@@ -18,8 +18,8 @@ bool User::check_id(string x)
 		return false;
 	}
 }
-;
-void User::read_data(map<string, User> &users) {
+
+void User::read_data(map<string, User>& users) {
 	fstream File1;
 	fstream File2;
 	fstream File3;
@@ -143,7 +143,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 		File << FullName;
 		File << "\n";
 	}
-	
+
 	File.close();
 	File.open("txts\\id.txt", ios::app);
 	if (File.is_open())
@@ -159,7 +159,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 		File << Age;
 		File << "\n";
 	}
-	
+
 	File.close();
 	File.open("txts\\country.txt", ios::app);
 	if (File.is_open())
@@ -204,6 +204,9 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 	User user1(FullName, NatID, Gender, Age, Country, Gov, Pass, Status);
 	//users.insert(pair<string, User>(id, user1));
 	//display();
+}
+User::~User()
+{
 }
 //void User::display() {
 //	map<string, User>::iterator it;

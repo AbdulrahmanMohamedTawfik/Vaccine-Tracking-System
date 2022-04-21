@@ -454,86 +454,11 @@ namespace gui {
 
 		}
 #pragma endregion
-	private: System::Void NameTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		
-		String^ name = NameTextBox->Text;
+	private: System::Void NameTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e);
 
-	}
-private: System::Void RegisterButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	//Register function call here
-	User l;
-	String^ all;
-	all = NameTextBox->Text;
-	string fullname = msclr::interop::marshal_as< std::string >(all);
+	private: System::Void RegisterButton_Click(System::Object^ sender, System::EventArgs^ e);
 
-	all = NatIDTextBox->Text;
-	string NatID = msclr::interop::marshal_as< std::string >(all);
-
-	all = PasswordTextBox->Text;
-	string password = msclr::interop::marshal_as< std::string >(all);
-	
-	string gender;
-	if (MaleCheckBox->Checked)
-	{
-		gender = "male";
-	}
-	else if (FemaleCheckBox->Checked)
-	{
-		gender = "female";
-	}
-	all = AgeTextBox->Text;
-	string age = msclr::interop::marshal_as< std::string >(all);
-	
-	string country;
-	if (EgyptCheckBox->Checked)
-	{
-		country = "Egypt";
-	}
-	else if (AbroadCheckBox->Checked)
-	{
-		all = OtherCountryComboBox->Text;
-		string c = msclr::interop::marshal_as< std::string >(all);
-		country = ("other: " + c);
-	}
-
-	all = GovernorateTextBox->Text;
-	string gov = msclr::interop::marshal_as< std::string >(all);
-
-	string status;
-	if (ApplyCheckBox->Checked)
-	{
-		status = "not vaccinated";
-	}
-	else if (vaccinatedCheckBox->Checked)
-	{
-		all = DoseComboBox->Text;
-		string c = msclr::interop::marshal_as< std::string >(all);
-		status = ("vaccinated: " + c);
-	}
-	if (l.check_id(NatID))
-	{
-		label4->Text = "ID is already used by another user!";
-	}
-	else 
-	{
-		l.registration(fullname, NatID, password, gender, age, country, gov, status);
-		label4->Text = "Registered successfully!";
-		//this->Close();
-	}
-}
-	private: System::Void UnseeButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (PasswordTextBox->PasswordChar == '*')
-		{
-			PasswordTextBox->PasswordChar = '\0';
-			//open: Project >> properties >> c/c++ >> commandline >> Additional Options >> write " /execution-charset /utf-8 "
-			UnseeButton->Text = "🙈";
-		}
-		else
-		{
-			PasswordTextBox->PasswordChar = '*';
-			UnseeButton->Text = "🐵";
-		}
-	}
+	private: System::Void UnseeButton_Click(System::Object^ sender, System::EventArgs^ e);
 	
 	private: System::Void reg_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -544,58 +469,26 @@ private: System::Void RegisterButton_Click(System::Object^ sender, System::Event
 	}
 	private: System::Void GenderLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void MaleCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (FemaleCheckBox->Checked)//uncheck the other choice
-			FemaleCheckBox->Checked = false;
+	private: System::Void MaleCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 
-	}
-	private: System::Void FemaleCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (MaleCheckBox->Checked)//uncheck the other choice
-			MaleCheckBox->Checked = false;
-	}
-	private: System::Void AbroadCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (EgyptCheckBox->Checked)//uncheck the other choice
-			EgyptCheckBox->Checked = false;
-		if (AbroadCheckBox->Checked)
-		{
-			OtherCountryComboBox->Show();
-		}
-		else
-		{
-			OtherCountryComboBox->Hide();
-		}
-	}
+	private: System::Void FemaleCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void AbroadCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+
 	private: System::Void OtherCountryComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void EgyptCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (AbroadCheckBox->Checked)//uncheck the other choice
-			AbroadCheckBox->Checked = false;
+	private: System::Void EgyptCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 
-	}
 	private: System::Void GovernorateLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void GovernorateTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void vaccinatedCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (ApplyCheckBox->Checked)//uncheck the other choice
-			ApplyCheckBox->Checked = false;
+	private: System::Void vaccinatedCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 
-		if (vaccinatedCheckBox->Checked)
-		{
-			DoseComboBox->Show();
-		}
-		else
-		{
-			DoseComboBox->Hide();
-		}
-	}
 	private: System::Void DoseComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void NatIDTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void ApplyCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (vaccinatedCheckBox->Checked)//uncheck the other choice
-		vaccinatedCheckBox->Checked = false;
-}
+	private: System::Void NatIDTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void ApplyCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 };
 }

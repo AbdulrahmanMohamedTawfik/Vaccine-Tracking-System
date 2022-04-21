@@ -166,25 +166,10 @@ namespace gui {
 
 		}
 #pragma endregion
-	private: System::Void ViewInfoButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		UserInfo^ userinfo = gcnew UserInfo();
-		userinfo->Show();
+	private: System::Void ViewInfoButton_Click(System::Object^ sender, System::EventArgs^ e);
 
-		//function call
-		label1->Text = "User Info showed successfully";
+	private: System::Void ViewAwaitingListButton_Click(System::Object^ sender, System::EventArgs^ e);
 
-	}
-	private: System::Void ViewAwaitingListButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		AwaitingList^ awaitinglist = gcnew AwaitingList();
-		awaitinglist->Show();
-
-		//function call
-		label1->Text = "Awaiting list viewed successfully";
-
-	}
-	private: System::Void DeleteInfoButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		label1->Text = "User Deletet successfully";
-
-	}
+	private: System::Void DeleteInfoButton_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

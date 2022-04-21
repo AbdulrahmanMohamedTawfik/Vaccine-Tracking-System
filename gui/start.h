@@ -133,22 +133,15 @@ namespace gui {
 
 		}
 #pragma endregion
-	private: System::Void LoginButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		login^ form = gcnew login();
-		form->Show();
-		//this->Close();
+	private: System::Void LoginButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void RegisterButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void ExitButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void RegisterButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		reg^ form = gcnew reg();
-		form->Show();
-		//this->Close();
+	private: System::Void start_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void ExitButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
-	}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void start_Load(System::Object^ sender, System::EventArgs^ e) {
-}
 };
 }

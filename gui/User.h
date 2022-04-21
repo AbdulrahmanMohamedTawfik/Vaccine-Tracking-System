@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include<map>
+#include <map>
 using namespace std;
 class User
 {
@@ -32,5 +32,5 @@ public:
 	void read_data(map<string, User>& users);
 	void login(string, string);
 	void registration(string FullName, string NatID, string Pass, string Genderr, string Agee, string Countryy, string Gov, string Statuss);
+	~User();
 };
-
