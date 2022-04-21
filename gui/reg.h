@@ -1,0 +1,601 @@
+﻿#pragma once
+#include<string>
+#include "User.h"
+#include <msclr/marshal_cppstd.h>
+namespace gui {
+
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+	/// <summary>
+	/// Summary for reg
+	/// </summary>
+	public ref class reg : public System::Windows::Forms::Form
+	{
+	public:
+		reg(void)
+		{
+			InitializeComponent();
+			PasswordTextBox->PasswordChar = '*';
+			OtherCountryComboBox->Hide();
+			DoseComboBox->Hide();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+
+	protected:
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		~reg()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+	private: System::Windows::Forms::TextBox^ PasswordTextBox;
+	protected:
+
+	private: System::Windows::Forms::TextBox^ NameTextBox;
+	protected:
+
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Button^ RegisterButton;
+	private: System::Windows::Forms::TextBox^ NatIDTextBox;
+
+
+
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Button^ UnseeButton;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::CheckBox^ MaleCheckBox;
+	private: System::Windows::Forms::CheckBox^ FemaleCheckBox;
+	private: System::Windows::Forms::Label^ GenderLabel;
+	private: System::Windows::Forms::Label^ AgeLabel;
+	private: System::Windows::Forms::TextBox^ AgeTextBox;
+	private: System::Windows::Forms::Label^ CountryLabel;
+	private: System::Windows::Forms::CheckBox^ EgyptCheckBox;
+	private: System::Windows::Forms::ComboBox^ OtherCountryComboBox;
+	private: System::Windows::Forms::CheckBox^ AbroadCheckBox;
+	private: System::Windows::Forms::Label^ GovernorateLabel;
+	private: System::Windows::Forms::TextBox^ GovernorateTextBox;
+	private: System::Windows::Forms::Label^ StatusLabel;
+	private: System::Windows::Forms::CheckBox^ vaccinatedCheckBox;
+	private: System::Windows::Forms::CheckBox^ ApplyCheckBox;
+	private: System::Windows::Forms::ComboBox^ DoseComboBox;
+
+
+
+
+
+
+
+	private:
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		System::ComponentModel::Container ^components;
+
+#pragma region Windows Form Designer generated code
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		void InitializeComponent(void)
+		{
+			this->PasswordTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->NameTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->RegisterButton = (gcnew System::Windows::Forms::Button());
+			this->NatIDTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->UnseeButton = (gcnew System::Windows::Forms::Button());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->MaleCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->FemaleCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->GenderLabel = (gcnew System::Windows::Forms::Label());
+			this->AgeLabel = (gcnew System::Windows::Forms::Label());
+			this->AgeTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->CountryLabel = (gcnew System::Windows::Forms::Label());
+			this->EgyptCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->OtherCountryComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->AbroadCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->GovernorateLabel = (gcnew System::Windows::Forms::Label());
+			this->GovernorateTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->StatusLabel = (gcnew System::Windows::Forms::Label());
+			this->vaccinatedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->ApplyCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->DoseComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->SuspendLayout();
+			// 
+			// PasswordTextBox
+			// 
+			this->PasswordTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->PasswordTextBox->Location = System::Drawing::Point(547, 180);
+			this->PasswordTextBox->Name = L"PasswordTextBox";
+			this->PasswordTextBox->Size = System::Drawing::Size(402, 54);
+			this->PasswordTextBox->TabIndex = 10;
+			// 
+			// NameTextBox
+			// 
+			this->NameTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NameTextBox->Location = System::Drawing::Point(547, 24);
+			this->NameTextBox->Name = L"NameTextBox";
+			this->NameTextBox->Size = System::Drawing::Size(402, 54);
+			this->NameTextBox->TabIndex = 9;
+			this->NameTextBox->TextChanged += gcnew System::EventHandler(this, &reg::NameTextBox_TextChanged);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(345, 180);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(196, 47);
+			this->label2->TabIndex = 8;
+			this->label2->Text = L"Password : ";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(325, 31);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(206, 47);
+			this->label1->TabIndex = 7;
+			this->label1->Text = L"Full Name : ";
+			// 
+			// RegisterButton
+			// 
+			this->RegisterButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->RegisterButton->Location = System::Drawing::Point(547, 738);
+			this->RegisterButton->Name = L"RegisterButton";
+			this->RegisterButton->Size = System::Drawing::Size(183, 60);
+			this->RegisterButton->TabIndex = 6;
+			this->RegisterButton->Text = L"Register";
+			this->RegisterButton->UseVisualStyleBackColor = true;
+			this->RegisterButton->Click += gcnew System::EventHandler(this, &reg::RegisterButton_Click);
+			// 
+			// NatIDTextBox
+			// 
+			this->NatIDTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NatIDTextBox->Location = System::Drawing::Point(547, 103);
+			this->NatIDTextBox->Name = L"NatIDTextBox";
+			this->NatIDTextBox->Size = System::Drawing::Size(402, 54);
+			this->NatIDTextBox->TabIndex = 12;
+			this->NatIDTextBox->TextChanged += gcnew System::EventHandler(this, &reg::NatIDTextBox_TextChanged);
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(315, 106);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(216, 47);
+			this->label3->TabIndex = 11;
+			this->label3->Text = L"National ID:";
+			this->label3->Click += gcnew System::EventHandler(this, &reg::label3_Click);
+			// 
+			// UnseeButton
+			// 
+			this->UnseeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->UnseeButton->Location = System::Drawing::Point(955, 180);
+			this->UnseeButton->Name = L"UnseeButton";
+			this->UnseeButton->Size = System::Drawing::Size(82, 54);
+			this->UnseeButton->TabIndex = 13;
+			this->UnseeButton->Text = L"👁";
+			this->UnseeButton->UseVisualStyleBackColor = true;
+			this->UnseeButton->Click += gcnew System::EventHandler(this, &reg::UnseeButton_Click);
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(839, 745);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(92, 47);
+			this->label4->TabIndex = 14;
+			this->label4->Text = L".........";
+			this->label4->Click += gcnew System::EventHandler(this, &reg::label4_Click);
+			// 
+			// MaleCheckBox
+			// 
+			this->MaleCheckBox->AutoSize = true;
+			this->MaleCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->MaleCheckBox->Location = System::Drawing::Point(561, 277);
+			this->MaleCheckBox->Name = L"MaleCheckBox";
+			this->MaleCheckBox->Size = System::Drawing::Size(90, 33);
+			this->MaleCheckBox->TabIndex = 15;
+			this->MaleCheckBox->Text = L"Male";
+			this->MaleCheckBox->UseVisualStyleBackColor = true;
+			this->MaleCheckBox->CheckedChanged += gcnew System::EventHandler(this, &reg::MaleCheckBox_CheckedChanged);
+			// 
+			// FemaleCheckBox
+			// 
+			this->FemaleCheckBox->AutoSize = true;
+			this->FemaleCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->FemaleCheckBox->Location = System::Drawing::Point(689, 277);
+			this->FemaleCheckBox->Name = L"FemaleCheckBox";
+			this->FemaleCheckBox->Size = System::Drawing::Size(120, 33);
+			this->FemaleCheckBox->TabIndex = 16;
+			this->FemaleCheckBox->Text = L"Female";
+			this->FemaleCheckBox->UseVisualStyleBackColor = true;
+			this->FemaleCheckBox->CheckedChanged += gcnew System::EventHandler(this, &reg::FemaleCheckBox_CheckedChanged);
+			// 
+			// GenderLabel
+			// 
+			this->GenderLabel->AutoSize = true;
+			this->GenderLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->GenderLabel->Location = System::Drawing::Point(386, 263);
+			this->GenderLabel->Name = L"GenderLabel";
+			this->GenderLabel->Size = System::Drawing::Size(145, 47);
+			this->GenderLabel->TabIndex = 17;
+			this->GenderLabel->Text = L"Gender:";
+			this->GenderLabel->Click += gcnew System::EventHandler(this, &reg::GenderLabel_Click);
+			// 
+			// AgeLabel
+			// 
+			this->AgeLabel->AutoSize = true;
+			this->AgeLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AgeLabel->Location = System::Drawing::Point(440, 338);
+			this->AgeLabel->Name = L"AgeLabel";
+			this->AgeLabel->Size = System::Drawing::Size(91, 47);
+			this->AgeLabel->TabIndex = 18;
+			this->AgeLabel->Text = L"Age:";
+			// 
+			// AgeTextBox
+			// 
+			this->AgeTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AgeTextBox->Location = System::Drawing::Point(547, 338);
+			this->AgeTextBox->Name = L"AgeTextBox";
+			this->AgeTextBox->Size = System::Drawing::Size(402, 54);
+			this->AgeTextBox->TabIndex = 19;
+			// 
+			// CountryLabel
+			// 
+			this->CountryLabel->AutoSize = true;
+			this->CountryLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->CountryLabel->Location = System::Drawing::Point(377, 413);
+			this->CountryLabel->Name = L"CountryLabel";
+			this->CountryLabel->Size = System::Drawing::Size(154, 47);
+			this->CountryLabel->TabIndex = 20;
+			this->CountryLabel->Text = L"Country:";
+			// 
+			// EgyptCheckBox
+			// 
+			this->EgyptCheckBox->AutoSize = true;
+			this->EgyptCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->EgyptCheckBox->Location = System::Drawing::Point(561, 424);
+			this->EgyptCheckBox->Name = L"EgyptCheckBox";
+			this->EgyptCheckBox->Size = System::Drawing::Size(100, 33);
+			this->EgyptCheckBox->TabIndex = 21;
+			this->EgyptCheckBox->Text = L"Egypt";
+			this->EgyptCheckBox->UseVisualStyleBackColor = true;
+			this->EgyptCheckBox->CheckedChanged += gcnew System::EventHandler(this, &reg::EgyptCheckBox_CheckedChanged);
+			// 
+			// OtherCountryComboBox
+			// 
+			this->OtherCountryComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->OtherCountryComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->OtherCountryComboBox->FormattingEnabled = true;
+			this->OtherCountryComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(196) {
+				L"OtherCountry", L"Afghanistan", L"Albania",
+					L"Algeria", L"Andorra", L"Angola", L"Antigua & Deps", L"Argentina", L"Armenia", L"Australia", L"Austria", L"Azerbaijan", L"Bahamas",
+					L"Bahrain", L"Bangladesh", L"Barbados", L"Belarus", L"Belgium", L"Belize", L"Benin", L"Bhutan", L"Bolivia", L"Bosnia Herzegovina",
+					L"Botswana", L"Brazil", L"Brunei", L"Bulgaria", L"Burkina", L"Burundi", L"Cambodia", L"Cameroon", L"Canada", L"Cape Verde", L"Central African Rep",
+					L"Chad", L"Chile", L"China", L"Colombia", L"Comoros", L"Congo", L"Congo {Democratic Rep}", L"Costa Rica", L"Croatia", L"Cuba",
+					L"Cyprus", L"Czech Republic", L"Denmark", L"Djibouti", L"Dominica", L"Dominican Republic", L"East Timor", L"Ecuador", L"El Salvador",
+					L"Equatorial Guinea", L"Eritrea", L"Estonia", L"Ethiopia", L"Fiji", L"Finland", L"France", L"Gabon", L"Gambia", L"Georgia", L"Germany",
+					L"Ghana", L"Greece", L"Grenada", L"Guatemala", L"Guinea", L"Guinea-Bissau", L"Guyana", L"Haiti", L"Honduras", L"Hungary", L"Iceland",
+					L"India", L"Indonesia", L"Iran", L"Iraq", L"Ireland {Republic}", L"Israel", L"Italy", L"Ivory Coast", L"Jamaica", L"Japan", L"Jordan",
+					L"Kazakhstan", L"Kenya", L"Kiribati", L"Korea North", L"Korea South", L"Kosovo", L"Kuwait", L"Kyrgyzstan", L"Laos", L"Latvia",
+					L"Lebanon", L"Lesotho", L"Liberia", L"Libya", L"Liechtenstein", L"Lithuania", L"Luxembourg", L"Macedonia", L"Madagascar", L"Malawi",
+					L"Malaysia", L"Maldives", L"Mali", L"Malta", L"Marshall Islands", L"Mauritania", L"Mauritius", L"Mexico", L"Micronesia", L"Moldova",
+					L"Monaco", L"Mongolia", L"Montenegro", L"Morocco", L"Mozambique", L"Myanmar, {Burma}", L"Namibia", L"Nauru", L"Nepal", L"Netherlands",
+					L"New Zealand", L"Nicaragua", L"Niger", L"Nigeria", L"Norway", L"Oman", L"Pakistan", L"Palau", L"Panama", L"Papua New Guinea",
+					L"Paraguay", L"Peru", L"Philippines", L"Poland", L"Portugal", L"Qatar", L"Romania", L"Russian Federation", L"Rwanda", L"St Kitts & Nevis",
+					L"St Lucia", L"Saint Vincent & the Grenadines", L"Samoa", L"San Marino", L"Sao Tome & Principe", L"Saudi Arabia", L"Senegal",
+					L"Serbia", L"Seychelles", L"Sierra Leone", L"Singapore", L"Slovakia", L"Slovenia", L"Solomon Islands", L"Somalia", L"South Africa",
+					L"South Sudan", L"Spain", L"Sri Lanka", L"Sudan", L"Suriname", L"Swaziland", L"Sweden", L"Switzerland", L"Syria", L"Taiwan",
+					L"Tajikistan", L"Tanzania", L"Thailand", L"Togo", L"Tonga", L"Trinidad & Tobago", L"Tunisia", L"Turkey", L"Turkmenistan", L"Tuvalu",
+					L"Uganda", L"Ukraine", L"United Arab Emirates", L"United Kingdom", L"United States", L"Uruguay", L"Uzbekistan", L"Vanuatu", L"Vatican City",
+					L"Venezuela", L"Vietnam", L"Yemen", L"Zambia", L"Zimbabwe"
+			});
+			this->OtherCountryComboBox->Location = System::Drawing::Point(838, 425);
+			this->OtherCountryComboBox->Name = L"OtherCountryComboBox";
+			this->OtherCountryComboBox->Size = System::Drawing::Size(236, 37);
+			this->OtherCountryComboBox->TabIndex = 22;
+			this->OtherCountryComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &reg::OtherCountryComboBox_SelectedIndexChanged);
+			// 
+			// AbroadCheckBox
+			// 
+			this->AbroadCheckBox->AutoSize = true;
+			this->AbroadCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AbroadCheckBox->Location = System::Drawing::Point(693, 427);
+			this->AbroadCheckBox->Name = L"AbroadCheckBox";
+			this->AbroadCheckBox->Size = System::Drawing::Size(116, 33);
+			this->AbroadCheckBox->TabIndex = 23;
+			this->AbroadCheckBox->Text = L"Abroad";
+			this->AbroadCheckBox->UseVisualStyleBackColor = true;
+			this->AbroadCheckBox->CheckedChanged += gcnew System::EventHandler(this, &reg::AbroadCheckBox_CheckedChanged);
+			// 
+			// GovernorateLabel
+			// 
+			this->GovernorateLabel->AutoSize = true;
+			this->GovernorateLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->GovernorateLabel->Location = System::Drawing::Point(304, 481);
+			this->GovernorateLabel->Name = L"GovernorateLabel";
+			this->GovernorateLabel->Size = System::Drawing::Size(227, 47);
+			this->GovernorateLabel->TabIndex = 24;
+			this->GovernorateLabel->Text = L"Governorate:";
+			this->GovernorateLabel->Click += gcnew System::EventHandler(this, &reg::GovernorateLabel_Click);
+			// 
+			// GovernorateTextBox
+			// 
+			this->GovernorateTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->GovernorateTextBox->Location = System::Drawing::Point(547, 481);
+			this->GovernorateTextBox->Name = L"GovernorateTextBox";
+			this->GovernorateTextBox->Size = System::Drawing::Size(402, 54);
+			this->GovernorateTextBox->TabIndex = 25;
+			this->GovernorateTextBox->TextChanged += gcnew System::EventHandler(this, &reg::GovernorateTextBox_TextChanged);
+			// 
+			// StatusLabel
+			// 
+			this->StatusLabel->AutoSize = true;
+			this->StatusLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->StatusLabel->Location = System::Drawing::Point(393, 547);
+			this->StatusLabel->Name = L"StatusLabel";
+			this->StatusLabel->Size = System::Drawing::Size(138, 47);
+			this->StatusLabel->TabIndex = 26;
+			this->StatusLabel->Text = L"Status:";
+			// 
+			// vaccinatedCheckBox
+			// 
+			this->vaccinatedCheckBox->AutoSize = true;
+			this->vaccinatedCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->vaccinatedCheckBox->Location = System::Drawing::Point(547, 558);
+			this->vaccinatedCheckBox->Name = L"vaccinatedCheckBox";
+			this->vaccinatedCheckBox->Size = System::Drawing::Size(161, 33);
+			this->vaccinatedCheckBox->TabIndex = 27;
+			this->vaccinatedCheckBox->Text = L"Vaccinated";
+			this->vaccinatedCheckBox->UseVisualStyleBackColor = true;
+			this->vaccinatedCheckBox->CheckedChanged += gcnew System::EventHandler(this, &reg::vaccinatedCheckBox_CheckedChanged);
+			// 
+			// ApplyCheckBox
+			// 
+			this->ApplyCheckBox->AutoSize = true;
+			this->ApplyCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ApplyCheckBox->Location = System::Drawing::Point(724, 558);
+			this->ApplyCheckBox->Name = L"ApplyCheckBox";
+			this->ApplyCheckBox->Size = System::Drawing::Size(304, 33);
+			this->ApplyCheckBox->TabIndex = 28;
+			this->ApplyCheckBox->Text = L"Applying for vaccination";
+			this->ApplyCheckBox->UseVisualStyleBackColor = true;
+			this->ApplyCheckBox->CheckedChanged += gcnew System::EventHandler(this, &reg::ApplyCheckBox_CheckedChanged);
+			// 
+			// DoseComboBox
+			// 
+			this->DoseComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->DoseComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->DoseComboBox->FormattingEnabled = true;
+			this->DoseComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"only first dose", L"both doses" });
+			this->DoseComboBox->Location = System::Drawing::Point(547, 597);
+			this->DoseComboBox->Name = L"DoseComboBox";
+			this->DoseComboBox->Size = System::Drawing::Size(206, 37);
+			this->DoseComboBox->TabIndex = 29;
+			this->DoseComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &reg::DoseComboBox_SelectedIndexChanged);
+			// 
+			// reg
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(1499, 810);
+			this->Controls->Add(this->DoseComboBox);
+			this->Controls->Add(this->ApplyCheckBox);
+			this->Controls->Add(this->vaccinatedCheckBox);
+			this->Controls->Add(this->StatusLabel);
+			this->Controls->Add(this->GovernorateTextBox);
+			this->Controls->Add(this->GovernorateLabel);
+			this->Controls->Add(this->AbroadCheckBox);
+			this->Controls->Add(this->OtherCountryComboBox);
+			this->Controls->Add(this->EgyptCheckBox);
+			this->Controls->Add(this->CountryLabel);
+			this->Controls->Add(this->AgeTextBox);
+			this->Controls->Add(this->AgeLabel);
+			this->Controls->Add(this->GenderLabel);
+			this->Controls->Add(this->FemaleCheckBox);
+			this->Controls->Add(this->MaleCheckBox);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->UnseeButton);
+			this->Controls->Add(this->NatIDTextBox);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->PasswordTextBox);
+			this->Controls->Add(this->NameTextBox);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->RegisterButton);
+			this->Name = L"reg";
+			this->Text = L"Registeration";
+			this->Load += gcnew System::EventHandler(this, &reg::reg_Load);
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
+		}
+#pragma endregion
+	private: System::Void NameTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		
+		String^ name = NameTextBox->Text;
+
+	}
+private: System::Void RegisterButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	//Register function call here
+	User l;
+	String^ all;
+	all = NameTextBox->Text;
+	string fullname = msclr::interop::marshal_as< std::string >(all);
+
+	all = NatIDTextBox->Text;
+	string NatID = msclr::interop::marshal_as< std::string >(all);
+
+	all = PasswordTextBox->Text;
+	string password = msclr::interop::marshal_as< std::string >(all);
+	
+	string gender;
+	if (MaleCheckBox->Checked)
+	{
+		gender = "male";
+	}
+	else if (FemaleCheckBox->Checked)
+	{
+		gender = "female";
+	}
+	all = AgeTextBox->Text;
+	string age = msclr::interop::marshal_as< std::string >(all);
+	
+	string country;
+	if (EgyptCheckBox->Checked)
+	{
+		country = "Egypt";
+	}
+	else if (AbroadCheckBox->Checked)
+	{
+		all = OtherCountryComboBox->Text;
+		string c = msclr::interop::marshal_as< std::string >(all);
+		country = ("other: " + c);
+	}
+
+	all = GovernorateTextBox->Text;
+	string gov = msclr::interop::marshal_as< std::string >(all);
+
+	string status;
+	if (ApplyCheckBox->Checked)
+	{
+		status = "not vaccinated";
+	}
+	else if (vaccinatedCheckBox->Checked)
+	{
+		all = DoseComboBox->Text;
+		string c = msclr::interop::marshal_as< std::string >(all);
+		status = ("vaccinated: " + c);
+	}
+	if (l.check_id(NatID))
+	{
+		label4->Text = "ID is already used by another user!";
+	}
+	else 
+	{
+		l.registration(fullname, NatID, password, gender, age, country, gov, status);
+		label4->Text = "Registered successfully!";
+		//this->Close();
+	}
+}
+	private: System::Void UnseeButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (PasswordTextBox->PasswordChar == '*')
+		{
+			PasswordTextBox->PasswordChar = '\0';
+			//open: Project >> properties >> c/c++ >> commandline >> Additional Options >> write " /execution-charset /utf-8 "
+			UnseeButton->Text = "🙈";
+		}
+		else
+		{
+			PasswordTextBox->PasswordChar = '*';
+			UnseeButton->Text = "🐵";
+		}
+	}
+	
+	private: System::Void reg_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	}
+	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void GenderLabel_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void MaleCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (FemaleCheckBox->Checked)//uncheck the other choice
+			FemaleCheckBox->Checked = false;
+
+	}
+	private: System::Void FemaleCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (MaleCheckBox->Checked)//uncheck the other choice
+			MaleCheckBox->Checked = false;
+	}
+	private: System::Void AbroadCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (EgyptCheckBox->Checked)//uncheck the other choice
+			EgyptCheckBox->Checked = false;
+		if (AbroadCheckBox->Checked)
+		{
+			OtherCountryComboBox->Show();
+		}
+		else
+		{
+			OtherCountryComboBox->Hide();
+		}
+	}
+	private: System::Void OtherCountryComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void EgyptCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (AbroadCheckBox->Checked)//uncheck the other choice
+			AbroadCheckBox->Checked = false;
+
+	}
+	private: System::Void GovernorateLabel_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void GovernorateTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void vaccinatedCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (ApplyCheckBox->Checked)//uncheck the other choice
+			ApplyCheckBox->Checked = false;
+
+		if (vaccinatedCheckBox->Checked)
+		{
+			DoseComboBox->Show();
+		}
+		else
+		{
+			DoseComboBox->Hide();
+		}
+	}
+	private: System::Void DoseComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void NatIDTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void ApplyCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (vaccinatedCheckBox->Checked)//uncheck the other choice
+		vaccinatedCheckBox->Checked = false;
+}
+};
+}
