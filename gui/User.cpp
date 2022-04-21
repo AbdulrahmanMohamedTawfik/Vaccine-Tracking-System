@@ -18,8 +18,8 @@ bool User::check_id(string x)
 		return false;
 	}
 }
-map<string, User> users;
-void User::read_data() {
+;
+void User::read_data(map<string, User> &users) {
 	fstream File1;
 	fstream File2;
 	fstream File3;
@@ -202,16 +202,16 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 		File << "\n";
 	}
 	User user1(FullName, NatID, Gender, Age, Country, Gov, Pass, Status);
-	users.insert(pair<string, User>(id, user1));
-	display();
+	//users.insert(pair<string, User>(id, user1));
+	//display();
 }
-void User::display() {
-	map<string, User>::iterator it;
-	for (it = users.begin(); it != users.end(); it++) {
-
-		cout << it->second.id << endl;
-		cout << it->second.name << endl;
-
-	}
-
-}
+//void User::display() {
+//	map<string, User>::iterator it;
+//	for (it = users.begin(); it != users.end(); it++) {
+//
+//		cout << it->second.id << endl;
+//		cout << it->second.name << endl;
+//
+//	}
+//
+//}

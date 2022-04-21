@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include<map>
 using namespace std;
 class User
 {
@@ -27,8 +28,8 @@ public:
 		this->status = status;
 	};
 	bool check_id(string x);
-	void display();
-	void read_data();
+	//void display();
+	void read_data(map<string, User>& users);
 	void login(string, string);
 	void registration(string FullName, string NatID, string Pass, string Genderr, string Agee, string Countryy, string Gov, string Statuss);
 };

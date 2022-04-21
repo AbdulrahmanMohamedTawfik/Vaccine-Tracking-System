@@ -6,8 +6,8 @@ using namespace System::Windows::Forms;
 int main(cli::array<System::String^>^ args)
 {
 
-	User l;
-	l.read_data();
+	//User l;
+	//l.read_data();
 	auto arr = gcnew cli::array<String^>(42);
 	Application::SetCompatibleTextRenderingDefault(false);
 	Application::EnableVisualStyles();
