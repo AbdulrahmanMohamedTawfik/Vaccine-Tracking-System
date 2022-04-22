@@ -5,7 +5,7 @@ using namespace std;
 class User
 {
 private:
-	string NAtIDTextBox_Text;
+	static string NAtIDTextBox_Text;
 	bool del_user_found;
 public:
 	string name;
@@ -37,8 +37,8 @@ public:
 	void login(string, string);
 	void registration(string FullName, string NatID, string Pass, string Genderr, string Agee, string Countryy, string Gov, string Statuss);
 	~User();
-	string getNAtIDTextBox_Text();
-	void setNAtIDTextBox_Text(string val);
+	string static getNAtIDTextBox_Text();
+	void static setNAtIDTextBox_Text(string val);
 	bool getdel_user_found();
 	void setdel_user_found(bool val);
 };

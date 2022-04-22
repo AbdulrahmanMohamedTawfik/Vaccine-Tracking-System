@@ -3,6 +3,7 @@
 #include <fstream>
 #include<map>
 using namespace std;
+string User::NAtIDTextBox_Text;
 bool User::check_id(string id)
 {
 	fstream IDFile;

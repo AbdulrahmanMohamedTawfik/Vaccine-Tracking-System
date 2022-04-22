@@ -137,6 +137,7 @@ namespace gui {
 			// HidePassCheckBox
 			// 
 			this->HidePassCheckBox->AutoSize = true;
+			this->HidePassCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->HidePassCheckBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->HidePassCheckBox->Location = System::Drawing::Point(894, 193);
@@ -161,6 +162,7 @@ namespace gui {
 			// NotRegYetLabel
 			// 
 			this->NotRegYetLabel->AutoSize = true;
+			this->NotRegYetLabel->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->NotRegYetLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NotRegYetLabel->ForeColor = System::Drawing::Color::Blue;
@@ -169,7 +171,6 @@ namespace gui {
 			this->NotRegYetLabel->Size = System::Drawing::Size(346, 47);
 			this->NotRegYetLabel->TabIndex = 17;
 			this->NotRegYetLabel->Text = L"Not Registered yet\?";
-			this->NotRegYetLabel->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->NotRegYetLabel->Click += gcnew System::EventHandler(this, &login::label1_Click);
 			// 
 			// login
@@ -201,9 +202,8 @@ namespace gui {
 	private: System::Void PasswordTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	}
-	private: System::Void login_Load(System::Object^ sender, System::EventArgs^ e) {
-		
-	}
+	private: System::Void login_Load(System::Object^ sender, System::EventArgs^ e);
+
 	private: System::Void HidePassCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void NationalIDLabel_Click(System::Object^ sender, System::EventArgs^ e) {

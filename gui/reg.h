@@ -117,6 +117,7 @@ namespace gui {
 			// 
 			this->RegisterButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
 				static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->RegisterButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->RegisterButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->RegisterButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -136,11 +137,11 @@ namespace gui {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(45, 35);
+			this->label1->Location = System::Drawing::Point(53, 35);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(165, 38);
+			this->label1->Size = System::Drawing::Size(157, 38);
 			this->label1->TabIndex = 7;
-			this->label1->Text = L"Full Name : ";
+			this->label1->Text = L"Full Name :";
 			this->label1->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			// 
 			// label2
@@ -148,12 +149,13 @@ namespace gui {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(57, 192);
+			this->label2->Location = System::Drawing::Point(64, 192);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(154, 38);
+			this->label2->Size = System::Drawing::Size(146, 38);
 			this->label2->TabIndex = 8;
-			this->label2->Text = L"Password : ";
+			this->label2->Text = L"Password :";
 			this->label2->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
+			this->label2->Click += gcnew System::EventHandler(this, &reg::label2_Click);
 			// 
 			// NameTextBox
 			// 
@@ -182,11 +184,11 @@ namespace gui {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
 			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(48, 114);
+			this->label3->Location = System::Drawing::Point(40, 114);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(162, 38);
+			this->label3->Size = System::Drawing::Size(170, 38);
 			this->label3->TabIndex = 11;
-			this->label3->Text = L"National ID:";
+			this->label3->Text = L"National ID :";
 			this->label3->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			this->label3->Click += gcnew System::EventHandler(this, &reg::label3_Click);
 			// 
@@ -219,22 +221,22 @@ namespace gui {
 			this->GenderLabel->AutoSize = true;
 			this->GenderLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
 			this->GenderLabel->ForeColor = System::Drawing::Color::White;
-			this->GenderLabel->Location = System::Drawing::Point(97, 264);
+			this->GenderLabel->Location = System::Drawing::Point(88, 273);
 			this->GenderLabel->Name = L"GenderLabel";
-			this->GenderLabel->Size = System::Drawing::Size(114, 38);
+			this->GenderLabel->Size = System::Drawing::Size(122, 38);
 			this->GenderLabel->TabIndex = 17;
-			this->GenderLabel->Text = L"Gender:";
+			this->GenderLabel->Text = L"Gender :";
 			this->GenderLabel->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			this->GenderLabel->Click += gcnew System::EventHandler(this, &reg::GenderLabel_Click);
 			// 
 			// MaleCheckBox
 			// 
 			this->MaleCheckBox->AutoSize = true;
-			this->MaleCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->MaleCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
 			this->MaleCheckBox->ForeColor = System::Drawing::Color::White;
-			this->MaleCheckBox->Location = System::Drawing::Point(281, 279);
+			this->MaleCheckBox->Location = System::Drawing::Point(267, 276);
 			this->MaleCheckBox->Name = L"MaleCheckBox";
-			this->MaleCheckBox->Size = System::Drawing::Size(77, 32);
+			this->MaleCheckBox->Size = System::Drawing::Size(90, 36);
 			this->MaleCheckBox->TabIndex = 15;
 			this->MaleCheckBox->Text = L"Male";
 			this->MaleCheckBox->UseVisualStyleBackColor = true;
@@ -244,11 +246,11 @@ namespace gui {
 			// FemaleCheckBox
 			// 
 			this->FemaleCheckBox->AutoSize = true;
-			this->FemaleCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->FemaleCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
 			this->FemaleCheckBox->ForeColor = System::Drawing::Color::White;
-			this->FemaleCheckBox->Location = System::Drawing::Point(409, 279);
+			this->FemaleCheckBox->Location = System::Drawing::Point(409, 276);
 			this->FemaleCheckBox->Name = L"FemaleCheckBox";
-			this->FemaleCheckBox->Size = System::Drawing::Size(96, 32);
+			this->FemaleCheckBox->Size = System::Drawing::Size(114, 36);
 			this->FemaleCheckBox->TabIndex = 16;
 			this->FemaleCheckBox->Text = L"Female";
 			this->FemaleCheckBox->UseVisualStyleBackColor = true;
@@ -274,11 +276,11 @@ namespace gui {
 			this->AgeLabel->AutoSize = true;
 			this->AgeLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
 			this->AgeLabel->ForeColor = System::Drawing::Color::White;
-			this->AgeLabel->Location = System::Drawing::Point(138, 349);
+			this->AgeLabel->Location = System::Drawing::Point(130, 349);
 			this->AgeLabel->Name = L"AgeLabel";
-			this->AgeLabel->Size = System::Drawing::Size(72, 38);
+			this->AgeLabel->Size = System::Drawing::Size(80, 38);
 			this->AgeLabel->TabIndex = 18;
-			this->AgeLabel->Text = L"Age:";
+			this->AgeLabel->Text = L"Age :";
 			this->AgeLabel->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			// 
 			// AgeTextBox
@@ -296,11 +298,11 @@ namespace gui {
 			this->CountryLabel->AutoSize = true;
 			this->CountryLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
 			this->CountryLabel->ForeColor = System::Drawing::Color::White;
-			this->CountryLabel->Location = System::Drawing::Point(89, 423);
+			this->CountryLabel->Location = System::Drawing::Point(81, 423);
 			this->CountryLabel->Name = L"CountryLabel";
-			this->CountryLabel->Size = System::Drawing::Size(121, 38);
+			this->CountryLabel->Size = System::Drawing::Size(129, 38);
 			this->CountryLabel->TabIndex = 20;
-			this->CountryLabel->Text = L"Country:";
+			this->CountryLabel->Text = L"Country :";
 			this->CountryLabel->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			// 
 			// EgyptCheckBox
@@ -308,7 +310,7 @@ namespace gui {
 			this->EgyptCheckBox->AutoSize = true;
 			this->EgyptCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
 			this->EgyptCheckBox->ForeColor = System::Drawing::Color::White;
-			this->EgyptCheckBox->Location = System::Drawing::Point(281, 426);
+			this->EgyptCheckBox->Location = System::Drawing::Point(267, 426);
 			this->EgyptCheckBox->Name = L"EgyptCheckBox";
 			this->EgyptCheckBox->Size = System::Drawing::Size(97, 36);
 			this->EgyptCheckBox->TabIndex = 21;
@@ -346,9 +348,9 @@ namespace gui {
 					L"Uganda", L"Ukraine", L"United Arab Emirates", L"United Kingdom", L"United States", L"Uruguay", L"Uzbekistan", L"Vanuatu", L"Vatican City",
 					L"Venezuela", L"Vietnam", L"Yemen", L"Zambia", L"Zimbabwe"
 			});
-			this->OtherCountryComboBox->Location = System::Drawing::Point(532, 429);
+			this->OtherCountryComboBox->Location = System::Drawing::Point(559, 429);
 			this->OtherCountryComboBox->Name = L"OtherCountryComboBox";
-			this->OtherCountryComboBox->Size = System::Drawing::Size(236, 37);
+			this->OtherCountryComboBox->Size = System::Drawing::Size(248, 37);
 			this->OtherCountryComboBox->TabIndex = 22;
 			this->OtherCountryComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &reg::OtherCountryComboBox_SelectedIndexChanged);
 			this->OtherCountryComboBox->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
@@ -358,7 +360,7 @@ namespace gui {
 			this->AbroadCheckBox->AutoSize = true;
 			this->AbroadCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
 			this->AbroadCheckBox->ForeColor = System::Drawing::Color::White;
-			this->AbroadCheckBox->Location = System::Drawing::Point(413, 429);
+			this->AbroadCheckBox->Location = System::Drawing::Point(409, 426);
 			this->AbroadCheckBox->Name = L"AbroadCheckBox";
 			this->AbroadCheckBox->Size = System::Drawing::Size(114, 36);
 			this->AbroadCheckBox->TabIndex = 23;
@@ -372,11 +374,11 @@ namespace gui {
 			this->GovernorateLabel->AutoSize = true;
 			this->GovernorateLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
 			this->GovernorateLabel->ForeColor = System::Drawing::Color::White;
-			this->GovernorateLabel->Location = System::Drawing::Point(35, 483);
+			this->GovernorateLabel->Location = System::Drawing::Point(26, 492);
 			this->GovernorateLabel->Name = L"GovernorateLabel";
-			this->GovernorateLabel->Size = System::Drawing::Size(176, 38);
+			this->GovernorateLabel->Size = System::Drawing::Size(184, 38);
 			this->GovernorateLabel->TabIndex = 24;
-			this->GovernorateLabel->Text = L"Governorate:";
+			this->GovernorateLabel->Text = L"Governorate :";
 			this->GovernorateLabel->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			this->GovernorateLabel->Click += gcnew System::EventHandler(this, &reg::GovernorateLabel_Click);
 			// 
@@ -396,11 +398,11 @@ namespace gui {
 			this->StatusLabel->AutoSize = true;
 			this->StatusLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
 			this->StatusLabel->ForeColor = System::Drawing::Color::White;
-			this->StatusLabel->Location = System::Drawing::Point(113, 559);
+			this->StatusLabel->Location = System::Drawing::Point(105, 559);
 			this->StatusLabel->Name = L"StatusLabel";
-			this->StatusLabel->Size = System::Drawing::Size(97, 38);
+			this->StatusLabel->Size = System::Drawing::Size(105, 38);
 			this->StatusLabel->TabIndex = 26;
-			this->StatusLabel->Text = L"Status:";
+			this->StatusLabel->Text = L"Status :";
 			this->StatusLabel->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			// 
 			// vaccinatedCheckBox
@@ -408,7 +410,7 @@ namespace gui {
 			this->vaccinatedCheckBox->AutoSize = true;
 			this->vaccinatedCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15));
 			this->vaccinatedCheckBox->ForeColor = System::Drawing::Color::White;
-			this->vaccinatedCheckBox->Location = System::Drawing::Point(267, 560);
+			this->vaccinatedCheckBox->Location = System::Drawing::Point(267, 558);
 			this->vaccinatedCheckBox->Name = L"vaccinatedCheckBox";
 			this->vaccinatedCheckBox->Size = System::Drawing::Size(157, 39);
 			this->vaccinatedCheckBox->TabIndex = 27;
@@ -422,7 +424,7 @@ namespace gui {
 			this->ApplyCheckBox->AutoSize = true;
 			this->ApplyCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15));
 			this->ApplyCheckBox->ForeColor = System::Drawing::Color::White;
-			this->ApplyCheckBox->Location = System::Drawing::Point(444, 560);
+			this->ApplyCheckBox->Location = System::Drawing::Point(444, 558);
 			this->ApplyCheckBox->Name = L"ApplyCheckBox";
 			this->ApplyCheckBox->Size = System::Drawing::Size(307, 39);
 			this->ApplyCheckBox->TabIndex = 28;
@@ -462,7 +464,7 @@ namespace gui {
 			this->panel1->Controls->Add(this->AgeLabel);
 			this->panel1->Location = System::Drawing::Point(665, -3);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(841, 819);
+			this->panel1->Size = System::Drawing::Size(1267, 1065);
 			this->panel1->TabIndex = 30;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &reg::panel1_Paint);
 			// 
@@ -480,9 +482,9 @@ namespace gui {
 			// 
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox1->Location = System::Drawing::Point(-2, 543);
+			this->pictureBox1->Location = System::Drawing::Point(-2, 575);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(670, 270);
+			this->pictureBox1->Size = System::Drawing::Size(669, 270);
 			this->pictureBox1->TabIndex = 31;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -504,7 +506,7 @@ namespace gui {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1499, 810);
+			this->ClientSize = System::Drawing::Size(1924, 1055);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel1);
@@ -563,5 +565,7 @@ namespace gui {
 	}
 	private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
