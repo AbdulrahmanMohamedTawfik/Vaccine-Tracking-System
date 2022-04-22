@@ -3,6 +3,7 @@
 #include "reg.h"
 #include "UserForm.h"
 #include "AdminForm.h"
+#include<string>
 #include <msclr/marshal_cppstd.h>
 namespace gui {
 
@@ -19,6 +20,7 @@ namespace gui {
 	public ref class login : public System::Windows::Forms::Form
 	{
 	public:
+		String^ user_id;
 		login(void)
 		{
 			InitializeComponent();
@@ -192,44 +194,8 @@ namespace gui {
 
 		}
 #pragma endregion
+	private: System::Void LoginButton_Click(System::Object^ sender, System::EventArgs^ e);
 
-	private: System::Void LoginButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		//login function call here
-		UserForm^ userform = gcnew UserForm();
-		AdminForm^ adminform = gcnew AdminForm();
-		User l;
-		String^ all;
-		
-		all = NatIDTextBox->Text;
-		string NatID = msclr::interop::marshal_as< std::string >(all);
-		all = PasswordTextBox->Text;
-		string password = msclr::interop::marshal_as< std::string >(all);
-		
-		l.login(NatID, password);
-
-		if (l.correct_NatId && l.correct_pass)
-		{
-			userform->Show();
-			this->Close();
-		}
-		if (NatIDTextBox->Text == "admin" && PasswordTextBox->Text == "admin")
-		{
-			adminform->Show();
-			this->Close();
-		}
-		/*else if (l.correct_NatId == false)
-		{
-			label4->Text = "Incorrect National ID!";
-		}
-		else if (l.correct_pass == false)
-		{
-			label4->Text = "Incorrect Password!";
-		}*/
-		else
-		{
-			label4->Text = "Incorrect info!";
-		}
-	}
 	private: System::Void NameTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	}
@@ -239,23 +205,11 @@ namespace gui {
 	private: System::Void login_Load(System::Object^ sender, System::EventArgs^ e) {
 		
 	}
-	private: System::Void HidePassCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (PasswordTextBox->PasswordChar == '\0')
-		{
-			PasswordTextBox->PasswordChar = '*';
-			HidePassCheckBox->Text = "🐵";
-		}
-		else
-		{
-			PasswordTextBox->PasswordChar = '\0';
-			HidePassCheckBox->Text = "🙈";
-		}
+	private: System::Void HidePassCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void NationalIDLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void NationalIDLabel_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	reg^ regform = gcnew reg();
-	regform->Show();
-}
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e);
+	//public: System::String^ get_id();
 };
 }

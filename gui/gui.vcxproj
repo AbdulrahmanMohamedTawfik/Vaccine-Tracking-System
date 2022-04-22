@@ -129,7 +129,6 @@
     <ClCompile Include="reg.cpp" />
     <ClCompile Include="start.cpp" />
     <ClCompile Include="UserForm.cpp" />
-    <ClCompile Include="UserInfo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Admin.h" />
@@ -152,9 +151,6 @@
     <ClInclude Include="UserForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="UserInfo.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdminForm.resx">
@@ -174,9 +170,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserInfo.resx">
-      <DependentUpon>UserInfo.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

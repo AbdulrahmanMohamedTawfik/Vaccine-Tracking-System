@@ -13,9 +13,7 @@ private:
 
 public:
 	Admin();
-
 	string viewUser(string userNationalID, map<string, User> users);
-
 	string viewAll(map<string, User> users);
 	void deleteUser(string userNationalID, map<string, User>& users);
 	void deleteAll(map<string, User>& users);
