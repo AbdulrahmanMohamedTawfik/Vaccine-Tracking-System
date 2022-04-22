@@ -3,7 +3,7 @@
 #include <fstream>
 #include<map>
 using namespace std;
-bool User::check_id(string x)
+bool User::check_id(string id)
 {
 	fstream IDFile;
 	IDFile.open("txts\\id.txt", ios::in);
@@ -12,7 +12,7 @@ bool User::check_id(string x)
 		string line;
 		while (getline(IDFile, line))
 		{
-			if (line == x)
+			if (line == id)
 				return true;
 		}
 		return false;
@@ -254,4 +254,14 @@ string User::getNAtIDTextBox_Text()
 void User::setNAtIDTextBox_Text(string val)
 {
 	NAtIDTextBox_Text = val;
+}
+
+bool User::getdel_user_found()
+{
+	return del_user_found;
+}
+
+void User::setdel_user_found(bool val)
+{
+	del_user_found = val;
 }

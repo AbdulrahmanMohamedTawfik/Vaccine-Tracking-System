@@ -15,8 +15,7 @@ System::Void gui::AdminForm::ViewInfoButton_Click(System::Object^ sender, System
 	string NatID = msclr::interop::marshal_as< std::string >(all);
 	string contents = a.viewUser(NatID, users);
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
-	UserInfoLabel->Text = syscontents;
-	label1->Text = "User Info showed successfully";
+	richTextBox1->Text = syscontents;
     return System::Void();
 }
 
@@ -28,8 +27,7 @@ System::Void gui::AdminForm::ViewAllUsers_Click(System::Object^ sender, System::
 	Admin a;
 	string contents = a.viewAll(users);
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
-	UserInfoLabel->Text = syscontents;
-	label1->Text = "All Users showed successfully";
+	richTextBox1->Text = syscontents;
 	return System::Void();
 }
 
@@ -39,7 +37,7 @@ System::Void gui::AdminForm::ViewAwaitingListButton_Click(System::Object^ sender
 	awaitinglist->Show();
 
 	//function call
-	label1->Text = "Awaiting list viewed successfully";
+	richTextBox1->Text = "Awaiting list viewed successfully";
 
 	return System::Void();
 }
@@ -54,8 +52,15 @@ System::Void gui::AdminForm::DeleteInfoButton_Click(System::Object^ sender, Syst
 	all = NationalIDTextBox->Text;
 	string NatID = msclr::interop::marshal_as< std::string >(all);
 	a.deleteUser(NatID, users);
-	u.update_files(users);
-	label1->Text = "User Deleteted successfully";
+	if (u.getdel_user_found())
+	{
+		u.update_files(users);
+		richTextBox1->Text = "User Deleteted successfully";
+	}
+	else
+	{
+		richTextBox1->Text = "User Not Found!";
+	}
 	return System::Void();
 }
 
@@ -70,6 +75,6 @@ System::Void gui::AdminForm::DeleteAllUsers_Click(System::Object^ sender, System
 	string NatID = msclr::interop::marshal_as< std::string >(all);
 	a.deleteAll(users);
 	u.update_files(users);
-	label1->Text = "All Users Deleteted successfully";
+	richTextBox1->Text = "All Users Deleteted successfully";
 	return System::Void();
 }
