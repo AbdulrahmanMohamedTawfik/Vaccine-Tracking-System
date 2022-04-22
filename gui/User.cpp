@@ -243,19 +243,15 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 		File << "\n";
 	}
 	User user1(FullName, NatID, Gender, Age, Country, Gov, Pass, Status);
-	//users.insert(pair<string, User>(id, user1));
-	//display();
 }
 User::~User()
 {
 }
-//void User::display() {
-//	map<string, User>::iterator it;
-//	for (it = users.begin(); it != users.end(); it++) {
-//
-//		cout << it->second.id << endl;
-//		cout << it->second.name << endl;
-//
-//	}
-//
-//}
+string User::getNAtIDTextBox_Text()
+{
+	return NAtIDTextBox_Text;
+}
+void User::setNAtIDTextBox_Text(string val)
+{
+	NAtIDTextBox_Text = val;
+}

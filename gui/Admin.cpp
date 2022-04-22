@@ -7,6 +7,17 @@ Admin::Admin()
 	this->password = "admin";
 }
 
+string Admin::viewUsername(string userNationalID, map<string, User> users)//Hello + username
+{
+	for (auto it : users) {
+		if (it.first == userNationalID)
+		{
+			return (it.second.name);
+		}
+	}
+	return("User");
+}
+
 string Admin::viewUser(string userNationalID, map<string, User> users)
 {
 	for (auto it : users) {
