@@ -20,7 +20,6 @@ namespace gui {
 	public ref class login : public System::Windows::Forms::Form
 	{
 	public:
-		String^ user_id;
 		login(void)
 		{
 			InitializeComponent();
@@ -210,6 +209,5 @@ namespace gui {
 	private: System::Void NationalIDLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e);
-	//public: System::String^ get_id();
 };
 }

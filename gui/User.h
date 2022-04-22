@@ -4,6 +4,8 @@
 using namespace std;
 class User
 {
+private:
+	string NAtIDTextBox_Text;
 public:
 	string name;
 	string id;
@@ -34,4 +36,6 @@ public:
 	void login(string, string);
 	void registration(string FullName, string NatID, string Pass, string Genderr, string Agee, string Countryy, string Gov, string Statuss);
 	~User();
+	string getNAtIDTextBox_Text();
+	void setNAtIDTextBox_Text(string val);
 };

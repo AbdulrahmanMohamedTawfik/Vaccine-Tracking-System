@@ -1,21 +1,25 @@
 ﻿#include "login.h"
-
+#include<iostream>
+using namespace std;
 System::Void gui::login::LoginButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	user_id = NatIDTextBox->Text;
+	//NAtIDTextBox_Text
+	//user_id = NatIDTextBox->Text;
 	//login function call here
 	UserForm^ userform = gcnew UserForm();
 	AdminForm^ adminform = gcnew AdminForm();
-	User l;
+	User u;
 	String^ all;
 	all = NatIDTextBox->Text;
 	string NatID = msclr::interop::marshal_as< std::string >(all);
+	u.setNAtIDTextBox_Text(NatID);
+	cout << "getNAtIDTextBox_Text= " << u.getNAtIDTextBox_Text() << endl;
 	all = PasswordTextBox->Text;
 	string password = msclr::interop::marshal_as< std::string >(all);
 
-	l.login(NatID, password);
+	u.login(NatID, password);
 
-	if (l.correct_NatId && l.correct_pass)
+	if (u.correct_NatId && u.correct_pass)
 	{
 		userform->Show();
 		this->Close();
