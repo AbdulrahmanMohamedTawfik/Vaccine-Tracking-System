@@ -65,7 +65,48 @@ void User::read_data(map<string, User>& users) {
 	File7.close();
 	File8.close();
 }
+void User::update_files(map<string, User>& users)
+{
+	fstream userFile;
+	fstream idFile;
+	fstream ageFile;
+	fstream contFile;
+	fstream govFile;
+	fstream passFile;
+	fstream statusFile;
+	fstream genderFile;
+	userFile.open("txts\\users.txt", ofstream::out | ofstream::trunc);
+	idFile.open("txts\\id.txt", ofstream::out | ofstream::trunc);
+	ageFile.open("txts\\age.txt", ofstream::out | ofstream::trunc);
+	contFile.open("txts\\country.txt", ofstream::out | ofstream::trunc);
+	govFile.open("txts\\governorate.txt", ofstream::out | ofstream::trunc);
+	passFile.open("txts\\pass.txt", ofstream::out | ofstream::trunc);
+	statusFile.open("txts\\status.txt", ofstream::out | ofstream::trunc);
+	genderFile.open("txts\\gender.txt", ofstream::out | ofstream::trunc);
 
+	for (auto it : users)
+	{
+		//cout << it.second.id << endl;
+
+		userFile << it.second.name << '\n';
+		idFile << it.second.id << '\n';
+		ageFile << it.second.age << '\n';
+		contFile << it.second.Country << '\n';
+		govFile << it.second.Governorate << '\n';
+		passFile << it.second.password << '\n';
+		statusFile << it.second.status << '\n';
+		genderFile << it.second.gender << '\n';
+	}
+
+	userFile.close();
+	idFile.close();
+	ageFile.close();
+	contFile.close();
+	govFile.close();
+	passFile.close();
+	statusFile.close();
+	genderFile.close();
+}
 void User::login(string natID, string pass)
 {
 	int indexofuser;

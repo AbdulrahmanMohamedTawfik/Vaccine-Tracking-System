@@ -15,6 +15,7 @@ string Admin::viewUser(string userNationalID, map<string, User> users)
 			return ("Name: " + it.second.name + "\nId: " + it.second.id + "\nGender: " + it.second.gender + "\nAge: " + it.second.age + "\nCountry: " + it.second.Country + "\nGovernorate: " + it.second.Governorate + "\nStatus: " + it.second.status + "\n");
 		}
 	}
+	return("User Not Found!");
 }
 
 string Admin::viewAll(map<string, User> users)
