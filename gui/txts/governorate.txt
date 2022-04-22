@@ -1,6 +1,3 @@
 giza
-cairo
-london
-gov
-
 giza
+london

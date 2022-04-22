@@ -44,6 +44,11 @@ System::Void gui::login::LoginButton_Click(System::Object^ sender, System::Event
 	return System::Void();
 }
 
+System::Void gui::login::login_Load(System::Object^ sender, System::EventArgs^ e)
+{
+	return System::Void();
+}
+
 System::Void gui::login::HidePassCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	if (PasswordTextBox->PasswordChar == '\0')

@@ -73,6 +73,7 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 	}
 	if ((NameTextBox->Text == "") || (NatIDTextBox->Text == "") || (PasswordTextBox->Text == "") || ((!MaleCheckBox->Checked) && (!FemaleCheckBox->Checked)) || (AgeTextBox->Text == "") || ((!EgyptCheckBox->Checked) && (!AbroadCheckBox->Checked)) || (GovernorateTextBox->Text == "") || ((!vaccinatedCheckBox->Checked) && (!ApplyCheckBox->Checked)))
 		label4->Text = "Missing info! please, fill all feilds";
+	
 	return System::Void();
 }
 
@@ -97,21 +98,30 @@ System::Void gui::reg::UnseeButton_Click(System::Object^ sender, System::EventAr
 System::Void gui::reg::MaleCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	if (FemaleCheckBox->Checked)//uncheck the other choice
+	{
 		FemaleCheckBox->Checked = false;
+		//MaleCheckBox->Checked = true;
+	}
 	return System::Void();
 }
 
 System::Void gui::reg::FemaleCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	if (MaleCheckBox->Checked)//uncheck the other choice
+	{
 		MaleCheckBox->Checked = false;
+		//FemaleCheckBox->Checked = true;
+	}
 	return System::Void();
 }
 
 System::Void gui::reg::AbroadCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	if (EgyptCheckBox->Checked)//uncheck the other choice
+	{
 		EgyptCheckBox->Checked = false;
+		//AbroadCheckBox->Checked = true;
+	}
 	if (AbroadCheckBox->Checked)
 	{
 		OtherCountryComboBox->Show();
@@ -126,14 +136,20 @@ System::Void gui::reg::AbroadCheckBox_CheckedChanged(System::Object^ sender, Sys
 System::Void gui::reg::EgyptCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	if (AbroadCheckBox->Checked)//uncheck the other choice
+	{
 		AbroadCheckBox->Checked = false;
+		//EgyptCheckBox->Checked = true;
+	}
 	return System::Void();
 }
 
 System::Void gui::reg::vaccinatedCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	if (ApplyCheckBox->Checked)//uncheck the other choice
+	{
 		ApplyCheckBox->Checked = false;
+		//vaccinatedCheckBox->Checked = true;
+	}
 
 	if (vaccinatedCheckBox->Checked)
 	{
@@ -149,6 +165,9 @@ System::Void gui::reg::vaccinatedCheckBox_CheckedChanged(System::Object^ sender,
 System::Void gui::reg::ApplyCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	if (vaccinatedCheckBox->Checked)//uncheck the other choice
+	{
 		vaccinatedCheckBox->Checked = false;
+		//ApplyCheckBox->Checked = true;
+	}
 	return System::Void();
 }

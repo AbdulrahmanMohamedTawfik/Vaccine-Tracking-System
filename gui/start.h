@@ -154,7 +154,7 @@ namespace gui {
 			this->panel1->Controls->Add(this->RegisterButton);
 			this->panel1->Location = System::Drawing::Point(1, 192);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(547, 551);
+			this->panel1->Size = System::Drawing::Size(547, 866);
 			this->panel1->TabIndex = 5;
 			// 
 			// label2
@@ -188,7 +188,7 @@ namespace gui {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
-			this->ClientSize = System::Drawing::Size(1390, 737);
+			this->ClientSize = System::Drawing::Size(1390, 1055);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->LoginButton);
 			this->Controls->Add(this->ExitButton);

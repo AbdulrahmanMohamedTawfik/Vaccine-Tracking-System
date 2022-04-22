@@ -9,9 +9,9 @@ System::Void gui::UserForm::ViewUserInfoButton_Click(System::Object^ sender, Sys
 {
 	map<string, User> users;
 	User u;
+	login^ l = gcnew login();
 	u.read_data(users);
 	Admin a;
-	cout << "getNAtIDTextBox_Text= " << u.getNAtIDTextBox_Text();
 	string contents = a.viewUser(u.getNAtIDTextBox_Text(), users);
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 	label1->Text = syscontents;
@@ -26,15 +26,14 @@ System::Void gui::UserForm::EditUserInfoButton_Click(System::Object^ sender, Sys
 
 System::Void gui::UserForm::DeleteInfoButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	/*map<string, User> users;
+	map<string, User> users;
 	User u;
 	u.read_data(users);
 	Admin a;
 	String^ all;
-	all = NationalIDTextBox->Text;
-	string NatID = msclr::interop::marshal_as< std::string >(all);
-	a.deleteUser(NatID, users);
+	a.deleteUser(u.getNAtIDTextBox_Text(), users);
 	u.update_files(users);
-	label1->Text = "User Deleteted successfully";*/
+	label1->Text = "User Deleteted successfully";
+	this->Close();
 	return System::Void();
 }
