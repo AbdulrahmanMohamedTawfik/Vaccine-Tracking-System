@@ -71,7 +71,8 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 		label4->Text = "Registered successfully!";
 		//this->Close();
 	}
-
+	if ((NameTextBox->Text == "") || (NatIDTextBox->Text == "") || (PasswordTextBox->Text == "") || ((!MaleCheckBox->Checked) && (!FemaleCheckBox->Checked)) || (AgeTextBox->Text == "") || ((!EgyptCheckBox->Checked) && (!AbroadCheckBox->Checked)) || (GovernorateTextBox->Text == "") || ((!vaccinatedCheckBox->Checked) && (!ApplyCheckBox->Checked)))
+		label4->Text = "Missing info! please, fill all feilds";
 	return System::Void();
 }
 

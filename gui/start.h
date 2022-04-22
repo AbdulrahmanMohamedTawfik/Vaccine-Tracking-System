@@ -176,11 +176,11 @@ namespace gui {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::Transparent;
-			this->label3->Location = System::Drawing::Point(599, 278);
+			this->label3->Location = System::Drawing::Point(659, 278);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(770, 37);
+			this->label3->Size = System::Drawing::Size(530, 37);
 			this->label3->TabIndex = 6;
-			this->label3->Text = L"Login now with your ID and Password to get vaccinated. ";
+			this->label3->Text = L"Login now to get vaccination services. ";
 			// 
 			// start
 			// 
@@ -188,15 +188,16 @@ namespace gui {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
-			this->ClientSize = System::Drawing::Size(1374, 737);
+			this->ClientSize = System::Drawing::Size(1390, 737);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->LoginButton);
 			this->Controls->Add(this->ExitButton);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->flowLayoutPanel1);
 			this->ForeColor = System::Drawing::Color::Transparent;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"start";
-			this->Text = L"start";
+			this->Text = L"Vaccination application";
 			this->Load += gcnew System::EventHandler(this, &start::start_Load);
 			this->flowLayoutPanel1->ResumeLayout(false);
 			this->flowLayoutPanel1->PerformLayout();
