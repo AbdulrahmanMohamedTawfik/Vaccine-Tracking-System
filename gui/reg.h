@@ -105,9 +105,9 @@ namespace gui {
 			this->vaccinatedCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->ApplyCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
@@ -466,6 +466,16 @@ namespace gui {
 			this->panel1->TabIndex = 30;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &reg::panel1_Paint);
 			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
+			this->label4->ForeColor = System::Drawing::Color::White;
+			this->label4->Location = System::Drawing::Point(175, 690);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(0, 38);
+			this->label4->TabIndex = 30;
+			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
@@ -488,16 +498,6 @@ namespace gui {
 			this->pictureBox2->TabIndex = 32;
 			this->pictureBox2->TabStop = false;
 			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
-			this->label4->ForeColor = System::Drawing::Color::White;
-			this->label4->Location = System::Drawing::Point(175, 690);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(0, 38);
-			this->label4->TabIndex = 30;
-			// 
 			// reg
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -508,6 +508,7 @@ namespace gui {
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"reg";
 			this->Text = L"Registeration";
 			this->Load += gcnew System::EventHandler(this, &reg::reg_Load);
@@ -555,11 +556,12 @@ namespace gui {
 	private: System::Void NatIDTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void ApplyCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-private: System::Void label1_BackColorChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void NameTextBox_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
+
+	private: System::Void label1_BackColorChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void NameTextBox_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
 };
 }
