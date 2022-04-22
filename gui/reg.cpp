@@ -15,13 +15,13 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 	User l;
 	String^ all;
 	all = NameTextBox->Text;
-	string fullname = msclr::interop::marshal_as< std::string >(all);
+	string fullname = msclr::interop::marshal_as< std::string >(all);//convert from sys string to std string
 
 	all = NatIDTextBox->Text;
-	string NatID = msclr::interop::marshal_as< std::string >(all);
+	string NatID = msclr::interop::marshal_as< std::string >(all);//convert from sys string to std string
 
 	all = PasswordTextBox->Text;
-	string password = msclr::interop::marshal_as< std::string >(all);
+	string password = msclr::interop::marshal_as< std::string >(all);//convert from sys string to std string
 
 	string gender;
 	if (MaleCheckBox->Checked)
