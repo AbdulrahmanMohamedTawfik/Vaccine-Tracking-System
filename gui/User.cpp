@@ -87,8 +87,6 @@ void User::update_files(map<string, User>& users)
 
 	for (auto it : users)
 	{
-		//cout << it.second.id << endl;
-
 		userFile << it.second.name << '\n';
 		idFile << it.second.id << '\n';
 		ageFile << it.second.age << '\n';
@@ -265,4 +263,83 @@ bool User::getdel_user_found()
 void User::setdel_user_found(bool val)
 {
 	del_user_found = val;
+}
+
+void User::editName(string newName, map<string, User>& users) {
+	User u;
+	for (auto it : users) {
+		if (it.first == u.getNAtIDTextBox_Text())
+		{
+			it.second.name = newName;
+		}
+	}
+}
+void User::editId(string newId, map<string, User>& users) {
+	User u;
+	for (auto it : users) {
+		if (it.first == u.getNAtIDTextBox_Text())
+		{
+			it.second.id = id;
+
+		}
+	}
+	u.setNAtIDTextBox_Text(id);
+}
+void User::editGender(string newGender, map<string, User>& users) {
+	User u;
+	for (auto it : users) {
+		if (it.first == u.getNAtIDTextBox_Text())
+		{
+			it.second.gender = newGender;
+
+		}
+	}
+}
+void User::editCountry(string newCountry, map<string, User>& users) {
+	User u;
+	for (auto it : users) {
+		if (it.first == u.getNAtIDTextBox_Text())
+		{
+			it.second.Country = newCountry;
+
+		}
+	}
+}
+void User::editAge(string newAge, map<string, User>& users) {
+	for (auto it : users) {
+		if (it.first == NAtIDTextBox_Text)
+		{
+			it.second.age = newAge;
+
+		}
+	}
+}
+void User::editStatus(string newStatus, map<string, User>& users) {
+	User u;
+	for (auto it : users) {
+		if (it.first == u.getNAtIDTextBox_Text())
+		{
+			it.second.status = newStatus;
+
+		}
+	}
+}
+void User::editPassword(string newPassword, map<string, User>& users) {
+	User u;
+	for (auto it : users) {
+		if (it.first == u.getNAtIDTextBox_Text())
+		{
+			it.second.password = newPassword;
+
+		}
+	}
+}
+void User::editGov(string newGov, map<string, User>& users) {
+	User u;
+	for (auto it : users) {
+		if (it.first == u.getNAtIDTextBox_Text())
+		{
+			it.second.Governorate = newGov;
+		}
+	}
 }
