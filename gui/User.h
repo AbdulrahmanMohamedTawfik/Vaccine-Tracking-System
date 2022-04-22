@@ -6,6 +6,7 @@ class User
 {
 private:
 	string NAtIDTextBox_Text;
+	bool del_user_found;
 public:
 	string name;
 	string id;
@@ -38,4 +39,6 @@ public:
 	~User();
 	string getNAtIDTextBox_Text();
 	void setNAtIDTextBox_Text(string val);
+	bool getdel_user_found();
+	void setdel_user_found(bool val);
 };
