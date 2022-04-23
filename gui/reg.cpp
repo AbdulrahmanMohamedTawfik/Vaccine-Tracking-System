@@ -12,7 +12,7 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 {
 
 	//Register function call here
-	User l;
+	User u;
 	String^ all;
 	all = NameTextBox->Text;
 	string fullname = msclr::interop::marshal_as< std::string >(all);//convert from sys string to std string
@@ -61,13 +61,13 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 		string c = msclr::interop::marshal_as< std::string >(all);
 		status = ("vaccinated: " + c);
 	}
-	if (l.check_id(NatID))
+	if (u.check_id(NatID))
 	{
 		label4->Text = "ID is already used by another user!";
 	}
 	else
 	{
-		l.registration(fullname, NatID, password, gender, age, country, gov, status);
+		u.registration(fullname, NatID, password, gender, age, country, gov, status);
 		label4->Text = "Registered successfully!";
 		//this->Close();
 	}

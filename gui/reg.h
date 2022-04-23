@@ -205,6 +205,7 @@ namespace gui {
 			// 
 			// UnseeButton
 			// 
+			this->UnseeButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->UnseeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->UnseeButton->Location = System::Drawing::Point(675, 182);
@@ -232,6 +233,7 @@ namespace gui {
 			// MaleCheckBox
 			// 
 			this->MaleCheckBox->AutoSize = true;
+			this->MaleCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->MaleCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
 			this->MaleCheckBox->ForeColor = System::Drawing::Color::White;
 			this->MaleCheckBox->Location = System::Drawing::Point(267, 276);
@@ -246,6 +248,7 @@ namespace gui {
 			// FemaleCheckBox
 			// 
 			this->FemaleCheckBox->AutoSize = true;
+			this->FemaleCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->FemaleCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
 			this->FemaleCheckBox->ForeColor = System::Drawing::Color::White;
 			this->FemaleCheckBox->Location = System::Drawing::Point(409, 276);
@@ -308,6 +311,7 @@ namespace gui {
 			// EgyptCheckBox
 			// 
 			this->EgyptCheckBox->AutoSize = true;
+			this->EgyptCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->EgyptCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
 			this->EgyptCheckBox->ForeColor = System::Drawing::Color::White;
 			this->EgyptCheckBox->Location = System::Drawing::Point(267, 426);
@@ -358,6 +362,7 @@ namespace gui {
 			// AbroadCheckBox
 			// 
 			this->AbroadCheckBox->AutoSize = true;
+			this->AbroadCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->AbroadCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
 			this->AbroadCheckBox->ForeColor = System::Drawing::Color::White;
 			this->AbroadCheckBox->Location = System::Drawing::Point(409, 426);
@@ -408,6 +413,7 @@ namespace gui {
 			// vaccinatedCheckBox
 			// 
 			this->vaccinatedCheckBox->AutoSize = true;
+			this->vaccinatedCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->vaccinatedCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15));
 			this->vaccinatedCheckBox->ForeColor = System::Drawing::Color::White;
 			this->vaccinatedCheckBox->Location = System::Drawing::Point(267, 558);
@@ -422,6 +428,7 @@ namespace gui {
 			// ApplyCheckBox
 			// 
 			this->ApplyCheckBox->AutoSize = true;
+			this->ApplyCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->ApplyCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15));
 			this->ApplyCheckBox->ForeColor = System::Drawing::Color::White;
 			this->ApplyCheckBox->Location = System::Drawing::Point(444, 558);

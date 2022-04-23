@@ -87,6 +87,8 @@ void User::update_files(map<string, User>& users)
 
 	for (auto it : users)
 	{
+		//cout << it.second.id << endl;
+
 		userFile << it.second.name << '\n';
 		idFile << it.second.id << '\n';
 		ageFile << it.second.age << '\n';
@@ -169,6 +171,7 @@ void User::login(string natID, string pass)
 		}
 
 	}
+	
 	id_File.close();
 	pass_File.close();
 }
@@ -264,82 +267,117 @@ void User::setdel_user_found(bool val)
 {
 	del_user_found = val;
 }
-
 void User::editName(string newName, map<string, User>& users) {
-	User u;
+
 	for (auto it : users) {
-		if (it.first == u.getNAtIDTextBox_Text())
+		if (it.first == getNAtIDTextBox_Text())
 		{
-			it.second.name = newName;
+			User u1(newName, it.second.id, it.second.gender, it.second.age, it.second.Country, it.second.Governorate, it.second.password, it.second.status);
+			users.erase(getNAtIDTextBox_Text());
+			users.insert(pair<string, User>(u1.id, u1));
+			break;
+
 		}
+
 	}
 }
 void User::editId(string newId, map<string, User>& users) {
-	User u;
 	for (auto it : users) {
-		if (it.first == u.getNAtIDTextBox_Text())
+		if (it.first == getNAtIDTextBox_Text())
 		{
-			it.second.id = id;
-
+			User u1(it.second.name, newId, it.second.gender, it.second.age, it.second.Country, it.second.Governorate, it.second.password, it.second.status);
+			users.erase(getNAtIDTextBox_Text());
+			users.insert(pair<string, User>(u1.id, u1));
+			u1.setNAtIDTextBox_Text(u1.id);
+			break;
 		}
+
 	}
-	u.setNAtIDTextBox_Text(id);
+	
+	
 }
 void User::editGender(string newGender, map<string, User>& users) {
-	User u;
+
 	for (auto it : users) {
-		if (it.first == u.getNAtIDTextBox_Text())
+		if (it.first == getNAtIDTextBox_Text())
 		{
-			it.second.gender = newGender;
+			User u1(it.second.name, it.second.id, newGender, it.second.age, it.second.Country, it.second.Governorate, it.second.password, it.second.status);
+			users.erase(getNAtIDTextBox_Text());
+			users.insert(pair<string, User>(u1.id, u1));
+			break;
 
 		}
+
 	}
 }
 void User::editCountry(string newCountry, map<string, User>& users) {
-	User u;
+
 	for (auto it : users) {
-		if (it.first == u.getNAtIDTextBox_Text())
+		if (it.first == getNAtIDTextBox_Text())
 		{
-			it.second.Country = newCountry;
+			User u1(it.second.name, it.second.id, it.second.gender, it.second.age,newCountry, it.second.Governorate, it.second.password, it.second.status);
+			users.erase(getNAtIDTextBox_Text());
+			users.insert(pair<string, User>(u1.id, u1));
+			break;
 
 		}
+
 	}
 }
 void User::editAge(string newAge, map<string, User>& users) {
+
 	for (auto it : users) {
-		if (it.first == NAtIDTextBox_Text)
+		if (it.first == getNAtIDTextBox_Text())
 		{
-			it.second.age = newAge;
+			cout << "ana b edit ahoooo\n";
+			User u1(it.second.name, it.second.id, it.second.gender, newAge, it.second.Country, it.second.Governorate, it.second.password, it.second.status);
+			users.erase(it.first);
+			users.insert(pair<string, User>(u1.id, u1));
+			break;
 
 		}
+
 	}
 }
 void User::editStatus(string newStatus, map<string, User>& users) {
-	User u;
+
 	for (auto it : users) {
-		if (it.first == u.getNAtIDTextBox_Text())
+		if (it.first == getNAtIDTextBox_Text())
 		{
-			it.second.status = newStatus;
+			User u1(it.second.name, it.second.id, it.second.gender, it.second.age, it.second.Country, it.second.password, it.second.password, newStatus);
+			users.erase(getNAtIDTextBox_Text());
+			users.insert(pair<string, User>(u1.id, u1));
+			break;
 
 		}
+
 	}
 }
 void User::editPassword(string newPassword, map<string, User>& users) {
-	User u;
+
 	for (auto it : users) {
-		if (it.first == u.getNAtIDTextBox_Text())
+		if (it.first == getNAtIDTextBox_Text())
 		{
-			it.second.password = newPassword;
+			User u1(it.second.name, it.second.id, it.second.gender, it.second.age, it.second.Country, it.second.Governorate, newPassword, it.second.status);
+		
+			users.erase(getNAtIDTextBox_Text());
+			users.insert(pair<string, User>(u1.id, u1));
+			break;
 
 		}
+
 	}
 }
 void User::editGov(string newGov, map<string, User>& users) {
-	User u;
 	for (auto it : users) {
-		if (it.first == u.getNAtIDTextBox_Text())
+		if (it.first == getNAtIDTextBox_Text())
 		{
-			it.second.Governorate = newGov;
+			User u1(it.second.name, it.second.id, it.second.gender, it.second.age, it.second.Country, newGov, it.second.password, it.second.status);
+			users.erase(getNAtIDTextBox_Text());
+			users.insert(pair<string, User>(u1.id, u1));
+			break;
+
 		}
+
 	}
 }

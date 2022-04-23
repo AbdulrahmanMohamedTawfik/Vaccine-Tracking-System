@@ -5,6 +5,8 @@
 #include <map>
 #include <msclr/marshal_cppstd.h>
 #include <string>
+map<string, User> users;
+
 System::Void gui::UserForm::ViewUserInfoButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	EditNameButton->Hide();
@@ -16,8 +18,10 @@ System::Void gui::UserForm::ViewUserInfoButton_Click(System::Object^ sender, Sys
 	EditStatusButton->Hide();
 	NewvalueLabel->Hide();
 	NewvalueTextBox->Hide();
+	SuccessLabel->Hide();
+	ErrorLabel->Hide();
 	SubmitButton->Hide();
-	map<string, User> users;
+	
 	User u;
 	login^ l = gcnew login();
 	u.read_data(users);
@@ -52,8 +56,10 @@ System::Void gui::UserForm::DeleteInfoButton_Click(System::Object^ sender, Syste
 	EditStatusButton->Hide();
 	NewvalueLabel->Hide();
 	NewvalueTextBox->Hide();
+	SuccessLabel->Hide();
+	ErrorLabel->Hide();
 	SubmitButton->Hide();
-	map<string, User> users;
+	/*map<string, User> users;*/
 	User u;
 	u.read_data(users);
 	Admin a;
@@ -69,6 +75,7 @@ System::Void gui::UserForm::EditNameButton_Click(System::Object^ sender, System:
 	NewvalueLabel->Text = "New Name :";
 	NewvalueLabel->Show();
 	NewvalueTextBox->Show();
+	SubmitButton->Show();
 	return System::Void();
 }
 
@@ -138,7 +145,7 @@ System::Void gui::UserForm::EditPassButton_Click(System::Object^ sender, System:
 
 System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	map<string, User> users;
+	/*map<string, User> users;*/
 	User u;
 	Admin a;
 	u.read_data(users);
@@ -150,38 +157,67 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 	new_value = msclr::interop::marshal_as< std::string >(all);//convert from sys string to std string
 	all1 = NewvalueLabel->Text;
 	new_value1 = msclr::interop::marshal_as< std::string >(all);//convert from sys string to std string
-
-	/*if (new_value1 == "New Name :")
+	if (NewvalueTextBox->Text == "")
 	{
-		u.editName(new_value, users);
+		ErrorLabel->Show();
+		ErrorLabel->Text = "Field is Empty!";
 	}
-	else if (NewvalueLabel->Text == "New ID :")
+	else
 	{
-		u.editId(new_value, users);
+		SuccessLabel->Hide();
+		ErrorLabel->Hide();
+		if (NewvalueLabel->Text == "New Name :")
+		{
+			u.editName(new_value, users);
+			SuccessLabel->Show();
+			SuccessLabel->Text = "Name Changed succesfully!";
+		}
+		else if (NewvalueLabel->Text == "New Age :")
+		{
+			u.editAge(new_value, users);
+			SuccessLabel->Show();
+			SuccessLabel->Text = " Age Changed succesfully!";
+		}
+		else if (NewvalueLabel->Text == "New gender :")
+		{
+			u.editGender(new_value, users);
+			SuccessLabel->Show();
+			SuccessLabel->Text = "Gender Changed succesfully!";
+		}
+		else if (NewvalueLabel->Text == "New country :")
+		{
+			u.editCountry(new_value, users);
+			SuccessLabel->Show();
+			SuccessLabel->Text = "Country Changed succesfully!";
+		}
+		else if (NewvalueLabel->Text == "New status :")
+		{
+			u.editStatus(new_value, users);
+			SuccessLabel->Show();
+			SuccessLabel->Text = "Status Changed succesfully!";
+		}
+		else if (NewvalueLabel->Text == "New pass :")
+		{
+			u.editPassword(new_value, users);
+			SuccessLabel->Show();
+			SuccessLabel->Text = "Password Changed succesfully!";
+		}
+		else //if (NewvalueLabel->Text == "New ID :")
+		{
+			if (u.check_id(new_value))
+			{
+				ErrorLabel->Show();
+				ErrorLabel->Text = "ID is already used!";
+			}
+			else
+			{
+				u.editId(new_value, users);
+				SuccessLabel->Show();
+				SuccessLabel->Text = "ID Changed succesfully!";
+			}
+		}
+		
+		u.update_files(users);
 	}
-	else if (NewvalueLabel->Text == "New gender :")
-	{
-		u.editGender(new_value, users);
-	}
-	else if (new_value1 == "New Age :")
-	{
-		u.editAge(new_value, users);
-	}
-	else if (NewvalueLabel->Text == "New country :")
-	{
-		u.editCountry(new_value, users);
-	}
-	else if (NewvalueLabel->Text == "New status :")
-	{
-		u.editStatus(new_value, users);
-	}
-	else if (NewvalueLabel->Text == "New pass :")
-	{
-		u.editPassword(new_value, users);
-	}*/
-	u.editAge(new_value, users);
-	u.update_files(users);
-	string s = a.viewUser("123", users);
-	cout <<"s="<< s;
 	return System::Void();
 }

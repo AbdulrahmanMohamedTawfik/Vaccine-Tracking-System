@@ -70,6 +70,9 @@ namespace gui {
 	private: System::Windows::Forms::Label^ NewvalueLabel;
 	private: System::Windows::Forms::Button^ SubmitButton;
 	private: System::Windows::Forms::Button^ EditPassButton;
+	private: System::Windows::Forms::Label^ SuccessLabel;
+	private: System::Windows::Forms::Label^ ErrorLabel;
+
 
 
 
@@ -103,13 +106,15 @@ namespace gui {
 			this->NewvalueLabel = (gcnew System::Windows::Forms::Label());
 			this->SubmitButton = (gcnew System::Windows::Forms::Button());
 			this->EditPassButton = (gcnew System::Windows::Forms::Button());
+			this->SuccessLabel = (gcnew System::Windows::Forms::Label());
+			this->ErrorLabel = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// ViewUserInfoButton
 			// 
 			this->ViewUserInfoButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ViewUserInfoButton->Location = System::Drawing::Point(437, 270);
+			this->ViewUserInfoButton->Location = System::Drawing::Point(437, 314);
 			this->ViewUserInfoButton->Name = L"ViewUserInfoButton";
 			this->ViewUserInfoButton->Size = System::Drawing::Size(302, 60);
 			this->ViewUserInfoButton->TabIndex = 2;
@@ -121,7 +126,7 @@ namespace gui {
 			// 
 			this->EditUserInfoButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->EditUserInfoButton->Location = System::Drawing::Point(437, 336);
+			this->EditUserInfoButton->Location = System::Drawing::Point(437, 380);
 			this->EditUserInfoButton->Name = L"EditUserInfoButton";
 			this->EditUserInfoButton->Size = System::Drawing::Size(302, 60);
 			this->EditUserInfoButton->TabIndex = 3;
@@ -133,7 +138,7 @@ namespace gui {
 			// 
 			this->DeleteInfoButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->DeleteInfoButton->Location = System::Drawing::Point(437, 402);
+			this->DeleteInfoButton->Location = System::Drawing::Point(437, 446);
 			this->DeleteInfoButton->Name = L"DeleteInfoButton";
 			this->DeleteInfoButton->Size = System::Drawing::Size(302, 60);
 			this->DeleteInfoButton->TabIndex = 4;
@@ -264,7 +269,7 @@ namespace gui {
 			// SubmitButton
 			// 
 			this->SubmitButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12));
-			this->SubmitButton->Location = System::Drawing::Point(410, 178);
+			this->SubmitButton->Location = System::Drawing::Point(411, 217);
 			this->SubmitButton->Name = L"SubmitButton";
 			this->SubmitButton->Size = System::Drawing::Size(128, 42);
 			this->SubmitButton->TabIndex = 22;
@@ -283,11 +288,33 @@ namespace gui {
 			this->EditPassButton->UseVisualStyleBackColor = true;
 			this->EditPassButton->Click += gcnew System::EventHandler(this, &UserForm::EditPassButton_Click);
 			// 
+			// NewValueErrorLabel
+			// 
+			this->SuccessLabel->AutoSize = true;
+			this->SuccessLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 13));
+			this->SuccessLabel->ForeColor = System::Drawing::Color::Lime;
+			this->SuccessLabel->Location = System::Drawing::Point(426, 172);
+			this->SuccessLabel->Name = L"NewValueErrorLabel";
+			this->SuccessLabel->Size = System::Drawing::Size(0, 30);
+			this->SuccessLabel->TabIndex = 24;
+			// 
+			// label2
+			// 
+			this->ErrorLabel->AutoSize = true;
+			this->ErrorLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 13));
+			this->ErrorLabel->ForeColor = System::Drawing::Color::Red;
+			this->ErrorLabel->Location = System::Drawing::Point(452, 172);
+			this->ErrorLabel->Name = L"label2";
+			this->ErrorLabel->Size = System::Drawing::Size(0, 30);
+			this->ErrorLabel->TabIndex = 25;
+			// 
 			// UserForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1448, 586);
+			this->Controls->Add(this->ErrorLabel);
+			this->Controls->Add(this->SuccessLabel);
 			this->Controls->Add(this->EditPassButton);
 			this->Controls->Add(this->SubmitButton);
 			this->Controls->Add(this->NewvalueLabel);
