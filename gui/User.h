@@ -2,10 +2,12 @@
 #include <string>
 #include <map>
 using namespace std;
+
 class User
 {
+	
 private:
-	static string NAtIDTextBox_Text;
+	static string NAtIDTextBox_Text;	  
 	bool del_user_found;
 public:
 	string name;
@@ -41,12 +43,14 @@ public:
 	void static setNAtIDTextBox_Text(string val);
 	bool getdel_user_found();
 	void setdel_user_found(bool val);
+
 	void editId(string id, map<string, User>& users);
 	void editName(string name, map<string, User>& users);
 	void editGender(string gender, map<string, User>& users);
 	void editAge(string age, map<string, User>& users);
-	void editCountry(string Country, map<string, User>& users);
+	void editCountry(string Country,map<string, User>& users);
 	void editGov(string gov, map<string, User>& users);
 	void editPassword(string password, map<string, User>& users);
 	void editStatus(string age, map<string, User>& users);
+	
 };

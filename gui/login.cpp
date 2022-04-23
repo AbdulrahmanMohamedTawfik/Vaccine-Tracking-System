@@ -64,7 +64,7 @@ System::Void gui::login::HidePassCheckBox_CheckedChanged(System::Object^ sender,
 	return System::Void();
 }
 
-System::Void gui::login::label1_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void gui::login::label5_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	reg^ regform = gcnew reg();
 	regform->Show();
