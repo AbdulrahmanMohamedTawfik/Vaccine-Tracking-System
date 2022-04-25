@@ -10,18 +10,16 @@ System::Void gui::reg::NameTextBox_TextChanged(System::Object^ sender, System::E
 
 System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-
-	//Register function call here
 	User u;
-	String^ all;
-	all = NameTextBox->Text;
-	string fullname = msclr::interop::marshal_as< std::string >(all);//convert from sys string to std string
+	String^ str_sys;
+	str_sys = NameTextBox->Text;
+	string fullname = msclr::interop::marshal_as< std::string >(str_sys);//convert from sys string to std string
 
-	all = NatIDTextBox->Text;
-	string NatID = msclr::interop::marshal_as< std::string >(all);//convert from sys string to std string
+	str_sys = NatIDTextBox->Text;
+	string NatID = msclr::interop::marshal_as< std::string >(str_sys);//convert from sys string to std string
 
-	all = PasswordTextBox->Text;
-	string password = msclr::interop::marshal_as< std::string >(all);//convert from sys string to std string
+	str_sys = PasswordTextBox->Text;
+	string password = msclr::interop::marshal_as< std::string >(str_sys);//convert from sys string to std string
 
 	string gender;
 	if (MaleCheckBox->Checked)
@@ -32,8 +30,8 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 	{
 		gender = "female";
 	}
-	all = AgeTextBox->Text;
-	string age = msclr::interop::marshal_as< std::string >(all);
+	str_sys = AgeTextBox->Text;
+	string age = msclr::interop::marshal_as< std::string >(str_sys);
 
 	string country;
 	if (EgyptCheckBox->Checked)
@@ -42,13 +40,13 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 	}
 	else if (AbroadCheckBox->Checked)
 	{
-		all = OtherCountryComboBox->Text;
-		string c = msclr::interop::marshal_as< std::string >(all);
+		str_sys = OtherCountryComboBox->Text;
+		string c = msclr::interop::marshal_as< std::string >(str_sys);
 		country = ("other: " + c);
 	}
 
-	all = GovernorateTextBox->Text;
-	string gov = msclr::interop::marshal_as< std::string >(all);
+	str_sys = GovernorateTextBox->Text;
+	string gov = msclr::interop::marshal_as< std::string >(str_sys);
 
 	string status;
 	if (ApplyCheckBox->Checked)
@@ -57,8 +55,8 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 	}
 	else if (vaccinatedCheckBox->Checked)
 	{
-		all = DoseComboBox->Text;
-		string c = msclr::interop::marshal_as< std::string >(all);
+		str_sys = DoseComboBox->Text;
+		string c = msclr::interop::marshal_as< std::string >(str_sys);
 		status = ("vaccinated: " + c);
 	}
 	if (u.check_id(NatID))
@@ -69,7 +67,6 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 	{
 		u.registration(fullname, NatID, password, gender, age, country, gov, status);
 		label4->Text = "Registered successfully!";
-		//this->Close();
 	}
 	if ((NameTextBox->Text == "") || (NatIDTextBox->Text == "") || (PasswordTextBox->Text == "") || ((!MaleCheckBox->Checked) && (!FemaleCheckBox->Checked)) || (AgeTextBox->Text == "") || ((!EgyptCheckBox->Checked) && (!AbroadCheckBox->Checked)) || (GovernorateTextBox->Text == "") || ((!vaccinatedCheckBox->Checked) && (!ApplyCheckBox->Checked)))
 		label4->Text = "Missing info! please, fill all feilds";

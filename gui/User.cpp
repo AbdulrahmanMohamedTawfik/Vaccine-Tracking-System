@@ -4,6 +4,7 @@
 #include<map>
 using namespace std;
 string User::NAtIDTextBox_Text;
+map<string, User>::iterator it;
 bool User::check_id(string id)
 {
 	fstream IDFile;
@@ -88,7 +89,6 @@ void User::update_files(map<string, User>& users)
 	for (auto it : users)
 	{
 		//cout << it.second.id << endl;
-
 		userFile << it.second.name << '\n';
 		idFile << it.second.id << '\n';
 		ageFile << it.second.age << '\n';
@@ -257,6 +257,15 @@ void User::setNAtIDTextBox_Text(string val)
 {
 	NAtIDTextBox_Text = val;
 }
+string User::getUserName(map<string, User>& users)
+{
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
+		{
+			return it->second.name;
+		}
+	}
+}
 
 bool User::getdel_user_found()
 {
@@ -269,12 +278,11 @@ void User::setdel_user_found(bool val)
 }
 void User::editName(string newName, map<string, User>& users) {
 
-	for (auto it : users) {
-		if (it.first == getNAtIDTextBox_Text())
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
 		{
-			User u1(newName, it.second.id, it.second.gender, it.second.age, it.second.Country, it.second.Governorate, it.second.password, it.second.status);
-			users.erase(getNAtIDTextBox_Text());
-			users.insert(pair<string, User>(u1.id, u1));
+
+			it->second.name = newName;
 			break;
 
 		}
@@ -282,14 +290,14 @@ void User::editName(string newName, map<string, User>& users) {
 	}
 }
 void User::editId(string newId, map<string, User>& users) {
-	for (auto it : users) {
-		if (it.first == getNAtIDTextBox_Text())
+
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
 		{
-			User u1(it.second.name, newId, it.second.gender, it.second.age, it.second.Country, it.second.Governorate, it.second.password, it.second.status);
-			users.erase(getNAtIDTextBox_Text());
-			users.insert(pair<string, User>(u1.id, u1));
-			u1.setNAtIDTextBox_Text(u1.id);
+
+			it->second.id = newId;
 			break;
+
 		}
 
 	}
@@ -298,12 +306,11 @@ void User::editId(string newId, map<string, User>& users) {
 }
 void User::editGender(string newGender, map<string, User>& users) {
 
-	for (auto it : users) {
-		if (it.first == getNAtIDTextBox_Text())
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
 		{
-			User u1(it.second.name, it.second.id, newGender, it.second.age, it.second.Country, it.second.Governorate, it.second.password, it.second.status);
-			users.erase(getNAtIDTextBox_Text());
-			users.insert(pair<string, User>(u1.id, u1));
+
+			it->second.gender = newGender;
 			break;
 
 		}
@@ -312,12 +319,11 @@ void User::editGender(string newGender, map<string, User>& users) {
 }
 void User::editCountry(string newCountry, map<string, User>& users) {
 
-	for (auto it : users) {
-		if (it.first == getNAtIDTextBox_Text())
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
 		{
-			User u1(it.second.name, it.second.id, it.second.gender, it.second.age,newCountry, it.second.Governorate, it.second.password, it.second.status);
-			users.erase(getNAtIDTextBox_Text());
-			users.insert(pair<string, User>(u1.id, u1));
+
+			it->second.Country = newCountry;
 			break;
 
 		}
@@ -325,14 +331,12 @@ void User::editCountry(string newCountry, map<string, User>& users) {
 	}
 }
 void User::editAge(string newAge, map<string, User>& users) {
-
-	for (auto it : users) {
-		if (it.first == getNAtIDTextBox_Text())
+	
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
 		{
-			cout << "ana b edit ahoooo\n";
-			User u1(it.second.name, it.second.id, it.second.gender, newAge, it.second.Country, it.second.Governorate, it.second.password, it.second.status);
-			users.erase(it.first);
-			users.insert(pair<string, User>(u1.id, u1));
+			
+			it->second.age = newAge;
 			break;
 
 		}
@@ -341,12 +345,11 @@ void User::editAge(string newAge, map<string, User>& users) {
 }
 void User::editStatus(string newStatus, map<string, User>& users) {
 
-	for (auto it : users) {
-		if (it.first == getNAtIDTextBox_Text())
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
 		{
-			User u1(it.second.name, it.second.id, it.second.gender, it.second.age, it.second.Country, it.second.password, it.second.password, newStatus);
-			users.erase(getNAtIDTextBox_Text());
-			users.insert(pair<string, User>(u1.id, u1));
+
+			it->second.status = newStatus;
 			break;
 
 		}
@@ -355,13 +358,11 @@ void User::editStatus(string newStatus, map<string, User>& users) {
 }
 void User::editPassword(string newPassword, map<string, User>& users) {
 
-	for (auto it : users) {
-		if (it.first == getNAtIDTextBox_Text())
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
 		{
-			User u1(it.second.name, it.second.id, it.second.gender, it.second.age, it.second.Country, it.second.Governorate, newPassword, it.second.status);
-		
-			users.erase(getNAtIDTextBox_Text());
-			users.insert(pair<string, User>(u1.id, u1));
+
+			it->second.password = newPassword;
 			break;
 
 		}
@@ -369,12 +370,11 @@ void User::editPassword(string newPassword, map<string, User>& users) {
 	}
 }
 void User::editGov(string newGov, map<string, User>& users) {
-	for (auto it : users) {
-		if (it.first == getNAtIDTextBox_Text())
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
 		{
-			User u1(it.second.name, it.second.id, it.second.gender, it.second.age, it.second.Country, newGov, it.second.password, it.second.status);
-			users.erase(getNAtIDTextBox_Text());
-			users.insert(pair<string, User>(u1.id, u1));
+
+			it->second.Governorate = newGov;
 			break;
 
 		}
