@@ -41,6 +41,7 @@ public:
 	~User();
 	string static getNAtIDTextBox_Text();
 	void static setNAtIDTextBox_Text(string val);
+	string getUserName(map<string, User>& users);
 	bool getdel_user_found();
 	void setdel_user_found(bool val);
 

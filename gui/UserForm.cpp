@@ -6,6 +6,15 @@
 #include <msclr/marshal_cppstd.h>
 #include <string>
 map<string, User> users;
+System::Void gui::UserForm::UserForm_Load(System::Object^ sender, System::EventArgs^ e)
+{
+	//hello + "username"
+	/*User u;
+	string std_str = u.getUserName(users);
+	String^ sys_str = gcnew String(std_str.c_str());
+	HelloUserLabel->Text = sys_str;*/
+	return System::Void();
+}
 
 System::Void gui::UserForm::ViewUserInfoButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -16,6 +25,7 @@ System::Void gui::UserForm::ViewUserInfoButton_Click(System::Object^ sender, Sys
 	EditCountryButton->Hide();
 	EditGovButton->Hide();
 	EditStatusButton->Hide();
+	EditPassButton->Hide();
 	NewvalueLabel->Hide();
 	NewvalueTextBox->Hide();
 	SuccessLabel->Hide();
@@ -29,7 +39,6 @@ System::Void gui::UserForm::ViewUserInfoButton_Click(System::Object^ sender, Sys
 	string contents = a.viewUser(u.getNAtIDTextBox_Text(), users);
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 	label1->Text = syscontents;
-	//label1->Text = "User Info showed successfully";
 	return System::Void();
 }
 
@@ -42,6 +51,7 @@ System::Void gui::UserForm::EditUserInfoButton_Click(System::Object^ sender, Sys
 	EditCountryButton->Show();
 	EditGovButton->Show();
 	EditStatusButton->Show();
+	EditPassButton->Show();
 	return System::Void();
 }
 
@@ -54,12 +64,12 @@ System::Void gui::UserForm::DeleteInfoButton_Click(System::Object^ sender, Syste
 	EditCountryButton->Hide();
 	EditGovButton->Hide();
 	EditStatusButton->Hide();
+	EditPassButton->Hide();
 	NewvalueLabel->Hide();
 	NewvalueTextBox->Hide();
 	SuccessLabel->Hide();
 	ErrorLabel->Hide();
 	SubmitButton->Hide();
-	/*map<string, User> users;*/
 	User u;
 	u.read_data(users);
 	Admin a;
@@ -145,18 +155,13 @@ System::Void gui::UserForm::EditPassButton_Click(System::Object^ sender, System:
 
 System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	/*map<string, User> users;*/
 	User u;
 	Admin a;
 	u.read_data(users);
 	string new_value;
-	string new_value1;
-	String^ all;
-	String^ all1;
-	all = NewvalueTextBox->Text;
-	new_value = msclr::interop::marshal_as< std::string >(all);//convert from sys string to std string
-	all1 = NewvalueLabel->Text;
-	new_value1 = msclr::interop::marshal_as< std::string >(all);//convert from sys string to std string
+	String^ str_sys;
+	str_sys = NewvalueTextBox->Text;
+	new_value = msclr::interop::marshal_as< std::string >(str_sys);//convert from sys string to std string
 	if (NewvalueTextBox->Text == "")
 	{
 		ErrorLabel->Show();
@@ -216,7 +221,7 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 				SuccessLabel->Text = "ID Changed succesfully!";
 			}
 		}
-		
+		NewvalueTextBox->Text = "";
 		u.update_files(users);
 	}
 	return System::Void();

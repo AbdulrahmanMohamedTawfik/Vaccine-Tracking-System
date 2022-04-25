@@ -1,5 +1,5 @@
 #pragma once
-
+#include"User.h"
 namespace gui {
 
 	using namespace System;
@@ -339,8 +339,8 @@ namespace gui {
 
 		}
 #pragma endregion
-	private: System::Void UserForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	}
+	private: System::Void UserForm_Load(System::Object^ sender, System::EventArgs^ e);
+
 	private: System::Void ViewUserInfoButton_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void EditUserInfoButton_Click(System::Object^ sender, System::EventArgs^ e);

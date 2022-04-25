@@ -3,19 +3,16 @@
 using namespace std;
 System::Void gui::login::LoginButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//NAtIDTextBox_Text
-	//user_id = NatIDTextBox->Text;
-	//login function call here
 	UserForm^ userform = gcnew UserForm();
 	AdminForm^ adminform = gcnew AdminForm();
 	User u;
-	String^ all;
-	all = NatIDTextBox->Text;
-	string NatID = msclr::interop::marshal_as< std::string >(all);
+	String^ str_sys;
+	str_sys = NatIDTextBox->Text;
+	string NatID = msclr::interop::marshal_as< std::string >(str_sys);
 	u.setNAtIDTextBox_Text(NatID);
-	cout << "getNAtIDTextBox_Text= " << u.getNAtIDTextBox_Text() << endl;
-	all = PasswordTextBox->Text;
-	string password = msclr::interop::marshal_as< std::string >(all);
+	//cout << "getNAtIDTextBox_Text= " << u.getNAtIDTextBox_Text() << endl;
+	str_sys = PasswordTextBox->Text;
+	string password = msclr::interop::marshal_as< std::string >(str_sys);
 
 	u.login(NatID, password);
 
