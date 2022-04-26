@@ -71,7 +71,7 @@ namespace gui {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -329,28 +329,26 @@ namespace gui {
 			this->OtherCountryComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->OtherCountryComboBox->FormattingEnabled = true;
-			this->OtherCountryComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(196) {
-				L"OtherCountry", L"Afghanistan", L"Albania",
-					L"Algeria", L"Andorra", L"Angola", L"Antigua & Deps", L"Argentina", L"Armenia", L"Australia", L"Austria", L"Azerbaijan", L"Bahamas",
-					L"Bahrain", L"Bangladesh", L"Barbados", L"Belarus", L"Belgium", L"Belize", L"Benin", L"Bhutan", L"Bolivia", L"Bosnia Herzegovina",
-					L"Botswana", L"Brazil", L"Brunei", L"Bulgaria", L"Burkina", L"Burundi", L"Cambodia", L"Cameroon", L"Canada", L"Cape Verde", L"Central African Rep",
-					L"Chad", L"Chile", L"China", L"Colombia", L"Comoros", L"Congo", L"Congo {Democratic Rep}", L"Costa Rica", L"Croatia", L"Cuba",
-					L"Cyprus", L"Czech Republic", L"Denmark", L"Djibouti", L"Dominica", L"Dominican Republic", L"East Timor", L"Ecuador", L"El Salvador",
-					L"Equatorial Guinea", L"Eritrea", L"Estonia", L"Ethiopia", L"Fiji", L"Finland", L"France", L"Gabon", L"Gambia", L"Georgia", L"Germany",
-					L"Ghana", L"Greece", L"Grenada", L"Guatemala", L"Guinea", L"Guinea-Bissau", L"Guyana", L"Haiti", L"Honduras", L"Hungary", L"Iceland",
-					L"India", L"Indonesia", L"Iran", L"Iraq", L"Ireland {Republic}", L"Israel", L"Italy", L"Ivory Coast", L"Jamaica", L"Japan", L"Jordan",
-					L"Kazakhstan", L"Kenya", L"Kiribati", L"Korea North", L"Korea South", L"Kosovo", L"Kuwait", L"Kyrgyzstan", L"Laos", L"Latvia",
-					L"Lebanon", L"Lesotho", L"Liberia", L"Libya", L"Liechtenstein", L"Lithuania", L"Luxembourg", L"Macedonia", L"Madagascar", L"Malawi",
-					L"Malaysia", L"Maldives", L"Mali", L"Malta", L"Marshall Islands", L"Mauritania", L"Mauritius", L"Mexico", L"Micronesia", L"Moldova",
-					L"Monaco", L"Mongolia", L"Montenegro", L"Morocco", L"Mozambique", L"Myanmar, {Burma}", L"Namibia", L"Nauru", L"Nepal", L"Netherlands",
-					L"New Zealand", L"Nicaragua", L"Niger", L"Nigeria", L"Norway", L"Oman", L"Pakistan", L"Palau", L"Panama", L"Papua New Guinea",
-					L"Paraguay", L"Peru", L"Philippines", L"Poland", L"Portugal", L"Qatar", L"Romania", L"Russian Federation", L"Rwanda", L"St Kitts & Nevis",
-					L"St Lucia", L"Saint Vincent & the Grenadines", L"Samoa", L"San Marino", L"Sao Tome & Principe", L"Saudi Arabia", L"Senegal",
-					L"Serbia", L"Seychelles", L"Sierra Leone", L"Singapore", L"Slovakia", L"Slovenia", L"Solomon Islands", L"Somalia", L"South Africa",
-					L"South Sudan", L"Spain", L"Sri Lanka", L"Sudan", L"Suriname", L"Swaziland", L"Sweden", L"Switzerland", L"Syria", L"Taiwan",
-					L"Tajikistan", L"Tanzania", L"Thailand", L"Togo", L"Tonga", L"Trinidad & Tobago", L"Tunisia", L"Turkey", L"Turkmenistan", L"Tuvalu",
-					L"Uganda", L"Ukraine", L"United Arab Emirates", L"United Kingdom", L"United States", L"Uruguay", L"Uzbekistan", L"Vanuatu", L"Vatican City",
-					L"Venezuela", L"Vietnam", L"Yemen", L"Zambia", L"Zimbabwe"
+			this->OtherCountryComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(189) {
+				L"Afghanistan", L"Albania", L"Algeria",
+					L"Andorra", L"Angola", L"Antigua ", L"Argentina", L"Armenia", L"Australia", L"Austria", L"Azerbaijan", L"Bahamas", L"Bahrain",
+					L"Bangladesh", L"Barbados", L"Belarus", L"Belgium", L"Belize", L"Benin", L"Bhutan", L"Bolivia", L"Botswana", L"Brazil", L"Brunei",
+					L"Bulgaria", L"Burkina", L"Burundi", L"Cambodia", L"Cameroon", L"Canada", L"Cape Verde", L"Central African", L"Chad", L"Chile",
+					L"China", L"Colombia", L"Comoros", L"Congo", L"Congo D.R", L"Costa Rica", L"Croatia", L"Cuba", L"Cyprus", L"Czech R", L"Denmark",
+					L"Djibouti", L"Dominica", L"Dominican R", L"East Timor", L"Ecuador", L"El Salvador", L"Guinea", L"Eritrea", L"Estonia", L"Ethiopia",
+					L"Fiji", L"Finland", L"France", L"Gabon", L"Gambia", L"Georgia", L"Germany", L"Ghana", L"Greece", L"Grenada", L"Guatemala", L"Guinea",
+					L"Guinea-Bissau", L"Guyana", L"Haiti", L"Honduras", L"Hungary", L"Iceland", L"India", L"Indonesia", L"Iran", L"Iraq", L"Ireland R",
+					L"Israel", L"Italy", L"Ivory Coast", L"Jamaica", L"Japan", L"Jordan", L"Kazakhstan", L"Kenya", L"Kiribati", L"Korea North", L"Korea South",
+					L"Kosovo", L"Kuwait", L"Kyrgyzstan", L"Laos", L"Latvia", L"Lebanon", L"Lesotho", L"Liberia", L"Libya", L"Lithuania", L"Luxembourg",
+					L"Macedonia", L"Madagascar", L"Malawi", L"Malaysia", L"Maldives", L"Mali", L"Malta", L"Mauritania", L"Mauritius", L"Mexico",
+					L"Micronesia", L"Moldova", L"Monaco", L"Mongolia", L"Montenegro", L"Morocco", L"Mozambique", L"Myanmar", L"Namibia", L"Nauru",
+					L"Nepal", L"Netherlands", L"New Zealand", L"Nicaragua", L"Niger", L"Nigeria", L"Norway", L"Oman", L"Pakistan", L"Palau", L"Panama",
+					L"Paraguay", L"Peru", L"Philippines", L"Poland", L"Portugal", L"Qatar", L"Romania", L"Russia", L"Rwanda", L"St Lucia", L"Saint Vincent",
+					L"Samoa", L"San Marino", L"Sao Tome", L"Saudi Arabia", L"Senegal", L"Serbia", L"Seychelles", L"Sierra Leone", L"Singapore", L"Slovakia",
+					L"Slovenia", L"Somalia", L"South Africa", L"South Sudan", L"Spain", L"Sri Lanka", L"Sudan", L"Suriname", L"Swaziland", L"Sweden",
+					L"Switzerland", L"Syria", L"Taiwan", L"Tajikistan", L"Tanzania", L"Thailand", L"Togo", L"Tonga", L"Tunisia", L"Turkey", L"Turkmenistan",
+					L"Tuvalu", L"Uganda", L"Ukraine", L"U.A.Emirates", L"United Kingdom", L"United States", L"Uruguay", L"Uzbekistan", L"Vanuatu",
+					L"Vatican City", L"Venezuela", L"Vietnam", L"Yemen", L"Zambia", L"Zimbabwe", L"OtherCountry"
 			});
 			this->OtherCountryComboBox->Location = System::Drawing::Point(559, 429);
 			this->OtherCountryComboBox->Name = L"OtherCountryComboBox";
@@ -534,11 +532,11 @@ namespace gui {
 	private: System::Void RegisterButton_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void UnseeButton_Click(System::Object^ sender, System::EventArgs^ e);
-	
+
 	private: System::Void reg_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+
 	}
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -572,7 +570,7 @@ namespace gui {
 	}
 	private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
-private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	};
 }
