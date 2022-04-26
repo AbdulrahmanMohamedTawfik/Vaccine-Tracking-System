@@ -16,7 +16,7 @@ System::Void gui::AdminForm::ViewInfoButton_Click(System::Object^ sender, System
 	string contents = a.viewUser(NatID, users);
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 	richTextBox1->Text = syscontents;
-    return System::Void();
+	return System::Void();
 }
 
 System::Void gui::AdminForm::ViewAllUsers_Click(System::Object^ sender, System::EventArgs^ e)
@@ -42,7 +42,7 @@ System::Void gui::AdminForm::ViewAwaitingListButton_Click(System::Object^ sender
 	return System::Void();
 }
 
-System::Void gui::AdminForm::DeleteInfoButton_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void gui::AdminForm::DeleteInfoButton_Click(System::Object^ sender, System::EventArgs^ e)//bug fix needed here
 {
 	map<string, User> users;
 	User u;
@@ -52,7 +52,7 @@ System::Void gui::AdminForm::DeleteInfoButton_Click(System::Object^ sender, Syst
 	all = NationalIDTextBox->Text;
 	string NatID = msclr::interop::marshal_as< std::string >(all);
 	a.deleteUser(NatID, users);
-	if (u.getdel_user_found())
+	if (u.getdel_user_found())//bug fix needed here (always if is executed and else never executed)
 	{
 		u.update_files(users);
 		richTextBox1->Text = "User Deleteted successfully";

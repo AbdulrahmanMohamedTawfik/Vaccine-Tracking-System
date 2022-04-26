@@ -5,9 +5,8 @@ using namespace std;
 
 class User
 {
-	
 private:
-	static string NAtIDTextBox_Text;	  
+	static string NAtIDTextBox_Text;
 	bool del_user_found;
 public:
 	string name;
@@ -20,6 +19,7 @@ public:
 	string status;
 	bool correct_pass;
 	bool correct_NatId;
+	string NameText;//"Hello " + NameText (in userform)
 public:
 	User() {};
 	User(string name, string id, string gender, string age, string Country, string Governorate, string password, string status) {
@@ -41,7 +41,7 @@ public:
 	~User();
 	string static getNAtIDTextBox_Text();
 	void static setNAtIDTextBox_Text(string val);
-	string getUserName(map<string, User>& users);
+	void getUserName(map<string, User>& users);
 	bool getdel_user_found();
 	void setdel_user_found(bool val);
 
@@ -49,9 +49,9 @@ public:
 	void editName(string name, map<string, User>& users);
 	void editGender(string gender, map<string, User>& users);
 	void editAge(string age, map<string, User>& users);
-	void editCountry(string Country,map<string, User>& users);
+	void editCountry(string Country, map<string, User>& users);
 	void editGov(string gov, map<string, User>& users);
 	void editPassword(string password, map<string, User>& users);
 	void editStatus(string age, map<string, User>& users);
-	
+
 };

@@ -66,7 +66,7 @@ namespace gui {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -102,7 +102,7 @@ namespace gui {
 			this->LoginButton->ForeColor = System::Drawing::Color::White;
 			this->LoginButton->Location = System::Drawing::Point(72, 417);
 			this->LoginButton->Name = L"LoginButton";
-			this->LoginButton->Size = System::Drawing::Size(535, 60);
+			this->LoginButton->Size = System::Drawing::Size(566, 60);
 			this->LoginButton->TabIndex = 1;
 			this->LoginButton->Text = L"Login";
 			this->LoginButton->UseVisualStyleBackColor = false;
@@ -159,8 +159,7 @@ namespace gui {
 			this->HidePassCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->HidePassCheckBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->HidePassCheckBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)),
-				static_cast<System::Int32>(static_cast<System::Byte>(135)), static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->HidePassCheckBox->ForeColor = System::Drawing::Color::White;
 			this->HidePassCheckBox->Location = System::Drawing::Point(550, 293);
 			this->HidePassCheckBox->Name = L"HidePassCheckBox";
 			this->HidePassCheckBox->Size = System::Drawing::Size(88, 49);
@@ -183,7 +182,7 @@ namespace gui {
 			this->panel1->Controls->Add(this->NatIDTextBox);
 			this->panel1->Location = System::Drawing::Point(2, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(644, 1238);
+			this->panel1->Size = System::Drawing::Size(692, 1238);
 			this->panel1->TabIndex = 18;
 			// 
 			// label5
@@ -207,7 +206,7 @@ namespace gui {
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->label4->Location = System::Drawing::Point(232, 369);
+			this->label4->Location = System::Drawing::Point(53, 363);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(0, 45);
 			this->label4->TabIndex = 19;
@@ -224,7 +223,7 @@ namespace gui {
 			// 
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox1->Location = System::Drawing::Point(683, 112);
+			this->pictureBox1->Location = System::Drawing::Point(707, 112);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(586, 367);
 			this->pictureBox1->TabIndex = 19;
@@ -236,7 +235,7 @@ namespace gui {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Stencil", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::Navy;
-			this->label3->Location = System::Drawing::Point(691, 497);
+			this->label3->Location = System::Drawing::Point(700, 497);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(537, 39);
 			this->label3->TabIndex = 20;
@@ -279,5 +278,5 @@ namespace gui {
 	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {}
-};
+	};
 }

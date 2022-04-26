@@ -171,7 +171,7 @@ void User::login(string natID, string pass)
 		}
 
 	}
-	
+
 	id_File.close();
 	pass_File.close();
 }
@@ -257,12 +257,14 @@ void User::setNAtIDTextBox_Text(string val)
 {
 	NAtIDTextBox_Text = val;
 }
-string User::getUserName(map<string, User>& users)
+
+void User::getUserName(map<string, User>& users)
 {
+	cout << "getNAtIDTextBox_Text= " << getNAtIDTextBox_Text();
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
 		{
-			return it->second.name;
+			NameText = it->second.name;
 		}
 	}
 }
@@ -281,10 +283,8 @@ void User::editName(string newName, map<string, User>& users) {
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
 		{
-
 			it->second.name = newName;
 			break;
-
 		}
 
 	}
@@ -301,8 +301,8 @@ void User::editId(string newId, map<string, User>& users) {
 		}
 
 	}
-	
-	
+
+
 }
 void User::editGender(string newGender, map<string, User>& users) {
 
@@ -331,11 +331,11 @@ void User::editCountry(string newCountry, map<string, User>& users) {
 	}
 }
 void User::editAge(string newAge, map<string, User>& users) {
-	
+
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
 		{
-			
+
 			it->second.age = newAge;
 			break;
 

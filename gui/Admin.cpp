@@ -43,7 +43,7 @@ string Admin::viewAll(map<string, User> users)
 void Admin::deleteUser(string userNationalID, map<string, User>& users)
 {
 	User u;
-	if (u.check_id(userNationalID)) 
+	if (u.check_id(userNationalID))
 	{
 		u.setdel_user_found(true);
 		users.erase(userNationalID);
