@@ -59,6 +59,9 @@ namespace gui {
 	protected:
 	private: System::Windows::Forms::Button^ EditUserInfoButton;
 	private: System::Windows::Forms::Button^ DeleteInfoButton;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Label^ HelloUserLabel;
 
 
@@ -105,9 +108,14 @@ namespace gui {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(UserForm::typeid));
 			this->ViewUserInfoButton = (gcnew System::Windows::Forms::Button());
 			this->EditUserInfoButton = (gcnew System::Windows::Forms::Button());
 			this->DeleteInfoButton = (gcnew System::Windows::Forms::Button());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->ErrorLabel = (gcnew System::Windows::Forms::Label());
 			this->HelloUserLabel = (gcnew System::Windows::Forms::Label());
 			this->EditNameButton = (gcnew System::Windows::Forms::Button());
 			this->EditIDButton = (gcnew System::Windows::Forms::Button());
@@ -120,7 +128,6 @@ namespace gui {
 			this->NewvalueLabel = (gcnew System::Windows::Forms::Label());
 			this->SubmitButton = (gcnew System::Windows::Forms::Button());
 			this->EditPassButton = (gcnew System::Windows::Forms::Button());
-			this->ErrorLabel = (gcnew System::Windows::Forms::Label());
 			this->MaleCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->FemaleCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->AbroadCheckBox = (gcnew System::Windows::Forms::CheckBox());
@@ -131,50 +138,95 @@ namespace gui {
 			this->vaccinatedCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->UsernameLabel = (gcnew System::Windows::Forms::Label());
 			this->UserInfoRichTextBox = (gcnew System::Windows::Forms::RichTextBox());
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// ViewUserInfoButton
 			// 
-			this->ViewUserInfoButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ViewUserInfoButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)),
+				static_cast<System::Int32>(static_cast<System::Byte>(135)), static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->ViewUserInfoButton->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->ViewUserInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->ViewUserInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ViewUserInfoButton->Location = System::Drawing::Point(708, 298);
+			this->ViewUserInfoButton->Location = System::Drawing::Point(374, 400);
 			this->ViewUserInfoButton->Name = L"ViewUserInfoButton";
-			this->ViewUserInfoButton->Size = System::Drawing::Size(302, 60);
+			this->ViewUserInfoButton->Size = System::Drawing::Size(1060, 60);
 			this->ViewUserInfoButton->TabIndex = 2;
 			this->ViewUserInfoButton->Text = L"View My Info";
-			this->ViewUserInfoButton->UseVisualStyleBackColor = true;
+			this->ViewUserInfoButton->UseVisualStyleBackColor = false;
 			this->ViewUserInfoButton->Click += gcnew System::EventHandler(this, &UserForm::ViewUserInfoButton_Click);
 			// 
 			// EditUserInfoButton
 			// 
-			this->EditUserInfoButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->EditUserInfoButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)),
+				static_cast<System::Int32>(static_cast<System::Byte>(135)), static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->EditUserInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->EditUserInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->EditUserInfoButton->Location = System::Drawing::Point(708, 364);
+			this->EditUserInfoButton->Location = System::Drawing::Point(374, 487);
 			this->EditUserInfoButton->Name = L"EditUserInfoButton";
-			this->EditUserInfoButton->Size = System::Drawing::Size(302, 60);
+			this->EditUserInfoButton->Size = System::Drawing::Size(1060, 60);
 			this->EditUserInfoButton->TabIndex = 3;
 			this->EditUserInfoButton->Text = L"Edit My Info";
-			this->EditUserInfoButton->UseVisualStyleBackColor = true;
+			this->EditUserInfoButton->UseVisualStyleBackColor = false;
 			this->EditUserInfoButton->Click += gcnew System::EventHandler(this, &UserForm::EditUserInfoButton_Click);
 			// 
 			// DeleteInfoButton
 			// 
-			this->DeleteInfoButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->DeleteInfoButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)),
+				static_cast<System::Int32>(static_cast<System::Byte>(135)), static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->DeleteInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->DeleteInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->DeleteInfoButton->Location = System::Drawing::Point(708, 430);
+			this->DeleteInfoButton->Location = System::Drawing::Point(374, 569);
 			this->DeleteInfoButton->Name = L"DeleteInfoButton";
-			this->DeleteInfoButton->Size = System::Drawing::Size(302, 60);
+			this->DeleteInfoButton->Size = System::Drawing::Size(1060, 60);
 			this->DeleteInfoButton->TabIndex = 4;
 			this->DeleteInfoButton->Text = L"Delete My Info";
-			this->DeleteInfoButton->UseVisualStyleBackColor = true;
+			this->DeleteInfoButton->UseVisualStyleBackColor = false;
 			this->DeleteInfoButton->Click += gcnew System::EventHandler(this, &UserForm::DeleteInfoButton_Click);
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::Navy;
+			this->panel1->Controls->Add(this->panel3);
+			this->panel1->Controls->Add(this->panel2);
+			this->panel1->Location = System::Drawing::Point(1, -2);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(659, 590);
+			this->panel1->TabIndex = 13;
+			// 
+			// panel3
+			// 
+			this->panel3->Location = System::Drawing::Point(656, 3);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(792, 587);
+			this->panel3->TabIndex = 14;
+			// 
+			// panel2
+			// 
+			this->panel2->Location = System::Drawing::Point(92, 201);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(1080, 357);
+			this->panel2->TabIndex = 1;
+			// 
+			// ErrorLabel
+			// 
+			this->ErrorLabel->AutoSize = true;
+			this->ErrorLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 13));
+			this->ErrorLabel->ForeColor = System::Drawing::Color::Red;
+			this->ErrorLabel->Location = System::Drawing::Point(907, 149);
+			this->ErrorLabel->Name = L"ErrorLabel";
+			this->ErrorLabel->Size = System::Drawing::Size(0, 30);
+			this->ErrorLabel->TabIndex = 25;
 			// 
 			// HelloUserLabel
 			// 
 			this->HelloUserLabel->AutoSize = true;
 			this->HelloUserLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->HelloUserLabel->Location = System::Drawing::Point(700, 2);
+			this->HelloUserLabel->Location = System::Drawing::Point(804, 9);
 			this->HelloUserLabel->Name = L"HelloUserLabel";
 			this->HelloUserLabel->Size = System::Drawing::Size(111, 47);
 			this->HelloUserLabel->TabIndex = 11;
@@ -183,7 +235,7 @@ namespace gui {
 			// EditNameButton
 			// 
 			this->EditNameButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12));
-			this->EditNameButton->Location = System::Drawing::Point(12, 79);
+			this->EditNameButton->Location = System::Drawing::Point(31, 10);
 			this->EditNameButton->Name = L"EditNameButton";
 			this->EditNameButton->Size = System::Drawing::Size(176, 42);
 			this->EditNameButton->TabIndex = 13;
@@ -194,7 +246,7 @@ namespace gui {
 			// EditIDButton
 			// 
 			this->EditIDButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12));
-			this->EditIDButton->Location = System::Drawing::Point(12, 127);
+			this->EditIDButton->Location = System::Drawing::Point(31, 58);
 			this->EditIDButton->Name = L"EditIDButton";
 			this->EditIDButton->Size = System::Drawing::Size(176, 42);
 			this->EditIDButton->TabIndex = 14;
@@ -205,7 +257,7 @@ namespace gui {
 			// EditGendrButton
 			// 
 			this->EditGendrButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12));
-			this->EditGendrButton->Location = System::Drawing::Point(12, 175);
+			this->EditGendrButton->Location = System::Drawing::Point(31, 106);
 			this->EditGendrButton->Name = L"EditGendrButton";
 			this->EditGendrButton->Size = System::Drawing::Size(176, 42);
 			this->EditGendrButton->TabIndex = 15;
@@ -216,7 +268,7 @@ namespace gui {
 			// EditAgeButton
 			// 
 			this->EditAgeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12));
-			this->EditAgeButton->Location = System::Drawing::Point(12, 223);
+			this->EditAgeButton->Location = System::Drawing::Point(31, 154);
 			this->EditAgeButton->Name = L"EditAgeButton";
 			this->EditAgeButton->Size = System::Drawing::Size(176, 42);
 			this->EditAgeButton->TabIndex = 16;
@@ -227,7 +279,7 @@ namespace gui {
 			// EditCountryButton
 			// 
 			this->EditCountryButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12));
-			this->EditCountryButton->Location = System::Drawing::Point(12, 271);
+			this->EditCountryButton->Location = System::Drawing::Point(31, 202);
 			this->EditCountryButton->Name = L"EditCountryButton";
 			this->EditCountryButton->Size = System::Drawing::Size(176, 42);
 			this->EditCountryButton->TabIndex = 17;
@@ -238,7 +290,7 @@ namespace gui {
 			// EditGovButton
 			// 
 			this->EditGovButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12));
-			this->EditGovButton->Location = System::Drawing::Point(12, 319);
+			this->EditGovButton->Location = System::Drawing::Point(31, 250);
 			this->EditGovButton->Name = L"EditGovButton";
 			this->EditGovButton->Size = System::Drawing::Size(176, 42);
 			this->EditGovButton->TabIndex = 18;
@@ -249,7 +301,7 @@ namespace gui {
 			// EditStatusButton
 			// 
 			this->EditStatusButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12));
-			this->EditStatusButton->Location = System::Drawing::Point(12, 367);
+			this->EditStatusButton->Location = System::Drawing::Point(31, 298);
 			this->EditStatusButton->Name = L"EditStatusButton";
 			this->EditStatusButton->Size = System::Drawing::Size(176, 42);
 			this->EditStatusButton->TabIndex = 19;
@@ -279,10 +331,18 @@ namespace gui {
 			// 
 			// SubmitButton
 			// 
+			this->SubmitButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SubmitButton.BackgroundImage")));
+			this->SubmitButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->SubmitButton->Cursor = System::Windows::Forms::Cursors::PanNorth;
+			this->SubmitButton->FlatAppearance->BorderColor = System::Drawing::Color::White;
+			this->SubmitButton->FlatAppearance->BorderSize = 0;
+			this->SubmitButton->FlatAppearance->MouseDownBackColor = System::Drawing::Color::DarkRed;
+			this->SubmitButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Black;
+			this->SubmitButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->SubmitButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12));
-			this->SubmitButton->Location = System::Drawing::Point(882, 196);
+			this->SubmitButton->Location = System::Drawing::Point(992, 213);
 			this->SubmitButton->Name = L"SubmitButton";
-			this->SubmitButton->Size = System::Drawing::Size(128, 42);
+			this->SubmitButton->Size = System::Drawing::Size(181, 42);
 			this->SubmitButton->TabIndex = 22;
 			this->SubmitButton->Text = L"Submit";
 			this->SubmitButton->UseVisualStyleBackColor = true;
@@ -291,23 +351,13 @@ namespace gui {
 			// EditPassButton
 			// 
 			this->EditPassButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12));
-			this->EditPassButton->Location = System::Drawing::Point(12, 415);
+			this->EditPassButton->Location = System::Drawing::Point(31, 346);
 			this->EditPassButton->Name = L"EditPassButton";
 			this->EditPassButton->Size = System::Drawing::Size(176, 42);
 			this->EditPassButton->TabIndex = 23;
 			this->EditPassButton->Text = L"Edit pass";
 			this->EditPassButton->UseVisualStyleBackColor = true;
 			this->EditPassButton->Click += gcnew System::EventHandler(this, &UserForm::EditPassButton_Click);
-			// 
-			// ErrorLabel
-			// 
-			this->ErrorLabel->AutoSize = true;
-			this->ErrorLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 13));
-			this->ErrorLabel->ForeColor = System::Drawing::Color::Red;
-			this->ErrorLabel->Location = System::Drawing::Point(907, 149);
-			this->ErrorLabel->Name = L"ErrorLabel";
-			this->ErrorLabel->Size = System::Drawing::Size(0, 30);
-			this->ErrorLabel->TabIndex = 25;
 			// 
 			// MaleCheckBox
 			// 
@@ -442,7 +492,7 @@ namespace gui {
 			this->UsernameLabel->AutoSize = true;
 			this->UsernameLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->UsernameLabel->Location = System::Drawing::Point(800, 2);
+			this->UsernameLabel->Location = System::Drawing::Point(904, 9);
 			this->UsernameLabel->Name = L"UsernameLabel";
 			this->UsernameLabel->Size = System::Drawing::Size(44, 47);
 			this->UsernameLabel->TabIndex = 37;
@@ -453,7 +503,7 @@ namespace gui {
 			this->UserInfoRichTextBox->BackColor = System::Drawing::SystemColors::Control;
 			this->UserInfoRichTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 19.5F));
 			this->UserInfoRichTextBox->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->UserInfoRichTextBox->Location = System::Drawing::Point(194, 79);
+			this->UserInfoRichTextBox->Location = System::Drawing::Point(211, 10);
 			this->UserInfoRichTextBox->Margin = System::Windows::Forms::Padding(1);
 			this->UserInfoRichTextBox->Name = L"UserInfoRichTextBox";
 			this->UserInfoRichTextBox->Size = System::Drawing::Size(508, 378);
@@ -464,7 +514,8 @@ namespace gui {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1852, 743);
+			this->BackColor = System::Drawing::Color::White;
+			this->ClientSize = System::Drawing::Size(1852, 1055);
 			this->Controls->Add(this->UserInfoRichTextBox);
 			this->Controls->Add(this->UsernameLabel);
 			this->Controls->Add(this->DoseComboBox);
@@ -494,6 +545,7 @@ namespace gui {
 			this->Name = L"UserForm";
 			this->Text = L"User";
 			this->Load += gcnew System::EventHandler(this, &UserForm::UserForm_Load);
+			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -537,6 +589,5 @@ namespace gui {
 		System::Void vaccinatedCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 
 		System::Void ApplyCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-
-	};
+};
 }
