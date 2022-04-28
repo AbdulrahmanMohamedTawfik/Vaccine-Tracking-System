@@ -74,7 +74,7 @@ namespace gui {
 	private: System::Windows::Forms::Label^ NewvalueLabel;
 	private: System::Windows::Forms::Button^ SubmitButton;
 	private: System::Windows::Forms::Button^ EditPassButton;
-	private: System::Windows::Forms::Label^ SuccessLabel;
+
 	private: System::Windows::Forms::Label^ ErrorLabel;
 	private: System::Windows::Forms::CheckBox^ MaleCheckBox;
 	private: System::Windows::Forms::CheckBox^ FemaleCheckBox;
@@ -120,7 +120,6 @@ namespace gui {
 			this->NewvalueLabel = (gcnew System::Windows::Forms::Label());
 			this->SubmitButton = (gcnew System::Windows::Forms::Button());
 			this->EditPassButton = (gcnew System::Windows::Forms::Button());
-			this->SuccessLabel = (gcnew System::Windows::Forms::Label());
 			this->ErrorLabel = (gcnew System::Windows::Forms::Label());
 			this->MaleCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->FemaleCheckBox = (gcnew System::Windows::Forms::CheckBox());
@@ -300,22 +299,12 @@ namespace gui {
 			this->EditPassButton->UseVisualStyleBackColor = true;
 			this->EditPassButton->Click += gcnew System::EventHandler(this, &UserForm::EditPassButton_Click);
 			// 
-			// SuccessLabel
-			// 
-			this->SuccessLabel->AutoSize = true;
-			this->SuccessLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 13));
-			this->SuccessLabel->ForeColor = System::Drawing::Color::Lime;
-			this->SuccessLabel->Location = System::Drawing::Point(928, 148);
-			this->SuccessLabel->Name = L"SuccessLabel";
-			this->SuccessLabel->Size = System::Drawing::Size(0, 30);
-			this->SuccessLabel->TabIndex = 24;
-			// 
 			// ErrorLabel
 			// 
 			this->ErrorLabel->AutoSize = true;
 			this->ErrorLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 13));
 			this->ErrorLabel->ForeColor = System::Drawing::Color::Red;
-			this->ErrorLabel->Location = System::Drawing::Point(954, 148);
+			this->ErrorLabel->Location = System::Drawing::Point(907, 149);
 			this->ErrorLabel->Name = L"ErrorLabel";
 			this->ErrorLabel->Size = System::Drawing::Size(0, 30);
 			this->ErrorLabel->TabIndex = 25;
@@ -475,7 +464,7 @@ namespace gui {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1448, 743);
+			this->ClientSize = System::Drawing::Size(1852, 743);
 			this->Controls->Add(this->UserInfoRichTextBox);
 			this->Controls->Add(this->UsernameLabel);
 			this->Controls->Add(this->DoseComboBox);
@@ -487,7 +476,6 @@ namespace gui {
 			this->Controls->Add(this->MaleCheckBox);
 			this->Controls->Add(this->FemaleCheckBox);
 			this->Controls->Add(this->ErrorLabel);
-			this->Controls->Add(this->SuccessLabel);
 			this->Controls->Add(this->EditPassButton);
 			this->Controls->Add(this->SubmitButton);
 			this->Controls->Add(this->NewvalueLabel);

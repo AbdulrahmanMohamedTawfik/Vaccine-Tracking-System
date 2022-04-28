@@ -142,6 +142,7 @@ namespace gui {
 			this->NatIDTextBox->Size = System::Drawing::Size(278, 54);
 			this->NatIDTextBox->TabIndex = 4;
 			this->NatIDTextBox->TextChanged += gcnew System::EventHandler(this, &login::NameTextBox_TextChanged);
+			this->NatIDTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &login::NatIDTextBox_KeyDown);
 			// 
 			// PasswordTextBox
 			// 
@@ -152,6 +153,7 @@ namespace gui {
 			this->PasswordTextBox->Size = System::Drawing::Size(278, 54);
 			this->PasswordTextBox->TabIndex = 5;
 			this->PasswordTextBox->TextChanged += gcnew System::EventHandler(this, &login::PasswordTextBox_TextChanged);
+			this->PasswordTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &login::PasswordTextBox_KeyDown);
 			// 
 			// HidePassCheckBox
 			// 
@@ -278,5 +280,9 @@ namespace gui {
 	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {}
-	};
+	
+	private: System::Void PasswordTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+	
+	private: System::Void NatIDTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+};
 }

@@ -168,6 +168,7 @@ namespace gui {
 			this->NameTextBox->Click += gcnew System::EventHandler(this, &reg::NameTextBox_Click);
 			this->NameTextBox->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			this->NameTextBox->TextChanged += gcnew System::EventHandler(this, &reg::NameTextBox_TextChanged);
+			this->NameTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &reg::NameTextBox_KeyDown);
 			// 
 			// PasswordTextBox
 			// 
@@ -202,6 +203,7 @@ namespace gui {
 			this->NatIDTextBox->TabIndex = 12;
 			this->NatIDTextBox->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			this->NatIDTextBox->TextChanged += gcnew System::EventHandler(this, &reg::NatIDTextBox_TextChanged);
+			this->NatIDTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &reg::NatIDTextBox_KeyDown);
 			// 
 			// UnseeButton
 			// 
@@ -477,7 +479,7 @@ namespace gui {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
-			this->label4->ForeColor = System::Drawing::Color::White;
+			this->label4->ForeColor = System::Drawing::Color::Red;
 			this->label4->Location = System::Drawing::Point(175, 690);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(0, 38);
@@ -519,6 +521,7 @@ namespace gui {
 			this->Name = L"reg";
 			this->Text = L"Registeration";
 			this->Load += gcnew System::EventHandler(this, &reg::reg_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &reg::reg_KeyDown);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -572,5 +575,10 @@ namespace gui {
 	}
 	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void NameTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+
+	private: System::Void NatIDTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+
+	private: System::Void reg_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+};
 }

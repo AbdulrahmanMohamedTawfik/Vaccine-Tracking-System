@@ -34,7 +34,6 @@ System::Void gui::UserForm::ViewUserInfoButton_Click(System::Object^ sender, Sys
 	EditPassButton->Hide();
 	NewvalueLabel->Hide();
 	NewvalueTextBox->Hide();
-	SuccessLabel->Hide();
 	ErrorLabel->Hide();
 	SubmitButton->Hide();
 	MaleCheckBox->Hide();
@@ -66,6 +65,10 @@ System::Void gui::UserForm::EditUserInfoButton_Click(System::Object^ sender, Sys
 	EditStatusButton->Show();
 	EditPassButton->Show();
 	MaleCheckBox->Hide();
+	ErrorLabel->Hide();
+	SubmitButton->Hide();
+	NewvalueTextBox->Hide();
+	NewvalueLabel->Hide();
 	FemaleCheckBox->Hide();
 	EgyptCheckBox->Hide();
 	AbroadCheckBox->Hide();
@@ -90,6 +93,7 @@ System::Void gui::UserForm::EditNameButton_Click(System::Object^ sender, System:
 	NewvalueLabel->Show();
 	NewvalueTextBox->Show();
 	SubmitButton->Show();
+	ErrorLabel->Hide();
 	MaleCheckBox->Hide();
 	FemaleCheckBox->Hide();
 	EgyptCheckBox->Hide();
@@ -107,6 +111,7 @@ System::Void gui::UserForm::EditIDButton_Click(System::Object^ sender, System::E
 	NewvalueLabel->Show();
 	NewvalueTextBox->Show();
 	SubmitButton->Show();
+	ErrorLabel->Hide();
 	MaleCheckBox->Hide();
 	FemaleCheckBox->Hide();
 	EgyptCheckBox->Hide();
@@ -124,6 +129,7 @@ System::Void gui::UserForm::EditGendrButton_Click(System::Object^ sender, System
 	NewvalueLabel->Show();
 	NewvalueTextBox->Hide();
 	EgyptCheckBox->Hide();
+	ErrorLabel->Hide();
 	AbroadCheckBox->Hide();
 	OtherCountryComboBox->Hide();
 	vaccinatedCheckBox->Hide();
@@ -141,6 +147,7 @@ System::Void gui::UserForm::EditAgeButton_Click(System::Object^ sender, System::
 	NewvalueLabel->Show();
 	NewvalueTextBox->Show();
 	SubmitButton->Show();
+	ErrorLabel->Hide();
 	MaleCheckBox->Hide();
 	FemaleCheckBox->Hide();
 	EgyptCheckBox->Hide();
@@ -157,6 +164,7 @@ System::Void gui::UserForm::EditCountryButton_Click(System::Object^ sender, Syst
 	NewvalueLabel->Text = "New country :";
 	NewvalueLabel->Show();
 	NewvalueTextBox->Hide();
+	ErrorLabel->Hide();
 	MaleCheckBox->Hide();
 	FemaleCheckBox->Hide();
 	EgyptCheckBox->Show();
@@ -174,6 +182,7 @@ System::Void gui::UserForm::EditGovButton_Click(System::Object^ sender, System::
 	NewvalueLabel->Show();
 	NewvalueTextBox->Show();
 	SubmitButton->Show();
+	ErrorLabel->Hide();
 	MaleCheckBox->Hide();
 	FemaleCheckBox->Hide();
 	EgyptCheckBox->Hide();
@@ -191,6 +200,7 @@ System::Void gui::UserForm::EditStatusButton_Click(System::Object^ sender, Syste
 	NewvalueLabel->Show();
 	NewvalueTextBox->Hide();
 	MaleCheckBox->Hide();
+	ErrorLabel->Hide();
 	FemaleCheckBox->Hide();
 	EgyptCheckBox->Hide();
 	AbroadCheckBox->Hide();
@@ -207,6 +217,7 @@ System::Void gui::UserForm::EditPassButton_Click(System::Object^ sender, System:
 	NewvalueLabel->Show();
 	NewvalueTextBox->Show();
 	SubmitButton->Show();
+	ErrorLabel->Hide();
 	MaleCheckBox->Hide();
 	FemaleCheckBox->Hide();
 	EgyptCheckBox->Hide();
@@ -226,27 +237,27 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 	new_value = msclr::interop::marshal_as< std::string >(str_sys);//convert from sys string to std string
 	if ((MaleCheckBox->Checked == false) && (FemaleCheckBox->Checked == false) && (EgyptCheckBox->Checked == false) && (AbroadCheckBox->Checked == false) && (vaccinatedCheckBox->Checked == false) && (ApplyCheckBox->Checked == false) && (NewvalueTextBox->Text == ""))
 	{
-
+		ErrorLabel->ForeColor = System::Drawing::Color::Red;
 		ErrorLabel->Show();
-		SuccessLabel->Hide();
 		ErrorLabel->Text = "Really? Submit Empty!";
 
 	}
 	else
 	{
-		SuccessLabel->Hide();
 		ErrorLabel->Hide();
 		if (NewvalueLabel->Text == "New Name :")
 		{
 			u.editName(new_value, users);
-			SuccessLabel->Show();
-			SuccessLabel->Text = "Name Changed succesfully!";
+			ErrorLabel->ForeColor = System::Drawing::Color::Green;
+			ErrorLabel->Show();
+			ErrorLabel->Text = "Name Changed succesfully!";
 		}
 		else if (NewvalueLabel->Text == "New Age :")
 		{
 			u.editAge(new_value, users);
-			SuccessLabel->Show();
-			SuccessLabel->Text = " Age Changed succesfully!";
+			ErrorLabel->ForeColor = System::Drawing::Color::Green;
+			ErrorLabel->Show();
+			ErrorLabel->Text = " Age Changed succesfully!";
 		}
 		else if (NewvalueLabel->Text == "New gender :")
 		{
@@ -259,59 +270,91 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 				new_value = "female";
 			}
 			u.editGender(new_value, users);
-			SuccessLabel->Show();
-			SuccessLabel->Text = "Gender Changed succesfully!";
+			ErrorLabel->ForeColor = System::Drawing::Color::Green;
+			ErrorLabel->Show();
+			ErrorLabel->Text = "Gender Changed succesfully!";
 		}
 		else if (NewvalueLabel->Text == "New country :")
 		{
 			if (EgyptCheckBox->Checked)
 			{
 				new_value = "Egypt";
+				u.editCountry(new_value, users);
+				ErrorLabel->ForeColor = System::Drawing::Color::Green;
+				ErrorLabel->Text = "Country Changed succesfully!";
+				ErrorLabel->Show();
 			}
 			else if (AbroadCheckBox->Checked)
 			{
 				str_sys = OtherCountryComboBox->Text;
 				string choosed_country = msclr::interop::marshal_as< std::string >(str_sys);
-				new_value = ("Abroad: " + choosed_country);
+				if (choosed_country == "")
+				{
+					ErrorLabel->ForeColor = System::Drawing::Color::Red;
+					ErrorLabel->Text = "Choose living country";
+					ErrorLabel->Show();
+				}
+				else
+				{
+					new_value = ("Abroad: " + choosed_country);
+					u.editCountry(new_value, users);
+					ErrorLabel->ForeColor = System::Drawing::Color::Green;
+					ErrorLabel->Text = "Country Changed succesfully!";
+					ErrorLabel->Show();
+				}
 			}
-			u.editCountry(new_value, users);
-			SuccessLabel->Show();
-			SuccessLabel->Text = "Country Changed succesfully!";
 		}
 		else if (NewvalueLabel->Text == "New status :")
 		{
 			if (ApplyCheckBox->Checked)
 			{
 				new_value = "not vaccinated";
+				u.editStatus(new_value, users);
+				ErrorLabel->ForeColor = System::Drawing::Color::Green;
+				ErrorLabel->Text = "Status Changed succesfully!";
+				ErrorLabel->Show();
 			}
 			else if (vaccinatedCheckBox->Checked)
 			{
 				str_sys = DoseComboBox->Text;
 				string choosed_status = msclr::interop::marshal_as< std::string >(str_sys);
-				new_value = ("vaccinated: " + choosed_status);
+				if (choosed_status=="")
+				{
+					ErrorLabel->ForeColor = System::Drawing::Color::Red;
+					ErrorLabel->Text = "Choose 1st dose or both doses";
+					ErrorLabel->Show();
+				}
+				else
+				{
+					new_value = ("vaccinated: " + choosed_status);
+					u.editStatus(new_value, users);
+					ErrorLabel->ForeColor = System::Drawing::Color::Green;
+					ErrorLabel->Text = "Status Changed succesfully!";
+					ErrorLabel->Show();
+				}
 			}
-			u.editStatus(new_value, users);
-			SuccessLabel->Show();
-			SuccessLabel->Text = "Status Changed succesfully!";
 		}
 		else if (NewvalueLabel->Text == "New pass :")
 		{
 			u.editPassword(new_value, users);
-			SuccessLabel->Show();
-			SuccessLabel->Text = "Password Changed succesfully!";
+			ErrorLabel->ForeColor = System::Drawing::Color::Green;
+			ErrorLabel->Show();
+			ErrorLabel->Text = "Password Changed succesfully!";
 		}
 		else //if (NewvalueLabel->Text == "New ID :")
 		{
 			if (u.check_id(new_value))
 			{
+				ErrorLabel->ForeColor = System::Drawing::Color::Red;
 				ErrorLabel->Show();
 				ErrorLabel->Text = "ID is already used!";
 			}
 			else
 			{
 				u.editId(new_value, users);
-				SuccessLabel->Show();
-				SuccessLabel->Text = "ID Changed succesfully!";
+				ErrorLabel->ForeColor = System::Drawing::Color::Green;
+				ErrorLabel->Show();
+				ErrorLabel->Text = "ID Changed succesfully!";
 			}
 		}
 		NewvalueTextBox->Text = "";
@@ -323,6 +366,10 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 		ApplyCheckBox->Checked = false;
 		u.update_files(users);
 	}
+	/*if ((ApplyCheckBox->Checked)||(AbroadCheckBox->Checked))
+	{
+		ErrorLabel->Hide();
+	}*/
 	return System::Void();
 }
 

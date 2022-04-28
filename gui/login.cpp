@@ -79,3 +79,21 @@ System::Void gui::login::label5_Click(System::Object^ sender, System::EventArgs^
 	regform->Show();
 	return System::Void();
 }
+
+System::Void gui::login::PasswordTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+{
+	if (e->KeyValue == (int)Keys::Enter)//if enter is pressed
+	{
+		LoginButton->PerformClick();
+	}
+	return System::Void();
+}
+
+System::Void gui::login::NatIDTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+{
+	if (e->KeyValue == (int)Keys::Enter)
+	{
+		PasswordTextBox->Focus();
+	}
+	return System::Void();
+}
