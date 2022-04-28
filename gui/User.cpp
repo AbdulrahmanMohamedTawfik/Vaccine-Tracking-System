@@ -1,10 +1,12 @@
 #include "User.h"
 #include <iostream>
 #include <fstream>
-#include<map>
+
+#include<unordered_map>
 using namespace std;
 string User::NAtIDTextBox_Text;
-map<string, User>::iterator it;
+bool User::del_user_found;
+unordered_map<string, User>::iterator it;
 bool User::check_id(string id)
 {
 	fstream IDFile;
@@ -21,7 +23,7 @@ bool User::check_id(string id)
 	}
 }
 
-void User::read_data(map<string, User>& users) {
+void User::read_data(unordered_map<string, User>& users) {
 	fstream File1;
 	fstream File2;
 	fstream File3;
@@ -67,7 +69,8 @@ void User::read_data(map<string, User>& users) {
 	File7.close();
 	File8.close();
 }
-void User::update_files(map<string, User>& users)
+
+void User::update_files(unordered_map<string, User>& users)
 {
 	fstream userFile;
 	fstream idFile;
@@ -258,7 +261,7 @@ void User::setNAtIDTextBox_Text(string val)
 	NAtIDTextBox_Text = val;
 }
 
-void User::getUserName(map<string, User>& users)
+void User::getUserName(unordered_map<string, User>& users)
 {
 	cout << "getNAtIDTextBox_Text= " << getNAtIDTextBox_Text();
 	for (it = users.begin(); it != users.end(); it++) {
@@ -278,8 +281,8 @@ void User::setdel_user_found(bool val)
 {
 	del_user_found = val;
 }
-void User::editName(string newName, map<string, User>& users) {
 
+void User::editName(string newName, unordered_map<string, User>& users) {
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
 		{
@@ -289,7 +292,8 @@ void User::editName(string newName, map<string, User>& users) {
 
 	}
 }
-void User::editId(string newId, map<string, User>& users) {
+
+void User::editId(string newId, unordered_map<string, User>& users) {
 
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
@@ -304,7 +308,7 @@ void User::editId(string newId, map<string, User>& users) {
 
 
 }
-void User::editGender(string newGender, map<string, User>& users) {
+void User::editGender(string newGender, unordered_map<string, User>& users) {
 
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
@@ -317,7 +321,7 @@ void User::editGender(string newGender, map<string, User>& users) {
 
 	}
 }
-void User::editCountry(string newCountry, map<string, User>& users) {
+void User::editCountry(string newCountry, unordered_map<string, User>& users) {
 
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
@@ -330,7 +334,7 @@ void User::editCountry(string newCountry, map<string, User>& users) {
 
 	}
 }
-void User::editAge(string newAge, map<string, User>& users) {
+void User::editAge(string newAge, unordered_map<string, User>& users) {
 
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
@@ -343,7 +347,7 @@ void User::editAge(string newAge, map<string, User>& users) {
 
 	}
 }
-void User::editStatus(string newStatus, map<string, User>& users) {
+void User::editStatus(string newStatus, unordered_map<string, User>& users) {
 
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
@@ -356,8 +360,7 @@ void User::editStatus(string newStatus, map<string, User>& users) {
 
 	}
 }
-void User::editPassword(string newPassword, map<string, User>& users) {
-
+void User::editPassword(string newPassword, unordered_map<string, User>& users) {
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
 		{
@@ -369,7 +372,7 @@ void User::editPassword(string newPassword, map<string, User>& users) {
 
 	}
 }
-void User::editGov(string newGov, map<string, User>& users) {
+void User::editGov(string newGov, unordered_map<string, User>& users) {
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
 		{
@@ -378,6 +381,5 @@ void User::editGov(string newGov, map<string, User>& users) {
 			break;
 
 		}
-
 	}
 }

@@ -1,5 +1,5 @@
 #pragma once
-#include <map>
+#include <unordered_map>
 #include <iostream>
 #include "User.h"
 using namespace std;
@@ -13,9 +13,9 @@ private:
 
 public:
 	Admin();
-	string viewUsername(string userNationalID, map<string, User> users);
-	string viewUser(string userNationalID, map<string, User> users);
-	string viewAll(map<string, User> users);
-	void deleteUser(string userNationalID, map<string, User>& users);
-	void deleteAll(map<string, User>& users);
+	string viewUsername(string userNationalID, unordered_map<string, User> users);
+	string viewUser(string userNationalID, unordered_map<string, User> users);
+	string viewAll(unordered_map<string, User> users);
+	void deleteUser(string userNationalID, unordered_map<string, User>& users);
+	void deleteAll(unordered_map<string, User>& users);
 };

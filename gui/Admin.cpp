@@ -7,7 +7,7 @@ Admin::Admin()
 	this->password = "admin";
 }
 
-string Admin::viewUsername(string userNationalID, map<string, User> users)//Hello + username
+string Admin::viewUsername(string userNationalID, unordered_map<string, User> users)//Hello + username
 {
 	for (auto it : users) {
 		if (it.first == userNationalID)
@@ -18,7 +18,7 @@ string Admin::viewUsername(string userNationalID, map<string, User> users)//Hell
 	return("User");
 }
 
-string Admin::viewUser(string userNationalID, map<string, User> users)
+string Admin::viewUser(string userNationalID, unordered_map<string, User> users)
 {
 	for (auto it : users) {
 		if (it.first == userNationalID)
@@ -29,7 +29,7 @@ string Admin::viewUser(string userNationalID, map<string, User> users)
 	return("User Not Found!");
 }
 
-string Admin::viewAll(map<string, User> users)
+string Admin::viewAll(unordered_map<string, User> users)
 {
 	string temp;
 	for (auto it : users) {
@@ -40,7 +40,7 @@ string Admin::viewAll(map<string, User> users)
 	return temp;
 }
 
-void Admin::deleteUser(string userNationalID, map<string, User>& users)
+void Admin::deleteUser(string userNationalID, unordered_map<string, User>& users)
 {
 	User u;
 	if (u.check_id(userNationalID))
@@ -54,7 +54,7 @@ void Admin::deleteUser(string userNationalID, map<string, User>& users)
 	}
 }
 
-void Admin::deleteAll(map<string, User>& users)
+void Admin::deleteAll(unordered_map<string, User>& users)
 {
 	users.clear();
 }

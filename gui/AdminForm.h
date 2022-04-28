@@ -233,7 +233,8 @@ namespace gui {
 	private: System::Void DeleteInfoButton_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void DeleteAllUsers_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void AdminForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	}
+	
+  private: System::Void AdminForm_Load(System::Object^ sender, System::EventArgs^ e);
+	
 	};
 }

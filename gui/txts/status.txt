@@ -1,5 +1,0 @@
-not vaccinated
-not vaccinated
-not vaccinated
-vaccinated: both doses
-vaccinated: both doses

@@ -2,15 +2,18 @@
 #include "Admin.h"
 #include "User.h"
 #include "login.h"
-#include <map>
+
+#include <unordered_map>
 #include <msclr/marshal_cppstd.h>
 #include <string>
 //#include<iostream>
 //using namespace std;
-map<string, User> users;
+unordered_map<string, User> users;
+User u;
+Admin a;
 System::Void gui::UserForm::UserForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
-	User u;
+	
 	u.read_data(users);
 	u.getUserName(users);
 	string std_str = u.NameText;
@@ -42,11 +45,9 @@ System::Void gui::UserForm::ViewUserInfoButton_Click(System::Object^ sender, Sys
 	vaccinatedCheckBox->Hide();
 	ApplyCheckBox->Hide();
 	DoseComboBox->Hide();
-
-	User u;
+	
 	login^ l = gcnew login();
-	u.read_data(users);
-	Admin a;
+	
 	string contents = a.viewUser(u.getNAtIDTextBox_Text(), users);
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 	UserInfoRichTextBox->Show();
@@ -77,9 +78,6 @@ System::Void gui::UserForm::EditUserInfoButton_Click(System::Object^ sender, Sys
 
 System::Void gui::UserForm::DeleteInfoButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	User u;
-	u.read_data(users);
-	Admin a;
 	a.deleteUser(u.getNAtIDTextBox_Text(), users);
 	u.update_files(users);
 	this->Close();
@@ -222,9 +220,6 @@ System::Void gui::UserForm::EditPassButton_Click(System::Object^ sender, System:
 
 System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	User u;
-	Admin a;
-	u.read_data(users);
 	string new_value;
 	String^ str_sys;
 	str_sys = NewvalueTextBox->Text;

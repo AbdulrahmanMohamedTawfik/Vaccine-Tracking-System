@@ -1,13 +1,13 @@
 #pragma once
 #include <string>
-#include <map>
+#include <unordered_map>
 using namespace std;
 
 class User
 {
 private:
 	static string NAtIDTextBox_Text;
-	bool del_user_found;
+	static bool del_user_found;
 public:
 	string name;
 	string id;
@@ -33,25 +33,24 @@ public:
 		this->status = status;
 	};
 	bool check_id(string x);
-	//void display();
-	void read_data(map<string, User>& users);
-	void update_files(map<string, User>& users);
+	void read_data(unordered_map<string, User>& users);
+	void update_files(unordered_map<string, User>& users);
 	void login(string, string);
 	void registration(string FullName, string NatID, string Pass, string Genderr, string Agee, string Countryy, string Gov, string Statuss);
 	~User();
 	string static getNAtIDTextBox_Text();
 	void static setNAtIDTextBox_Text(string val);
-	void getUserName(map<string, User>& users);
-	bool getdel_user_found();
-	void setdel_user_found(bool val);
+	void getUserName(unordered_map<string, User>& users);
+	bool static getdel_user_found();
+	void static setdel_user_found(bool val);
 
-	void editId(string id, map<string, User>& users);
-	void editName(string name, map<string, User>& users);
-	void editGender(string gender, map<string, User>& users);
-	void editAge(string age, map<string, User>& users);
-	void editCountry(string Country, map<string, User>& users);
-	void editGov(string gov, map<string, User>& users);
-	void editPassword(string password, map<string, User>& users);
-	void editStatus(string age, map<string, User>& users);
+	void editId(string id, unordered_map<string, User>& users);
+	void editName(string name, unordered_map<string, User>& users);
+	void editGender(string gender, unordered_map<string, User>& users);
+	void editAge(string age, unordered_map<string, User>& users);
+	void editCountry(string Country, unordered_map<string, User>& users);
+	void editGov(string gov, unordered_map<string, User>& users);
+	void editPassword(string password, unordered_map<string, User>& users);
+	void editStatus(string age, unordered_map<string, User>& users);
 
 };
