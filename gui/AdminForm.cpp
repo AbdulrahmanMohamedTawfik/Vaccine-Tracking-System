@@ -17,6 +17,7 @@ System::Void gui::AdminForm::ViewInfoButton_Click(System::Object^ sender, System
 	all = NationalIDTextBox->Text;
 	string NatID = msclr::interop::marshal_as< std::string >(all);
 	string contents = a1.viewUser(NatID, users_for_admin);
+
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 	richTextBox1->Text = syscontents;
 	return System::Void();
@@ -48,8 +49,6 @@ System::Void gui::AdminForm::DeleteInfoButton_Click(System::Object^ sender, Syst
 {
 
 
-
-
 	String^ all;
 	all = NationalIDTextBox->Text;
 	string NatID = msclr::interop::marshal_as< std::string >(all);
@@ -67,9 +66,7 @@ System::Void gui::AdminForm::DeleteInfoButton_Click(System::Object^ sender, Syst
 }
 
 System::Void gui::AdminForm::DeleteAllUsers_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	
-	
+{	
 
 
 	String^ all;

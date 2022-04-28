@@ -1,4 +1,0 @@
-cairo
-giza
-gov
-giza

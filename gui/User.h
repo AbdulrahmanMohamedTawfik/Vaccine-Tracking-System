@@ -33,7 +33,6 @@ public:
 		this->status = status;
 	};
 	bool check_id(string x);
-	//void display();
 	void read_data(unordered_map<string, User>& users);
 	void update_files(unordered_map<string, User>& users);
 	void login(string, string);

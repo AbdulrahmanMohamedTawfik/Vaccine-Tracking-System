@@ -69,6 +69,7 @@ void User::read_data(unordered_map<string, User>& users) {
 	File7.close();
 	File8.close();
 }
+
 void User::update_files(unordered_map<string, User>& users)
 {
 	fstream userFile;
@@ -280,8 +281,8 @@ void User::setdel_user_found(bool val)
 {
 	del_user_found = val;
 }
-void User::editName(string newName, unordered_map<string, User>& users) {
 
+void User::editName(string newName, unordered_map<string, User>& users) {
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
 		{
@@ -291,6 +292,7 @@ void User::editName(string newName, unordered_map<string, User>& users) {
 
 	}
 }
+
 void User::editId(string newId, unordered_map<string, User>& users) {
 
 	for (it = users.begin(); it != users.end(); it++) {
@@ -359,7 +361,6 @@ void User::editStatus(string newStatus, unordered_map<string, User>& users) {
 	}
 }
 void User::editPassword(string newPassword, unordered_map<string, User>& users) {
-
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
 		{
@@ -380,6 +381,5 @@ void User::editGov(string newGov, unordered_map<string, User>& users) {
 			break;
 
 		}
-
 	}
 }
