@@ -1,6 +1,21 @@
 #pragma once
+#include <unordered_map>
+#include <iostream>
+#include "User.h"
+using namespace std;
+
+
 class Admin
 {
+private:
+	string nationalID;
+	string password;
 
+public:
+	Admin();
+	string viewUsername(string userNationalID, unordered_map<string, User> users);
+	string viewUser(string userNationalID, unordered_map<string, User> users);
+	string viewAll(unordered_map<string, User> users);
+	void deleteUser(string userNationalID, unordered_map<string, User>& users);
+	void deleteAll(unordered_map<string, User>& users);
 };
-

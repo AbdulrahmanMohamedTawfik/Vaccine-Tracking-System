@@ -48,7 +48,7 @@ namespace gui {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -86,7 +86,7 @@ namespace gui {
 
 		}
 #pragma endregion
-	
+
 	private: System::Void AwaitingList_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void UserInfoLabel_Click(System::Object^ sender, System::EventArgs^ e) {

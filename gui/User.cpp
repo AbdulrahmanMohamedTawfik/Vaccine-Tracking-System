@@ -1,9 +1,13 @@
 #include "User.h"
 #include <iostream>
 #include <fstream>
-#include<map>
+
+#include<unordered_map>
 using namespace std;
-bool User::check_id(string x)
+string User::NAtIDTextBox_Text;
+bool User::del_user_found;
+unordered_map<string, User>::iterator it;
+bool User::check_id(string id)
 {
 	fstream IDFile;
 	IDFile.open("txts\\id.txt", ios::in);
@@ -12,14 +16,14 @@ bool User::check_id(string x)
 		string line;
 		while (getline(IDFile, line))
 		{
-			if (line == x)
+			if (line == id)
 				return true;
 		}
 		return false;
 	}
 }
-map<string, User> users;
-void User::read_data() {
+
+void User::read_data(unordered_map<string, User>& users) {
 	fstream File1;
 	fstream File2;
 	fstream File3;
@@ -65,7 +69,47 @@ void User::read_data() {
 	File7.close();
 	File8.close();
 }
+void User::update_files(unordered_map<string, User>& users)
+{
+	fstream userFile;
+	fstream idFile;
+	fstream ageFile;
+	fstream contFile;
+	fstream govFile;
+	fstream passFile;
+	fstream statusFile;
+	fstream genderFile;
+	userFile.open("txts\\users.txt", ofstream::out | ofstream::trunc);
+	idFile.open("txts\\id.txt", ofstream::out | ofstream::trunc);
+	ageFile.open("txts\\age.txt", ofstream::out | ofstream::trunc);
+	contFile.open("txts\\country.txt", ofstream::out | ofstream::trunc);
+	govFile.open("txts\\governorate.txt", ofstream::out | ofstream::trunc);
+	passFile.open("txts\\pass.txt", ofstream::out | ofstream::trunc);
+	statusFile.open("txts\\status.txt", ofstream::out | ofstream::trunc);
+	genderFile.open("txts\\gender.txt", ofstream::out | ofstream::trunc);
 
+	for (auto it : users)
+	{
+		//cout << it.second.id << endl;
+		userFile << it.second.name << '\n';
+		idFile << it.second.id << '\n';
+		ageFile << it.second.age << '\n';
+		contFile << it.second.Country << '\n';
+		govFile << it.second.Governorate << '\n';
+		passFile << it.second.password << '\n';
+		statusFile << it.second.status << '\n';
+		genderFile << it.second.gender << '\n';
+	}
+
+	userFile.close();
+	idFile.close();
+	ageFile.close();
+	contFile.close();
+	govFile.close();
+	passFile.close();
+	statusFile.close();
+	genderFile.close();
+}
 void User::login(string natID, string pass)
 {
 	int indexofuser;
@@ -129,6 +173,7 @@ void User::login(string natID, string pass)
 		}
 
 	}
+
 	id_File.close();
 	pass_File.close();
 }
@@ -143,7 +188,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 		File << FullName;
 		File << "\n";
 	}
-	
+
 	File.close();
 	File.open("txts\\id.txt", ios::app);
 	if (File.is_open())
@@ -159,7 +204,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 		File << Age;
 		File << "\n";
 	}
-	
+
 	File.close();
 	File.open("txts\\country.txt", ios::app);
 	if (File.is_open())
@@ -202,16 +247,139 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 		File << "\n";
 	}
 	User user1(FullName, NatID, Gender, Age, Country, Gov, Pass, Status);
-	users.insert(pair<string, User>(id, user1));
-	display();
 }
-void User::display() {
-	map<string, User>::iterator it;
-	for (it = users.begin(); it != users.end(); it++) {
+User::~User()
+{
+}
+string User::getNAtIDTextBox_Text()
+{
+	return NAtIDTextBox_Text;
+}
+void User::setNAtIDTextBox_Text(string val)
+{
+	NAtIDTextBox_Text = val;
+}
 
-		cout << it->second.id << endl;
-		cout << it->second.name << endl;
+void User::getUserName(unordered_map<string, User>& users)
+{
+	cout << "getNAtIDTextBox_Text= " << getNAtIDTextBox_Text();
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
+		{
+			NameText = it->second.name;
+		}
+	}
+}
+
+bool User::getdel_user_found()
+{
+	return del_user_found;
+}
+
+void User::setdel_user_found(bool val)
+{
+	del_user_found = val;
+}
+void User::editName(string newName, unordered_map<string, User>& users) {
+
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
+		{
+			it->second.name = newName;
+			break;
+		}
+
+	}
+}
+void User::editId(string newId, unordered_map<string, User>& users) {
+
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
+		{
+
+			it->second.id = newId;
+			break;
+
+		}
 
 	}
 
+
+}
+void User::editGender(string newGender, unordered_map<string, User>& users) {
+
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
+		{
+
+			it->second.gender = newGender;
+			break;
+
+		}
+
+	}
+}
+void User::editCountry(string newCountry, unordered_map<string, User>& users) {
+
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
+		{
+
+			it->second.Country = newCountry;
+			break;
+
+		}
+
+	}
+}
+void User::editAge(string newAge, unordered_map<string, User>& users) {
+
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
+		{
+
+			it->second.age = newAge;
+			break;
+
+		}
+
+	}
+}
+void User::editStatus(string newStatus, unordered_map<string, User>& users) {
+
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
+		{
+
+			it->second.status = newStatus;
+			break;
+
+		}
+
+	}
+}
+void User::editPassword(string newPassword, unordered_map<string, User>& users) {
+
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
+		{
+
+			it->second.password = newPassword;
+			break;
+
+		}
+
+	}
+}
+void User::editGov(string newGov, unordered_map<string, User>& users) {
+	for (it = users.begin(); it != users.end(); it++) {
+		if (it->first == getNAtIDTextBox_Text())
+		{
+
+			it->second.Governorate = newGov;
+			break;
+
+		}
+
+	}
 }

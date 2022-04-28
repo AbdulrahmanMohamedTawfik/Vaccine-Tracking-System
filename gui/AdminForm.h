@@ -1,6 +1,5 @@
 #pragma once
 #include"AwaitingList.h"
-#include"UserInfo.h"
 namespace gui {
 
 	using namespace System;
@@ -40,15 +39,21 @@ namespace gui {
 	private: System::Windows::Forms::Label^ NationalIDLabel;
 	private: System::Windows::Forms::Button^ DeleteInfoButton;
 	private: System::Windows::Forms::Button^ ViewAwaitingListButton;
-	private: System::Windows::Forms::Label^ label1;
+
 	private: System::Windows::Forms::Label^ HelloAdminLabel;
+	private: System::Windows::Forms::Button^ DeleteAllUsers;
+	private: System::Windows::Forms::Button^ ViewAllUsers;
+
+	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Button^ StatButton;
 	protected:
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -62,17 +67,21 @@ namespace gui {
 			this->NationalIDLabel = (gcnew System::Windows::Forms::Label());
 			this->DeleteInfoButton = (gcnew System::Windows::Forms::Button());
 			this->ViewAwaitingListButton = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->HelloAdminLabel = (gcnew System::Windows::Forms::Label());
+			this->DeleteAllUsers = (gcnew System::Windows::Forms::Button());
+			this->ViewAllUsers = (gcnew System::Windows::Forms::Button());
+			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->StatButton = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// ViewInfoButton
 			// 
 			this->ViewInfoButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ViewInfoButton->Location = System::Drawing::Point(533, 270);
+			this->ViewInfoButton->Location = System::Drawing::Point(533, 218);
 			this->ViewInfoButton->Name = L"ViewInfoButton";
-			this->ViewInfoButton->Size = System::Drawing::Size(346, 60);
+			this->ViewInfoButton->Size = System::Drawing::Size(373, 60);
 			this->ViewInfoButton->TabIndex = 3;
 			this->ViewInfoButton->Text = L"View User Info";
 			this->ViewInfoButton->UseVisualStyleBackColor = true;
@@ -82,7 +91,7 @@ namespace gui {
 			// 
 			this->NationalIDTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NationalIDTextBox->Location = System::Drawing::Point(533, 160);
+			this->NationalIDTextBox->Location = System::Drawing::Point(533, 139);
 			this->NationalIDTextBox->Name = L"NationalIDTextBox";
 			this->NationalIDTextBox->Size = System::Drawing::Size(329, 54);
 			this->NationalIDTextBox->TabIndex = 5;
@@ -92,7 +101,7 @@ namespace gui {
 			this->NationalIDLabel->AutoSize = true;
 			this->NationalIDLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NationalIDLabel->Location = System::Drawing::Point(182, 163);
+			this->NationalIDLabel->Location = System::Drawing::Point(185, 146);
 			this->NationalIDLabel->Name = L"NationalIDLabel";
 			this->NationalIDLabel->Size = System::Drawing::Size(323, 47);
 			this->NationalIDLabel->TabIndex = 6;
@@ -102,9 +111,9 @@ namespace gui {
 			// 
 			this->DeleteInfoButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->DeleteInfoButton->Location = System::Drawing::Point(533, 402);
+			this->DeleteInfoButton->Location = System::Drawing::Point(533, 416);
 			this->DeleteInfoButton->Name = L"DeleteInfoButton";
-			this->DeleteInfoButton->Size = System::Drawing::Size(346, 60);
+			this->DeleteInfoButton->Size = System::Drawing::Size(373, 60);
 			this->DeleteInfoButton->TabIndex = 7;
 			this->DeleteInfoButton->Text = L"Delete User Info";
 			this->DeleteInfoButton->UseVisualStyleBackColor = true;
@@ -114,27 +123,13 @@ namespace gui {
 			// 
 			this->ViewAwaitingListButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ViewAwaitingListButton->Location = System::Drawing::Point(533, 336);
+			this->ViewAwaitingListButton->Location = System::Drawing::Point(533, 350);
 			this->ViewAwaitingListButton->Name = L"ViewAwaitingListButton";
-			this->ViewAwaitingListButton->Size = System::Drawing::Size(346, 60);
+			this->ViewAwaitingListButton->Size = System::Drawing::Size(373, 60);
 			this->ViewAwaitingListButton->TabIndex = 8;
 			this->ViewAwaitingListButton->Text = L"View awaiting list";
 			this->ViewAwaitingListButton->UseVisualStyleBackColor = true;
 			this->ViewAwaitingListButton->Click += gcnew System::EventHandler(this, &AdminForm::ViewAwaitingListButton_Click);
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::SystemColors::Control;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(488, 481);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(44, 47);
-			this->label1->TabIndex = 9;
-			this->label1->Text = L"...";
 			// 
 			// HelloAdminLabel
 			// 
@@ -147,13 +142,75 @@ namespace gui {
 			this->HelloAdminLabel->TabIndex = 10;
 			this->HelloAdminLabel->Text = L"Hello Admin";
 			// 
+			// DeleteAllUsers
+			// 
+			this->DeleteAllUsers->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->DeleteAllUsers->Location = System::Drawing::Point(533, 482);
+			this->DeleteAllUsers->Name = L"DeleteAllUsers";
+			this->DeleteAllUsers->Size = System::Drawing::Size(373, 60);
+			this->DeleteAllUsers->TabIndex = 11;
+			this->DeleteAllUsers->Text = L"Delete All Users";
+			this->DeleteAllUsers->UseVisualStyleBackColor = true;
+			this->DeleteAllUsers->Click += gcnew System::EventHandler(this, &AdminForm::DeleteAllUsers_Click);
+			// 
+			// ViewAllUsers
+			// 
+			this->ViewAllUsers->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ViewAllUsers->Location = System::Drawing::Point(533, 284);
+			this->ViewAllUsers->Name = L"ViewAllUsers";
+			this->ViewAllUsers->Size = System::Drawing::Size(373, 60);
+			this->ViewAllUsers->TabIndex = 12;
+			this->ViewAllUsers->Text = L"View All Users";
+			this->ViewAllUsers->UseVisualStyleBackColor = true;
+			this->ViewAllUsers->Click += gcnew System::EventHandler(this, &AdminForm::ViewAllUsers_Click);
+			// 
+			// richTextBox1
+			// 
+			this->richTextBox1->BackColor = System::Drawing::SystemColors::Control;
+			this->richTextBox1->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->richTextBox1->ForeColor = System::Drawing::SystemColors::MenuText;
+			this->richTextBox1->Location = System::Drawing::Point(984, 139);
+			this->richTextBox1->Name = L"richTextBox1";
+			this->richTextBox1->Size = System::Drawing::Size(357, 358);
+			this->richTextBox1->TabIndex = 14;
+			this->richTextBox1->Text = L"";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(976, 79);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(102, 47);
+			this->label2->TabIndex = 15;
+			this->label2->Text = L"Info:";
+			// 
+			// StatButton
+			// 
+			this->StatButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->StatButton->Location = System::Drawing::Point(533, 548);
+			this->StatButton->Name = L"StatButton";
+			this->StatButton->Size = System::Drawing::Size(373, 60);
+			this->StatButton->TabIndex = 16;
+			this->StatButton->Text = L"Statstics Dashboard";
+			this->StatButton->UseVisualStyleBackColor = true;
+			// 
 			// AdminForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1254, 537);
+			this->ClientSize = System::Drawing::Size(1390, 607);
+			this->Controls->Add(this->StatButton);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->richTextBox1);
+			this->Controls->Add(this->ViewAllUsers);
+			this->Controls->Add(this->DeleteAllUsers);
 			this->Controls->Add(this->HelloAdminLabel);
-			this->Controls->Add(this->label1);
 			this->Controls->Add(this->ViewAwaitingListButton);
 			this->Controls->Add(this->DeleteInfoButton);
 			this->Controls->Add(this->NationalIDLabel);
@@ -161,30 +218,22 @@ namespace gui {
 			this->Controls->Add(this->ViewInfoButton);
 			this->Name = L"AdminForm";
 			this->Text = L"Admin";
+			this->Load += gcnew System::EventHandler(this, &AdminForm::AdminForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void ViewInfoButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		UserInfo^ userinfo = gcnew UserInfo();
-		userinfo->Show();
+	private: System::Void ViewInfoButton_Click(System::Object^ sender, System::EventArgs^ e);
 
-		//function call
-		label1->Text = "User Info showed successfully";
+	private: System::Void ViewAllUsers_Click(System::Object^ sender, System::EventArgs^ e);
 
-	}
-	private: System::Void ViewAwaitingListButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		AwaitingList^ awaitinglist = gcnew AwaitingList();
-		awaitinglist->Show();
+	private: System::Void ViewAwaitingListButton_Click(System::Object^ sender, System::EventArgs^ e);
 
-		//function call
-		label1->Text = "Awaiting list viewed successfully";
+	private: System::Void DeleteInfoButton_Click(System::Object^ sender, System::EventArgs^ e);
 
-	}
-	private: System::Void DeleteInfoButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		label1->Text = "User Deletet successfully";
-
-	}
-};
+	private: System::Void DeleteAllUsers_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void AdminForm_Load(System::Object^ sender, System::EventArgs^ e);
+	
+	};
 }

@@ -38,22 +38,18 @@ namespace gui {
 	private: System::Windows::Forms::Button^ LoginButton;
 	private: System::Windows::Forms::Button^ RegisterButton;
 	private: System::Windows::Forms::Button^ ExitButton;
+	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label1;
-	protected:
-
-
-
-	protected:
-
-	protected:
-
-
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -62,93 +58,168 @@ namespace gui {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(start::typeid));
 			this->LoginButton = (gcnew System::Windows::Forms::Button());
 			this->RegisterButton = (gcnew System::Windows::Forms::Button());
 			this->ExitButton = (gcnew System::Windows::Forms::Button());
+			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->flowLayoutPanel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// LoginButton
 			// 
-			this->LoginButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->LoginButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(174)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
+				static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->LoginButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->LoginButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->LoginButton->Location = System::Drawing::Point(351, 266);
+			this->LoginButton->Location = System::Drawing::Point(606, 354);
 			this->LoginButton->Name = L"LoginButton";
-			this->LoginButton->Size = System::Drawing::Size(128, 60);
+			this->LoginButton->Size = System::Drawing::Size(673, 60);
 			this->LoginButton->TabIndex = 0;
 			this->LoginButton->Text = L"Login";
-			this->LoginButton->UseVisualStyleBackColor = true;
+			this->LoginButton->UseVisualStyleBackColor = false;
 			this->LoginButton->Click += gcnew System::EventHandler(this, &start::LoginButton_Click);
 			// 
 			// RegisterButton
 			// 
-			this->RegisterButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->RegisterButton->Location = System::Drawing::Point(548, 266);
+			this->RegisterButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(174)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
+				static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->RegisterButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->RegisterButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
+			this->RegisterButton->Location = System::Drawing::Point(99, 452);
 			this->RegisterButton->Name = L"RegisterButton";
-			this->RegisterButton->Size = System::Drawing::Size(180, 60);
+			this->RegisterButton->Size = System::Drawing::Size(215, 51);
 			this->RegisterButton->TabIndex = 1;
 			this->RegisterButton->Text = L"Register";
-			this->RegisterButton->UseVisualStyleBackColor = true;
+			this->RegisterButton->UseVisualStyleBackColor = false;
 			this->RegisterButton->Click += gcnew System::EventHandler(this, &start::RegisterButton_Click);
 			// 
 			// ExitButton
 			// 
-			this->ExitButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->ExitButton->Location = System::Drawing::Point(452, 359);
+			this->ExitButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(174)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
+				static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->ExitButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->ExitButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
+			this->ExitButton->Location = System::Drawing::Point(1274, 3);
 			this->ExitButton->Name = L"ExitButton";
-			this->ExitButton->Size = System::Drawing::Size(128, 60);
+			this->ExitButton->Size = System::Drawing::Size(98, 47);
 			this->ExitButton->TabIndex = 2;
 			this->ExitButton->Text = L"Exit";
-			this->ExitButton->UseVisualStyleBackColor = true;
+			this->ExitButton->UseVisualStyleBackColor = false;
 			this->ExitButton->Click += gcnew System::EventHandler(this, &start::ExitButton_Click);
+			// 
+			// flowLayoutPanel1
+			// 
+			this->flowLayoutPanel1->BackColor = System::Drawing::Color::White;
+			this->flowLayoutPanel1->Controls->Add(this->label1);
+			this->flowLayoutPanel1->Controls->Add(this->pictureBox1);
+			this->flowLayoutPanel1->Location = System::Drawing::Point(1, 0);
+			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
+			this->flowLayoutPanel1->Size = System::Drawing::Size(547, 193);
+			this->flowLayoutPanel1->TabIndex = 4;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(469, 86);
+			this->label1->Location = System::Drawing::Point(3, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(101, 47);
-			this->label1->TabIndex = 8;
-			this->label1->Text = L"Hello";
-			this->label1->Click += gcnew System::EventHandler(this, &start::label1_Click);
+			this->label1->Size = System::Drawing::Size(46, 17);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"label1";
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pictureBox1->Location = System::Drawing::Point(3, 20);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(541, 182);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 0;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &start::pictureBox1_Click);
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::White;
+			this->panel1->Controls->Add(this->label2);
+			this->panel1->Controls->Add(this->RegisterButton);
+			this->panel1->Location = System::Drawing::Point(1, 192);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(547, 866);
+			this->panel1->TabIndex = 5;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 21, System::Drawing::FontStyle::Bold));
+			this->label2->ForeColor = System::Drawing::Color::Black;
+			this->label2->Location = System::Drawing::Point(91, 393);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(223, 47);
+			this->label2->TabIndex = 0;
+			this->label2->Text = L"No account\?";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::Transparent;
+			this->label3->Location = System::Drawing::Point(659, 278);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(530, 37);
+			this->label3->TabIndex = 6;
+			this->label3->Text = L"Login now to get vaccination services. ";
 			// 
 			// start
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1349, 523);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->ExitButton);
-			this->Controls->Add(this->RegisterButton);
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->ClientSize = System::Drawing::Size(1390, 1055);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->LoginButton);
+			this->Controls->Add(this->ExitButton);
+			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->flowLayoutPanel1);
+			this->ForeColor = System::Drawing::Color::Transparent;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"start";
-			this->Text = L"start";
+			this->Text = L"Vaccination application";
 			this->Load += gcnew System::EventHandler(this, &start::start_Load);
+			this->flowLayoutPanel1->ResumeLayout(false);
+			this->flowLayoutPanel1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void LoginButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		login^ form = gcnew login();
-		form->Show();
-		//this->Close();
+	private: System::Void LoginButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void RegisterButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void ExitButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void RegisterButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		reg^ form = gcnew reg();
-		form->Show();
-		//this->Close();
+	private: System::Void start_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void ExitButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
+	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void start_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	};
 }
