@@ -10,7 +10,6 @@ System::Void gui::login::LoginButton_Click(System::Object^ sender, System::Event
 	str_sys = NatIDTextBox->Text;
 	string NatID = msclr::interop::marshal_as< std::string >(str_sys);
 	u.setNAtIDTextBox_Text(NatID);
-	//cout << "getNAtIDTextBox_Text= " << u.getNAtIDTextBox_Text() << endl;
 	str_sys = PasswordTextBox->Text;
 	string password = msclr::interop::marshal_as< std::string >(str_sys);
 

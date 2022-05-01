@@ -91,15 +91,14 @@ void User::update_files(unordered_map<string, User>& users)
 
 	for (auto it : users)
 	{
-		//cout << it.second.id << endl;
-		userFile << it.second.name << '\n';
-		idFile << it.second.id << '\n';
-		ageFile << it.second.age << '\n';
-		contFile << it.second.Country << '\n';
-		govFile << it.second.Governorate << '\n';
-		passFile << it.second.password << '\n';
-		statusFile << it.second.status << '\n';
-		genderFile << it.second.gender << '\n';
+		userFile << '\n' + it.second.name;
+		idFile << '\n' + it.second.id;
+		ageFile << '\n' + it.second.age;
+		contFile << '\n' + it.second.Country;
+		govFile << '\n' + it.second.Governorate;
+		passFile << '\n' + it.second.password;
+		statusFile << '\n' + it.second.status;
+		genderFile << '\n' + it.second.gender;
 	}
 
 	userFile.close();
@@ -181,62 +180,59 @@ void User::login(string natID, string pass)
 
 void User::registration(string FullName, string NatID, string Pass, string Gender, string Age, string Country, string Gov, string Status)
 {
-
 	fstream File;
 	File.open("txts\\users.txt", ios::app);
 	if (File.is_open())
 	{
-		File << FullName;
-		File << "\n";
+		File << '\n' + FullName;
 	}
 
 	File.close();
 	File.open("txts\\id.txt", ios::app);
 	if (File.is_open())
 	{
-		File << NatID;
-		File << "\n";
+
+		File << '\n' + NatID;
 	}
 
 	File.close();
 	File.open("txts\\age.txt", ios::app);
 	if (File.is_open())
 	{
-		File << Age;
-		File << "\n";
+
+		File << '\n' + Age;
 	}
 
 	File.close();
 	File.open("txts\\country.txt", ios::app);
 	if (File.is_open())
 	{
-		File << Country;
-		File << "\n";
+
+		File << '\n' + Country;
 	}
 
 	File.close();
 	File.open("txts\\governorate.txt", ios::app);
 	if (File.is_open())
 	{
-		File << Gov;
-		File << "\n";
+
+		File << '\n' + Gov;
 	}
 
 	File.close();
 	File.open("txts\\pass.txt", ios::app);
 	if (File.is_open())
 	{
-		File << Pass;
-		File << "\n";
-	}
 
+		File << '\n' + Pass;
+	}
 
 	File.close();
 	File.open("txts\\status.txt", ios::app);
 	if (File.is_open())
 	{
-		File << Status;
-		File << "\n";
+
+		File << '\n' + Status;
 	}
 
 
@@ -244,8 +240,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 	File.open("txts\\gender.txt", ios::app);
 	if (File.is_open())
 	{
-		File << Gender;
-		File << "\n";
+		File << '\n' + Gender;
 	}
 	User user1(FullName, NatID, Gender, Age, Country, Gov, Pass, Status);
 }
@@ -298,15 +293,10 @@ void User::editId(string newId, unordered_map<string, User>& users) {
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
 		{
-
 			it->second.id = newId;
 			break;
-
 		}
-
 	}
-
-
 }
 void User::editGender(string newGender, unordered_map<string, User>& users) {
 
@@ -339,12 +329,9 @@ void User::editAge(string newAge, unordered_map<string, User>& users) {
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
 		{
-
 			it->second.age = newAge;
 			break;
-
 		}
-
 	}
 }
 void User::editStatus(string newStatus, unordered_map<string, User>& users) {
@@ -352,12 +339,9 @@ void User::editStatus(string newStatus, unordered_map<string, User>& users) {
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
 		{
-
 			it->second.status = newStatus;
 			break;
-
 		}
-
 	}
 }
 void User::editPassword(string newPassword, unordered_map<string, User>& users) {
