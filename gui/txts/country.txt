@@ -1,9 +1,8 @@
-
+Egypt
+Abroad: United Kingdom
 Egypt
 Abroad: United Kingdom
 Abroad: El Salvador
-Abroad: United Kingdom
-Egypt
 Egypt
 Egypt
 Egypt
@@ -11,3 +10,4 @@ Egypt
 Egypt
 Egypt
 Abroad: Benin
+Abroad: Canada

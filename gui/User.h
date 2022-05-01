@@ -9,16 +9,8 @@ private:
 	static string NAtIDTextBox_Text;
 	static bool del_user_found;
 public:
-	string name;
-	string id;
-	string gender;
-	string age;
-	string Country;
-	string Governorate;
-	string password;
-	string status;
-	bool correct_pass;
-	bool correct_NatId;
+	string name, id, gender, age, Country, Governorate, password, status;
+	bool correct_NatId, correct_pass;
 	string NameText;//"Hello " + NameText (in userform)
 public:
 	User() {};
