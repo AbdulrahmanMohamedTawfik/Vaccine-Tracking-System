@@ -1,8 +1,7 @@
 #include "User.h"
 #include <iostream>
 #include <fstream>
-
-#include<unordered_map>
+#include <unordered_map>
 using namespace std;
 string User::NAtIDTextBox_Text;
 bool User::del_user_found;
@@ -24,14 +23,7 @@ bool User::check_id(string id)
 }
 
 void User::read_data(unordered_map<string, User>& users) {
-	fstream File1;
-	fstream File2;
-	fstream File3;
-	fstream File4;
-	fstream File5;
-	fstream File6;
-	fstream File7;
-	fstream File8;
+	fstream File1, File2, File3, File4, File5, File6, File7, File8;
 	File1.open("txts\\users.txt", ios::in);
 	File2.open("txts\\id.txt", ios::in);
 	File3.open("txts\\age.txt", ios::in);
@@ -40,14 +32,7 @@ void User::read_data(unordered_map<string, User>& users) {
 	File6.open("txts\\pass.txt", ios::in);
 	File7.open("txts\\status.txt", ios::in);
 	File8.open("txts\\gender.txt", ios::in);
-	string name;
-	string id;
-	string gender;
-	string age;
-	string Country;
-	string Governorate;
-	string password;
-	string status;
+	string name, id, gender, age, Country, Governorate, password, status;
 	while (getline(File2, id)) {
 		getline(File1, name);
 		getline(File3, age);
@@ -58,7 +43,6 @@ void User::read_data(unordered_map<string, User>& users) {
 		getline(File8, gender);
 		User user1(name, id, gender, age, Country, Governorate, password, status);
 		users.insert(pair<string, User>(id, user1));
-
 	}
 	File1.close();
 	File2.close();
@@ -72,14 +56,7 @@ void User::read_data(unordered_map<string, User>& users) {
 
 void User::update_files(unordered_map<string, User>& users)
 {
-	fstream userFile;
-	fstream idFile;
-	fstream ageFile;
-	fstream contFile;
-	fstream govFile;
-	fstream passFile;
-	fstream statusFile;
-	fstream genderFile;
+	fstream userFile, idFile, ageFile, contFile, govFile, passFile, statusFile, genderFile;
 	userFile.open("txts\\users.txt", ofstream::out | ofstream::trunc);
 	idFile.open("txts\\id.txt", ofstream::out | ofstream::trunc);
 	ageFile.open("txts\\age.txt", ofstream::out | ofstream::trunc);
@@ -91,14 +68,14 @@ void User::update_files(unordered_map<string, User>& users)
 
 	for (auto it : users)
 	{
-		userFile << '\n' + it.second.name;
-		idFile << '\n' + it.second.id;
-		ageFile << '\n' + it.second.age;
-		contFile << '\n' + it.second.Country;
-		govFile << '\n' + it.second.Governorate;
-		passFile << '\n' + it.second.password;
-		statusFile << '\n' + it.second.status;
-		genderFile << '\n' + it.second.gender;
+		userFile << it.second.name + '\n';
+		idFile << it.second.id + '\n';
+		ageFile << it.second.age + '\n';
+		contFile << it.second.Country + '\n';
+		govFile << it.second.Governorate + '\n';
+		passFile << it.second.password + '\n';
+		statusFile << it.second.status + '\n';
+		genderFile << it.second.gender + '\n';
 	}
 
 	userFile.close();
@@ -184,7 +161,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 	File.open("txts\\users.txt", ios::app);
 	if (File.is_open())
 	{
-		File << '\n' + FullName;
+		File << FullName + '\n';
 	}
 
 	File.close();
@@ -192,7 +169,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 	if (File.is_open())
 	{
 
-		File << '\n' + NatID;
+		File << NatID + '\n';
 	}
 
 	File.close();
@@ -200,7 +177,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 	if (File.is_open())
 	{
 
-		File << '\n' + Age;
+		File << Age + '\n';
 	}
 
 	File.close();
@@ -208,7 +185,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 	if (File.is_open())
 	{
 
-		File << '\n' + Country;
+		File << Country + '\n';
 	}
 
 	File.close();
@@ -216,7 +193,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 	if (File.is_open())
 	{
 
-		File << '\n' + Gov;
+		File << Gov + '\n';
 	}
 
 	File.close();
@@ -224,7 +201,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 	if (File.is_open())
 	{
 
-		File << '\n' + Pass;
+		File << Pass + '\n';
 	}
 
 	File.close();
@@ -232,7 +209,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 	if (File.is_open())
 	{
 
-		File << '\n' + Status;
+		File << Status + '\n';
 	}
 
 
@@ -240,7 +217,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 	File.open("txts\\gender.txt", ios::app);
 	if (File.is_open())
 	{
-		File << '\n' + Gender;
+		File << Gender + '\n';
 	}
 	User user1(FullName, NatID, Gender, Age, Country, Gov, Pass, Status);
 }

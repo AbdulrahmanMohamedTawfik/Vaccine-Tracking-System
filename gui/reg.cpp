@@ -59,15 +59,16 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 		status = ("vaccinated: " + choosed_status);
 	}
 
-	if (u.check_id(NatID))
-	{
-		label4->ForeColor = System::Drawing::Color::Red;
-		label4->Text = "ID is already used by another user!";
-	}
-	else if ((NameTextBox->Text == "") || (NatIDTextBox->Text == "") || (PasswordTextBox->Text == "") || ((!MaleCheckBox->Checked) && (!FemaleCheckBox->Checked)) || (AgeTextBox->Text == "") || ((!EgyptCheckBox->Checked) && (!AbroadCheckBox->Checked)) || (GovernorateTextBox->Text == "") || ((!vaccinatedCheckBox->Checked) && (!ApplyCheckBox->Checked)) || ((AbroadCheckBox->Checked) && (OtherCountryComboBox->Text == "")) || ((vaccinatedCheckBox->Checked) && (DoseComboBox->Text == "")))
+	
+	if ((NameTextBox->Text == "") || (NatIDTextBox->Text == "") || (PasswordTextBox->Text == "") || ((!MaleCheckBox->Checked) && (!FemaleCheckBox->Checked)) || (AgeTextBox->Text == "") || ((!EgyptCheckBox->Checked) && (!AbroadCheckBox->Checked)) || (GovernorateTextBox->Text == "") || ((!vaccinatedCheckBox->Checked) && (!ApplyCheckBox->Checked)) || ((AbroadCheckBox->Checked) && (OtherCountryComboBox->Text == "")) || ((vaccinatedCheckBox->Checked) && (DoseComboBox->Text == "")))
 	{
 		label4->ForeColor = System::Drawing::Color::Red;
 		label4->Text = "Missing info! please, fill all feilds";
+	}
+	else if (u.check_id(NatID))
+	{
+		label4->ForeColor = System::Drawing::Color::Red;
+		label4->Text = "ID is already used by another user!";
 	}
 	else
 	{

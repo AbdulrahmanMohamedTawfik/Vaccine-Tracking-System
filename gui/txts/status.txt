@@ -1,4 +1,4 @@
-
+not vaccinated
 not vaccinated
 not vaccinated
 vaccinated: only first dose
@@ -10,4 +10,4 @@ not vaccinated
 not vaccinated
 not vaccinated
 not vaccinated
-not vaccinated
+vaccinated: both doses
