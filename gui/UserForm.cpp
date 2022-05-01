@@ -13,7 +13,7 @@ User u;
 Admin a;
 System::Void gui::UserForm::UserForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
-	
+
 	u.read_data(users);
 	u.getUserName(users);
 	string std_str = u.NameText;
@@ -44,9 +44,9 @@ System::Void gui::UserForm::ViewUserInfoButton_Click(System::Object^ sender, Sys
 	vaccinatedCheckBox->Hide();
 	ApplyCheckBox->Hide();
 	DoseComboBox->Hide();
-	
+
 	login^ l = gcnew login();
-	
+
 	string contents = a.viewUser(u.getNAtIDTextBox_Text(), users);
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 	UserInfoRichTextBox->Show();
@@ -318,7 +318,7 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			{
 				str_sys = DoseComboBox->Text;
 				string choosed_status = msclr::interop::marshal_as< std::string >(str_sys);
-				if (choosed_status=="")
+				if (choosed_status == "")
 				{
 					ErrorLabel->ForeColor = System::Drawing::Color::Red;
 					ErrorLabel->Text = "Choose 1st dose or both doses";
