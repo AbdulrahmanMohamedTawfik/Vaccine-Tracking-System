@@ -1,7 +1,6 @@
 not vaccinated
 not vaccinated
 vaccinated: only first dose
-
 vaccinated: 
 not vaccinated
 not vaccinated
