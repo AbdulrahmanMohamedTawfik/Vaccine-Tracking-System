@@ -1,7 +1,6 @@
 giza
 cairo
 gov
-
 cairo
 giza
 hgdf
