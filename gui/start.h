@@ -44,6 +44,7 @@ namespace gui {
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
 
 	private:
 		/// <summary>
@@ -68,9 +69,11 @@ namespace gui {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->flowLayoutPanel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// LoginButton
@@ -80,7 +83,7 @@ namespace gui {
 			this->LoginButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->LoginButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->LoginButton->Location = System::Drawing::Point(606, 354);
+			this->LoginButton->Location = System::Drawing::Point(863, 356);
 			this->LoginButton->Name = L"LoginButton";
 			this->LoginButton->Size = System::Drawing::Size(673, 60);
 			this->LoginButton->TabIndex = 0;
@@ -108,7 +111,7 @@ namespace gui {
 				static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->ExitButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->ExitButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
-			this->ExitButton->Location = System::Drawing::Point(1274, 3);
+			this->ExitButton->Location = System::Drawing::Point(1600, 12);
 			this->ExitButton->Name = L"ExitButton";
 			this->ExitButton->Size = System::Drawing::Size(98, 47);
 			this->ExitButton->TabIndex = 2;
@@ -176,11 +179,22 @@ namespace gui {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::Transparent;
-			this->label3->Location = System::Drawing::Point(659, 278);
+			this->label3->Location = System::Drawing::Point(916, 280);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(530, 37);
 			this->label3->TabIndex = 6;
 			this->label3->Text = L"Login now to get vaccination services. ";
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
+			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pictureBox2->Location = System::Drawing::Point(546, 465);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(1503, 593);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox2->TabIndex = 2;
+			this->pictureBox2->TabStop = false;
 			// 
 			// start
 			// 
@@ -188,9 +202,10 @@ namespace gui {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
-			this->ClientSize = System::Drawing::Size(1390, 1055);
+			this->ClientSize = System::Drawing::Size(1924, 1055);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->LoginButton);
+			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->ExitButton);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->flowLayoutPanel1);
@@ -205,6 +220,7 @@ namespace gui {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -218,8 +234,8 @@ namespace gui {
 
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void start_Load(System::Object^ sender, System::EventArgs^ e) {
-	}
+	private: System::Void start_Load(System::Object^ sender, System::EventArgs^ e);
+
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void start_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
