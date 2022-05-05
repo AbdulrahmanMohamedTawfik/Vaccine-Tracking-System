@@ -11,7 +11,7 @@ private:
 	double fullyvac;
 	double egyptians;
 	double forgienrs;
-	string awaiting_users;
+	//string awaiting_users;
 public:
 	statstics();
 	void getuser();
@@ -26,6 +26,6 @@ public:
 	double p_fully();
 	double p_egypt();
 	double p_abroad();
-	string getAwaitingUsers();
-	void setAwaitingUsers(string val);
+	/*string getAwaitingUsers();
+	void setAwaitingUsers(string val);*/
 };

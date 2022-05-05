@@ -1,6 +1,7 @@
 #include "AdminForm.h"
 #include "Admin.h"
 #include "User.h"
+#include "statstics_dashboard.h"
 #include <unordered_map>
 #include <msclr/marshal_cppstd.h>
 #include <string>
@@ -81,5 +82,12 @@ System::Void gui::AdminForm::DeleteAllUsers_Click(System::Object^ sender, System
 System::Void gui::AdminForm::AdminForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	u1.read_data(users_for_admin);
+	return System::Void();
+}
+
+System::Void gui::AdminForm::StatButton_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	statstics_dashboard^ form = gcnew statstics_dashboard();
+	form->Show();
 	return System::Void();
 }

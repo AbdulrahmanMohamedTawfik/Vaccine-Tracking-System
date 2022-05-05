@@ -4,7 +4,6 @@
 #include <fstream>
 #include <string>
 using namespace std;
-
 statstics::statstics() {
 	users = 0;
 	male = 0;
@@ -14,17 +13,12 @@ statstics::statstics() {
 	forgienrs = 0;
 	firstdoes = 0;
 	fullyvac = 0;
-
 }
 //function to get number of users
 void statstics::getuser() {
 	string myText;
 	vector<string> s;
-
-
-	ifstream MyReadFile("users.txt");
-
-
+	ifstream MyReadFile("txts\\users.txt");
 	while (getline(MyReadFile, myText))
 	{
 		if (myText.size() > 0) {
@@ -33,27 +27,19 @@ void statstics::getuser() {
 	}
 	users = 0;
 	vector<string>::iterator it;
-
 	it = s.begin();
-
 	while (it != s.end())
 	{
-
 		it++;
 		users++;
 	}
-
 	MyReadFile.close();
 }
 //function to get numbers of males and females 
 void statstics::getmale() {
 	string myText;
 	vector<string> s;
-
-
-	ifstream MyReadFile("gender.txt");
-
-
+	ifstream MyReadFile("txts\\gender.txt");
 	while (getline(MyReadFile, myText))
 	{
 		if (myText.size() > 0) {
@@ -62,9 +48,7 @@ void statstics::getmale() {
 	}
 	male = 0;
 	female = 0;
-
 	vector<string>::iterator it;
-
 	it = s.begin();
 	while (it != s.end())
 	{
@@ -74,12 +58,8 @@ void statstics::getmale() {
 		else if (*it == "female") {
 			female++;
 		}
-
 		it++;
 	}
-
-
-
 	MyReadFile.close();
 }
 //calcutaions of the % of male
@@ -100,11 +80,7 @@ double statstics::p_female() {
 void statstics::getwaiting() {
 	string myText;
 	vector<string> s;
-
-
-	ifstream MyReadFile("status.txt");
-
-
+	ifstream MyReadFile("txts\\status.txt");
 	while (getline(MyReadFile, myText))
 	{
 		if (myText.size() > 0) {
@@ -113,19 +89,14 @@ void statstics::getwaiting() {
 	}
 	waiting = 0;
 	vector<string>::iterator it;
-
 	it = s.begin();
-
 	while (it != s.end())
 	{
 		if (*it == "not vaccinated") {
 			waiting++;
 		}
-
 		it++;
-
 	}
-
 	MyReadFile.close();
 }
 //calcutaion of the % of waiting list
@@ -139,11 +110,7 @@ double statstics::p_waiting() {
 void statstics::getegypt() {
 	string myText;
 	vector<string> s;
-
-
-	ifstream MyReadFile("country.txt");
-
-
+	ifstream MyReadFile("txts\\country.txt");
 	while (getline(MyReadFile, myText))
 	{
 		if (myText.size() > 0) {
@@ -153,9 +120,7 @@ void statstics::getegypt() {
 	egyptians = 0;
 	forgienrs = 0;
 	vector<string>::iterator it;
-
 	it = s.begin();
-
 	while (it != s.end())
 	{
 		if (*it == "Egypt") {
@@ -163,9 +128,7 @@ void statstics::getegypt() {
 		}
 		else forgienrs++;
 		it++;
-
 	}
-
 	MyReadFile.close();
 }
 //calcutaion of the % of egyptians 
@@ -174,7 +137,6 @@ double statstics::p_egypt() {
 	getegypt();
 	double g = (egyptians / users) * 100;
 	return g;
-
 }
 //calcutaion of the % of abroad
 double statstics::p_abroad() {
@@ -183,23 +145,19 @@ double statstics::p_abroad() {
 	double k = (forgienrs / users) * 100;
 	return k;
 }
-string statstics::getAwaitingUsers()
-{
-	return awaiting_users;
-}
-void statstics::setAwaitingUsers(string val)
-{
-	awaiting_users = val;
-}
+//string statstics::getAwaitingUsers()
+//{
+//	return awaiting_users;
+//}
+//void statstics::setAwaitingUsers(string val)
+//{
+//	awaiting_users = val;
+//}
 //function gets number of people with first dose and fully
 void statstics::get_vaccintiated() {
 	string myText;
 	vector<string> s;
-
-
-	ifstream MyReadFile("status.txt");
-
-
+	ifstream MyReadFile("txts\\status.txt");
 	while (getline(MyReadFile, myText))
 	{
 		if (myText.size() > 0) {
@@ -208,9 +166,7 @@ void statstics::get_vaccintiated() {
 	}
 	firstdoes = 0;
 	fullyvac = 0;
-
 	vector<string>::iterator it;
-
 	it = s.begin();
 	while (it != s.end())
 	{
@@ -220,12 +176,8 @@ void statstics::get_vaccintiated() {
 		else if (*it == "vaccinated: both doses") {
 			fullyvac++;
 		}
-
 		it++;
 	}
-
-
-
 	MyReadFile.close();
 }
 //calcutaion of the % of first dose
