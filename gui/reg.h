@@ -179,6 +179,7 @@ namespace gui {
 			this->PasswordTextBox->Size = System::Drawing::Size(402, 54);
 			this->PasswordTextBox->TabIndex = 10;
 			this->PasswordTextBox->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
+			this->PasswordTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &reg::PasswordTextBox_KeyDown);
 			// 
 			// label3
 			// 
@@ -297,6 +298,7 @@ namespace gui {
 			this->AgeTextBox->Size = System::Drawing::Size(149, 54);
 			this->AgeTextBox->TabIndex = 19;
 			this->AgeTextBox->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
+			this->AgeTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &reg::AgeTextBox_KeyDown);
 			// 
 			// CountryLabel
 			// 
@@ -397,6 +399,7 @@ namespace gui {
 			this->GovernorateTextBox->TabIndex = 25;
 			this->GovernorateTextBox->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			this->GovernorateTextBox->TextChanged += gcnew System::EventHandler(this, &reg::GovernorateTextBox_TextChanged);
+			this->GovernorateTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &reg::GovernorateTextBox_KeyDown);
 			// 
 			// StatusLabel
 			// 
@@ -578,6 +581,12 @@ namespace gui {
 	private: System::Void NameTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 
 	private: System::Void NatIDTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+
+	private: System::Void PasswordTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+
+	private: System::Void AgeTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+
+	private: System::Void GovernorateTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 
 	private: System::Void reg_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 };

@@ -213,7 +213,7 @@ System::Void gui::UserForm::EditStatusButton_Click(System::Object^ sender, Syste
 
 System::Void gui::UserForm::EditPassButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	NewvalueLabel->Text = "New pass :";
+	NewvalueLabel->Text = "New password :";
 	NewvalueLabel->Show();
 	NewvalueTextBox->Show();
 	SubmitButton->Show();
@@ -446,6 +446,15 @@ System::Void gui::UserForm::ApplyCheckBox_CheckedChanged(System::Object^ sender,
 	{
 		vaccinatedCheckBox->Checked = false;
 		//ApplyCheckBox->Checked = true;
+	}
+	return System::Void();
+}
+
+System::Void gui::UserForm::NewvalueTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+{
+	if (e->KeyValue == (int)Keys::Enter)//if enter is pressed
+	{
+		SubmitButton->PerformClick();
 	}
 	return System::Void();
 }

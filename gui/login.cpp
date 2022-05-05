@@ -50,6 +50,7 @@ System::Void gui::login::LoginButton_Click(System::Object^ sender, System::Event
 
 System::Void gui::login::login_Load(System::Object^ sender, System::EventArgs^ e)
 {
+	NatIDTextBox->Focus();
 	return System::Void();
 }
 
@@ -77,7 +78,11 @@ System::Void gui::login::label5_Click(System::Object^ sender, System::EventArgs^
 
 System::Void gui::login::PasswordTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
 {
-	if (e->KeyValue == (int)Keys::Enter)//if enter is pressed
+	if (e->KeyValue == (int)Keys::Up)
+	{
+		NatIDTextBox->Focus();
+	}
+	else if (e->KeyValue == (int)Keys::Enter)
 	{
 		LoginButton->PerformClick();
 	}
@@ -86,9 +91,13 @@ System::Void gui::login::PasswordTextBox_KeyDown(System::Object^ sender, System:
 
 System::Void gui::login::NatIDTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
 {
-	if (e->KeyValue == (int)Keys::Enter)
+	if (e->KeyValue == (int)Keys::Down)
 	{
 		PasswordTextBox->Focus();
+	}
+	else if (e->KeyValue == (int)Keys::Enter)
+	{
+		LoginButton->PerformClick();
 	}
 	return System::Void();
 }

@@ -34,3 +34,12 @@ System::Void gui::start::ExitButton_Click(System::Object^ sender, System::EventA
 	this->Close();
 	return System::Void();
 }
+
+System::Void gui::start::start_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+{
+	if (e->KeyValue == (int)Keys::Enter)//if enter is pressed
+	{
+		LoginButton->PerformClick();
+	}
+	return System::Void();
+}

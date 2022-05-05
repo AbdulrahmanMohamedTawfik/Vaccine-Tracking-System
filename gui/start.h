@@ -199,6 +199,7 @@ namespace gui {
 			this->Name = L"start";
 			this->Text = L"Vaccination application";
 			this->Load += gcnew System::EventHandler(this, &start::start_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &start::start_KeyDown);
 			this->flowLayoutPanel1->ResumeLayout(false);
 			this->flowLayoutPanel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -221,5 +222,6 @@ namespace gui {
 	}
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void start_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+};
 }
