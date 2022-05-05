@@ -79,9 +79,9 @@ namespace gui {
 			// 
 			this->ViewInfoButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ViewInfoButton->Location = System::Drawing::Point(533, 218);
+			this->ViewInfoButton->Location = System::Drawing::Point(473, 219);
 			this->ViewInfoButton->Name = L"ViewInfoButton";
-			this->ViewInfoButton->Size = System::Drawing::Size(381, 60);
+			this->ViewInfoButton->Size = System::Drawing::Size(404, 60);
 			this->ViewInfoButton->TabIndex = 3;
 			this->ViewInfoButton->Text = L"View User Info";
 			this->ViewInfoButton->UseVisualStyleBackColor = true;
@@ -111,9 +111,9 @@ namespace gui {
 			// 
 			this->DeleteInfoButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->DeleteInfoButton->Location = System::Drawing::Point(533, 416);
+			this->DeleteInfoButton->Location = System::Drawing::Point(473, 417);
 			this->DeleteInfoButton->Name = L"DeleteInfoButton";
-			this->DeleteInfoButton->Size = System::Drawing::Size(381, 60);
+			this->DeleteInfoButton->Size = System::Drawing::Size(404, 60);
 			this->DeleteInfoButton->TabIndex = 7;
 			this->DeleteInfoButton->Text = L"Delete User Info";
 			this->DeleteInfoButton->UseVisualStyleBackColor = true;
@@ -123,9 +123,9 @@ namespace gui {
 			// 
 			this->ViewAwaitingListButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ViewAwaitingListButton->Location = System::Drawing::Point(533, 350);
+			this->ViewAwaitingListButton->Location = System::Drawing::Point(473, 351);
 			this->ViewAwaitingListButton->Name = L"ViewAwaitingListButton";
-			this->ViewAwaitingListButton->Size = System::Drawing::Size(381, 60);
+			this->ViewAwaitingListButton->Size = System::Drawing::Size(404, 60);
 			this->ViewAwaitingListButton->TabIndex = 8;
 			this->ViewAwaitingListButton->Text = L"View awaiting list";
 			this->ViewAwaitingListButton->UseVisualStyleBackColor = true;
@@ -146,9 +146,9 @@ namespace gui {
 			// 
 			this->DeleteAllUsers->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->DeleteAllUsers->Location = System::Drawing::Point(533, 482);
+			this->DeleteAllUsers->Location = System::Drawing::Point(473, 483);
 			this->DeleteAllUsers->Name = L"DeleteAllUsers";
-			this->DeleteAllUsers->Size = System::Drawing::Size(381, 60);
+			this->DeleteAllUsers->Size = System::Drawing::Size(404, 60);
 			this->DeleteAllUsers->TabIndex = 11;
 			this->DeleteAllUsers->Text = L"Delete All Users";
 			this->DeleteAllUsers->UseVisualStyleBackColor = true;
@@ -158,9 +158,9 @@ namespace gui {
 			// 
 			this->ViewAllUsers->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ViewAllUsers->Location = System::Drawing::Point(533, 284);
+			this->ViewAllUsers->Location = System::Drawing::Point(473, 285);
 			this->ViewAllUsers->Name = L"ViewAllUsers";
-			this->ViewAllUsers->Size = System::Drawing::Size(381, 60);
+			this->ViewAllUsers->Size = System::Drawing::Size(404, 60);
 			this->ViewAllUsers->TabIndex = 12;
 			this->ViewAllUsers->Text = L"View All Users";
 			this->ViewAllUsers->UseVisualStyleBackColor = true;
@@ -193,9 +193,9 @@ namespace gui {
 			// 
 			this->StatButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->StatButton->Location = System::Drawing::Point(533, 548);
+			this->StatButton->Location = System::Drawing::Point(473, 549);
 			this->StatButton->Name = L"StatButton";
-			this->StatButton->Size = System::Drawing::Size(381, 60);
+			this->StatButton->Size = System::Drawing::Size(404, 60);
 			this->StatButton->TabIndex = 16;
 			this->StatButton->Text = L"Statstics Dashboard";
 			this->StatButton->UseVisualStyleBackColor = true;
@@ -205,7 +205,7 @@ namespace gui {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1390, 607);
+			this->ClientSize = System::Drawing::Size(1840, 975);
 			this->Controls->Add(this->StatButton);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->richTextBox1);

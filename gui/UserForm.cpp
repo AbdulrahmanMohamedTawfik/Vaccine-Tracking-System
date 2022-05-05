@@ -13,12 +13,12 @@ User u;
 Admin a;
 System::Void gui::UserForm::UserForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
-
 	u.read_data(users);
 	u.getUserName(users);
 	string std_str = u.NameText;
 	String^ sys_str = gcnew String(std_str.c_str());
 	UsernameLabel->Text = sys_str;
+	this->Text = sys_str;
 	return System::Void();
 }
 

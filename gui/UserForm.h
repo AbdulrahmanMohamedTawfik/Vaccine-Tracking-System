@@ -612,6 +612,7 @@ namespace gui {
 			this->Controls->Add(this->EditNameButton);
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"UserForm";
 			this->Text = L"User";
 			this->Load += gcnew System::EventHandler(this, &UserForm::UserForm_Load);

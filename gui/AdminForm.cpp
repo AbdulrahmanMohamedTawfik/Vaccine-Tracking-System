@@ -1,7 +1,7 @@
 #include "AdminForm.h"
 #include "Admin.h"
 #include "User.h"
-#include "statstics_dashboard.h"
+#include "statistics_dashboard.h"
 #include <unordered_map>
 #include <msclr/marshal_cppstd.h>
 #include <string>
@@ -10,10 +10,6 @@ User u1;
 Admin a1;
 System::Void gui::AdminForm::ViewInfoButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	
-	
-	
-	
 	String^ all;
 	all = NationalIDTextBox->Text;
 	string NatID = msclr::interop::marshal_as< std::string >(all);
@@ -26,9 +22,6 @@ System::Void gui::AdminForm::ViewInfoButton_Click(System::Object^ sender, System
 
 System::Void gui::AdminForm::ViewAllUsers_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	
-	
-
 	string contents = a1.viewAll(users_for_admin);
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 	richTextBox1->Text = syscontents;
@@ -67,7 +60,7 @@ System::Void gui::AdminForm::DeleteInfoButton_Click(System::Object^ sender, Syst
 }
 
 System::Void gui::AdminForm::DeleteAllUsers_Click(System::Object^ sender, System::EventArgs^ e)
-{	
+{
 
 
 	String^ all;
@@ -87,7 +80,7 @@ System::Void gui::AdminForm::AdminForm_Load(System::Object^ sender, System::Even
 
 System::Void gui::AdminForm::StatButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	statstics_dashboard^ form = gcnew statstics_dashboard();
+	statistics_dashboard^ form = gcnew statistics_dashboard();
 	form->Show();
 	return System::Void();
 }
