@@ -177,18 +177,77 @@ System::Void gui::reg::ApplyCheckBox_CheckedChanged(System::Object^ sender, Syst
 
 System::Void gui::reg::NameTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
 {
-	if (e->KeyValue == (int)Keys::Enter)
+	if (e->KeyValue == (int)Keys::Down)
 	{
 		NatIDTextBox->Focus();
+	}
+	else if (e->KeyValue == (int)Keys::Enter)
+	{
+		RegisterButton->PerformClick();
 	}
 	return System::Void();
 }
 
 System::Void gui::reg::NatIDTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
 {
-	if (e->KeyValue == (int)Keys::Enter)
+	if (e->KeyValue == (int)Keys::Down)
 	{
 		PasswordTextBox->Focus();
+	}
+	else if (e->KeyValue == (int)Keys::Up)
+	{
+		NameTextBox->Focus();
+	}
+	else if (e->KeyValue == (int)Keys::Enter)
+	{
+		RegisterButton->PerformClick();
+	}
+	return System::Void();
+}
+
+System::Void gui::reg::PasswordTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+{
+	if (e->KeyValue == (int)Keys::Down)
+	{
+		AgeTextBox->Focus();
+	}
+	else if (e->KeyValue == (int)Keys::Up)
+	{
+		NatIDTextBox->Focus();
+	}
+	else if (e->KeyValue == (int)Keys::Enter)
+	{
+		RegisterButton->PerformClick();
+	}
+	return System::Void();
+}
+
+System::Void gui::reg::AgeTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+{
+	if (e->KeyValue == (int)Keys::Down)
+	{
+		GovernorateTextBox->Focus();
+	}
+	else if (e->KeyValue == (int)Keys::Up)
+	{
+		PasswordTextBox->Focus();
+	}
+	else if (e->KeyValue == (int)Keys::Enter)
+	{
+		RegisterButton->PerformClick();
+	}
+	return System::Void();
+}
+
+System::Void gui::reg::GovernorateTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+{
+	if (e->KeyValue == (int)Keys::Up)
+	{
+		AgeTextBox->Focus();
+	}
+	else if (e->KeyValue == (int)Keys::Enter)
+	{
+		RegisterButton->PerformClick();
 	}
 	return System::Void();
 }
@@ -201,3 +260,5 @@ System::Void gui::reg::reg_KeyDown(System::Object^ sender, System::Windows::Form
 	}
 	return System::Void();
 }
+
+
