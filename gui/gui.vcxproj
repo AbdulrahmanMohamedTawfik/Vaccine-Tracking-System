@@ -126,7 +126,7 @@
     <ClCompile Include="AdminForm.cpp" />
     <ClCompile Include="AwaitingList.cpp" />
     <ClCompile Include="login.cpp" />
-    <ClCompile Include="statstics.cpp" />
+    <ClCompile Include="statistics.cpp" />
     <ClCompile Include="statstics_dashboard.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="reg.cpp" />
@@ -144,8 +144,8 @@
     <ClInclude Include="login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="statstics.h" />
-    <ClInclude Include="statstics_dashboard.h">
+    <ClInclude Include="statistics.h" />
+    <ClInclude Include="statistics_dashboard.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="User.h" />
@@ -175,8 +175,8 @@
     <EmbeddedResource Include="start.resx">
       <DependentUpon>start.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="statstics_dashboard.resx">
-      <DependentUpon>statstics_dashboard.h</DependentUpon>
+    <EmbeddedResource Include="statistics_dashboard.resx">
+      <DependentUpon>statistics_dashboard.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.h</DependentUpon>

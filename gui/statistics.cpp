@@ -1,10 +1,10 @@
 #include <iostream>
-#include "statstics.h"
+#include "statistics.h"
 #include <vector>
 #include <fstream>
 #include <string>
 using namespace std;
-statstics::statstics() {
+statistics::statistics() {
 	users = 0;
 	male = 0;
 	female = 0;
@@ -15,7 +15,7 @@ statstics::statstics() {
 	fullyvac = 0;
 }
 //function to get number of users
-void statstics::getuser() {
+void statistics::getuser() {
 	string myText;
 	vector<string> s;
 	ifstream MyReadFile("txts\\users.txt");
@@ -36,7 +36,7 @@ void statstics::getuser() {
 	MyReadFile.close();
 }
 //function to get numbers of males and females 
-void statstics::getmale() {
+void statistics::getmale() {
 	string myText;
 	vector<string> s;
 	ifstream MyReadFile("txts\\gender.txt");
@@ -63,21 +63,21 @@ void statstics::getmale() {
 	MyReadFile.close();
 }
 //calcutaions of the % of male
-double statstics::p_male() {
+double statistics::p_male() {
 	getuser();
 	getmale();
 	double x = (male / users) * 100;
 	return x;
 }
 //calcutaions of the % of female
-double statstics::p_female() {
+double statistics::p_female() {
 	getuser();
 	getmale();
 	double y = (female / users) * 100;
 	return y;
 }
 //function gets the number of people in waiting list
-void statstics::getwaiting() {
+void statistics::getwaiting() {
 	string myText;
 	vector<string> s;
 	ifstream MyReadFile("txts\\status.txt");
@@ -100,14 +100,14 @@ void statstics::getwaiting() {
 	MyReadFile.close();
 }
 //calcutaion of the % of waiting list
-double statstics::p_waiting() {
+double statistics::p_waiting() {
 	getuser();
 	getwaiting();
 	double z = (waiting / users) * 100;
 	return z;
 }
 //function gets the number of users in egypt and other
-void statstics::getegypt() {
+void statistics::getegypt() {
 	string myText;
 	vector<string> s;
 	ifstream MyReadFile("txts\\country.txt");
@@ -132,29 +132,29 @@ void statstics::getegypt() {
 	MyReadFile.close();
 }
 //calcutaion of the % of egyptians 
-double statstics::p_egypt() {
+double statistics::p_egypt() {
 	getuser();
 	getegypt();
 	double g = (egyptians / users) * 100;
 	return g;
 }
 //calcutaion of the % of abroad
-double statstics::p_abroad() {
+double statistics::p_abroad() {
 	getuser();
 	getegypt();
 	double k = (forgienrs / users) * 100;
 	return k;
 }
-//string statstics::getAwaitingUsers()
+//string statistics::getAwaitingUsers()
 //{
 //	return awaiting_users;
 //}
-//void statstics::setAwaitingUsers(string val)
+//void statistics::setAwaitingUsers(string val)
 //{
 //	awaiting_users = val;
 //}
 //function gets number of people with first dose and fully
-void statstics::get_vaccintiated() {
+void statistics::get_vaccinated() {
 	string myText;
 	vector<string> s;
 	ifstream MyReadFile("txts\\status.txt");
@@ -181,16 +181,16 @@ void statstics::get_vaccintiated() {
 	MyReadFile.close();
 }
 //calcutaion of the % of first dose
-double statstics::p_first() {
+double statistics::p_first() {
 	getuser();
-	get_vaccintiated();
+	get_vaccinated();
 	double f = (firstdoes / users) * 100;
 	return f;
 }
 //calcutaion of the % of fully
-double statstics::p_fully() {
+double statistics::p_fully() {
 	getuser();
-	get_vaccintiated();
+	get_vaccinated();
 	double g = (fullyvac / users) * 100;
 	return g;
 }

@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-class statstics
+class statistics
 {
 private:
 	double users;
@@ -13,14 +13,14 @@ private:
 	double forgienrs;
 	//string awaiting_users;
 public:
-	statstics();
+	statistics();
 	void getuser();
 	void getmale();
 	double p_male();
 	double p_female();
 	void getwaiting();
 	double p_waiting();
-	void get_vaccintiated();
+	void get_vaccinated();
 	void getegypt();
 	double p_first();
 	double p_fully();
