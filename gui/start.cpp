@@ -35,6 +35,12 @@ System::Void gui::start::ExitButton_Click(System::Object^ sender, System::EventA
 	return System::Void();
 }
 
+System::Void gui::start::start_Load(System::Object^ sender, System::EventArgs^ e)
+{
+	WindowState = FormWindowState::Maximized;
+	return System::Void();
+}
+
 System::Void gui::start::start_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
 {
 	if (e->KeyValue == (int)Keys::Enter)//if enter is pressed
