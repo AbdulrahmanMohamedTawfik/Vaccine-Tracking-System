@@ -13,6 +13,7 @@ User u;
 Admin a;
 System::Void gui::UserForm::UserForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
+	WindowState = FormWindowState::Maximized;
 	u.read_data(users);
 	u.getUserName(users);
 	string std_str = u.NameText;
@@ -44,7 +45,7 @@ System::Void gui::UserForm::ViewUserInfoButton_Click(System::Object^ sender, Sys
 	vaccinatedCheckBox->Hide();
 	ApplyCheckBox->Hide();
 	DoseComboBox->Hide();
-
+	GovernorateComboBox->Hide();
 	login^ l = gcnew login();
 
 	string contents = a.viewUser(u.getNAtIDTextBox_Text(), users);
@@ -76,6 +77,7 @@ System::Void gui::UserForm::EditUserInfoButton_Click(System::Object^ sender, Sys
 	vaccinatedCheckBox->Hide();
 	ApplyCheckBox->Hide();
 	DoseComboBox->Hide();
+	GovernorateComboBox->Hide();
 	return System::Void();
 }
 
@@ -102,6 +104,7 @@ System::Void gui::UserForm::EditNameButton_Click(System::Object^ sender, System:
 	vaccinatedCheckBox->Hide();
 	ApplyCheckBox->Hide();
 	DoseComboBox->Hide();
+	GovernorateComboBox->Hide();
 	return System::Void();
 }
 
@@ -120,6 +123,7 @@ System::Void gui::UserForm::EditIDButton_Click(System::Object^ sender, System::E
 	vaccinatedCheckBox->Hide();
 	ApplyCheckBox->Hide();
 	DoseComboBox->Hide();
+	GovernorateComboBox->Hide();
 	return System::Void();
 }
 
@@ -138,6 +142,7 @@ System::Void gui::UserForm::EditGendrButton_Click(System::Object^ sender, System
 	MaleCheckBox->Show();
 	FemaleCheckBox->Show();
 	SubmitButton->Show();
+	GovernorateComboBox->Hide();
 	return System::Void();
 }
 
@@ -156,6 +161,7 @@ System::Void gui::UserForm::EditAgeButton_Click(System::Object^ sender, System::
 	vaccinatedCheckBox->Hide();
 	ApplyCheckBox->Hide();
 	DoseComboBox->Hide();
+	GovernorateComboBox->Hide();
 	return System::Void();
 }
 
@@ -173,15 +179,17 @@ System::Void gui::UserForm::EditCountryButton_Click(System::Object^ sender, Syst
 	ApplyCheckBox->Hide();
 	DoseComboBox->Hide();
 	SubmitButton->Show();
+	GovernorateComboBox->Hide();
 	return System::Void();
 }
 
 System::Void gui::UserForm::EditGovButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	NewvalueLabel->Text = "New gov :";
+	NewvalueLabel->Text = "New governorate :";
 	NewvalueLabel->Show();
-	NewvalueTextBox->Show();
 	SubmitButton->Show();
+	GovernorateComboBox->Show();
+	NewvalueTextBox->Hide();
 	ErrorLabel->Hide();
 	MaleCheckBox->Hide();
 	FemaleCheckBox->Hide();
@@ -208,6 +216,7 @@ System::Void gui::UserForm::EditStatusButton_Click(System::Object^ sender, Syste
 	vaccinatedCheckBox->Show();
 	ApplyCheckBox->Show();
 	SubmitButton->Show();
+	GovernorateComboBox->Hide();
 	return System::Void();
 }
 
@@ -226,6 +235,7 @@ System::Void gui::UserForm::EditPassButton_Click(System::Object^ sender, System:
 	vaccinatedCheckBox->Hide();
 	ApplyCheckBox->Hide();
 	DoseComboBox->Hide();
+	GovernorateComboBox->Hide();
 	return System::Void();
 }
 
@@ -235,7 +245,7 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 	String^ str_sys;
 	str_sys = NewvalueTextBox->Text;
 	new_value = msclr::interop::marshal_as< std::string >(str_sys);//convert from sys string to std string
-	if ((MaleCheckBox->Checked == false) && (FemaleCheckBox->Checked == false) && (EgyptCheckBox->Checked == false) && (AbroadCheckBox->Checked == false) && (vaccinatedCheckBox->Checked == false) && (ApplyCheckBox->Checked == false) && (NewvalueTextBox->Text == ""))
+	if ((MaleCheckBox->Checked == false) && (FemaleCheckBox->Checked == false) && (EgyptCheckBox->Checked == false) && (AbroadCheckBox->Checked == false) && (vaccinatedCheckBox->Checked == false) && (ApplyCheckBox->Checked == false) && (NewvalueTextBox->Text == "") && (GovernorateComboBox->Text == ""))
 	{
 		ErrorLabel->ForeColor = System::Drawing::Color::Red;
 		ErrorLabel->Show();
@@ -251,6 +261,12 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			ErrorLabel->ForeColor = System::Drawing::Color::Green;
 			ErrorLabel->Show();
 			ErrorLabel->Text = "Name Changed succesfully!";
+			u.read_data(users);
+			u.getUserName(users);
+			string std_str = u.NameText;
+			String^ sys_str = gcnew String(std_str.c_str());
+			UsernameLabel->Text = sys_str;
+			this->Text = sys_str;
 		}
 		else if (NewvalueLabel->Text == "New Age :")
 		{
@@ -304,6 +320,15 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 				}
 			}
 		}
+		else if (NewvalueLabel->Text == "New governorate :")
+		{
+			str_sys = GovernorateComboBox->Text;
+			new_value = msclr::interop::marshal_as< std::string >(str_sys);//convert from sys string to std string
+			u.editGov(new_value, users);
+			ErrorLabel->ForeColor = System::Drawing::Color::Green;
+			ErrorLabel->Show();
+			ErrorLabel->Text = "Governorate Changed succesfully!";
+		}
 		else if (NewvalueLabel->Text == "New status :")
 		{
 			if (ApplyCheckBox->Checked)
@@ -334,7 +359,7 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 				}
 			}
 		}
-		else if (NewvalueLabel->Text == "New pass :")
+		else if (NewvalueLabel->Text == "New password :")
 		{
 			u.editPassword(new_value, users);
 			ErrorLabel->ForeColor = System::Drawing::Color::Green;

@@ -45,7 +45,7 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 		country = ("Abroad: " + choosed_country);
 	}
 
-	str_sys = GovernorateTextBox->Text;
+	str_sys = GovernorateComboBox->Text;
 	gov = msclr::interop::marshal_as< std::string >(str_sys);
 
 	if (ApplyCheckBox->Checked)
@@ -60,7 +60,7 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 	}
 
 	
-	if ((NameTextBox->Text == "") || (NatIDTextBox->Text == "") || (PasswordTextBox->Text == "") || ((!MaleCheckBox->Checked) && (!FemaleCheckBox->Checked)) || (AgeTextBox->Text == "") || ((!EgyptCheckBox->Checked) && (!AbroadCheckBox->Checked)) || (GovernorateTextBox->Text == "") || ((!vaccinatedCheckBox->Checked) && (!ApplyCheckBox->Checked)) || ((AbroadCheckBox->Checked) && (OtherCountryComboBox->Text == "")) || ((vaccinatedCheckBox->Checked) && (DoseComboBox->Text == "")))
+	if ((NameTextBox->Text == "") || (NatIDTextBox->Text == "") || (PasswordTextBox->Text == "") || ((!MaleCheckBox->Checked) && (!FemaleCheckBox->Checked)) || (AgeTextBox->Text == "") || ((!EgyptCheckBox->Checked) && (!AbroadCheckBox->Checked)) || (GovernorateComboBox->Text == "") || ((!vaccinatedCheckBox->Checked) && (!ApplyCheckBox->Checked)) || ((AbroadCheckBox->Checked) && (OtherCountryComboBox->Text == "")) || ((vaccinatedCheckBox->Checked) && (DoseComboBox->Text == "")))
 	{
 		label4->ForeColor = System::Drawing::Color::Red;
 		label4->Text = "Missing info! please, fill all feilds";
@@ -95,6 +95,12 @@ System::Void gui::reg::UnseeButton_Click(System::Object^ sender, System::EventAr
 		UnseeButton->Text = "🐵";
 	}
 
+	return System::Void();
+}
+
+System::Void gui::reg::reg_Load(System::Object^ sender, System::EventArgs^ e)
+{
+	WindowState = FormWindowState::Maximized;
 	return System::Void();
 }
 
@@ -226,7 +232,7 @@ System::Void gui::reg::AgeTextBox_KeyDown(System::Object^ sender, System::Window
 {
 	if (e->KeyValue == (int)Keys::Down)
 	{
-		GovernorateTextBox->Focus();
+		GovernorateComboBox->Focus();
 	}
 	else if (e->KeyValue == (int)Keys::Up)
 	{
