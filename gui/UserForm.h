@@ -39,6 +39,7 @@ namespace gui {
 			vaccinatedCheckBox->Hide();
 			ApplyCheckBox->Hide();
 			DoseComboBox->Hide();
+			GovernorateComboBox->Hide();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -93,6 +94,7 @@ namespace gui {
 	private: System::Windows::Forms::Label^ UsernameLabel;
 	private: System::Windows::Forms::Label^ HelloLabel;
 	private: System::Windows::Forms::Label^ SecurityLabel;
+	private: System::Windows::Forms::ComboBox^ GovernorateComboBox;
 
 
 
@@ -143,6 +145,7 @@ namespace gui {
 			this->UserInfoRichTextBox = (gcnew System::Windows::Forms::RichTextBox());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->GovernorateComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->UsernameLabel = (gcnew System::Windows::Forms::Label());
 			this->HelloLabel = (gcnew System::Windows::Forms::Label());
 			this->SecurityLabel = (gcnew System::Windows::Forms::Label());
@@ -159,7 +162,7 @@ namespace gui {
 			this->ViewUserInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->ViewUserInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ViewUserInfoButton->Location = System::Drawing::Point(31, 57);
+			this->ViewUserInfoButton->Location = System::Drawing::Point(31, 44);
 			this->ViewUserInfoButton->Name = L"ViewUserInfoButton";
 			this->ViewUserInfoButton->Size = System::Drawing::Size(721, 64);
 			this->ViewUserInfoButton->TabIndex = 2;
@@ -174,7 +177,7 @@ namespace gui {
 			this->EditUserInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->EditUserInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->EditUserInfoButton->Location = System::Drawing::Point(31, 179);
+			this->EditUserInfoButton->Location = System::Drawing::Point(31, 166);
 			this->EditUserInfoButton->Name = L"EditUserInfoButton";
 			this->EditUserInfoButton->Size = System::Drawing::Size(721, 64);
 			this->EditUserInfoButton->TabIndex = 3;
@@ -189,7 +192,7 @@ namespace gui {
 			this->DeleteInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->DeleteInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->DeleteInfoButton->Location = System::Drawing::Point(31, 297);
+			this->DeleteInfoButton->Location = System::Drawing::Point(31, 284);
 			this->DeleteInfoButton->Name = L"DeleteInfoButton";
 			this->DeleteInfoButton->Size = System::Drawing::Size(721, 64);
 			this->DeleteInfoButton->TabIndex = 4;
@@ -226,7 +229,7 @@ namespace gui {
 			this->ErrorLabel->AutoSize = true;
 			this->ErrorLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 13));
 			this->ErrorLabel->ForeColor = System::Drawing::Color::Red;
-			this->ErrorLabel->Location = System::Drawing::Point(233, 207);
+			this->ErrorLabel->Location = System::Drawing::Point(259, 264);
 			this->ErrorLabel->Name = L"ErrorLabel";
 			this->ErrorLabel->Size = System::Drawing::Size(0, 30);
 			this->ErrorLabel->TabIndex = 25;
@@ -326,7 +329,7 @@ namespace gui {
 			// 
 			this->NewvalueTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NewvalueTextBox->Location = System::Drawing::Point(268, 69);
+			this->NewvalueTextBox->Location = System::Drawing::Point(294, 126);
 			this->NewvalueTextBox->Name = L"NewvalueTextBox";
 			this->NewvalueTextBox->Size = System::Drawing::Size(233, 54);
 			this->NewvalueTextBox->TabIndex = 20;
@@ -339,7 +342,7 @@ namespace gui {
 				static_cast<System::Byte>(0)));
 			this->NewvalueLabel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
 				static_cast<System::Int32>(static_cast<System::Byte>(15)));
-			this->NewvalueLabel->Location = System::Drawing::Point(21, 65);
+			this->NewvalueLabel->Location = System::Drawing::Point(47, 122);
 			this->NewvalueLabel->Name = L"NewvalueLabel";
 			this->NewvalueLabel->Size = System::Drawing::Size(227, 54);
 			this->NewvalueLabel->TabIndex = 21;
@@ -356,7 +359,7 @@ namespace gui {
 			this->SubmitButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->SubmitButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->SubmitButton->Location = System::Drawing::Point(238, 240);
+			this->SubmitButton->Location = System::Drawing::Point(264, 297);
 			this->SubmitButton->Name = L"SubmitButton";
 			this->SubmitButton->Size = System::Drawing::Size(237, 52);
 			this->SubmitButton->TabIndex = 22;
@@ -383,7 +386,7 @@ namespace gui {
 			this->MaleCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->MaleCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
 			this->MaleCheckBox->ForeColor = System::Drawing::Color::White;
-			this->MaleCheckBox->Location = System::Drawing::Point(238, 76);
+			this->MaleCheckBox->Location = System::Drawing::Point(264, 133);
 			this->MaleCheckBox->Name = L"MaleCheckBox";
 			this->MaleCheckBox->Size = System::Drawing::Size(90, 36);
 			this->MaleCheckBox->TabIndex = 26;
@@ -397,7 +400,7 @@ namespace gui {
 			this->FemaleCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->FemaleCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
 			this->FemaleCheckBox->ForeColor = System::Drawing::Color::White;
-			this->FemaleCheckBox->Location = System::Drawing::Point(362, 76);
+			this->FemaleCheckBox->Location = System::Drawing::Point(388, 133);
 			this->FemaleCheckBox->Name = L"FemaleCheckBox";
 			this->FemaleCheckBox->Size = System::Drawing::Size(114, 36);
 			this->FemaleCheckBox->TabIndex = 27;
@@ -411,7 +414,7 @@ namespace gui {
 			this->AbroadCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->AbroadCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
 			this->AbroadCheckBox->ForeColor = System::Drawing::Color::White;
-			this->AbroadCheckBox->Location = System::Drawing::Point(368, 76);
+			this->AbroadCheckBox->Location = System::Drawing::Point(394, 133);
 			this->AbroadCheckBox->Name = L"AbroadCheckBox";
 			this->AbroadCheckBox->Size = System::Drawing::Size(114, 36);
 			this->AbroadCheckBox->TabIndex = 33;
@@ -446,7 +449,7 @@ namespace gui {
 					L"Tuvalu", L"Uganda", L"Ukraine", L"U.A.Emirates", L"United Kingdom", L"United States", L"Uruguay", L"Uzbekistan", L"Vanuatu",
 					L"Vatican City", L"Venezuela", L"Vietnam", L"Yemen", L"Zambia", L"Zimbabwe", L"OtherCountry"
 			});
-			this->OtherCountryComboBox->Location = System::Drawing::Point(398, 122);
+			this->OtherCountryComboBox->Location = System::Drawing::Point(424, 179);
 			this->OtherCountryComboBox->Name = L"OtherCountryComboBox";
 			this->OtherCountryComboBox->Size = System::Drawing::Size(218, 37);
 			this->OtherCountryComboBox->TabIndex = 32;
@@ -457,7 +460,7 @@ namespace gui {
 			this->EgyptCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->EgyptCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
 			this->EgyptCheckBox->ForeColor = System::Drawing::Color::White;
-			this->EgyptCheckBox->Location = System::Drawing::Point(249, 76);
+			this->EgyptCheckBox->Location = System::Drawing::Point(275, 133);
 			this->EgyptCheckBox->Name = L"EgyptCheckBox";
 			this->EgyptCheckBox->Size = System::Drawing::Size(97, 36);
 			this->EgyptCheckBox->TabIndex = 31;
@@ -472,7 +475,7 @@ namespace gui {
 				static_cast<System::Byte>(0)));
 			this->DoseComboBox->FormattingEnabled = true;
 			this->DoseComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"only first dose", L"both doses" });
-			this->DoseComboBox->Location = System::Drawing::Point(435, 122);
+			this->DoseComboBox->Location = System::Drawing::Point(461, 179);
 			this->DoseComboBox->Name = L"DoseComboBox";
 			this->DoseComboBox->Size = System::Drawing::Size(181, 37);
 			this->DoseComboBox->TabIndex = 36;
@@ -483,7 +486,7 @@ namespace gui {
 			this->ApplyCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->ApplyCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15));
 			this->ApplyCheckBox->ForeColor = System::Drawing::Color::White;
-			this->ApplyCheckBox->Location = System::Drawing::Point(398, 76);
+			this->ApplyCheckBox->Location = System::Drawing::Point(424, 133);
 			this->ApplyCheckBox->Name = L"ApplyCheckBox";
 			this->ApplyCheckBox->Size = System::Drawing::Size(307, 39);
 			this->ApplyCheckBox->TabIndex = 35;
@@ -497,7 +500,7 @@ namespace gui {
 			this->vaccinatedCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->vaccinatedCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15));
 			this->vaccinatedCheckBox->ForeColor = System::Drawing::Color::White;
-			this->vaccinatedCheckBox->Location = System::Drawing::Point(238, 76);
+			this->vaccinatedCheckBox->Location = System::Drawing::Point(264, 133);
 			this->vaccinatedCheckBox->Name = L"vaccinatedCheckBox";
 			this->vaccinatedCheckBox->Size = System::Drawing::Size(157, 39);
 			this->vaccinatedCheckBox->TabIndex = 34;
@@ -521,18 +524,9 @@ namespace gui {
 			// panel4
 			// 
 			this->panel4->BackColor = System::Drawing::Color::MidnightBlue;
-			this->panel4->Controls->Add(this->NewvalueLabel);
-			this->panel4->Controls->Add(this->SubmitButton);
-			this->panel4->Controls->Add(this->NewvalueTextBox);
-			this->panel4->Controls->Add(this->EgyptCheckBox);
-			this->panel4->Controls->Add(this->DoseComboBox);
-			this->panel4->Controls->Add(this->OtherCountryComboBox);
-			this->panel4->Controls->Add(this->MaleCheckBox);
-			this->panel4->Controls->Add(this->ApplyCheckBox);
-			this->panel4->Controls->Add(this->AbroadCheckBox);
-			this->panel4->Controls->Add(this->ErrorLabel);
-			this->panel4->Controls->Add(this->FemaleCheckBox);
-			this->panel4->Controls->Add(this->vaccinatedCheckBox);
+			this->panel4->Controls->Add(this->EditUserInfoButton);
+			this->panel4->Controls->Add(this->DeleteInfoButton);
+			this->panel4->Controls->Add(this->ViewUserInfoButton);
 			this->panel4->Location = System::Drawing::Point(657, 400);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(1012, 677);
@@ -542,13 +536,40 @@ namespace gui {
 			// 
 			this->panel5->BackColor = System::Drawing::Color::MidnightBlue;
 			this->panel5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel5->Controls->Add(this->EditUserInfoButton);
-			this->panel5->Controls->Add(this->DeleteInfoButton);
-			this->panel5->Controls->Add(this->ViewUserInfoButton);
+			this->panel5->Controls->Add(this->GovernorateComboBox);
+			this->panel5->Controls->Add(this->SubmitButton);
+			this->panel5->Controls->Add(this->NewvalueLabel);
+			this->panel5->Controls->Add(this->vaccinatedCheckBox);
+			this->panel5->Controls->Add(this->FemaleCheckBox);
+			this->panel5->Controls->Add(this->ErrorLabel);
+			this->panel5->Controls->Add(this->AbroadCheckBox);
+			this->panel5->Controls->Add(this->NewvalueTextBox);
+			this->panel5->Controls->Add(this->ApplyCheckBox);
+			this->panel5->Controls->Add(this->EgyptCheckBox);
+			this->panel5->Controls->Add(this->MaleCheckBox);
+			this->panel5->Controls->Add(this->DoseComboBox);
+			this->panel5->Controls->Add(this->OtherCountryComboBox);
 			this->panel5->Location = System::Drawing::Point(657, -12);
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(970, 406);
 			this->panel5->TabIndex = 40;
+			// 
+			// GovernorateComboBox
+			// 
+			this->GovernorateComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->GovernorateComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->GovernorateComboBox->FormattingEnabled = true;
+			this->GovernorateComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(27) {
+				L"Alexandria", L"Aswan", L"Assiut", L"Beheira",
+					L"Beni Suef", L"Cairo", L"Dakahlia", L"Damietta", L"Fayoum", L"Gharbia", L"Giza", L"Ismailia", L"Kafr el-Sheikh", L"Matrouh",
+					L"Minya", L"Menofia", L"New Valley", L"North Sinai", L"Port Said", L"Qualyubia", L"Qena", L"Red Sea", L"Al-Sharqia", L"Sohag",
+					L"South Sinai", L"Suez", L"Luxor"
+			});
+			this->GovernorateComboBox->Location = System::Drawing::Point(342, 135);
+			this->GovernorateComboBox->Name = L"GovernorateComboBox";
+			this->GovernorateComboBox->Size = System::Drawing::Size(206, 37);
+			this->GovernorateComboBox->TabIndex = 45;
 			// 
 			// UsernameLabel
 			// 
@@ -618,8 +639,8 @@ namespace gui {
 			this->Load += gcnew System::EventHandler(this, &UserForm::UserForm_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
-			this->panel4->PerformLayout();
 			this->panel5->ResumeLayout(false);
+			this->panel5->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

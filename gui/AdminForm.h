@@ -174,7 +174,7 @@ namespace gui {
 			this->richTextBox1->ForeColor = System::Drawing::SystemColors::MenuText;
 			this->richTextBox1->Location = System::Drawing::Point(984, 139);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(357, 358);
+			this->richTextBox1->Size = System::Drawing::Size(435, 358);
 			this->richTextBox1->TabIndex = 14;
 			this->richTextBox1->Text = L"";
 			// 
