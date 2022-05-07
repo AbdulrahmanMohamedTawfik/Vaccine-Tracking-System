@@ -75,6 +75,7 @@ System::Void gui::AdminForm::DeleteAllUsers_Click(System::Object^ sender, System
 System::Void gui::AdminForm::AdminForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	u1.read_data(users_for_admin);
+	WindowState = FormWindowState::Maximized;
 	return System::Void();
 }
 
@@ -82,5 +83,6 @@ System::Void gui::AdminForm::StatButton_Click(System::Object^ sender, System::Ev
 {
 	statistics_dashboard^ form = gcnew statistics_dashboard();
 	form->Show();
+	richTextBox1->Text = "Statistics dashboard viewed successfully";
 	return System::Void();
 }
