@@ -32,6 +32,7 @@ System::Void gui::statistics_dashboard::statistics_dashboard_Load(System::Object
 	DoseChart->Series["s1"]->Points[0]->SetValueXY("1k", syscontents1);
 	DoseChart->Series["s1"]->Points[1]->SetValueXY("2k", syscontents2);
 	DoseChart->Series["s1"]->Points[2]->SetValueXY("2k", syscontents3);
-	DoseLabel->Text = "Not vaccinated = %" + syscontents1 + "\nvaccinated: First dose = %" + syscontents2 + "\nvaccinated: Both doses= %" + syscontents3;
+	DoseLabel->Text = "Not vaccinated = %" + syscontents1 + "\nVaccinated: First dose = %" + syscontents2 + "\nVaccinated: Both doses= %" + syscontents3;
+	WindowState = FormWindowState::Maximized;
 	return System::Void();
 }

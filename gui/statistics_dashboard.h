@@ -178,7 +178,7 @@ namespace gui {
 			dataPoint3->BackImage = L"";
 			dataPoint3->BackImageAlignment = System::Windows::Forms::DataVisualization::Charting::ChartImageAlignmentStyle::Center;
 			dataPoint3->BackImageWrapMode = System::Windows::Forms::DataVisualization::Charting::ChartImageWrapMode::Scaled;
-			dataPoint3->BackSecondaryColor = System::Drawing::Color::Black;
+			dataPoint3->BackSecondaryColor = System::Drawing::Color::Empty;
 			dataPoint3->BorderDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::Dash;
 			dataPoint3->BorderWidth = 0;
 			dataPoint3->Color = System::Drawing::Color::Red;
