@@ -1,13 +1,10 @@
 not vaccinated
-not vaccinated
 vaccinated: both doses
 not vaccinated
+not vaccinated
+vaccinated: both doses
 vaccinated: only first dose
-vaccinated: both doses
 not vaccinated
 not vaccinated
 not vaccinated
 not vaccinated
-not vaccinated
-not vaccinated
-vaccinated: both doses

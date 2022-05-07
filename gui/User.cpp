@@ -235,7 +235,6 @@ void User::setNAtIDTextBox_Text(string val)
 
 void User::getUserName(unordered_map<string, User>& users)
 {
-	cout << "getNAtIDTextBox_Text= " << getNAtIDTextBox_Text();
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())
 		{

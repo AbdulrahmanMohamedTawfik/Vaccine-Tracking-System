@@ -26,6 +26,7 @@ public:
 	double p_fully();
 	double p_egypt();
 	double p_abroad();
+	double round(double var);
 	/*string getAwaitingUsers();
 	void setAwaitingUsers(string val);*/
 };
