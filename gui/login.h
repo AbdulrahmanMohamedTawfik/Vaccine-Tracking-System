@@ -135,8 +135,10 @@ namespace gui {
 			// 
 			// NatIDTextBox
 			// 
+			this->NatIDTextBox->BackColor = System::Drawing::Color::MidnightBlue;
 			this->NatIDTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->NatIDTextBox->ForeColor = System::Drawing::Color::White;
 			this->NatIDTextBox->Location = System::Drawing::Point(266, 212);
 			this->NatIDTextBox->Name = L"NatIDTextBox";
 			this->NatIDTextBox->Size = System::Drawing::Size(278, 54);
@@ -146,8 +148,10 @@ namespace gui {
 			// 
 			// PasswordTextBox
 			// 
+			this->PasswordTextBox->BackColor = System::Drawing::Color::MidnightBlue;
 			this->PasswordTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->PasswordTextBox->ForeColor = System::Drawing::Color::White;
 			this->PasswordTextBox->Location = System::Drawing::Point(266, 291);
 			this->PasswordTextBox->Name = L"PasswordTextBox";
 			this->PasswordTextBox->Size = System::Drawing::Size(278, 54);
@@ -252,6 +256,7 @@ namespace gui {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"login";
 			this->Text = L"login";
 			this->Load += gcnew System::EventHandler(this, &login::login_Load);

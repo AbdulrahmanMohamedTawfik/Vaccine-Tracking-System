@@ -49,3 +49,46 @@ System::Void gui::start::start_KeyDown(System::Object^ sender, System::Windows::
 	}
 	return System::Void();
 }
+
+System::Void gui::start::ResizeButton_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	if (this->WindowState == FormWindowState::Maximized)
+	{
+		this->WindowState = FormWindowState::Normal;
+	}
+	else //if (this->WindowState == FormWindowState::Normal)
+	{
+		this->WindowState = FormWindowState::Maximized;
+	}
+	return System::Void();
+}
+
+System::Void gui::start::MinimizeButton_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	this->WindowState = FormWindowState::Minimized;
+	return System::Void();
+}
+
+System::Void gui::start::start_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
+{
+	//tell the form its gonna be draggin'
+	this->dragging = true;
+	this->offset = Point(e->X, e->Y);
+	return System::Void();
+}
+
+System::Void gui::start::start_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
+{
+	if (this->dragging) { //Move, soldier, MOVE!
+		Point currentScreenPos = PointToScreen(e->Location);
+		Location = Point(currentScreenPos.X - this->offset.X,
+			currentScreenPos.Y - this->offset.Y);
+	}
+	return System::Void();
+}
+
+System::Void gui::start::start_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
+{
+	dragging = false;
+	return System::Void();
+}
