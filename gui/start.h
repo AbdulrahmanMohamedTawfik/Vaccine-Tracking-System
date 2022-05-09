@@ -122,6 +122,7 @@ namespace gui {
 			// ExitButton
 			// 
 			this->ExitButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->ExitButton->AutoSize = true;
 			this->ExitButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(174)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
 				static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->ExitButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
@@ -251,6 +252,7 @@ namespace gui {
 			// ResizeButton
 			// 
 			this->ResizeButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->ResizeButton->AutoSize = true;
 			this->ResizeButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(174)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
 				static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->ResizeButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
@@ -267,6 +269,7 @@ namespace gui {
 			// MinimizeButton
 			// 
 			this->MinimizeButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->MinimizeButton->AutoSize = true;
 			this->MinimizeButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(174)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
 				static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->MinimizeButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
