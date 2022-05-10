@@ -47,13 +47,14 @@ namespace gui {
 	private: System::Windows::Forms::TextBox^ NatIDTextBox;
 
 	private: System::Windows::Forms::TextBox^ PasswordTextBox;
-	private: System::Windows::Forms::CheckBox^ HidePassCheckBox;
+
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Button^ UnseeButton;
 
 
 
@@ -81,13 +82,13 @@ namespace gui {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->NatIDTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->PasswordTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->HidePassCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->UnseeButton = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
@@ -159,28 +160,13 @@ namespace gui {
 			this->PasswordTextBox->TextChanged += gcnew System::EventHandler(this, &login::PasswordTextBox_TextChanged);
 			this->PasswordTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &login::PasswordTextBox_KeyDown);
 			// 
-			// HidePassCheckBox
-			// 
-			this->HidePassCheckBox->AutoSize = true;
-			this->HidePassCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->HidePassCheckBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->HidePassCheckBox->ForeColor = System::Drawing::Color::White;
-			this->HidePassCheckBox->Location = System::Drawing::Point(550, 293);
-			this->HidePassCheckBox->Name = L"HidePassCheckBox";
-			this->HidePassCheckBox->Size = System::Drawing::Size(88, 49);
-			this->HidePassCheckBox->TabIndex = 15;
-			this->HidePassCheckBox->Text = L"👁";
-			this->HidePassCheckBox->UseVisualStyleBackColor = true;
-			this->HidePassCheckBox->CheckedChanged += gcnew System::EventHandler(this, &login::HidePassCheckBox_CheckedChanged);
-			// 
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::MidnightBlue;
+			this->panel1->Controls->Add(this->UnseeButton);
 			this->panel1->Controls->Add(this->label5);
 			this->panel1->Controls->Add(this->label4);
 			this->panel1->Controls->Add(this->label1);
-			this->panel1->Controls->Add(this->HidePassCheckBox);
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Controls->Add(this->LoginButton);
 			this->panel1->Controls->Add(this->NationalIDLabel);
@@ -204,6 +190,8 @@ namespace gui {
 			this->label5->TabIndex = 20;
 			this->label5->Text = L"Don\'t have account yet\?";
 			this->label5->Click += gcnew System::EventHandler(this, &login::label5_Click);
+			this->label5->MouseLeave += gcnew System::EventHandler(this, &login::label5_MouseLeave);
+			this->label5->MouseHover += gcnew System::EventHandler(this, &login::label5_MouseHover);
 			// 
 			// label4
 			// 
@@ -247,6 +235,19 @@ namespace gui {
 			this->label3->TabIndex = 20;
 			this->label3->Text = L"# Get Vax for healthier life";
 			// 
+			// UnseeButton
+			// 
+			this->UnseeButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->UnseeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->UnseeButton->Location = System::Drawing::Point(550, 290);
+			this->UnseeButton->Name = L"UnseeButton";
+			this->UnseeButton->Size = System::Drawing::Size(76, 54);
+			this->UnseeButton->TabIndex = 21;
+			this->UnseeButton->Text = L"👁";
+			this->UnseeButton->UseVisualStyleBackColor = true;
+			this->UnseeButton->Click += gcnew System::EventHandler(this, &login::UnseeButton_Click);
+			// 
 			// login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -278,8 +279,6 @@ namespace gui {
 	}
 	private: System::Void login_Load(System::Object^ sender, System::EventArgs^ e);
 
-	private: System::Void HidePassCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-
 	private: System::Void NationalIDLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e);
@@ -289,5 +288,11 @@ namespace gui {
 	private: System::Void PasswordTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 	
 	private: System::Void NatIDTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+	
+	private: System::Void label5_MouseHover(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void label5_MouseLeave(System::Object^ sender, System::EventArgs^ e);
+	
+	private: System::Void UnseeButton_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

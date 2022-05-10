@@ -123,16 +123,16 @@ namespace gui {
 			// 
 			this->ExitButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->ExitButton->AutoSize = true;
-			this->ExitButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(174)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
-				static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->ExitButton->BackColor = System::Drawing::Color::White;
+			this->ExitButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ExitButton.BackgroundImage")));
+			this->ExitButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ExitButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->ExitButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->ExitButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
-			this->ExitButton->Location = System::Drawing::Point(1513, 0);
+			this->ExitButton->Location = System::Drawing::Point(1501, -1);
 			this->ExitButton->Name = L"ExitButton";
-			this->ExitButton->Size = System::Drawing::Size(43, 47);
+			this->ExitButton->Size = System::Drawing::Size(54, 47);
 			this->ExitButton->TabIndex = 2;
-			this->ExitButton->Text = L"X";
-			this->ExitButton->TextAlign = System::Drawing::ContentAlignment::TopLeft;
 			this->ExitButton->UseVisualStyleBackColor = false;
 			this->ExitButton->Click += gcnew System::EventHandler(this, &start::ExitButton_Click);
 			// 
@@ -253,15 +253,15 @@ namespace gui {
 			// 
 			this->ResizeButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->ResizeButton->AutoSize = true;
-			this->ResizeButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(174)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
-				static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->ResizeButton->BackColor = System::Drawing::Color::White;
+			this->ResizeButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ResizeButton.BackgroundImage")));
+			this->ResizeButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ResizeButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->ResizeButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
-			this->ResizeButton->Location = System::Drawing::Point(1453, 0);
+			this->ResizeButton->Location = System::Drawing::Point(1441, 0);
 			this->ResizeButton->Name = L"ResizeButton";
 			this->ResizeButton->Size = System::Drawing::Size(54, 47);
 			this->ResizeButton->TabIndex = 9;
-			this->ResizeButton->Text = L"🗖";
 			this->ResizeButton->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->ResizeButton->UseVisualStyleBackColor = false;
 			this->ResizeButton->Click += gcnew System::EventHandler(this, &start::ResizeButton_Click);
@@ -270,15 +270,16 @@ namespace gui {
 			// 
 			this->MinimizeButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->MinimizeButton->AutoSize = true;
-			this->MinimizeButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(174)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
-				static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->MinimizeButton->BackColor = System::Drawing::Color::White;
+			this->MinimizeButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"MinimizeButton.BackgroundImage")));
+			this->MinimizeButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->MinimizeButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->MinimizeButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
-			this->MinimizeButton->Location = System::Drawing::Point(1393, 0);
+			this->MinimizeButton->Location = System::Drawing::Point(1381, 0);
 			this->MinimizeButton->Name = L"MinimizeButton";
 			this->MinimizeButton->Size = System::Drawing::Size(54, 47);
 			this->MinimizeButton->TabIndex = 10;
-			this->MinimizeButton->Text = L"🗕";
+			this->MinimizeButton->TextAlign = System::Drawing::ContentAlignment::BottomLeft;
 			this->MinimizeButton->UseVisualStyleBackColor = false;
 			this->MinimizeButton->Click += gcnew System::EventHandler(this, &start::MinimizeButton_Click);
 			// 
@@ -288,6 +289,7 @@ namespace gui {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1942, 1055);
 			this->ControlBox = false;
 			this->Controls->Add(this->MinimizeButton);

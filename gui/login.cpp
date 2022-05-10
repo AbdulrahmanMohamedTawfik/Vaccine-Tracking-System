@@ -54,20 +54,6 @@ System::Void gui::login::login_Load(System::Object^ sender, System::EventArgs^ e
 	return System::Void();
 }
 
-System::Void gui::login::HidePassCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
-{
-	if (PasswordTextBox->PasswordChar == '\0')
-	{
-		PasswordTextBox->PasswordChar = '*';
-		HidePassCheckBox->Text = "🐵";
-	}
-	else
-	{
-		PasswordTextBox->PasswordChar = '\0';
-		HidePassCheckBox->Text = "🙈";
-	}
-	return System::Void();
-}
 
 System::Void gui::login::label5_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -98,6 +84,33 @@ System::Void gui::login::NatIDTextBox_KeyDown(System::Object^ sender, System::Wi
 	else if (e->KeyValue == (int)Keys::Enter)
 	{
 		LoginButton->PerformClick();
+	}
+	return System::Void();
+}
+
+System::Void gui::login::label5_MouseHover(System::Object^ sender, System::EventArgs^ e)
+{
+	label5->ForeColor = System::Drawing::Color::HotPink;
+	return System::Void();
+}
+
+System::Void gui::login::label5_MouseLeave(System::Object^ sender, System::EventArgs^ e)
+{
+	label5->ForeColor = System::Drawing::Color::MediumOrchid;
+	return System::Void();
+}
+
+System::Void gui::login::UnseeButton_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	if (PasswordTextBox->PasswordChar == '\0')
+	{
+		PasswordTextBox->PasswordChar = '*';
+		UnseeButton->Text = "🐵";
+	}
+	else
+	{
+		PasswordTextBox->PasswordChar = '\0';
+		UnseeButton->Text = "🙈";
 	}
 	return System::Void();
 }

@@ -52,13 +52,17 @@ System::Void gui::start::start_KeyDown(System::Object^ sender, System::Windows::
 
 System::Void gui::start::ResizeButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	Bitmap^ max_ico = gcnew Bitmap("icons\\window_maximize_icon.ico");
+	Bitmap^ restore_ico = gcnew Bitmap("icons\\window_restore_icon.ico");
 	if (this->WindowState == FormWindowState::Maximized)
 	{
 		this->WindowState = FormWindowState::Normal;
+		ResizeButton->BackgroundImage = max_ico;
 	}
 	else //if (this->WindowState == FormWindowState::Normal)
 	{
 		this->WindowState = FormWindowState::Maximized;
+		ResizeButton->BackgroundImage = restore_ico;
 	}
 	return System::Void();
 }
