@@ -39,6 +39,7 @@ namespace gui {
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ GenderChart;
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ CountryChart;
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ DoseChart;
+
 	private: System::Windows::Forms::Label^ GenderLabel;
 	private: System::Windows::Forms::Label^ CountryLabel;
 	private: System::Windows::Forms::Label^ DoseLabel;
@@ -111,7 +112,8 @@ namespace gui {
 			legend1->ForeColor = System::Drawing::Color::White;
 			legend1->Name = L"Legend1";
 			this->GenderChart->Legends->Add(legend1);
-			this->GenderChart->Location = System::Drawing::Point(95, 51);
+			this->GenderChart->Location = System::Drawing::Point(11, 41);
+			this->GenderChart->Margin = System::Windows::Forms::Padding(2);
 			this->GenderChart->Name = L"GenderChart";
 			series1->ChartArea = L"ChartArea1";
 			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
@@ -137,7 +139,7 @@ namespace gui {
 			series1->Points->Add(dataPoint2);
 			series1->ShadowColor = System::Drawing::Color::Black;
 			this->GenderChart->Series->Add(series1);
-			this->GenderChart->Size = System::Drawing::Size(500, 350);
+			this->GenderChart->Size = System::Drawing::Size(450, 325);
 			this->GenderChart->TabIndex = 0;
 			title1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
@@ -165,7 +167,8 @@ namespace gui {
 			legend2->ForeColor = System::Drawing::Color::White;
 			legend2->Name = L"Legend1";
 			this->CountryChart->Legends->Add(legend2);
-			this->CountryChart->Location = System::Drawing::Point(601, 65);
+			this->CountryChart->Location = System::Drawing::Point(473, 41);
+			this->CountryChart->Margin = System::Windows::Forms::Padding(2);
 			this->CountryChart->Name = L"CountryChart";
 			this->CountryChart->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::None;
 			series2->ChartArea = L"ChartArea1";
@@ -196,7 +199,7 @@ namespace gui {
 			series2->ShadowColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->CountryChart->Series->Add(series2);
-			this->CountryChart->Size = System::Drawing::Size(500, 350);
+			this->CountryChart->Size = System::Drawing::Size(450, 325);
 			this->CountryChart->TabIndex = 1;
 			title2->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 18));
 			title2->ForeColor = System::Drawing::Color::White;
@@ -211,9 +214,10 @@ namespace gui {
 			this->GenderLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->GenderLabel->ForeColor = System::Drawing::Color::White;
-			this->GenderLabel->Location = System::Drawing::Point(88, 418);
+			this->GenderLabel->Location = System::Drawing::Point(9, 383);
+			this->GenderLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->GenderLabel->Name = L"GenderLabel";
-			this->GenderLabel->Size = System::Drawing::Size(200, 42);
+			this->GenderLabel->Size = System::Drawing::Size(161, 33);
 			this->GenderLabel->TabIndex = 2;
 			this->GenderLabel->Text = L"Gender Label";
 			// 
@@ -223,9 +227,10 @@ namespace gui {
 			this->CountryLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->CountryLabel->ForeColor = System::Drawing::Color::White;
-			this->CountryLabel->Location = System::Drawing::Point(594, 418);
+			this->CountryLabel->Location = System::Drawing::Point(468, 383);
+			this->CountryLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->CountryLabel->Name = L"CountryLabel";
-			this->CountryLabel->Size = System::Drawing::Size(211, 42);
+			this->CountryLabel->Size = System::Drawing::Size(167, 33);
 			this->CountryLabel->TabIndex = 3;
 			this->CountryLabel->Text = L"Country Label";
 			// 
@@ -235,9 +240,10 @@ namespace gui {
 			this->DoseLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->DoseLabel->ForeColor = System::Drawing::Color::White;
-			this->DoseLabel->Location = System::Drawing::Point(1100, 418);
+			this->DoseLabel->Location = System::Drawing::Point(968, 383);
+			this->DoseLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->DoseLabel->Name = L"DoseLabel";
-			this->DoseLabel->Size = System::Drawing::Size(196, 42);
+			this->DoseLabel->Size = System::Drawing::Size(154, 33);
 			this->DoseLabel->TabIndex = 5;
 			this->DoseLabel->Text = L"Status Label";
 			// 
@@ -258,7 +264,8 @@ namespace gui {
 			legend3->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19, System::Drawing::FontStyle::Bold));
 			legend3->TitleForeColor = System::Drawing::Color::White;
 			this->DoseChart->Legends->Add(legend3);
-			this->DoseChart->Location = System::Drawing::Point(1107, 51);
+			this->DoseChart->Location = System::Drawing::Point(937, 41);
+			this->DoseChart->Margin = System::Windows::Forms::Padding(2);
 			this->DoseChart->Name = L"DoseChart";
 			series3->ChartArea = L"ChartArea1";
 			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
@@ -279,7 +286,7 @@ namespace gui {
 			series3->Points->Add(dataPoint6);
 			series3->Points->Add(dataPoint7);
 			this->DoseChart->Series->Add(series3);
-			this->DoseChart->Size = System::Drawing::Size(500, 350);
+			this->DoseChart->Size = System::Drawing::Size(450, 325);
 			this->DoseChart->TabIndex = 4;
 			title3->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 18));
 			title3->ForeColor = System::Drawing::Color::White;
@@ -290,17 +297,18 @@ namespace gui {
 			// 
 			// statistics_dashboard
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
-			this->ClientSize = System::Drawing::Size(1924, 1055);
+			this->ClientSize = System::Drawing::Size(1443, 857);
 			this->Controls->Add(this->DoseLabel);
 			this->Controls->Add(this->DoseChart);
 			this->Controls->Add(this->CountryLabel);
 			this->Controls->Add(this->GenderLabel);
 			this->Controls->Add(this->CountryChart);
 			this->Controls->Add(this->GenderChart);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"statistics_dashboard";
 			this->Text = L"Statstics Dashboard";
 			this->Load += gcnew System::EventHandler(this, &statistics_dashboard::statistics_dashboard_Load);

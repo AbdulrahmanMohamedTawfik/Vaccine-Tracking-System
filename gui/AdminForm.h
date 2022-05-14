@@ -15,9 +15,14 @@ namespace gui {
 	public ref class AdminForm : public System::Windows::Forms::Form
 	{
 	public:
+		bool view_or_del = 0;
 		AdminForm(void)
 		{
 			InitializeComponent();
+			NationalIDLabel->Hide();
+			NationalIDTextBox->Hide();
+			SubmitButton->Hide();
+			richTextBox1->Hide();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -57,6 +62,7 @@ namespace gui {
 	private: System::Windows::Forms::PictureBox^ pictureBox6;
 	private: System::Windows::Forms::PictureBox^ pictureBox5;
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
+	private: System::Windows::Forms::Button^ SubmitButton;
 	protected:
 
 	private:
@@ -93,6 +99,7 @@ namespace gui {
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->SubmitButton = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
@@ -130,6 +137,7 @@ namespace gui {
 			this->NationalIDTextBox->Name = L"NationalIDTextBox";
 			this->NationalIDTextBox->Size = System::Drawing::Size(329, 54);
 			this->NationalIDTextBox->TabIndex = 5;
+			this->NationalIDTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AdminForm::NationalIDTextBox_KeyDown);
 			// 
 			// NationalIDLabel
 			// 
@@ -223,11 +231,14 @@ namespace gui {
 			// 
 			this->richTextBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->richTextBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->richTextBox1->Cursor = System::Windows::Forms::Cursors::IBeam;
 			this->richTextBox1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->richTextBox1->ForeColor = System::Drawing::Color::White;
-			this->richTextBox1->Location = System::Drawing::Point(402, 200);
+			this->richTextBox1->Location = System::Drawing::Point(415, 265);
 			this->richTextBox1->Name = L"richTextBox1";
+			this->richTextBox1->ReadOnly = true;
 			this->richTextBox1->Size = System::Drawing::Size(647, 529);
 			this->richTextBox1->TabIndex = 14;
 			this->richTextBox1->Text = L"";
@@ -365,6 +376,16 @@ namespace gui {
 			this->pictureBox1->TabIndex = 18;
 			this->pictureBox1->TabStop = false;
 			// 
+			// SubmitButton
+			// 
+			this->SubmitButton->Location = System::Drawing::Point(723, 192);
+			this->SubmitButton->Name = L"SubmitButton";
+			this->SubmitButton->Size = System::Drawing::Size(95, 47);
+			this->SubmitButton->TabIndex = 24;
+			this->SubmitButton->Text = L"Submit";
+			this->SubmitButton->UseVisualStyleBackColor = true;
+			this->SubmitButton->Click += gcnew System::EventHandler(this, &AdminForm::SubmitButton_Click);
+			// 
 			// AdminForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -372,6 +393,7 @@ namespace gui {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->ClientSize = System::Drawing::Size(1840, 975);
+			this->Controls->Add(this->SubmitButton);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->richTextBox1);
 			this->Controls->Add(this->HelloAdminLabel);
@@ -406,8 +428,12 @@ namespace gui {
 
 	private: System::Void DeleteAllUsers_Click(System::Object^ sender, System::EventArgs^ e);
 	
-  private: System::Void AdminForm_Load(System::Object^ sender, System::EventArgs^ e);
+    private: System::Void AdminForm_Load(System::Object^ sender, System::EventArgs^ e);
 	
 	private: System::Void StatButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void SubmitButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void NationalIDTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 };
 }

@@ -327,8 +327,10 @@ namespace gui {
 			// 
 			// NewvalueTextBox
 			// 
+			this->NewvalueTextBox->BackColor = System::Drawing::Color::MidnightBlue;
 			this->NewvalueTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->NewvalueTextBox->ForeColor = System::Drawing::Color::White;
 			this->NewvalueTextBox->Location = System::Drawing::Point(294, 126);
 			this->NewvalueTextBox->Name = L"NewvalueTextBox";
 			this->NewvalueTextBox->Size = System::Drawing::Size(233, 54);
@@ -424,9 +426,11 @@ namespace gui {
 			// 
 			// OtherCountryComboBox
 			// 
+			this->OtherCountryComboBox->BackColor = System::Drawing::Color::MidnightBlue;
 			this->OtherCountryComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->OtherCountryComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->OtherCountryComboBox->ForeColor = System::Drawing::Color::White;
 			this->OtherCountryComboBox->FormattingEnabled = true;
 			this->OtherCountryComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(189) {
 				L"Afghanistan", L"Albania", L"Algeria",
@@ -470,9 +474,11 @@ namespace gui {
 			// 
 			// DoseComboBox
 			// 
+			this->DoseComboBox->BackColor = System::Drawing::Color::MidnightBlue;
 			this->DoseComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->DoseComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->DoseComboBox->ForeColor = System::Drawing::Color::White;
 			this->DoseComboBox->FormattingEnabled = true;
 			this->DoseComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"only first dose", L"both doses" });
 			this->DoseComboBox->Location = System::Drawing::Point(461, 179);
@@ -511,12 +517,14 @@ namespace gui {
 			// UserInfoRichTextBox
 			// 
 			this->UserInfoRichTextBox->BackColor = System::Drawing::Color::White;
+			this->UserInfoRichTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->UserInfoRichTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->UserInfoRichTextBox->ForeColor = System::Drawing::Color::Black;
 			this->UserInfoRichTextBox->Location = System::Drawing::Point(117, 370);
 			this->UserInfoRichTextBox->Margin = System::Windows::Forms::Padding(1);
 			this->UserInfoRichTextBox->Name = L"UserInfoRichTextBox";
+			this->UserInfoRichTextBox->ReadOnly = true;
 			this->UserInfoRichTextBox->Size = System::Drawing::Size(514, 368);
 			this->UserInfoRichTextBox->TabIndex = 38;
 			this->UserInfoRichTextBox->Text = L"";
@@ -556,9 +564,11 @@ namespace gui {
 			// 
 			// GovernorateComboBox
 			// 
+			this->GovernorateComboBox->BackColor = System::Drawing::Color::MidnightBlue;
 			this->GovernorateComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->GovernorateComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->GovernorateComboBox->ForeColor = System::Drawing::Color::White;
 			this->GovernorateComboBox->FormattingEnabled = true;
 			this->GovernorateComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(27) {
 				L"Alexandria", L"Aswan", L"Assiut", L"Beheira",
