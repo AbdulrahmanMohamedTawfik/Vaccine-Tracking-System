@@ -13,6 +13,9 @@ statistics::statistics() {
 	forgienrs = 0;
 	firstdoes = 0;
 	fullyvac = 0;
+	double under18=0;
+	double between18_60=0;
+	double above60=0;
 }
 //function to get number of users
 void statistics::getuser() {
@@ -180,11 +183,59 @@ void statistics::get_vaccinated() {
 	}
 	MyReadFile.close();
 }
+void statistics::getAge() {
+	string myText;
+	vector<string> s;
+	ifstream MyReadFile("txts\\age.txt");
+	while (getline(MyReadFile, myText))
+	{
+		if (myText.size() > 0) {
+			s.push_back(myText);
+		}
+	}
+	
+	vector<string>::iterator it;
+	it = s.begin();
+	under18 = 0;
+	between18_60 = 0;
+	above60 = 0;
+	while (it != s.end())
+	{
+		if (stoi(*it) <= 18) {
+			under18++;
+		}
+		else if (stoi(*it) >= 60) {
+			above60++;
+		}
+		else
+			between18_60++;
+		it++;
+	}
+	MyReadFile.close();
+}
 //calcutaion of the % of first dose
 double statistics::p_first() {
 	getuser();
 	get_vaccinated();
 	double f = (firstdoes / users) * 100;
+	return f;
+}
+double statistics::p_under18() {
+	getuser();
+	getAge();
+	double f = (under18 / users) * 100;
+	return f;
+}
+double statistics::p_between18_60() {
+	getuser();
+	getAge();
+	double f = (between18_60 / users) * 100;
+	return f;
+}
+double statistics::p_above60() {
+	getuser();
+	getAge();
+	double f = (above60 / users) * 100;
 	return f;
 }
 //calcutaion of the % of fully
