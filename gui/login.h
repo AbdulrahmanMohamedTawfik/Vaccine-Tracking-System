@@ -83,12 +83,12 @@ namespace gui {
 			this->NatIDTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->PasswordTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->UnseeButton = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->UnseeButton = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
@@ -177,6 +177,19 @@ namespace gui {
 			this->panel1->Size = System::Drawing::Size(692, 1238);
 			this->panel1->TabIndex = 18;
 			// 
+			// UnseeButton
+			// 
+			this->UnseeButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->UnseeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->UnseeButton->Location = System::Drawing::Point(550, 290);
+			this->UnseeButton->Name = L"UnseeButton";
+			this->UnseeButton->Size = System::Drawing::Size(76, 54);
+			this->UnseeButton->TabIndex = 21;
+			this->UnseeButton->Text = L"👁";
+			this->UnseeButton->UseVisualStyleBackColor = true;
+			this->UnseeButton->Click += gcnew System::EventHandler(this, &login::UnseeButton_Click);
+			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
@@ -217,7 +230,7 @@ namespace gui {
 			// 
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox1->Location = System::Drawing::Point(707, 112);
+			this->pictureBox1->Location = System::Drawing::Point(700, 112);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(586, 367);
 			this->pictureBox1->TabIndex = 19;
@@ -235,24 +248,11 @@ namespace gui {
 			this->label3->TabIndex = 20;
 			this->label3->Text = L"# Get Vax for healthier life";
 			// 
-			// UnseeButton
-			// 
-			this->UnseeButton->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->UnseeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->UnseeButton->Location = System::Drawing::Point(550, 290);
-			this->UnseeButton->Name = L"UnseeButton";
-			this->UnseeButton->Size = System::Drawing::Size(76, 54);
-			this->UnseeButton->TabIndex = 21;
-			this->UnseeButton->Text = L"👁";
-			this->UnseeButton->UseVisualStyleBackColor = true;
-			this->UnseeButton->Click += gcnew System::EventHandler(this, &login::UnseeButton_Click);
-			// 
 			// login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::White;
+			this->BackColor = System::Drawing::Color::Gainsboro;
 			this->ClientSize = System::Drawing::Size(1314, 1055);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->pictureBox1);

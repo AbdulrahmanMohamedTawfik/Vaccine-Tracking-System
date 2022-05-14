@@ -42,7 +42,7 @@ namespace gui {
 	private: System::Windows::Forms::Button^ ExitButton;
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::Label^ label1;
+
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
@@ -71,7 +71,6 @@ namespace gui {
 			this->RegisterButton = (gcnew System::Windows::Forms::Button());
 			this->ExitButton = (gcnew System::Windows::Forms::Button());
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -121,13 +120,13 @@ namespace gui {
 			// 
 			this->ExitButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->ExitButton->AutoSize = true;
-			this->ExitButton->BackColor = System::Drawing::Color::White;
+			this->ExitButton->BackColor = System::Drawing::Color::Gainsboro;
 			this->ExitButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ExitButton.BackgroundImage")));
 			this->ExitButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ExitButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->ExitButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->ExitButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
-			this->ExitButton->Location = System::Drawing::Point(1501, -1);
+			this->ExitButton->Location = System::Drawing::Point(1502, 3);
 			this->ExitButton->Name = L"ExitButton";
 			this->ExitButton->Size = System::Drawing::Size(54, 47);
 			this->ExitButton->TabIndex = 2;
@@ -136,30 +135,20 @@ namespace gui {
 			// 
 			// flowLayoutPanel1
 			// 
-			this->flowLayoutPanel1->BackColor = System::Drawing::Color::White;
-			this->flowLayoutPanel1->Controls->Add(this->label1);
+			this->flowLayoutPanel1->BackColor = System::Drawing::Color::Gainsboro;
 			this->flowLayoutPanel1->Controls->Add(this->pictureBox1);
 			this->flowLayoutPanel1->Location = System::Drawing::Point(1, 0);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
 			this->flowLayoutPanel1->Size = System::Drawing::Size(547, 193);
 			this->flowLayoutPanel1->TabIndex = 4;
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(3, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(46, 17);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"label1";
-			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox1->Location = System::Drawing::Point(3, 20);
+			this->pictureBox1->Location = System::Drawing::Point(3, 3);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(541, 182);
+			this->pictureBox1->Size = System::Drawing::Size(544, 186);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
@@ -167,7 +156,7 @@ namespace gui {
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::White;
+			this->panel1->BackColor = System::Drawing::Color::Gainsboro;
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Controls->Add(this->RegisterButton);
 			this->panel1->Controls->Add(this->pictureBox3);
@@ -192,7 +181,7 @@ namespace gui {
 			// 
 			this->pictureBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.BackgroundImage")));
 			this->pictureBox3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox3->Location = System::Drawing::Point(6, 0);
+			this->pictureBox3->Location = System::Drawing::Point(3, -10);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(538, 274);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -240,12 +229,12 @@ namespace gui {
 			// 
 			this->ResizeButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->ResizeButton->AutoSize = true;
-			this->ResizeButton->BackColor = System::Drawing::Color::White;
+			this->ResizeButton->BackColor = System::Drawing::Color::Gainsboro;
 			this->ResizeButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ResizeButton.BackgroundImage")));
 			this->ResizeButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ResizeButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->ResizeButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
-			this->ResizeButton->Location = System::Drawing::Point(1441, 0);
+			this->ResizeButton->Location = System::Drawing::Point(1442, 4);
 			this->ResizeButton->Name = L"ResizeButton";
 			this->ResizeButton->Size = System::Drawing::Size(54, 47);
 			this->ResizeButton->TabIndex = 9;
@@ -257,12 +246,12 @@ namespace gui {
 			// 
 			this->MinimizeButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->MinimizeButton->AutoSize = true;
-			this->MinimizeButton->BackColor = System::Drawing::Color::White;
+			this->MinimizeButton->BackColor = System::Drawing::Color::Gainsboro;
 			this->MinimizeButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"MinimizeButton.BackgroundImage")));
 			this->MinimizeButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->MinimizeButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->MinimizeButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
-			this->MinimizeButton->Location = System::Drawing::Point(1381, 0);
+			this->MinimizeButton->Location = System::Drawing::Point(1382, 4);
 			this->MinimizeButton->Name = L"MinimizeButton";
 			this->MinimizeButton->Size = System::Drawing::Size(54, 47);
 			this->MinimizeButton->TabIndex = 10;
@@ -277,7 +266,7 @@ namespace gui {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1942, 1055);
+			this->ClientSize = System::Drawing::Size(1860, 1055);
 			this->ControlBox = false;
 			this->Controls->Add(this->MinimizeButton);
 			this->Controls->Add(this->ResizeButton);
@@ -300,7 +289,6 @@ namespace gui {
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &start::start_MouseMove);
 			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &start::start_MouseUp);
 			this->flowLayoutPanel1->ResumeLayout(false);
-			this->flowLayoutPanel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
