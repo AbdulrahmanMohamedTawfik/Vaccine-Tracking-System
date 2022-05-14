@@ -125,10 +125,12 @@ namespace gui {
 			this->GenderChart->ChartAreas->Add(chartArea1);
 			legend1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			legend1->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9));
 			legend1->ForeColor = System::Drawing::Color::White;
+			legend1->IsTextAutoFit = false;
 			legend1->Name = L"Legend1";
 			this->GenderChart->Legends->Add(legend1);
-			this->GenderChart->Location = System::Drawing::Point(12, 12);
+			this->GenderChart->Location = System::Drawing::Point(19, 12);
 			this->GenderChart->Name = L"GenderChart";
 			series1->ChartArea = L"ChartArea1";
 			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
@@ -179,7 +181,9 @@ namespace gui {
 			this->CountryChart->ChartAreas->Add(chartArea2);
 			legend2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			legend2->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9));
 			legend2->ForeColor = System::Drawing::Color::White;
+			legend2->IsTextAutoFit = false;
 			legend2->Name = L"Legend1";
 			this->CountryChart->Legends->Add(legend2);
 			this->CountryChart->Location = System::Drawing::Point(958, 12);
@@ -224,11 +228,13 @@ namespace gui {
 			// 
 			// GenderLabel
 			// 
+			this->GenderLabel->AutoEllipsis = true;
 			this->GenderLabel->AutoSize = true;
+			this->GenderLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->GenderLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->GenderLabel->ForeColor = System::Drawing::Color::White;
-			this->GenderLabel->Location = System::Drawing::Point(12, 410);
+			this->GenderLabel->Location = System::Drawing::Point(12, 397);
 			this->GenderLabel->Name = L"GenderLabel";
 			this->GenderLabel->Size = System::Drawing::Size(200, 42);
 			this->GenderLabel->TabIndex = 2;
@@ -240,7 +246,7 @@ namespace gui {
 			this->CountryLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->CountryLabel->ForeColor = System::Drawing::Color::White;
-			this->CountryLabel->Location = System::Drawing::Point(951, 410);
+			this->CountryLabel->Location = System::Drawing::Point(951, 397);
 			this->CountryLabel->Name = L"CountryLabel";
 			this->CountryLabel->Size = System::Drawing::Size(211, 42);
 			this->CountryLabel->TabIndex = 3;
@@ -252,7 +258,7 @@ namespace gui {
 			this->DoseLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->DoseLabel->ForeColor = System::Drawing::Color::White;
-			this->DoseLabel->Location = System::Drawing::Point(941, 858);
+			this->DoseLabel->Location = System::Drawing::Point(951, 845);
 			this->DoseLabel->Name = L"DoseLabel";
 			this->DoseLabel->Size = System::Drawing::Size(196, 42);
 			this->DoseLabel->TabIndex = 5;
@@ -269,6 +275,7 @@ namespace gui {
 			this->DoseChart->ChartAreas->Add(chartArea3);
 			legend3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			legend3->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9));
 			legend3->ForeColor = System::Drawing::Color::White;
 			legend3->IsTextAutoFit = false;
 			legend3->Name = L"Legend1";
@@ -314,7 +321,7 @@ namespace gui {
 			this->AgeLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->AgeLabel->ForeColor = System::Drawing::Color::White;
-			this->AgeLabel->Location = System::Drawing::Point(12, 858);
+			this->AgeLabel->Location = System::Drawing::Point(12, 845);
 			this->AgeLabel->Name = L"AgeLabel";
 			this->AgeLabel->Size = System::Drawing::Size(155, 42);
 			this->AgeLabel->TabIndex = 7;
@@ -331,13 +338,14 @@ namespace gui {
 			this->AgeChart->ChartAreas->Add(chartArea4);
 			legend4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			legend4->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 9));
 			legend4->ForeColor = System::Drawing::Color::White;
 			legend4->IsTextAutoFit = false;
 			legend4->Name = L"Legend1";
 			legend4->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19, System::Drawing::FontStyle::Bold));
 			legend4->TitleForeColor = System::Drawing::Color::White;
 			this->AgeChart->Legends->Add(legend4);
-			this->AgeChart->Location = System::Drawing::Point(12, 492);
+			this->AgeChart->Location = System::Drawing::Point(19, 492);
 			this->AgeChart->Name = L"AgeChart";
 			series4->ChartArea = L"ChartArea1";
 			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;

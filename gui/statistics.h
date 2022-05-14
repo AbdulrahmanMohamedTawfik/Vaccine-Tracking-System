@@ -14,8 +14,6 @@ private:
 	double under18;
 	double between18_60;
 	double above60;
-
-	//string awaiting_users;
 public:
 	statistics();
 	void getuser();
@@ -34,7 +32,4 @@ public:
 	double p_under18();
 	double p_between18_60();
 	double p_above60();
-	double round(double var);
-	/*string getAwaitingUsers();
-	void setAwaitingUsers(string val);*/
 };

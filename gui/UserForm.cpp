@@ -2,12 +2,9 @@
 #include "Admin.h"
 #include "User.h"
 #include "login.h"
-
 #include <unordered_map>
 #include <msclr/marshal_cppstd.h>
 #include <string>
-//#include<iostream>
-//using namespace std;
 unordered_map<string, User> users;
 User u;
 Admin a;
@@ -47,7 +44,6 @@ System::Void gui::UserForm::ViewUserInfoButton_Click(System::Object^ sender, Sys
 	DoseComboBox->Hide();
 	GovernorateComboBox->Hide();
 	login^ l = gcnew login();
-
 	string contents = a.viewUser(u.getNAtIDTextBox_Text(), users);
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 	UserInfoRichTextBox->Show();

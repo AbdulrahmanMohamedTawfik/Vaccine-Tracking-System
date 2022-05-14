@@ -35,7 +35,6 @@ public:
 	void getUserName(unordered_map<string, User>& users);
 	bool static getdel_user_found();
 	void static setdel_user_found(bool val);
-
 	void editId(string id, unordered_map<string, User>& users);
 	void editName(string name, unordered_map<string, User>& users);
 	void editGender(string gender, unordered_map<string, User>& users);
@@ -44,5 +43,4 @@ public:
 	void editGov(string gov, unordered_map<string, User>& users);
 	void editPassword(string password, unordered_map<string, User>& users);
 	void editStatus(string age, unordered_map<string, User>& users);
-
 };
