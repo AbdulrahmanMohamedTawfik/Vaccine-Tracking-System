@@ -27,6 +27,7 @@ System::Void gui::AdminForm::ViewAllUsers_Click(System::Object^ sender, System::
 	string contents = a1.viewAll(users_for_admin);
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 	richTextBox1->Text = syscontents;
+	richTextBox1->Show();
 	return System::Void();
 }
 
@@ -35,9 +36,10 @@ System::Void gui::AdminForm::ViewAwaitingListButton_Click(System::Object^ sender
 	NationalIDLabel->Hide();
 	NationalIDTextBox->Hide();
 	SubmitButton->Hide();
-	AwaitingList^ awaitinglist = gcnew AwaitingList();
-	awaitinglist->Show();
-	richTextBox1->Text = "Awaiting list viewed successfully";
+	string contents = a1.view_Waiting(users_for_admin);
+	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
+	richTextBox1->Text = syscontents;
+	richTextBox1->Show();
 	return System::Void();
 }
 

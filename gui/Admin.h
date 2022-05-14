@@ -18,4 +18,5 @@ public:
 	string viewAll(unordered_map<string, User> users);
 	void deleteUser(string userNationalID, unordered_map<string, User>& users);
 	void deleteAll(unordered_map<string, User>& users);
+	string view_Waiting(unordered_map<string, User> users);
 };
