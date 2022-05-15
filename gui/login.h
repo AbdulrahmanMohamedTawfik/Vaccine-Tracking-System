@@ -277,7 +277,6 @@ namespace gui {
 	private: System::Void PasswordTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	}
-	private: System::Void login_Load(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void NationalIDLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -294,5 +293,7 @@ namespace gui {
 	private: System::Void label5_MouseLeave(System::Object^ sender, System::EventArgs^ e);
 	
 	private: System::Void UnseeButton_Click(System::Object^ sender, System::EventArgs^ e);
+	
+	private: System::Void login_Load(System::Object^ sender, System::EventArgs^ e);
 };
 }

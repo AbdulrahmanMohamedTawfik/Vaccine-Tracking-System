@@ -97,7 +97,7 @@ System::Void gui::AdminForm::SubmitButton_Click(System::Object^ sender, System::
 	if (view_or_del)
 	{
 		a1.deleteUser(NatID, users_for_admin);
-		if (u1.getdel_user_found())//bug fix needed here (always if is executed and else never executed)
+		if (u1.getdel_user_found())
 		{
 			u1.update_files(users_for_admin);
 			richTextBox1->Text = "User Deleteted successfully";

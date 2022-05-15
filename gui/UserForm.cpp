@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <msclr/marshal_cppstd.h>
 #include <string>
+using namespace System::Media;
 unordered_map<string, User> users;
 User u;
 Admin a;
@@ -17,6 +18,11 @@ System::Void gui::UserForm::UserForm_Load(System::Object^ sender, System::EventA
 	String^ sys_str = gcnew String(std_str.c_str());
 	UsernameLabel->Text = sys_str;
 	this->Text = sys_str;
+	if (u.getvol_on())
+	{
+		SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\user.wav");
+		splayer->Play();
+	}
 	return System::Void();
 }
 

@@ -2,6 +2,7 @@
 #include<string>
 #include "User.h"
 #include <msclr/marshal_cppstd.h>
+using namespace System::Media;
 System::Void gui::reg::NameTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	String^ name = NameTextBox->Text;
@@ -64,11 +65,21 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 	{
 		label4->ForeColor = System::Drawing::Color::Red;
 		label4->Text = "Missing info! please, fill all feilds";
+		if (u.getvol_on())
+		{
+			SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\reg_mising_info.wav");
+			splayer->Play();
+		}
 	}
 	else if (u.check_id(NatID))
 	{
 		label4->ForeColor = System::Drawing::Color::Red;
 		label4->Text = "ID is already used by another user!";
+		if (u.getvol_on())
+		{
+			SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\id_already_used.wav");
+			splayer->Play();
+		}
 	}
 	else
 	{
@@ -100,7 +111,13 @@ System::Void gui::reg::UnseeButton_Click(System::Object^ sender, System::EventAr
 
 System::Void gui::reg::reg_Load(System::Object^ sender, System::EventArgs^ e)
 {
+	User u;
 	WindowState = FormWindowState::Maximized;
+	if (u.getvol_on())
+	{
+		SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\reg.wav");
+		splayer->Play();
+	}
 	return System::Void();
 }
 

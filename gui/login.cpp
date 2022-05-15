@@ -1,32 +1,49 @@
 ﻿#include "login.h"
 #include<iostream>
+#include"User.h"
 using namespace std;
+using namespace System::Media;
 System::Void gui::login::LoginButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	UserForm^ userform = gcnew UserForm();
 	AdminForm^ adminform = gcnew AdminForm();
-	User u;
 	String^ str_sys;
+	User usr;
 	str_sys = NatIDTextBox->Text;
 	string NatID = msclr::interop::marshal_as< std::string >(str_sys);
-	u.setNAtIDTextBox_Text(NatID);
+	usr.setNAtIDTextBox_Text(NatID);
 	str_sys = PasswordTextBox->Text;
 	string password = msclr::interop::marshal_as< std::string >(str_sys);
 
-	u.login(NatID, password);
+	usr.login(NatID, password);
 	if ((NatIDTextBox->Text == "") && (PasswordTextBox->Text == ""))
 	{
-		label4->Text = "Really? u wanna login with Empty user";
+		label4->Text = "You can't login with Empty user";
+		if (usr.getvol_on())
+		{
+			SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\empty_user.wav");
+			splayer->Play();
+		}
 	}
 	else if ((NatIDTextBox->Text != "") && (PasswordTextBox->Text == ""))
 	{
-		label4->Text = "Really? u wanna login with Empty pass";
+		label4->Text = "You can't login with Empty pass";
+		if (usr.getvol_on())
+		{
+			SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\empty_pass.wav");
+			splayer->Play();
+		}
 	}
 	else if ((NatIDTextBox->Text == "") && (PasswordTextBox->Text != ""))
 	{
-		label4->Text = "Really? u wanna login with Empty ID";
+		label4->Text = "You can't login with Empty ID";
+		if (usr.getvol_on())
+		{
+			SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\empty_id.wav");
+			splayer->Play();
+		}
 	}
-	else if ((u.correct_NatId && u.correct_pass))
+	else if ((usr.correct_NatId && usr.correct_pass))
 	{
 		userform->Show();
 		this->Close();
@@ -34,6 +51,11 @@ System::Void gui::login::LoginButton_Click(System::Object^ sender, System::Event
 	else
 	{
 		label4->Text = "Sorry , User does not exist";
+		if (usr.getvol_on())
+		{
+			SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\user_not_exist.wav");
+			splayer->Play();
+		}
 	}
 	if (NatIDTextBox->Text == "admin" && PasswordTextBox->Text == "admin")
 	{
@@ -45,12 +67,6 @@ System::Void gui::login::LoginButton_Click(System::Object^ sender, System::Event
 		label4->Text = "u know ID is 14 num ,don't u?";
 	}*/
 
-	return System::Void();
-}
-
-System::Void gui::login::login_Load(System::Object^ sender, System::EventArgs^ e)
-{
-	NatIDTextBox->Focus();
 	return System::Void();
 }
 
@@ -111,6 +127,18 @@ System::Void gui::login::UnseeButton_Click(System::Object^ sender, System::Event
 	{
 		PasswordTextBox->PasswordChar = '\0';
 		UnseeButton->Text = "🙈";
+	}
+	return System::Void();
+}
+
+System::Void gui::login::login_Load(System::Object^ sender, System::EventArgs^ e)
+{
+	User usr;
+	NatIDTextBox->Focus();
+	if (usr.getvol_on())
+	{
+		SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\login.wav");
+		splayer->Play();
 	}
 	return System::Void();
 }
