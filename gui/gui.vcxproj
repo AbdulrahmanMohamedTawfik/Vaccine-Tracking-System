@@ -89,7 +89,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalOptions> /execution-charset /utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalDependencies>gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -124,7 +124,6 @@
   <ItemGroup>
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="AdminForm.cpp" />
-    <ClCompile Include="AwaitingList.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="statistics.cpp" />
     <ClCompile Include="statstics_dashboard.cpp" />
@@ -136,9 +135,6 @@
   <ItemGroup>
     <ClInclude Include="Admin.h" />
     <ClInclude Include="AdminForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="AwaitingList.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="login.h">
@@ -162,9 +158,6 @@
   <ItemGroup>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AwaitingList.resx">
-      <DependentUpon>AwaitingList.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.h</DependentUpon>
