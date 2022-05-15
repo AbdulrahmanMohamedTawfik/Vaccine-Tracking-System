@@ -52,6 +52,7 @@ namespace gui {
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
 	private: System::Windows::Forms::Button^ ResizeButton;
 	private: System::Windows::Forms::Button^ MinimizeButton;
+	private: System::Windows::Forms::Button^ VolumeButton;
 
 	private:
 		/// <summary>
@@ -80,6 +81,7 @@ namespace gui {
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->ResizeButton = (gcnew System::Windows::Forms::Button());
 			this->MinimizeButton = (gcnew System::Windows::Forms::Button());
+			this->VolumeButton = (gcnew System::Windows::Forms::Button());
 			this->flowLayoutPanel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel1->SuspendLayout();
@@ -259,6 +261,25 @@ namespace gui {
 			this->MinimizeButton->UseVisualStyleBackColor = false;
 			this->MinimizeButton->Click += gcnew System::EventHandler(this, &start::MinimizeButton_Click);
 			// 
+			// VolumeButton
+			// 
+			this->VolumeButton->AutoSize = true;
+			this->VolumeButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->VolumeButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"VolumeButton.BackgroundImage")));
+			this->VolumeButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->VolumeButton->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->VolumeButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->VolumeButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
+			this->VolumeButton->Location = System::Drawing::Point(571, 138);
+			this->VolumeButton->Name = L"VolumeButton";
+			this->VolumeButton->Size = System::Drawing::Size(54, 51);
+			this->VolumeButton->TabIndex = 11;
+			this->VolumeButton->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->VolumeButton->UseVisualStyleBackColor = false;
+			this->VolumeButton->Click += gcnew System::EventHandler(this, &start::VolumeButton_Click);
+			// 
 			// start
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -268,6 +289,7 @@ namespace gui {
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1860, 1055);
 			this->ControlBox = false;
+			this->Controls->Add(this->VolumeButton);
 			this->Controls->Add(this->MinimizeButton);
 			this->Controls->Add(this->ResizeButton);
 			this->Controls->Add(this->pictureBox4);
@@ -322,5 +344,7 @@ namespace gui {
 	private: System::Void start_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 
 	private: System::Void start_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
+	
+	private: System::Void VolumeButton_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

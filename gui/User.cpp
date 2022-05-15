@@ -5,6 +5,7 @@
 using namespace std;
 string User::NAtIDTextBox_Text;
 bool User::del_user_found;
+bool User::volume_on;
 unordered_map<string, User>::iterator it;
 bool User::check_id(string id)
 {
@@ -253,6 +254,15 @@ void User::setdel_user_found(bool val)
 	del_user_found = val;
 }
 
+bool User::getvol_on()
+{
+	return volume_on;
+}
+
+void User::setvol_on(bool val)
+{
+	volume_on = val;
+}
 void User::editName(string newName, unordered_map<string, User>& users) {
 	for (it = users.begin(); it != users.end(); it++) {
 		if (it->first == getNAtIDTextBox_Text())

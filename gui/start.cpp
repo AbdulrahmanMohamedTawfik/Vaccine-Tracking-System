@@ -1,7 +1,12 @@
 #include "start.h"
 #include <array>
+#include"User.h"
+#include<iostream>
+using namespace std;
 using namespace System;
 using namespace System::Windows::Forms;
+using namespace System::Media;
+User usr;
 [STAThreadAttribute]
 int main(cli::array<System::String^>^ args)
 {
@@ -38,6 +43,10 @@ System::Void gui::start::ExitButton_Click(System::Object^ sender, System::EventA
 System::Void gui::start::start_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	WindowState = FormWindowState::Maximized;
+	SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\welcome.wav");
+	splayer->Play();
+	usr.setvol_on(true);
+	//cout << "getvol_on()= " << usr.getvol_on() << "\n";
 	return System::Void();
 }
 
@@ -94,5 +103,23 @@ System::Void gui::start::start_MouseMove(System::Object^ sender, System::Windows
 System::Void gui::start::start_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
 {
 	dragging = false;
+	return System::Void();
+}
+
+System::Void gui::start::VolumeButton_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	Bitmap^ vol_on = gcnew Bitmap("icons\\sound_on.ico");
+	Bitmap^ vol_off = gcnew Bitmap("icons\\sound_off.ico");
+	if (usr.getvol_on())
+	{
+		usr.setvol_on(false);
+		VolumeButton->BackgroundImage = vol_off;
+	}
+	else if (!usr.getvol_on())
+	{
+		usr.setvol_on(true);
+		VolumeButton->BackgroundImage = vol_on;
+	}
+	cout << "getvol_on()= " << usr.getvol_on() << "\n";
 	return System::Void();
 }

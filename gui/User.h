@@ -8,7 +8,9 @@ class User
 private:
 	static string NAtIDTextBox_Text;
 	static bool del_user_found;
+	static bool volume_on;
 public:
+	//= true;
 	string name, id, gender, age, Country, Governorate, password, status;
 	bool correct_NatId, correct_pass;
 	string NameText;//"Hello " + NameText (in userform)
@@ -35,7 +37,9 @@ public:
 	void getUserName(unordered_map<string, User>& users);
 	bool static getdel_user_found();
 	void static setdel_user_found(bool val);
+	bool getvol_on();
 	void editId(string id, unordered_map<string, User>& users);
+	void setvol_on(bool val);
 	void editName(string name, unordered_map<string, User>& users);
 	void editGender(string gender, unordered_map<string, User>& users);
 	void editAge(string age, unordered_map<string, User>& users);
