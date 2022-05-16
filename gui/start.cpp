@@ -46,7 +46,13 @@ System::Void gui::start::start_Load(System::Object^ sender, System::EventArgs^ e
 	SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\welcome.wav");
 	splayer->Play();
 	usr.setvol_on(true);
-	//cout << "getvol_on()= " << usr.getvol_on() << "\n";
+	return System::Void();
+}
+
+System::Void gui::start::pictureBox1_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	login^ form = gcnew login();
+	form->Show();
 	return System::Void();
 }
 
@@ -56,29 +62,6 @@ System::Void gui::start::start_KeyDown(System::Object^ sender, System::Windows::
 	{
 		LoginButton->PerformClick();
 	}
-	return System::Void();
-}
-
-System::Void gui::start::ResizeButton_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	Bitmap^ max_ico = gcnew Bitmap("icons\\window_maximize_icon.ico");
-	Bitmap^ restore_ico = gcnew Bitmap("icons\\window_restore_icon.ico");
-	if (this->WindowState == FormWindowState::Maximized)
-	{
-		this->WindowState = FormWindowState::Normal;
-		ResizeButton->BackgroundImage = max_ico;
-	}
-	else //if (this->WindowState == FormWindowState::Normal)
-	{
-		this->WindowState = FormWindowState::Maximized;
-		ResizeButton->BackgroundImage = restore_ico;
-	}
-	return System::Void();
-}
-
-System::Void gui::start::MinimizeButton_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->WindowState = FormWindowState::Minimized;
 	return System::Void();
 }
 
