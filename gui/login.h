@@ -162,9 +162,8 @@ namespace gui {
 				static_cast<System::Byte>(0)));
 			this->NatIDTextBox->ForeColor = System::Drawing::Color::Black;
 			this->NatIDTextBox->Location = System::Drawing::Point(162, 377);
-			this->NatIDTextBox->Multiline = true;
 			this->NatIDTextBox->Name = L"NatIDTextBox";
-			this->NatIDTextBox->Size = System::Drawing::Size(345, 45);
+			this->NatIDTextBox->Size = System::Drawing::Size(345, 36);
 			this->NatIDTextBox->TabIndex = 4;
 			this->NatIDTextBox->TextChanged += gcnew System::EventHandler(this, &login::NameTextBox_TextChanged);
 			this->NatIDTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &login::NatIDTextBox_KeyDown);
@@ -176,9 +175,8 @@ namespace gui {
 				static_cast<System::Byte>(0)));
 			this->PasswordTextBox->ForeColor = System::Drawing::Color::Black;
 			this->PasswordTextBox->Location = System::Drawing::Point(162, 468);
-			this->PasswordTextBox->Multiline = true;
 			this->PasswordTextBox->Name = L"PasswordTextBox";
-			this->PasswordTextBox->Size = System::Drawing::Size(345, 45);
+			this->PasswordTextBox->Size = System::Drawing::Size(345, 36);
 			this->PasswordTextBox->TabIndex = 5;
 			this->PasswordTextBox->TextChanged += gcnew System::EventHandler(this, &login::PasswordTextBox_TextChanged);
 			this->PasswordTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &login::PasswordTextBox_KeyDown);
@@ -219,19 +217,25 @@ namespace gui {
 			// 
 			// panel1
 			// 
+			this->panel1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
 			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->panel1->Controls->Add(this->panel5);
 			this->panel1->Cursor = System::Windows::Forms::Cursors::No;
 			this->panel1->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->panel1->Location = System::Drawing::Point(46, 44);
+			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1217, 744);
+			this->panel1->Size = System::Drawing::Size(1924, 1055);
 			this->panel1->TabIndex = 22;
 			// 
 			// panel5
 			// 
+			this->panel5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel5->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->panel5->Controls->Add(this->UnseeButton);
 			this->panel5->Controls->Add(this->pictureBox2);
 			this->panel5->Controls->Add(this->label3);
@@ -247,9 +251,9 @@ namespace gui {
 			this->panel5->Controls->Add(this->label2);
 			this->panel5->Controls->Add(this->LoginButton);
 			this->panel5->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->panel5->Location = System::Drawing::Point(485, 0);
+			this->panel5->Location = System::Drawing::Point(769, 0);
 			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(732, 741);
+			this->panel5->Size = System::Drawing::Size(1143, 1055);
 			this->panel5->TabIndex = 25;
 			this->panel5->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &login::panel5_Paint);
 			// 
@@ -310,7 +314,6 @@ namespace gui {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(361, 25);
 			this->label4->TabIndex = 8;
-			this->label4->Text = L"label4";
 			this->label4->Click += gcnew System::EventHandler(this, &login::label4_Click_1);
 			// 
 			// panel3
@@ -335,7 +338,7 @@ namespace gui {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1837, 1055);
+			this->ClientSize = System::Drawing::Size(1924, 1055);
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"login";
