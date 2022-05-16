@@ -66,10 +66,6 @@ namespace gui {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(start::typeid));
-			Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties^ stateProperties1 = (gcnew Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties());
-			Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties^ stateProperties2 = (gcnew Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties());
-			Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties^ stateProperties3 = (gcnew Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties());
-			Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties^ stateProperties4 = (gcnew Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties());
 			this->LoginButton = (gcnew System::Windows::Forms::Button());
 			this->RegisterButton = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -178,10 +174,10 @@ namespace gui {
 			// 
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox1->Location = System::Drawing::Point(513, 238);
+			this->pictureBox1->Location = System::Drawing::Point(522, 238);
 			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(92, 60);
+			this->pictureBox1->Size = System::Drawing::Size(83, 60);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 2;
 			this->pictureBox1->TabStop = false;
