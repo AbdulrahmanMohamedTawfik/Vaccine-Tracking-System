@@ -122,7 +122,7 @@ namespace gui {
 			this->LoginButton->Font = (gcnew System::Drawing::Font(L"Tahoma", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->LoginButton->ForeColor = System::Drawing::Color::RoyalBlue;
-			this->LoginButton->Location = System::Drawing::Point(368, 554);
+			this->LoginButton->Location = System::Drawing::Point(367, 559);
 			this->LoginButton->Name = L"LoginButton";
 			this->LoginButton->Size = System::Drawing::Size(140, 60);
 			this->LoginButton->TabIndex = 1;
@@ -158,12 +158,13 @@ namespace gui {
 			// NatIDTextBox
 			// 
 			this->NatIDTextBox->BackColor = System::Drawing::Color::White;
-			this->NatIDTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->NatIDTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NatIDTextBox->ForeColor = System::Drawing::Color::Black;
 			this->NatIDTextBox->Location = System::Drawing::Point(162, 377);
+			this->NatIDTextBox->Multiline = true;
 			this->NatIDTextBox->Name = L"NatIDTextBox";
-			this->NatIDTextBox->Size = System::Drawing::Size(346, 45);
+			this->NatIDTextBox->Size = System::Drawing::Size(345, 45);
 			this->NatIDTextBox->TabIndex = 4;
 			this->NatIDTextBox->TextChanged += gcnew System::EventHandler(this, &login::NameTextBox_TextChanged);
 			this->NatIDTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &login::NatIDTextBox_KeyDown);
@@ -171,12 +172,13 @@ namespace gui {
 			// PasswordTextBox
 			// 
 			this->PasswordTextBox->BackColor = System::Drawing::Color::White;
-			this->PasswordTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->PasswordTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->PasswordTextBox->ForeColor = System::Drawing::Color::Black;
 			this->PasswordTextBox->Location = System::Drawing::Point(162, 468);
+			this->PasswordTextBox->Multiline = true;
 			this->PasswordTextBox->Name = L"PasswordTextBox";
-			this->PasswordTextBox->Size = System::Drawing::Size(346, 45);
+			this->PasswordTextBox->Size = System::Drawing::Size(345, 45);
 			this->PasswordTextBox->TabIndex = 5;
 			this->PasswordTextBox->TextChanged += gcnew System::EventHandler(this, &login::PasswordTextBox_TextChanged);
 			this->PasswordTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &login::PasswordTextBox_KeyDown);
@@ -184,13 +186,18 @@ namespace gui {
 			// UnseeButton
 			// 
 			this->UnseeButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->UnseeButton->FlatAppearance->BorderSize = 0;
+			this->UnseeButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::WhiteSmoke;
+			this->UnseeButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->UnseeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->UnseeButton->Location = System::Drawing::Point(1618, 112);
+			this->UnseeButton->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->UnseeButton->Location = System::Drawing::Point(514, 461);
 			this->UnseeButton->Name = L"UnseeButton";
-			this->UnseeButton->Size = System::Drawing::Size(76, 54);
+			this->UnseeButton->Size = System::Drawing::Size(69, 57);
 			this->UnseeButton->TabIndex = 21;
 			this->UnseeButton->Text = L"👁";
+			this->UnseeButton->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->UnseeButton->UseVisualStyleBackColor = true;
 			this->UnseeButton->Click += gcnew System::EventHandler(this, &login::UnseeButton_Click);
 			// 
@@ -225,6 +232,7 @@ namespace gui {
 			// 
 			// panel5
 			// 
+			this->panel5->Controls->Add(this->UnseeButton);
 			this->panel5->Controls->Add(this->pictureBox2);
 			this->panel5->Controls->Add(this->label3);
 			this->panel5->Controls->Add(this->label1);
@@ -293,17 +301,16 @@ namespace gui {
 			// 
 			// label4
 			// 
-			this->label4->AutoSize = true;
 			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::Purple;
-			this->label4->Location = System::Drawing::Point(88, 581);
+			this->label4->Location = System::Drawing::Point(158, 521);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(274, 20);
+			this->label4->Size = System::Drawing::Size(361, 25);
 			this->label4->TabIndex = 8;
-			//this->label4->Text = L"You can\'t login with Empty user";
+			this->label4->Text = L"label4";
 			this->label4->Click += gcnew System::EventHandler(this, &login::label4_Click_1);
 			// 
 			// panel3
@@ -311,7 +318,7 @@ namespace gui {
 			this->panel3->BackColor = System::Drawing::Color::RoyalBlue;
 			this->panel3->Location = System::Drawing::Point(136, 362);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(10, 85);
+			this->panel3->Size = System::Drawing::Size(10, 69);
 			this->panel3->TabIndex = 22;
 			// 
 			// panel2
@@ -328,8 +335,7 @@ namespace gui {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1314, 1055);
-			this->Controls->Add(this->UnseeButton);
+			this->ClientSize = System::Drawing::Size(1837, 1055);
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"login";
