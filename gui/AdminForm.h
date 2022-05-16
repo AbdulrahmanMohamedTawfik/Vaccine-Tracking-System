@@ -39,7 +39,7 @@ namespace gui {
 			}
 		}
 	private: System::Windows::Forms::Button^ ViewInfoButton;
-	private: System::Windows::Forms::TextBox^ NationalIDTextBox;
+
 	private: System::Windows::Forms::Label^ NationalIDLabel;
 	private: System::Windows::Forms::Button^ DeleteInfoButton;
 	private: System::Windows::Forms::Button^ ViewAwaitingListButton;
@@ -61,7 +61,9 @@ namespace gui {
 	private: System::Windows::Forms::PictureBox^ pictureBox6;
 	private: System::Windows::Forms::PictureBox^ pictureBox5;
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
-	private: System::Windows::Forms::Button^ SubmitButton;
+	private: Bunifu::UI::WinForms::BunifuButton::BunifuButton^ SubmitButton;
+	private: Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox^ NationalIDTextBox;
+
 	protected:
 
 	private:
@@ -78,8 +80,14 @@ namespace gui {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AdminForm::typeid));
+			Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderEdges^ borderEdges1 = (gcnew Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderEdges());
+			Bunifu::UI::WinForms::BunifuButton::BunifuButton::StateProperties^ stateProperties1 = (gcnew Bunifu::UI::WinForms::BunifuButton::BunifuButton::StateProperties());
+			Bunifu::UI::WinForms::BunifuButton::BunifuButton::StateProperties^ stateProperties2 = (gcnew Bunifu::UI::WinForms::BunifuButton::BunifuButton::StateProperties());
+			Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties^ stateProperties3 = (gcnew Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties());
+			Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties^ stateProperties4 = (gcnew Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties());
+			Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties^ stateProperties5 = (gcnew Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties());
+			Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties^ stateProperties6 = (gcnew Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::StateProperties());
 			this->ViewInfoButton = (gcnew System::Windows::Forms::Button());
-			this->NationalIDTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->NationalIDLabel = (gcnew System::Windows::Forms::Label());
 			this->DeleteInfoButton = (gcnew System::Windows::Forms::Button());
 			this->ViewAwaitingListButton = (gcnew System::Windows::Forms::Button());
@@ -98,7 +106,8 @@ namespace gui {
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->SubmitButton = (gcnew System::Windows::Forms::Button());
+			this->SubmitButton = (gcnew Bunifu::UI::WinForms::BunifuButton::BunifuButton());
+			this->NationalIDTextBox = (gcnew Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
@@ -116,7 +125,7 @@ namespace gui {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->ViewInfoButton->FlatAppearance->BorderSize = 0;
 			this->ViewInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->ViewInfoButton->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->ViewInfoButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ViewInfoButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(129)),
 				static_cast<System::Int32>(static_cast<System::Byte>(249)));
@@ -127,16 +136,6 @@ namespace gui {
 			this->ViewInfoButton->Text = L"View User Info";
 			this->ViewInfoButton->UseVisualStyleBackColor = false;
 			this->ViewInfoButton->Click += gcnew System::EventHandler(this, &AdminForm::ViewInfoButton_Click);
-			// 
-			// NationalIDTextBox
-			// 
-			this->NationalIDTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->NationalIDTextBox->Location = System::Drawing::Point(696, 108);
-			this->NationalIDTextBox->Name = L"NationalIDTextBox";
-			this->NationalIDTextBox->Size = System::Drawing::Size(329, 54);
-			this->NationalIDTextBox->TabIndex = 5;
-			this->NationalIDTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AdminForm::NationalIDTextBox_KeyDown);
 			// 
 			// NationalIDLabel
 			// 
@@ -156,7 +155,7 @@ namespace gui {
 			// 
 			this->DeleteInfoButton->FlatAppearance->BorderSize = 0;
 			this->DeleteInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->DeleteInfoButton->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->DeleteInfoButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->DeleteInfoButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(129)),
 				static_cast<System::Int32>(static_cast<System::Byte>(249)));
@@ -172,8 +171,8 @@ namespace gui {
 			// 
 			this->ViewAwaitingListButton->FlatAppearance->BorderSize = 0;
 			this->ViewAwaitingListButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->ViewAwaitingListButton->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->ViewAwaitingListButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ViewAwaitingListButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(129)), static_cast<System::Int32>(static_cast<System::Byte>(249)));
 			this->ViewAwaitingListButton->Location = System::Drawing::Point(3, 397);
@@ -198,7 +197,7 @@ namespace gui {
 			// 
 			this->DeleteAllUsers->FlatAppearance->BorderSize = 0;
 			this->DeleteAllUsers->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->DeleteAllUsers->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->DeleteAllUsers->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->DeleteAllUsers->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(129)),
 				static_cast<System::Int32>(static_cast<System::Byte>(249)));
@@ -214,7 +213,7 @@ namespace gui {
 			// 
 			this->ViewAllUsers->FlatAppearance->BorderSize = 0;
 			this->ViewAllUsers->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->ViewAllUsers->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->ViewAllUsers->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ViewAllUsers->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(129)),
 				static_cast<System::Int32>(static_cast<System::Byte>(249)));
@@ -246,7 +245,7 @@ namespace gui {
 			// 
 			this->StatButton->FlatAppearance->BorderSize = 0;
 			this->StatButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->StatButton->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->StatButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->StatButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(129)),
 				static_cast<System::Int32>(static_cast<System::Byte>(249)));
@@ -377,13 +376,151 @@ namespace gui {
 			// 
 			// SubmitButton
 			// 
-			this->SubmitButton->Location = System::Drawing::Point(723, 192);
+			this->SubmitButton->AllowToggling = false;
+			this->SubmitButton->AnimationSpeed = 200;
+			this->SubmitButton->AutoGenerateColors = false;
+			this->SubmitButton->BackColor = System::Drawing::Color::Transparent;
+			this->SubmitButton->BackColor1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->SubmitButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SubmitButton.BackgroundImage")));
+			this->SubmitButton->BorderStyle = Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderStyles::Solid;
+			this->SubmitButton->ButtonText = L"View";
+			this->SubmitButton->ButtonTextMarginLeft = 0;
+			this->SubmitButton->ColorContrastOnClick = 45;
+			this->SubmitButton->ColorContrastOnHover = 45;
+			this->SubmitButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			borderEdges1->BottomLeft = true;
+			borderEdges1->BottomRight = true;
+			borderEdges1->TopLeft = true;
+			borderEdges1->TopRight = true;
+			this->SubmitButton->CustomizableEdges = borderEdges1;
+			this->SubmitButton->DialogResult = System::Windows::Forms::DialogResult::None;
+			this->SubmitButton->DisabledBorderColor = System::Drawing::Color::Empty;
+			this->SubmitButton->DisabledFillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(204)));
+			this->SubmitButton->DisabledForecolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(168)),
+				static_cast<System::Int32>(static_cast<System::Byte>(160)), static_cast<System::Int32>(static_cast<System::Byte>(168)));
+			this->SubmitButton->FocusState = Bunifu::UI::WinForms::BunifuButton::BunifuButton::ButtonStates::Pressed;
+			this->SubmitButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 9.75F));
+			this->SubmitButton->ForeColor = System::Drawing::Color::White;
+			this->SubmitButton->IconLeftCursor = System::Windows::Forms::Cursors::Hand;
+			this->SubmitButton->IconMarginLeft = 11;
+			this->SubmitButton->IconPadding = 10;
+			this->SubmitButton->IconRightCursor = System::Windows::Forms::Cursors::Hand;
+			this->SubmitButton->IdleBorderColor = System::Drawing::Color::DodgerBlue;
+			this->SubmitButton->IdleBorderRadius = 35;
+			this->SubmitButton->IdleBorderThickness = 1;
+			this->SubmitButton->IdleFillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->SubmitButton->IdleIconLeftImage = nullptr;
+			this->SubmitButton->IdleIconRightImage = nullptr;
+			this->SubmitButton->IndicateFocus = false;
+			this->SubmitButton->Location = System::Drawing::Point(731, 180);
 			this->SubmitButton->Name = L"SubmitButton";
-			this->SubmitButton->Size = System::Drawing::Size(95, 47);
-			this->SubmitButton->TabIndex = 24;
-			this->SubmitButton->Text = L"Submit";
-			this->SubmitButton->UseVisualStyleBackColor = true;
+			stateProperties1->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(181)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			stateProperties1->BorderRadius = 35;
+			stateProperties1->BorderStyle = Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderStyles::Solid;
+			stateProperties1->BorderThickness = 1;
+			stateProperties1->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(181)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			stateProperties1->ForeColor = System::Drawing::Color::White;
+			stateProperties1->IconLeftImage = nullptr;
+			stateProperties1->IconRightImage = nullptr;
+			this->SubmitButton->onHoverState = stateProperties1;
+			stateProperties2->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(96)),
+				static_cast<System::Int32>(static_cast<System::Byte>(144)));
+			stateProperties2->BorderRadius = 35;
+			stateProperties2->BorderStyle = Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderStyles::Solid;
+			stateProperties2->BorderThickness = 1;
+			stateProperties2->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(96)),
+				static_cast<System::Int32>(static_cast<System::Byte>(144)));
+			stateProperties2->ForeColor = System::Drawing::Color::White;
+			stateProperties2->IconLeftImage = nullptr;
+			stateProperties2->IconRightImage = nullptr;
+			this->SubmitButton->OnPressedState = stateProperties2;
+			this->SubmitButton->Size = System::Drawing::Size(119, 45);
+			this->SubmitButton->TabIndex = 25;
+			this->SubmitButton->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->SubmitButton->TextMarginLeft = 0;
+			this->SubmitButton->UseDefaultRadiusAndThickness = true;
 			this->SubmitButton->Click += gcnew System::EventHandler(this, &AdminForm::SubmitButton_Click);
+			// 
+			// NationalIDTextBox
+			// 
+			this->NationalIDTextBox->AcceptsReturn = false;
+			this->NationalIDTextBox->AcceptsTab = false;
+			this->NationalIDTextBox->AnimationSpeed = 200;
+			this->NationalIDTextBox->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::None;
+			this->NationalIDTextBox->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::None;
+			this->NationalIDTextBox->BackColor = System::Drawing::Color::Transparent;
+			this->NationalIDTextBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"NationalIDTextBox.BackgroundImage")));
+			this->NationalIDTextBox->BorderColorActive = System::Drawing::Color::DodgerBlue;
+			this->NationalIDTextBox->BorderColorDisabled = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(161)),
+				static_cast<System::Int32>(static_cast<System::Byte>(161)), static_cast<System::Int32>(static_cast<System::Byte>(161)));
+			this->NationalIDTextBox->BorderColorHover = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->NationalIDTextBox->BorderColorIdle = System::Drawing::Color::Silver;
+			this->NationalIDTextBox->BorderRadius = 35;
+			this->NationalIDTextBox->BorderThickness = 1;
+			this->NationalIDTextBox->CharacterCasing = System::Windows::Forms::CharacterCasing::Normal;
+			this->NationalIDTextBox->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->NationalIDTextBox->DefaultFont = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12));
+			this->NationalIDTextBox->DefaultText = L"";
+			this->NationalIDTextBox->FillColor = System::Drawing::Color::White;
+			this->NationalIDTextBox->HideSelection = true;
+			this->NationalIDTextBox->IconLeft = nullptr;
+			this->NationalIDTextBox->IconLeftCursor = System::Windows::Forms::Cursors::IBeam;
+			this->NationalIDTextBox->IconPadding = 10;
+			this->NationalIDTextBox->IconRight = nullptr;
+			this->NationalIDTextBox->IconRightCursor = System::Windows::Forms::Cursors::IBeam;
+			this->NationalIDTextBox->Lines = gcnew cli::array< System::String^  >(0);
+			this->NationalIDTextBox->Location = System::Drawing::Point(690, 113);
+			this->NationalIDTextBox->MaxLength = 32767;
+			this->NationalIDTextBox->MinimumSize = System::Drawing::Size(100, 35);
+			this->NationalIDTextBox->Modified = false;
+			this->NationalIDTextBox->Multiline = false;
+			this->NationalIDTextBox->Name = L"NationalIDTextBox";
+			stateProperties3->BorderColor = System::Drawing::Color::DodgerBlue;
+			stateProperties3->FillColor = System::Drawing::Color::Empty;
+			stateProperties3->ForeColor = System::Drawing::Color::Empty;
+			stateProperties3->PlaceholderForeColor = System::Drawing::Color::Empty;
+			this->NationalIDTextBox->OnActiveState = stateProperties3;
+			stateProperties4->BorderColor = System::Drawing::Color::Empty;
+			stateProperties4->FillColor = System::Drawing::Color::White;
+			stateProperties4->ForeColor = System::Drawing::Color::Empty;
+			stateProperties4->PlaceholderForeColor = System::Drawing::Color::Silver;
+			this->NationalIDTextBox->OnDisabledState = stateProperties4;
+			stateProperties5->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(181)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			stateProperties5->FillColor = System::Drawing::Color::Empty;
+			stateProperties5->ForeColor = System::Drawing::Color::Empty;
+			stateProperties5->PlaceholderForeColor = System::Drawing::Color::Empty;
+			this->NationalIDTextBox->OnHoverState = stateProperties5;
+			stateProperties6->BorderColor = System::Drawing::Color::Silver;
+			stateProperties6->FillColor = System::Drawing::Color::White;
+			stateProperties6->ForeColor = System::Drawing::Color::Empty;
+			stateProperties6->PlaceholderForeColor = System::Drawing::Color::Empty;
+			this->NationalIDTextBox->OnIdleState = stateProperties6;
+			this->NationalIDTextBox->PasswordChar = '\0';
+			this->NationalIDTextBox->PlaceholderForeColor = System::Drawing::Color::Silver;
+			this->NationalIDTextBox->PlaceholderText = L"Enter user national id";
+			this->NationalIDTextBox->ReadOnly = false;
+			this->NationalIDTextBox->ScrollBars = System::Windows::Forms::ScrollBars::None;
+			this->NationalIDTextBox->SelectedText = L"";
+			this->NationalIDTextBox->SelectionLength = 0;
+			this->NationalIDTextBox->SelectionStart = 0;
+			this->NationalIDTextBox->ShortcutsEnabled = true;
+			this->NationalIDTextBox->Size = System::Drawing::Size(259, 49);
+			this->NationalIDTextBox->Style = Bunifu::UI::WinForms::BunifuTextbox::BunifuTextBox::_Style::Bunifu;
+			this->NationalIDTextBox->TabIndex = 26;
+			this->NationalIDTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->NationalIDTextBox->TextMarginBottom = 0;
+			this->NationalIDTextBox->TextMarginLeft = 5;
+			this->NationalIDTextBox->TextMarginTop = 0;
+			this->NationalIDTextBox->TextPlaceholder = L"Enter user national id";
+			this->NationalIDTextBox->UseSystemPasswordChar = false;
+			this->NationalIDTextBox->WordWrap = true;
 			// 
 			// AdminForm
 			// 
@@ -392,12 +529,12 @@ namespace gui {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->ClientSize = System::Drawing::Size(1840, 975);
+			this->Controls->Add(this->NationalIDTextBox);
 			this->Controls->Add(this->SubmitButton);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->richTextBox1);
 			this->Controls->Add(this->HelloAdminLabel);
 			this->Controls->Add(this->NationalIDLabel);
-			this->Controls->Add(this->NationalIDTextBox);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"AdminForm";
 			this->Text = L"Admin";
