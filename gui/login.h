@@ -60,7 +60,6 @@ namespace gui {
 
 
 
-
 	protected:
 
 	private:
@@ -77,6 +76,9 @@ namespace gui {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(login::typeid));
+			Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderEdges^ borderEdges1 = (gcnew Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderEdges());
+			Bunifu::UI::WinForms::BunifuButton::BunifuButton::StateProperties^ stateProperties1 = (gcnew Bunifu::UI::WinForms::BunifuButton::BunifuButton::StateProperties());
+			Bunifu::UI::WinForms::BunifuButton::BunifuButton::StateProperties^ stateProperties2 = (gcnew Bunifu::UI::WinForms::BunifuButton::BunifuButton::StateProperties());
 			this->LoginButton = (gcnew System::Windows::Forms::Button());
 			this->NationalIDLabel = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
