@@ -179,7 +179,7 @@ namespace gui {
 			this->ViewAwaitingListButton->Name = L"ViewAwaitingListButton";
 			this->ViewAwaitingListButton->Size = System::Drawing::Size(227, 60);
 			this->ViewAwaitingListButton->TabIndex = 8;
-			this->ViewAwaitingListButton->Text = L"View awaiting list";
+			this->ViewAwaitingListButton->Text = L"View waiting list";
 			this->ViewAwaitingListButton->UseVisualStyleBackColor = true;
 			this->ViewAwaitingListButton->Click += gcnew System::EventHandler(this, &AdminForm::ViewAwaitingListButton_Click);
 			// 

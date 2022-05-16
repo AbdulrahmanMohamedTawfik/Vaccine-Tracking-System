@@ -45,28 +45,38 @@ System::Void gui::login::LoginButton_Click(System::Object^ sender, System::Event
 	}
 	else if ((usr.correct_NatId && usr.correct_pass))
 	{
-		userform->Show();
-		this->Close();
+		if (NatID.length() != 13)
+		{
+			label4->Text = "National ID is 13 number length";
+			SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\nat_id_13_num.wav");
+			splayer->Play();
+		}
+		else
+		{
+			userform->Show();
+			this->Close();
+		}
 	}
 	else
 	{
-		label4->Text = "Sorry , User does not exist";
-		if (usr.getvol_on())
+		if (NatIDTextBox->Text == "admin" && PasswordTextBox->Text == "admin")
 		{
-			SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\user_not_exist.wav");
+			adminform->Show();
+			SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\hello_admin.wav");
 			splayer->Play();
+			this->Close();
+		}
+		else
+		{
+			label4->Text = "Sorry , User does not exist";
+			if (usr.getvol_on())
+			{
+				SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\user_not_exist.wav");
+				splayer->Play();
+			}
 		}
 	}
-	if (NatIDTextBox->Text == "admin" && PasswordTextBox->Text == "admin")
-	{
-		adminform->Show();
-		this->Close();
-	}
-	/*if (NatID.length()!=14)
-	{
-		label4->Text = "u know ID is 14 num ,don't u?";
-	}*/
-
+	
 	return System::Void();
 }
 
