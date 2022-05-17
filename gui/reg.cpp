@@ -1,8 +1,10 @@
 ﻿#include "reg.h"
 #include<string>
+#include<iostream>
 #include "User.h"
 #include <msclr/marshal_cppstd.h>
 using namespace System::Media;
+using namespace std;
 System::Void gui::reg::NameTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	String^ name = NameTextBox->Text;
@@ -13,6 +15,7 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 {
 	User u;
 	string fullname, NatID, password, gender, age, country, gov, choosed_country, status, choosed_status;
+	int age1;
 	String^ str_sys;//system string to read from text box
 	str_sys = NameTextBox->Text;
 	fullname = msclr::interop::marshal_as< std::string >(str_sys);//convert from sys string to std string
@@ -60,7 +63,7 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 		status = ("vaccinated: " + choosed_status);
 	}
 
-	
+
 	if ((NameTextBox->Text == "") || (NatIDTextBox->Text == "") || (PasswordTextBox->Text == "") || ((!MaleCheckBox->Checked) && (!FemaleCheckBox->Checked)) || (AgeTextBox->Text == "") || ((!EgyptCheckBox->Checked) && (!AbroadCheckBox->Checked)) || (GovernorateComboBox->Text == "") || ((!vaccinatedCheckBox->Checked) && (!ApplyCheckBox->Checked)) || ((AbroadCheckBox->Checked) && (OtherCountryComboBox->Text == "")) || ((vaccinatedCheckBox->Checked) && (DoseComboBox->Text == "")))
 	{
 		label4->ForeColor = System::Drawing::Color::Red;
@@ -83,9 +86,72 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 	}
 	else
 	{
-		u.registration(fullname, NatID, password, gender, age, country, gov, status);
-		label4->ForeColor = System::Drawing::Color::Green;
-		label4->Text = "Registered successfully!";
+		if (age.find_first_not_of("0123456789"))
+		{
+			age1 = stoi(age);
+		}
+		if (fullname.find_first_not_of("0123456789"))
+		{
+			label4->Text = "Name must contains only letters";
+			if (u.getvol_on())
+			{
+				SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\name_only_letters.wav");
+				splayer->Play();
+			}
+		}
+		else if (!NatID.find_first_not_of("0123456789"))//NatID.find_first_not_of("0123456789") returns 1 if all is not number
+		{
+			label4->Text = "National ID must contains only numbers";
+			if (u.getvol_on())
+			{
+				SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\nat_id_only_num.wav");
+				splayer->Play();
+			}
+		}
+		
+		else if (!age.find_first_not_of("0123456789"))
+		{
+			label4->Text = "age must contains only numbers";
+			if (u.getvol_on())
+			{
+				SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\age_only_num.wav");
+				splayer->Play();
+			}
+		}
+		else if ((age1 < 1) || (age1 > 100))
+		{
+			label4->Text = "Enter a real age";
+			if (u.getvol_on())
+			{
+				SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\age_valid.wav");
+				splayer->Play();
+			}
+		}
+		else if (NatID.length() != 13)
+		{
+			label4->Text = "National ID is 13 number length";
+			if (u.getvol_on())
+			{
+				SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\nat_id_13_num.wav");
+				splayer->Play();
+			}
+		}
+		else if (password.length() < 8)
+		{
+			label4->Text = "Weak Password(at least 8 characters)";
+			label4->Show();
+			if (u.getvol_on())
+			{
+				SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\pass_less_than_8.wav");
+				splayer->Play();
+			}
+		}
+		else
+		{
+			u.registration(fullname, NatID, password, gender, age, country, gov, status);
+			label4->ForeColor = System::Drawing::Color::Green;
+			label4->Text = "Registered successfully!";
+		}
 	}
 
 	return System::Void();

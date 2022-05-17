@@ -251,31 +251,63 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 	{
 		ErrorLabel->ForeColor = System::Drawing::Color::Red;
 		ErrorLabel->Show();
-		ErrorLabel->Text = "Really? Submit Empty!";
-
+		ErrorLabel->Text = "You can't submit empty";
+		if (u.getvol_on())
+		{
+			SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\empty_new_val.wav");
+			splayer->Play();
+		}
 	}
 	else
 	{
 		ErrorLabel->Hide();
 		if (NewvalueLabel->Text == "New Name :")
 		{
-			u.editName(new_value, users);
-			ErrorLabel->ForeColor = System::Drawing::Color::Green;
-			ErrorLabel->Show();
-			ErrorLabel->Text = "Name Changed succesfully!";
-			u.read_data(users);
-			u.getUserName(users);
-			string std_str = u.NameText;
-			String^ sys_str = gcnew String(std_str.c_str());
-			UsernameLabel->Text = sys_str;
-			this->Text = sys_str;
+			if (new_value.find_first_not_of("0123456789"))
+			{
+				ErrorLabel->ForeColor = System::Drawing::Color::Red;
+				ErrorLabel->Text = "Name must contains only letters";
+				ErrorLabel->Show();
+				if (u.getvol_on())
+				{
+					SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\name_only_letters.wav");
+					splayer->Play();
+				}
+			}
+			else
+			{
+				u.editName(new_value, users);
+				ErrorLabel->ForeColor = System::Drawing::Color::Green;
+				ErrorLabel->Show();
+				ErrorLabel->Text = "Name Changed succesfully!";
+				u.read_data(users);
+				u.getUserName(users);
+				string std_str = u.NameText;
+				String^ sys_str = gcnew String(std_str.c_str());
+				UsernameLabel->Text = sys_str;
+				this->Text = sys_str;
+			}
 		}
 		else if (NewvalueLabel->Text == "New Age :")
 		{
-			u.editAge(new_value, users);
-			ErrorLabel->ForeColor = System::Drawing::Color::Green;
-			ErrorLabel->Show();
-			ErrorLabel->Text = " Age Changed succesfully!";
+			if ((stoi(new_value) < 1) || (stoi(new_value) > 100))
+			{
+				ErrorLabel->ForeColor = System::Drawing::Color::Red;
+				ErrorLabel->Text = "Enter a real age";
+				ErrorLabel->Show();
+				if (u.getvol_on())
+				{
+					SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\age_valid.wav");
+					splayer->Play();
+				}
+			}
+			else
+			{
+				u.editAge(new_value, users);
+				ErrorLabel->ForeColor = System::Drawing::Color::Green;
+				ErrorLabel->Show();
+				ErrorLabel->Text = " Age Changed succesfully!";
+			}
 		}
 		else if (NewvalueLabel->Text == "New gender :")
 		{
@@ -310,6 +342,11 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 				{
 					ErrorLabel->ForeColor = System::Drawing::Color::Red;
 					ErrorLabel->Text = "Choose living country";
+					if (u.getvol_on())
+					{
+						SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\empty_other_country.wav");
+						splayer->Play();
+					}
 					ErrorLabel->Show();
 				}
 				else
@@ -349,6 +386,11 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 				{
 					ErrorLabel->ForeColor = System::Drawing::Color::Red;
 					ErrorLabel->Text = "Choose 1st dose or both doses";
+					if (u.getvol_on())
+					{
+						SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\empty_dose.wav");
+						splayer->Play();
+					}
 					ErrorLabel->Show();
 				}
 				else
@@ -363,18 +405,59 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 		}
 		else if (NewvalueLabel->Text == "New password :")
 		{
-			u.editPassword(new_value, users);
-			ErrorLabel->ForeColor = System::Drawing::Color::Green;
-			ErrorLabel->Show();
-			ErrorLabel->Text = "Password Changed succesfully!";
+			if (new_value.length() < 8)
+			{
+				ErrorLabel->ForeColor = System::Drawing::Color::Red;
+				ErrorLabel->Text = "Weak Password(at least 8 characters)";
+				ErrorLabel->Show();
+				if (u.getvol_on())
+				{
+					SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\pass_less_than_8.wav");
+					splayer->Play();
+				}
+			}
+			else
+			{
+				u.editPassword(new_value, users);
+				ErrorLabel->ForeColor = System::Drawing::Color::Green;
+				ErrorLabel->Show();
+				ErrorLabel->Text = "Password Changed succesfully!";
+			}
 		}
 		else //if (NewvalueLabel->Text == "New ID :")
 		{
-			if (u.check_id(new_value))
+			if (!new_value.find_first_not_of("0123456789"))//NatID.find_first_not_of("0123456789") returns 1 if all is not number
+			{
+				ErrorLabel->ForeColor = System::Drawing::Color::Red;
+				ErrorLabel->Text = "National ID must contains only numbers";
+				ErrorLabel->Show();
+				if (u.getvol_on())
+				{
+					SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\nat_id_only_num.wav");
+					splayer->Play();
+				}
+			}
+			else if (new_value.length() != 13)
+			{
+				ErrorLabel->ForeColor = System::Drawing::Color::Red;
+				ErrorLabel->Text = "National ID is 13 number length";
+				ErrorLabel->Show();
+				if (u.getvol_on())
+				{
+					SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\nat_id_13_num.wav");
+					splayer->Play();
+				}
+			}
+			else if (u.check_id(new_value))
 			{
 				ErrorLabel->ForeColor = System::Drawing::Color::Red;
 				ErrorLabel->Show();
 				ErrorLabel->Text = "ID is already used!";
+				if (u.getvol_on())
+				{
+					SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\id_already_used.wav");
+					splayer->Play();
+				}
 			}
 			else
 			{

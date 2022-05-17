@@ -321,7 +321,7 @@ namespace gui {
 			this->AgeLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->AgeLabel->ForeColor = System::Drawing::Color::White;
-			this->AgeLabel->Location = System::Drawing::Point(12, 845);
+			this->AgeLabel->Location = System::Drawing::Point(29, 845);
 			this->AgeLabel->Name = L"AgeLabel";
 			this->AgeLabel->Size = System::Drawing::Size(155, 42);
 			this->AgeLabel->TabIndex = 7;

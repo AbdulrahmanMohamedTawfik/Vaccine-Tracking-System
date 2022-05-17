@@ -1,5 +1,7 @@
 #include "statistics_dashboard.h"
+#include "statistics.h"
 #include<iostream>
+#include<string>
 using namespace std;
 System::Void gui::statistics_dashboard::statistics_dashboard_Load(System::Object^ sender, System::EventArgs^ e)
 {

@@ -48,8 +48,11 @@ System::Void gui::login::LoginButton_Click(System::Object^ sender, System::Event
 		if (NatID.length() != 13)
 		{
 			label4->Text = "National ID is 13 number length";
-			SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\nat_id_13_num.wav");
-			splayer->Play();
+			if (usr.getvol_on())
+			{
+				SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\nat_id_13_num.wav");
+				splayer->Play();
+			}
 		}
 		else
 		{
@@ -62,8 +65,11 @@ System::Void gui::login::LoginButton_Click(System::Object^ sender, System::Event
 		if (NatIDTextBox->Text == "admin" && PasswordTextBox->Text == "admin")
 		{
 			adminform->Show();
-			SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\hello_admin.wav");
-			splayer->Play();
+			if (usr.getvol_on())
+			{
+				SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\hello_admin.wav");
+				splayer->Play();
+			}
 			this->Close();
 		}
 		else
@@ -76,7 +82,7 @@ System::Void gui::login::LoginButton_Click(System::Object^ sender, System::Event
 			}
 		}
 	}
-	
+
 	return System::Void();
 }
 

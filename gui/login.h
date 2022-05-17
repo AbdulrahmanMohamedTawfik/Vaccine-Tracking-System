@@ -115,7 +115,7 @@ namespace gui {
 			// LoginButton
 			// 
 			this->LoginButton->BackColor = System::Drawing::Color::White;
-			this->LoginButton->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->LoginButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->LoginButton->FlatAppearance->BorderSize = 0;
 			this->LoginButton->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Blue;
 			this->LoginButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
@@ -190,7 +190,7 @@ namespace gui {
 			this->UnseeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->UnseeButton->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->UnseeButton->Location = System::Drawing::Point(514, 461);
+			this->UnseeButton->Location = System::Drawing::Point(513, 454);
 			this->UnseeButton->Name = L"UnseeButton";
 			this->UnseeButton->Size = System::Drawing::Size(69, 57);
 			this->UnseeButton->TabIndex = 21;
@@ -319,17 +319,17 @@ namespace gui {
 			// panel3
 			// 
 			this->panel3->BackColor = System::Drawing::Color::RoyalBlue;
-			this->panel3->Location = System::Drawing::Point(136, 362);
+			this->panel3->Location = System::Drawing::Point(141, 357);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(10, 69);
+			this->panel3->Size = System::Drawing::Size(10, 67);
 			this->panel3->TabIndex = 22;
 			// 
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::Color::RoyalBlue;
-			this->panel2->Location = System::Drawing::Point(136, 453);
+			this->panel2->Location = System::Drawing::Point(141, 451);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(10, 69);
+			this->panel2->Size = System::Drawing::Size(10, 67);
 			this->panel2->TabIndex = 21;
 			// 
 			// login

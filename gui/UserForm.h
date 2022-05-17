@@ -158,7 +158,7 @@ namespace gui {
 			// 
 			this->ViewUserInfoButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)),
 				static_cast<System::Int32>(static_cast<System::Byte>(135)), static_cast<System::Int32>(static_cast<System::Byte>(15)));
-			this->ViewUserInfoButton->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->ViewUserInfoButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->ViewUserInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->ViewUserInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -174,6 +174,7 @@ namespace gui {
 			// 
 			this->EditUserInfoButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)),
 				static_cast<System::Int32>(static_cast<System::Byte>(135)), static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->EditUserInfoButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->EditUserInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->EditUserInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -189,6 +190,7 @@ namespace gui {
 			// 
 			this->DeleteInfoButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)),
 				static_cast<System::Int32>(static_cast<System::Byte>(135)), static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->DeleteInfoButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->DeleteInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->DeleteInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -237,6 +239,7 @@ namespace gui {
 			// EditNameButton
 			// 
 			this->EditNameButton->BackColor = System::Drawing::Color::DodgerBlue;
+			this->EditNameButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->EditNameButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EditNameButton->Location = System::Drawing::Point(5, 370);
@@ -250,6 +253,7 @@ namespace gui {
 			// EditIDButton
 			// 
 			this->EditIDButton->BackColor = System::Drawing::Color::DodgerBlue;
+			this->EditIDButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->EditIDButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EditIDButton->Location = System::Drawing::Point(5, 425);
@@ -263,6 +267,7 @@ namespace gui {
 			// EditGendrButton
 			// 
 			this->EditGendrButton->BackColor = System::Drawing::Color::DodgerBlue;
+			this->EditGendrButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->EditGendrButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EditGendrButton->Location = System::Drawing::Point(5, 471);
@@ -276,6 +281,7 @@ namespace gui {
 			// EditAgeButton
 			// 
 			this->EditAgeButton->BackColor = System::Drawing::Color::DodgerBlue;
+			this->EditAgeButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->EditAgeButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EditAgeButton->Location = System::Drawing::Point(5, 516);
@@ -289,6 +295,7 @@ namespace gui {
 			// EditCountryButton
 			// 
 			this->EditCountryButton->BackColor = System::Drawing::Color::DodgerBlue;
+			this->EditCountryButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->EditCountryButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EditCountryButton->Location = System::Drawing::Point(5, 558);
@@ -302,6 +309,7 @@ namespace gui {
 			// EditGovButton
 			// 
 			this->EditGovButton->BackColor = System::Drawing::Color::DodgerBlue;
+			this->EditGovButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->EditGovButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EditGovButton->Location = System::Drawing::Point(5, 603);
@@ -315,6 +323,7 @@ namespace gui {
 			// EditStatusButton
 			// 
 			this->EditStatusButton->BackColor = System::Drawing::Color::DodgerBlue;
+			this->EditStatusButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->EditStatusButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EditStatusButton->Location = System::Drawing::Point(5, 648);
@@ -355,7 +364,7 @@ namespace gui {
 			this->SubmitButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
 				static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->SubmitButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->SubmitButton->Cursor = System::Windows::Forms::Cursors::PanNorth;
+			this->SubmitButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->SubmitButton->FlatAppearance->BorderColor = System::Drawing::Color::White;
 			this->SubmitButton->FlatAppearance->BorderSize = 0;
 			this->SubmitButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -372,6 +381,7 @@ namespace gui {
 			// EditPassButton
 			// 
 			this->EditPassButton->BackColor = System::Drawing::Color::DodgerBlue;
+			this->EditPassButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->EditPassButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EditPassButton->Location = System::Drawing::Point(5, 694);
@@ -535,9 +545,9 @@ namespace gui {
 			this->panel4->Controls->Add(this->EditUserInfoButton);
 			this->panel4->Controls->Add(this->DeleteInfoButton);
 			this->panel4->Controls->Add(this->ViewUserInfoButton);
-			this->panel4->Location = System::Drawing::Point(657, 400);
+			this->panel4->Location = System::Drawing::Point(657, 390);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(1012, 677);
+			this->panel4->Size = System::Drawing::Size(1012, 687);
 			this->panel4->TabIndex = 39;
 			// 
 			// panel5
