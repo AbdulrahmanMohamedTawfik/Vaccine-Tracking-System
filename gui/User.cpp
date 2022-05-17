@@ -6,6 +6,7 @@ using namespace std;
 string User::NAtIDTextBox_Text;
 bool User::del_user_found;
 unordered_map<string, User>::iterator it;
+
 bool User::check_id(string id)
 {
 	fstream IDFile;
@@ -221,9 +222,7 @@ void User::registration(string FullName, string NatID, string Pass, string Gende
 	}
 	User user1(FullName, NatID, Gender, Age, Country, Gov, Pass, Status);
 }
-User::~User()
-{
-}
+
 string User::getNAtIDTextBox_Text()
 {
 	return NAtIDTextBox_Text;
@@ -235,12 +234,7 @@ void User::setNAtIDTextBox_Text(string val)
 
 void User::getUserName(unordered_map<string, User>& users)
 {
-	for (it = users.begin(); it != users.end(); it++) {
-		if (it->first == getNAtIDTextBox_Text())
-		{
-			NameText = it->second.name;
-		}
-	}
+	NameText = users[getNAtIDTextBox_Text()].name;
 }
 
 bool User::getdel_user_found()
@@ -254,92 +248,26 @@ void User::setdel_user_found(bool val)
 }
 
 void User::editName(string newName, unordered_map<string, User>& users) {
-	for (it = users.begin(); it != users.end(); it++) {
-		if (it->first == getNAtIDTextBox_Text())
-		{
-			it->second.name = newName;
-			break;
-		}
-
-	}
+	users[getNAtIDTextBox_Text()].name = newName;
 }
-
 void User::editId(string newId, unordered_map<string, User>& users) {
-
-	for (it = users.begin(); it != users.end(); it++) {
-		if (it->first == getNAtIDTextBox_Text())
-		{
-			it->second.id = newId;
-			break;
-		}
-	}
+	users[getNAtIDTextBox_Text()].id = newId;
 }
 void User::editGender(string newGender, unordered_map<string, User>& users) {
-
-	for (it = users.begin(); it != users.end(); it++) {
-		if (it->first == getNAtIDTextBox_Text())
-		{
-
-			it->second.gender = newGender;
-			break;
-
-		}
-
-	}
+	users[getNAtIDTextBox_Text()].gender = newGender;
 }
 void User::editCountry(string newCountry, unordered_map<string, User>& users) {
-
-	for (it = users.begin(); it != users.end(); it++) {
-		if (it->first == getNAtIDTextBox_Text())
-		{
-
-			it->second.Country = newCountry;
-			break;
-
-		}
-
-	}
+	users[getNAtIDTextBox_Text()].Country = newCountry;
 }
 void User::editAge(string newAge, unordered_map<string, User>& users) {
-
-	for (it = users.begin(); it != users.end(); it++) {
-		if (it->first == getNAtIDTextBox_Text())
-		{
-			it->second.age = newAge;
-			break;
-		}
-	}
+	users[getNAtIDTextBox_Text()].age = newAge;
 }
 void User::editStatus(string newStatus, unordered_map<string, User>& users) {
-
-	for (it = users.begin(); it != users.end(); it++) {
-		if (it->first == getNAtIDTextBox_Text())
-		{
-			it->second.status = newStatus;
-			break;
-		}
-	}
+	users[getNAtIDTextBox_Text()].status = newStatus;
 }
 void User::editPassword(string newPassword, unordered_map<string, User>& users) {
-	for (it = users.begin(); it != users.end(); it++) {
-		if (it->first == getNAtIDTextBox_Text())
-		{
-
-			it->second.password = newPassword;
-			break;
-
-		}
-
-	}
+	users[getNAtIDTextBox_Text()].password = newPassword;
 }
 void User::editGov(string newGov, unordered_map<string, User>& users) {
-	for (it = users.begin(); it != users.end(); it++) {
-		if (it->first == getNAtIDTextBox_Text())
-		{
-
-			it->second.Governorate = newGov;
-			break;
-
-		}
-	}
+	users[getNAtIDTextBox_Text()].Governorate = newGov;
 }
