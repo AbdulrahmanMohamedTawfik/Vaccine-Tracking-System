@@ -26,12 +26,12 @@ public:
 		this->password = password;
 		this->status = status;
 	};
-	bool check_id(string x);
+	bool check_id(string );
 	void read_data(unordered_map<string, User>& users);
 	void update_files(unordered_map<string, User>& users);
 	void login(string, string);
 	void registration(string FullName, string NatID, string Pass, string Genderr, string Agee, string Countryy, string Gov, string Statuss);
-	~User();
+
 	string static getNAtIDTextBox_Text();
 	void static setNAtIDTextBox_Text(string val);
 	void getUserName(unordered_map<string, User>& users);
