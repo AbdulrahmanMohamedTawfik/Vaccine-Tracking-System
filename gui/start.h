@@ -81,6 +81,7 @@ namespace gui {
 			// LoginButton
 			// 
 			this->LoginButton->BackColor = System::Drawing::Color::DarkTurquoise;
+			this->LoginButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->LoginButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->LoginButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -97,6 +98,7 @@ namespace gui {
 			// RegisterButton
 			// 
 			this->RegisterButton->BackColor = System::Drawing::Color::Transparent;
+			this->RegisterButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->RegisterButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->RegisterButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
 			this->RegisterButton->ForeColor = System::Drawing::Color::SlateBlue;
@@ -140,6 +142,7 @@ namespace gui {
 			this->VolumeButton->BackColor = System::Drawing::Color::White;
 			this->VolumeButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"VolumeButton.BackgroundImage")));
 			this->VolumeButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->VolumeButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->VolumeButton->FlatAppearance->BorderColor = System::Drawing::Color::White;
 			this->VolumeButton->FlatAppearance->BorderSize = 0;
 			this->VolumeButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::AliceBlue;
@@ -174,6 +177,7 @@ namespace gui {
 			// 
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureBox1->Location = System::Drawing::Point(522, 238);
 			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";

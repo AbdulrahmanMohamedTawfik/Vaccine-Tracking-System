@@ -481,6 +481,7 @@ namespace gui {
 			this->NationalIDTextBox->Modified = false;
 			this->NationalIDTextBox->Multiline = false;
 			this->NationalIDTextBox->Name = L"NationalIDTextBox";
+			this->NationalIDTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AdminForm::NationalIDTextBox_KeyDown);
 			stateProperties3->BorderColor = System::Drawing::Color::DodgerBlue;
 			stateProperties3->FillColor = System::Drawing::Color::Empty;
 			stateProperties3->ForeColor = System::Drawing::Color::Empty;
