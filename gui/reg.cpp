@@ -151,6 +151,7 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 			u.registration(fullname, NatID, password, gender, age, country, gov, status);
 			label4->ForeColor = System::Drawing::Color::Green;
 			label4->Text = "Registered successfully!";
+			this->Close();
 		}
 	}
 
@@ -163,13 +164,15 @@ System::Void gui::reg::UnseeButton_Click(System::Object^ sender, System::EventAr
 	if (PasswordTextBox->PasswordChar == '*')
 	{
 		PasswordTextBox->PasswordChar = '\0';
-		//open: Project >> properties >> c/c++ >> commandline >> Additional Options >> write " /execution-charset /utf-8 "
-		UnseeButton->Text = "🙈";
+		UnseeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Strikeout, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
 	}
 	else
 	{
 		PasswordTextBox->PasswordChar = '*';
-		UnseeButton->Text = "🐵";
+		//UnseeButton->Text = "🐵";
+		UnseeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
 	}
 
 	return System::Void();
@@ -178,7 +181,6 @@ System::Void gui::reg::UnseeButton_Click(System::Object^ sender, System::EventAr
 System::Void gui::reg::reg_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	User u;
-	WindowState = FormWindowState::Maximized;
 	if (u.getvol_on())
 	{
 		SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\reg.wav");

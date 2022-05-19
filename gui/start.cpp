@@ -97,6 +97,8 @@ System::Void gui::start::VolumeButton_Click(System::Object^ sender, System::Even
 	{
 		usr.setvol_on(false);
 		VolumeButton->BackgroundImage = vol_off;
+		SoundPlayer^ splayer;
+		splayer->Stop();
 	}
 	else if (!usr.getvol_on())
 	{
