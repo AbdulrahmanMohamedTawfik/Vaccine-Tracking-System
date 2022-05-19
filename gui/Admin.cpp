@@ -37,19 +37,26 @@ string Admin::viewAll(unordered_map<string, User> users)
 
 		temp += ("Name: " + it.second.name + "\nID: " + it.second.id + "\npassword: " + it.second.password + "\nGender: " + it.second.gender + "\nAge: " + it.second.age + "\nCountry: " + it.second.Country + "\nGovernorate: " + it.second.Governorate + "\nStatus: " + it.second.status + "\n------------------------------\n");
 	}
+	if (temp == "")
+	return("No Users Found");
+
 	return temp;
 }
 string Admin::view_Waiting(unordered_map<string, User> users)
 {
-	string temp = "Waiting List : ";
+	string temp = "Waiting for first dose : ";
 	for (auto it : users) {
 		if (it.second.status == "not vaccinated")
 			temp += ("\n------------------------------\nName: " + it.second.name + "\nID: " + it.second.id);
 	}
-	if (temp == "Waiting List : ")
-		return("No Users in The Waiting List !");
-	else
-		return temp;
+	if (temp == "Waiting for first dose : ")
+		temp+=("\nNo Users Waiting for first dose !\n------------------------------\n");
+	temp+= "\n------------------------------\nWaiting for second dose : ";
+	for (auto it : users) {
+		if (it.second.status == "vaccinated: only first dose")
+			temp += ("\n------------------------------\nName: " + it.second.name + "\nID: " + it.second.id);
+	}
+	return temp;
 }
 
 void Admin::deleteUser(string userNationalID, unordered_map<string, User>& users)
