@@ -243,7 +243,7 @@ System::Void gui::UserForm::EditPassButton_Click(System::Object^ sender, System:
 
 System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	
+
 	string new_value;
 	String^ str_sys;
 	str_sys = NewvalueTextBox->Text;
@@ -261,7 +261,7 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 	}
 	else
 	{
-		
+
 		ErrorLabel->Hide();
 		if (NewvalueLabel->Text == "New Name :")
 		{
@@ -493,7 +493,7 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 		AbroadCheckBox->Checked = false;
 		vaccinatedCheckBox->Checked = false;
 		ApplyCheckBox->Checked = false;
-		
+
 	}
 	/*if ((ApplyCheckBox->Checked)||(AbroadCheckBox->Checked))
 	{
