@@ -71,6 +71,7 @@ System::Void gui::AdminForm::DeleteAllUsers_Click(System::Object^ sender, System
 
 System::Void gui::AdminForm::AdminForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
+	users_for_admin.clear();
 	u1.read_data(users_for_admin);
 	WindowState = FormWindowState::Maximized;
 	return System::Void();

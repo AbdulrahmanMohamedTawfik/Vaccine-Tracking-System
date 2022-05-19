@@ -1,1 +1,1 @@
-vaccinated: only first dose
+vaccinated: both doses

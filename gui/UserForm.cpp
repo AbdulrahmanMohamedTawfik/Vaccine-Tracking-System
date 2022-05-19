@@ -12,6 +12,7 @@ Admin a;
 System::Void gui::UserForm::UserForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	WindowState = FormWindowState::Maximized;
+	users.clear();
 	u.read_data(users);
 	u.getUserName(users);
 	string std_str = u.NameText;
