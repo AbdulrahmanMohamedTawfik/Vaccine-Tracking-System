@@ -243,6 +243,7 @@ System::Void gui::UserForm::EditPassButton_Click(System::Object^ sender, System:
 
 System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	
 	string new_value;
 	String^ str_sys;
 	str_sys = NewvalueTextBox->Text;
@@ -260,6 +261,7 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 	}
 	else
 	{
+		
 		ErrorLabel->Hide();
 		if (NewvalueLabel->Text == "New Name :")
 		{
@@ -277,6 +279,7 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			else
 			{
 				u.editName(new_value, users);
+				u.update_files(users);
 				ErrorLabel->ForeColor = System::Drawing::Color::Green;
 				ErrorLabel->Show();
 				ErrorLabel->Text = "Name Changed succesfully!";
@@ -304,6 +307,7 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			else
 			{
 				u.editAge(new_value, users);
+				u.update_files(users);
 				ErrorLabel->ForeColor = System::Drawing::Color::Green;
 				ErrorLabel->Show();
 				ErrorLabel->Text = " Age Changed succesfully!";
@@ -320,6 +324,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 				new_value = "female";
 			}
 			u.editGender(new_value, users);
+			u.update_files(users);
+
 			ErrorLabel->ForeColor = System::Drawing::Color::Green;
 			ErrorLabel->Show();
 			ErrorLabel->Text = "Gender Changed succesfully!";
@@ -330,6 +336,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			{
 				new_value = "Egypt";
 				u.editCountry(new_value, users);
+				u.update_files(users);
+
 				ErrorLabel->ForeColor = System::Drawing::Color::Green;
 				ErrorLabel->Text = "Country Changed succesfully!";
 				ErrorLabel->Show();
@@ -353,6 +361,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 				{
 					new_value = ("Abroad: " + choosed_country);
 					u.editCountry(new_value, users);
+					u.update_files(users);
+
 					ErrorLabel->ForeColor = System::Drawing::Color::Green;
 					ErrorLabel->Text = "Country Changed succesfully!";
 					ErrorLabel->Show();
@@ -364,6 +374,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			str_sys = GovernorateComboBox->Text;
 			new_value = msclr::interop::marshal_as< std::string >(str_sys);//convert from sys string to std string
 			u.editGov(new_value, users);
+			u.update_files(users);
+
 			ErrorLabel->ForeColor = System::Drawing::Color::Green;
 			ErrorLabel->Show();
 			ErrorLabel->Text = "Governorate Changed succesfully!";
@@ -374,6 +386,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			{
 				new_value = "not vaccinated";
 				u.editStatus(new_value, users);
+				u.update_files(users);
+
 				ErrorLabel->ForeColor = System::Drawing::Color::Green;
 				ErrorLabel->Text = "Status Changed succesfully!";
 				ErrorLabel->Show();
@@ -397,6 +411,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 				{
 					new_value = ("vaccinated: " + choosed_status);
 					u.editStatus(new_value, users);
+					u.update_files(users);
+
 					ErrorLabel->ForeColor = System::Drawing::Color::Green;
 					ErrorLabel->Text = "Status Changed succesfully!";
 					ErrorLabel->Show();
@@ -419,6 +435,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			else
 			{
 				u.editPassword(new_value, users);
+				u.update_files(users);
+
 				ErrorLabel->ForeColor = System::Drawing::Color::Green;
 				ErrorLabel->Show();
 				ErrorLabel->Text = "Password Changed succesfully!";
@@ -462,6 +480,7 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			else
 			{
 				u.editId(new_value, users);
+				u.update_files(users);
 				ErrorLabel->ForeColor = System::Drawing::Color::Green;
 				ErrorLabel->Show();
 				ErrorLabel->Text = "ID Changed succesfully!";
@@ -474,7 +493,7 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 		AbroadCheckBox->Checked = false;
 		vaccinatedCheckBox->Checked = false;
 		ApplyCheckBox->Checked = false;
-		u.update_files(users);
+		
 	}
 	/*if ((ApplyCheckBox->Checked)||(AbroadCheckBox->Checked))
 	{
