@@ -152,10 +152,8 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 			label4->ForeColor = System::Drawing::Color::Green;
 			label4->Text = "Registered successfully!";
 			this->Close();
-		}
-	}
-
-	return System::Void();
+    }
+     return System::Void();
 }
 
 System::Void gui::reg::UnseeButton_Click(System::Object^ sender, System::EventArgs^ e)
