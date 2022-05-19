@@ -152,13 +152,13 @@ System::Void gui::reg::RegisterButton_Click(System::Object^ sender, System::Even
 			label4->ForeColor = System::Drawing::Color::Green;
 			label4->Text = "Registered successfully!";
 			this->Close();
+		}
     }
      return System::Void();
 }
 
 System::Void gui::reg::UnseeButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-
 	if (PasswordTextBox->PasswordChar == '*')
 	{
 		PasswordTextBox->PasswordChar = '\0';
@@ -168,11 +168,9 @@ System::Void gui::reg::UnseeButton_Click(System::Object^ sender, System::EventAr
 	else
 	{
 		PasswordTextBox->PasswordChar = '*';
-		//UnseeButton->Text = "🐵";
 		UnseeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(0)));
 	}
-
 	return System::Void();
 }
 
@@ -192,7 +190,6 @@ System::Void gui::reg::MaleCheckBox_CheckedChanged(System::Object^ sender, Syste
 	if (FemaleCheckBox->Checked)//uncheck the other choice
 	{
 		FemaleCheckBox->Checked = false;
-		//MaleCheckBox->Checked = true;
 	}
 	return System::Void();
 }
@@ -202,7 +199,6 @@ System::Void gui::reg::FemaleCheckBox_CheckedChanged(System::Object^ sender, Sys
 	if (MaleCheckBox->Checked)//uncheck the other choice
 	{
 		MaleCheckBox->Checked = false;
-		//FemaleCheckBox->Checked = true;
 	}
 	return System::Void();
 }
@@ -212,7 +208,6 @@ System::Void gui::reg::AbroadCheckBox_CheckedChanged(System::Object^ sender, Sys
 	if (EgyptCheckBox->Checked)//uncheck the other choice
 	{
 		EgyptCheckBox->Checked = false;
-		//AbroadCheckBox->Checked = true;
 	}
 	if (AbroadCheckBox->Checked)
 	{
@@ -230,7 +225,6 @@ System::Void gui::reg::EgyptCheckBox_CheckedChanged(System::Object^ sender, Syst
 	if (AbroadCheckBox->Checked)//uncheck the other choice
 	{
 		AbroadCheckBox->Checked = false;
-		//EgyptCheckBox->Checked = true;
 	}
 	return System::Void();
 }
@@ -240,7 +234,6 @@ System::Void gui::reg::vaccinatedCheckBox_CheckedChanged(System::Object^ sender,
 	if (ApplyCheckBox->Checked)//uncheck the other choice
 	{
 		ApplyCheckBox->Checked = false;
-		//vaccinatedCheckBox->Checked = true;
 	}
 
 	if (vaccinatedCheckBox->Checked)
@@ -259,7 +252,6 @@ System::Void gui::reg::ApplyCheckBox_CheckedChanged(System::Object^ sender, Syst
 	if (vaccinatedCheckBox->Checked)//uncheck the other choice
 	{
 		vaccinatedCheckBox->Checked = false;
-		//ApplyCheckBox->Checked = true;
 	}
 	return System::Void();
 }
