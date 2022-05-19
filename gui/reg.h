@@ -588,6 +588,7 @@ namespace gui {
 			this->ClientSize = System::Drawing::Size(854, 843);
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Location = System::Drawing::Point(2000, 600);
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->MaximumSize = System::Drawing::Size(872, 890);
 			this->MinimumSize = System::Drawing::Size(872, 890);
