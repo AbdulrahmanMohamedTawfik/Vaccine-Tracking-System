@@ -570,7 +570,7 @@ namespace gui {
 			this->UsernameLabel->Font = (gcnew System::Drawing::Font(L"Sitka Text", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->UsernameLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->UsernameLabel->Location = System::Drawing::Point(64, 130);
+			this->UsernameLabel->Location = System::Drawing::Point(64, 125);
 			this->UsernameLabel->Name = L"UsernameLabel";
 			this->UsernameLabel->Size = System::Drawing::Size(78, 40);
 			this->UsernameLabel->TabIndex = 42;
@@ -605,10 +605,10 @@ namespace gui {
 			// pictureBox1
 			// 
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
-			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->pictureBox1->Location = System::Drawing::Point(0, 0);
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pictureBox1->Location = System::Drawing::Point(101, 12);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(368, 115);
+			this->pictureBox1->Size = System::Drawing::Size(110, 110);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 47;
 			this->pictureBox1->TabStop = false;
