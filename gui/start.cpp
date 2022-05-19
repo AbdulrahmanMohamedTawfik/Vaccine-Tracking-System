@@ -22,7 +22,6 @@ System::Void gui::start::LoginButton_Click(System::Object^ sender, System::Event
 {
 	login^ form = gcnew login();
 	form->Show();
-	//this->Close();
 	return System::Void();
 }
 
@@ -30,7 +29,6 @@ System::Void gui::start::RegisterButton_Click(System::Object^ sender, System::Ev
 {
 	reg^ form = gcnew reg();
 	form->Show();
-	//this->Close();
 	return System::Void();
 }
 
@@ -65,30 +63,6 @@ System::Void gui::start::start_KeyDown(System::Object^ sender, System::Windows::
 	return System::Void();
 }
 
-System::Void gui::start::start_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
-{
-	//tell the form its gonna be draggin'
-	this->dragging = true;
-	this->offset = Point(e->X, e->Y);
-	return System::Void();
-}
-
-System::Void gui::start::start_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
-{
-	if (this->dragging) { //Move, soldier, MOVE!
-		Point currentScreenPos = PointToScreen(e->Location);
-		Location = Point(currentScreenPos.X - this->offset.X,
-			currentScreenPos.Y - this->offset.Y);
-	}
-	return System::Void();
-}
-
-System::Void gui::start::start_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
-{
-	dragging = false;
-	return System::Void();
-}
-
 System::Void gui::start::VolumeButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	Bitmap^ vol_on = gcnew Bitmap("icons\\sound_on.ico");
@@ -104,6 +78,8 @@ System::Void gui::start::VolumeButton_Click(System::Object^ sender, System::Even
 	{
 		usr.setvol_on(true);
 		VolumeButton->BackgroundImage = vol_on;
+		//SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\welcome.wav");
+		//splayer->Play();
 	}
 	cout << "getvol_on()= " << usr.getvol_on() << "\n";
 	return System::Void();

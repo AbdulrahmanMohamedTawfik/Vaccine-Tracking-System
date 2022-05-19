@@ -206,9 +206,6 @@ namespace gui {
 			this->Text = L"Vaccination application";
 			this->Load += gcnew System::EventHandler(this, &start::start_Load);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &start::start_KeyDown);
-			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &start::start_MouseDown);
-			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &start::start_MouseMove);
-			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &start::start_MouseUp);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -230,12 +227,6 @@ namespace gui {
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void start_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
-
-	private: System::Void start_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
-
-	private: System::Void start_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
-
-	private: System::Void start_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 
 	private: System::Void VolumeButton_Click(System::Object^ sender, System::EventArgs^ e);
 	};
