@@ -3,27 +3,23 @@
 class statistics
 {
 private:
-	double users;
-	double male;
-	double female;
-	double waiting;
-	double firstdoes;
-	double fullyvac;
-	double egyptians;
-	double forgienrs;
-	double under18;
-	double between18_60;
-	double above60;
+	int users;
+	int firstdoes;
+	int fullyvac;
+	int under18;
+	int between18_60;
+	int above60;
+
 public:
 	statistics();
-	void getuser();
-	void getmale();
+	int getuser();
+	int getmale();
 	double p_male();
 	double p_female();
-	void getwaiting();
+	int getwaitingNotVacc();
 	double p_waiting();
 	void get_vaccinated();
-	void getegypt();
+	int getegypt();
 	void getAge();
 	double p_first();
 	double p_fully();
