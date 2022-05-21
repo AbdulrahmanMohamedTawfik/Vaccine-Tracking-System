@@ -4,150 +4,87 @@
 #include <fstream>
 #include <string>
 using namespace std;
+
 statistics::statistics() {
 	users = 0;
-	male = 0;
-	female = 0;
-	waiting = 0;
-	egyptians = 0;
-	forgienrs = 0;
 	firstdoes = 0;
 	fullyvac = 0;
-	double under18=0;
-	double between18_60=0;
-	double above60=0;
+	under18=0;
+	between18_60=0;
+	above60=0;
 }
+
 //function to get number of users
-void statistics::getuser() {
+int statistics::getuser() {
 	string myText;
-	vector<string> s;
+	users = 0;
 	ifstream MyReadFile("txts\\users.txt");
 	while (getline(MyReadFile, myText))
 	{
 		if (myText.size() > 0) {
-			s.push_back(myText);
+			users++;
 		}
 	}
-	users = 0;
-	vector<string>::iterator it;
-	it = s.begin();
-	while (it != s.end())
-	{
-		it++;
-		users++;
-	}
 	MyReadFile.close();
+	return users;
 }
+
 //function to get numbers of males and females 
-void statistics::getmale() {
+int statistics::getmale() {
 	string myText;
-	vector<string> s;
+	int male = 0;
 	ifstream MyReadFile("txts\\gender.txt");
 	while (getline(MyReadFile, myText))
 	{
+		cout << myText << endl;
 		if (myText.size() > 0) {
-			s.push_back(myText);
+			if (myText == "male") {
+				male++;
+			}
 		}
-	}
-	male = 0;
-	female = 0;
-	vector<string>::iterator it;
-	it = s.begin();
-	while (it != s.end())
-	{
-		if (*it == "male") {
-			male++;
-		}
-		else if (*it == "female") {
-			female++;
-		}
-		it++;
 	}
 	MyReadFile.close();
+	return male;
 }
 //calcutaions of the % of male
 double statistics::p_male() {
-	getuser();
-	getmale();
-	double x = (male / users) * 100;
+	users = getuser();
+	int male = getmale();
+	double x = ((double)male / users) * 100;
 	return x;
 }
 //calcutaions of the % of female
 double statistics::p_female() {
-	getuser();
-	getmale();
-	double y = (female / users) * 100;
+	users = getuser();
+	int female = users - getmale();
+	double y = ((double)female / users) * 100;
 	return y;
 }
+
 //function gets the number of people in waiting list
-void statistics::getwaiting() {
+int statistics::getwaitingNotVacc() {
 	string myText;
-	vector<string> s;
+	int waiting = 0;
 	ifstream MyReadFile("txts\\status.txt");
 	while (getline(MyReadFile, myText))
 	{
 		if (myText.size() > 0) {
-			s.push_back(myText);
+			if (myText == "not vaccinated") {
+				waiting++;
+			}
 		}
-	}
-	waiting = 0;
-	vector<string>::iterator it;
-	it = s.begin();
-	while (it != s.end())
-	{
-		if (*it == "not vaccinated") {
-			waiting++;
-		}
-		it++;
 	}
 	MyReadFile.close();
+	return waiting;
 }
 //calcutaion of the % of waiting list
 double statistics::p_waiting() {
-	getuser();
-	getwaiting();
-	double z = (waiting / users) * 100;
+	users = getuser();
+	int waiting = getwaitingNotVacc();
+	double z = ((double)waiting / users) * 100;
 	return z;
 }
-//function gets the number of users in egypt and other
-void statistics::getegypt() {
-	string myText;
-	vector<string> s;
-	ifstream MyReadFile("txts\\country.txt");
-	while (getline(MyReadFile, myText))
-	{
-		if (myText.size() > 0) {
-			s.push_back(myText);
-		}
-	}
-	egyptians = 0;
-	forgienrs = 0;
-	vector<string>::iterator it;
-	it = s.begin();
-	while (it != s.end())
-	{
-		if (*it == "Egypt") {
-			egyptians++;
-		}
-		else forgienrs++;
-		it++;
-	}
-	MyReadFile.close();
-}
-//calcutaion of the % of egyptians 
-double statistics::p_egypt() {
-	getuser();
-	getegypt();
-	double g = (egyptians / users) * 100;
-	return g;
-}
-//calcutaion of the % of abroad
-double statistics::p_abroad() {
-	getuser();
-	getegypt();
-	double k = (forgienrs / users) * 100;
-	return k;
-}
+
 void statistics::get_vaccinated() {
 	string myText;
 	vector<string> s;
@@ -160,20 +97,31 @@ void statistics::get_vaccinated() {
 	}
 	firstdoes = 0;
 	fullyvac = 0;
-	vector<string>::iterator it;
-	it = s.begin();
-	while (it != s.end())
-	{
-		if (*it == "vaccinated: only first dose") {
+	for (int i = 0; i < s.size(); i++) {
+		if (s[i] == "vaccinated: only first dose") {
 			firstdoes++;
 		}
-		else if (*it == "vaccinated: both doses") {
+		else if (s[i] == "vaccinated: both doses") {
 			fullyvac++;
 		}
-		it++;
 	}
 	MyReadFile.close();
 }
+//calcutaion of the % of first dose
+double statistics::p_first() {
+	users = getuser();
+	get_vaccinated();
+	double f = ((double)firstdoes / users) * 100;
+	return f;
+}
+//calcutaion of the % of fully
+double statistics::p_fully() {
+	users = getuser();
+	get_vaccinated();
+	double g = ((double)fullyvac / users) * 100;
+	return g;
+}
+
 void statistics::getAge() {
 	string myText;
 	vector<string> s;
@@ -184,55 +132,67 @@ void statistics::getAge() {
 			s.push_back(myText);
 		}
 	}
-	
-	vector<string>::iterator it;
-	it = s.begin();
 	under18 = 0;
 	between18_60 = 0;
 	above60 = 0;
-	while (it != s.end())
-	{
-		if (stoi(*it) <= 18) {
+	for (int i = 0; i < s.size(); i++) {
+		if (stoi(s[i]) <= 18) {
 			under18++;
 		}
-		else if (stoi(*it) >= 60) {
+		else if (stoi(s[i]) >= 60) {
 			above60++;
 		}
 		else
 			between18_60++;
-		it++;
 	}
 	MyReadFile.close();
 }
-//calcutaion of the % of first dose
-double statistics::p_first() {
-	getuser();
-	get_vaccinated();
-	double f = (firstdoes / users) * 100;
-	return f;
-}
 double statistics::p_under18() {
-	getuser();
+	users = getuser();
 	getAge();
-	double f = (under18 / users) * 100;
+	double f = ((double)under18 / users) * 100;
 	return f;
 }
 double statistics::p_between18_60() {
-	getuser();
+	users = getuser();
 	getAge();
-	double f = (between18_60 / users) * 100;
+	double f = ((double)between18_60 / users) * 100;
 	return f;
 }
 double statistics::p_above60() {
-	getuser();
+	users = getuser();
 	getAge();
-	double f = (above60 / users) * 100;
+	double f = ((double)above60 / users) * 100;
 	return f;
 }
-//calcutaion of the % of fully
-double statistics::p_fully() {
-	getuser();
-	get_vaccinated();
-	double g = (fullyvac / users) * 100;
+
+//function gets the number of users in egypt and other
+int statistics::getegypt() {
+	string myText;
+	int egyptians = 0;
+	ifstream MyReadFile("txts\\country.txt");
+	while (getline(MyReadFile, myText))
+	{
+		if (myText.size() > 0) {
+			if (myText == "Egypt") {
+				egyptians++;
+			}
+		}
+	}
+	MyReadFile.close();
+	return egyptians;
+}
+//calcutaion of the % of egyptians 
+double statistics::p_egypt() {
+	users = getuser();
+	int egyptians = getegypt();
+	double g = ((double)egyptians / users) * 100;
 	return g;
+}
+//calcutaion of the % of abroad
+double statistics::p_abroad() {
+	users = getuser();
+	int forgienrs = users -getegypt();
+	double k = ((double)forgienrs / users) * 100;
+	return k;
 }
