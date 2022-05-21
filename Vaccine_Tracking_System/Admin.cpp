@@ -38,23 +38,23 @@ string Admin::viewAll(unordered_map<string, User> users)
 		temp += ("Name: " + it.second.name + "\nID: " + it.second.id + "\npassword: " + it.second.password + "\nGender: " + it.second.gender + "\nAge: " + it.second.age + "\nCountry: " + it.second.Country + "\nGovernorate: " + it.second.Governorate + "\nStatus: " + it.second.status + "\n------------------------------\n");
 	}
 	if (temp == "")
-	return("No Users Found");
+		return("No Users Found");
 
 	return temp;
 }
 string Admin::view_Waiting(unordered_map<string, User> users)
 {
-	string temp = "Waiting for first dose : ";
+	string temp = "Waiting for first dose : \n_______________\n\n";
 	for (auto it : users) {
 		if (it.second.status == "not vaccinated")
-			temp += ("\n------------------------------\nName: " + it.second.name + "\nID: " + it.second.id);
+			temp += ("Name: " + it.second.name + "\nID: " + it.second.id + "\n______________________________\n\n");
 	}
 	if (temp == "Waiting for first dose : ")
-		temp+=("\nNo Users Waiting for first dose !\n------------------------------\n");
-	temp+= "\n------------------------------\n------------------------------\nWaiting for second dose : ";
+		temp += ("\nNo Users Waiting for first dose !\n______________________________");
+	temp += "\nWaiting for second dose : \n_______________\n\n";
 	for (auto it : users) {
 		if (it.second.status == "vaccinated: only first dose")
-			temp += ("\n------------------------------\nName: " + it.second.name + "\nID: " + it.second.id);
+			temp += ("Name: " + it.second.name + "\nID: " + it.second.id + "\n______________________________\n\n");
 	}
 	return temp;
 }
