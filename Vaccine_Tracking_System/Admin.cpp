@@ -51,7 +51,7 @@ string Admin::view_Waiting(unordered_map<string, User> users)
 	}
 	if (temp == "Waiting for first dose : ")
 		temp+=("\nNo Users Waiting for first dose !\n------------------------------\n");
-	temp+= "\n------------------------------\nWaiting for second dose : ";
+	temp+= "\n------------------------------\n------------------------------\nWaiting for second dose : ";
 	for (auto it : users) {
 		if (it.second.status == "vaccinated: only first dose")
 			temp += ("\n------------------------------\nName: " + it.second.name + "\nID: " + it.second.id);
