@@ -64,11 +64,12 @@ namespace gui {
 	private: System::Windows::Forms::CheckBox^ ApplyCheckBox;
 	private: System::Windows::Forms::Panel^ panel1;
 
-	private: System::Windows::Forms::PictureBox^ pictureBox2;
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::ComboBox^ GovernorateComboBox;
-	private: System::Windows::Forms::Label^ TitleLabel;
-	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ label6;
+
 
 	private:
 		/// <summary>
@@ -107,13 +108,11 @@ namespace gui {
 			this->vaccinatedCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->ApplyCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->TitleLabel = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->GovernorateComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// RegisterButton
@@ -121,13 +120,15 @@ namespace gui {
 			this->RegisterButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
 				static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->RegisterButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->RegisterButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->RegisterButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->RegisterButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->RegisterButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->RegisterButton->ForeColor = System::Drawing::Color::White;
-			this->RegisterButton->Location = System::Drawing::Point(38, 839);
+			this->RegisterButton->Location = System::Drawing::Point(185, 753);
+			this->RegisterButton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->RegisterButton->Name = L"RegisterButton";
-			this->RegisterButton->Size = System::Drawing::Size(726, 60);
+			this->RegisterButton->Size = System::Drawing::Size(432, 41);
 			this->RegisterButton->TabIndex = 6;
 			this->RegisterButton->Text = L"Register";
 			this->RegisterButton->UseVisualStyleBackColor = false;
@@ -162,14 +163,15 @@ namespace gui {
 			// 
 			// NameTextBox
 			// 
-			this->NameTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->NameTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->NameTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NameTextBox->ForeColor = System::Drawing::Color::White;
 			this->NameTextBox->Location = System::Drawing::Point(263, 124);
+			this->NameTextBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->NameTextBox->Name = L"NameTextBox";
-			this->NameTextBox->Size = System::Drawing::Size(402, 54);
+			this->NameTextBox->Size = System::Drawing::Size(401, 54);
 			this->NameTextBox->TabIndex = 9;
 			this->NameTextBox->Click += gcnew System::EventHandler(this, &reg::NameTextBox_Click);
 			this->NameTextBox->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
@@ -178,14 +180,15 @@ namespace gui {
 			// 
 			// PasswordTextBox
 			// 
-			this->PasswordTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->PasswordTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->PasswordTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->PasswordTextBox->ForeColor = System::Drawing::Color::White;
 			this->PasswordTextBox->Location = System::Drawing::Point(263, 281);
+			this->PasswordTextBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->PasswordTextBox->Name = L"PasswordTextBox";
-			this->PasswordTextBox->Size = System::Drawing::Size(402, 54);
+			this->PasswordTextBox->Size = System::Drawing::Size(401, 54);
 			this->PasswordTextBox->TabIndex = 10;
 			this->PasswordTextBox->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			this->PasswordTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &reg::PasswordTextBox_KeyDown);
@@ -205,14 +208,15 @@ namespace gui {
 			// 
 			// NatIDTextBox
 			// 
-			this->NatIDTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->NatIDTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->NatIDTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NatIDTextBox->ForeColor = System::Drawing::Color::White;
 			this->NatIDTextBox->Location = System::Drawing::Point(263, 203);
+			this->NatIDTextBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->NatIDTextBox->Name = L"NatIDTextBox";
-			this->NatIDTextBox->Size = System::Drawing::Size(402, 54);
+			this->NatIDTextBox->Size = System::Drawing::Size(401, 54);
 			this->NatIDTextBox->TabIndex = 12;
 			this->NatIDTextBox->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			this->NatIDTextBox->TextChanged += gcnew System::EventHandler(this, &reg::NatIDTextBox_TextChanged);
@@ -221,14 +225,23 @@ namespace gui {
 			// UnseeButton
 			// 
 			this->UnseeButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->UnseeButton->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
+			this->UnseeButton->FlatAppearance->BorderSize = 0;
+			this->UnseeButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::DarkBlue;
+			this->UnseeButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->UnseeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->UnseeButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
+				static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->UnseeButton->Location = System::Drawing::Point(671, 281);
+			this->UnseeButton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->UnseeButton->Name = L"UnseeButton";
 			this->UnseeButton->Size = System::Drawing::Size(76, 54);
 			this->UnseeButton->TabIndex = 13;
 			this->UnseeButton->Text = L"👁";
-			this->UnseeButton->UseVisualStyleBackColor = true;
+			this->UnseeButton->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			this->UnseeButton->UseVisualStyleBackColor = false;
 			this->UnseeButton->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			this->UnseeButton->Click += gcnew System::EventHandler(this, &reg::UnseeButton_Click);
 			// 
@@ -237,7 +250,7 @@ namespace gui {
 			this->GenderLabel->AutoSize = true;
 			this->GenderLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
 			this->GenderLabel->ForeColor = System::Drawing::Color::White;
-			this->GenderLabel->Location = System::Drawing::Point(84, 371);
+			this->GenderLabel->Location = System::Drawing::Point(84, 370);
 			this->GenderLabel->Name = L"GenderLabel";
 			this->GenderLabel->Size = System::Drawing::Size(122, 38);
 			this->GenderLabel->TabIndex = 17;
@@ -250,8 +263,10 @@ namespace gui {
 			this->MaleCheckBox->AutoSize = true;
 			this->MaleCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->MaleCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
-			this->MaleCheckBox->ForeColor = System::Drawing::Color::White;
+			this->MaleCheckBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
+				static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->MaleCheckBox->Location = System::Drawing::Point(263, 374);
+			this->MaleCheckBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->MaleCheckBox->Name = L"MaleCheckBox";
 			this->MaleCheckBox->Size = System::Drawing::Size(90, 36);
 			this->MaleCheckBox->TabIndex = 15;
@@ -265,8 +280,10 @@ namespace gui {
 			this->FemaleCheckBox->AutoSize = true;
 			this->FemaleCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->FemaleCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
-			this->FemaleCheckBox->ForeColor = System::Drawing::Color::White;
+			this->FemaleCheckBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
+				static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->FemaleCheckBox->Location = System::Drawing::Point(405, 374);
+			this->FemaleCheckBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->FemaleCheckBox->Name = L"FemaleCheckBox";
 			this->FemaleCheckBox->Size = System::Drawing::Size(114, 36);
 			this->FemaleCheckBox->TabIndex = 16;
@@ -277,17 +294,18 @@ namespace gui {
 			// 
 			// DoseComboBox
 			// 
-			this->DoseComboBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->DoseComboBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->DoseComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->DoseComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->DoseComboBox->ForeColor = System::Drawing::Color::White;
 			this->DoseComboBox->FormattingEnabled = true;
 			this->DoseComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"only first dose", L"both doses" });
-			this->DoseComboBox->Location = System::Drawing::Point(541, 703);
+			this->DoseComboBox->Location = System::Drawing::Point(540, 699);
+			this->DoseComboBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->DoseComboBox->Name = L"DoseComboBox";
-			this->DoseComboBox->Size = System::Drawing::Size(206, 37);
+			this->DoseComboBox->Size = System::Drawing::Size(207, 37);
 			this->DoseComboBox->TabIndex = 29;
 			this->DoseComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &reg::DoseComboBox_SelectedIndexChanged);
 			this->DoseComboBox->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
@@ -297,7 +315,7 @@ namespace gui {
 			this->AgeLabel->AutoSize = true;
 			this->AgeLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
 			this->AgeLabel->ForeColor = System::Drawing::Color::White;
-			this->AgeLabel->Location = System::Drawing::Point(126, 447);
+			this->AgeLabel->Location = System::Drawing::Point(125, 447);
 			this->AgeLabel->Name = L"AgeLabel";
 			this->AgeLabel->Size = System::Drawing::Size(80, 38);
 			this->AgeLabel->TabIndex = 18;
@@ -306,14 +324,15 @@ namespace gui {
 			// 
 			// AgeTextBox
 			// 
-			this->AgeTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				static_cast<System::Int32>(static_cast<System::Byte>(102)));
-			this->AgeTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->AgeTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->AgeTextBox->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 19, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->AgeTextBox->ForeColor = System::Drawing::Color::White;
 			this->AgeTextBox->Location = System::Drawing::Point(263, 438);
+			this->AgeTextBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->AgeTextBox->Name = L"AgeTextBox";
-			this->AgeTextBox->Size = System::Drawing::Size(149, 54);
+			this->AgeTextBox->Size = System::Drawing::Size(149, 52);
 			this->AgeTextBox->TabIndex = 19;
 			this->AgeTextBox->BackColorChanged += gcnew System::EventHandler(this, &reg::label1_BackColorChanged);
 			this->AgeTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &reg::AgeTextBox_KeyDown);
@@ -335,8 +354,10 @@ namespace gui {
 			this->EgyptCheckBox->AutoSize = true;
 			this->EgyptCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->EgyptCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
-			this->EgyptCheckBox->ForeColor = System::Drawing::Color::White;
+			this->EgyptCheckBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
+				static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->EgyptCheckBox->Location = System::Drawing::Point(263, 524);
+			this->EgyptCheckBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EgyptCheckBox->Name = L"EgyptCheckBox";
 			this->EgyptCheckBox->Size = System::Drawing::Size(97, 36);
 			this->EgyptCheckBox->TabIndex = 21;
@@ -347,12 +368,13 @@ namespace gui {
 			// 
 			// OtherCountryComboBox
 			// 
-			this->OtherCountryComboBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->OtherCountryComboBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)),
+				static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->OtherCountryComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->OtherCountryComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->OtherCountryComboBox->ForeColor = System::Drawing::Color::White;
+			this->OtherCountryComboBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)),
+				static_cast<System::Int32>(static_cast<System::Byte>(135)), static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->OtherCountryComboBox->FormattingEnabled = true;
 			this->OtherCountryComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(189) {
 				L"Afghanistan", L"Albania", L"Algeria",
@@ -376,6 +398,7 @@ namespace gui {
 					L"Vatican City", L"Venezuela", L"Vietnam", L"Yemen", L"Zambia", L"Zimbabwe", L"OtherCountry"
 			});
 			this->OtherCountryComboBox->Location = System::Drawing::Point(555, 527);
+			this->OtherCountryComboBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->OtherCountryComboBox->Name = L"OtherCountryComboBox";
 			this->OtherCountryComboBox->Size = System::Drawing::Size(248, 37);
 			this->OtherCountryComboBox->TabIndex = 22;
@@ -387,8 +410,10 @@ namespace gui {
 			this->AbroadCheckBox->AutoSize = true;
 			this->AbroadCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->AbroadCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
-			this->AbroadCheckBox->ForeColor = System::Drawing::Color::White;
+			this->AbroadCheckBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
+				static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->AbroadCheckBox->Location = System::Drawing::Point(405, 524);
+			this->AbroadCheckBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->AbroadCheckBox->Name = L"AbroadCheckBox";
 			this->AbroadCheckBox->Size = System::Drawing::Size(114, 36);
 			this->AbroadCheckBox->TabIndex = 23;
@@ -402,7 +427,7 @@ namespace gui {
 			this->GovernorateLabel->AutoSize = true;
 			this->GovernorateLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
 			this->GovernorateLabel->ForeColor = System::Drawing::Color::White;
-			this->GovernorateLabel->Location = System::Drawing::Point(22, 590);
+			this->GovernorateLabel->Location = System::Drawing::Point(21, 590);
 			this->GovernorateLabel->Name = L"GovernorateLabel";
 			this->GovernorateLabel->Size = System::Drawing::Size(184, 38);
 			this->GovernorateLabel->TabIndex = 24;
@@ -427,8 +452,10 @@ namespace gui {
 			this->vaccinatedCheckBox->AutoSize = true;
 			this->vaccinatedCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->vaccinatedCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15));
-			this->vaccinatedCheckBox->ForeColor = System::Drawing::Color::White;
+			this->vaccinatedCheckBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)),
+				static_cast<System::Int32>(static_cast<System::Byte>(135)), static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->vaccinatedCheckBox->Location = System::Drawing::Point(263, 656);
+			this->vaccinatedCheckBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->vaccinatedCheckBox->Name = L"vaccinatedCheckBox";
 			this->vaccinatedCheckBox->Size = System::Drawing::Size(157, 39);
 			this->vaccinatedCheckBox->TabIndex = 27;
@@ -442,8 +469,10 @@ namespace gui {
 			this->ApplyCheckBox->AutoSize = true;
 			this->ApplyCheckBox->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->ApplyCheckBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15));
-			this->ApplyCheckBox->ForeColor = System::Drawing::Color::White;
+			this->ApplyCheckBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
+				static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->ApplyCheckBox->Location = System::Drawing::Point(440, 656);
+			this->ApplyCheckBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ApplyCheckBox->Name = L"ApplyCheckBox";
 			this->ApplyCheckBox->Size = System::Drawing::Size(307, 39);
 			this->ApplyCheckBox->TabIndex = 28;
@@ -454,11 +483,11 @@ namespace gui {
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(54)));
 			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel1->Controls->Add(this->label5);
-			this->panel1->Controls->Add(this->TitleLabel);
+			this->panel1->Controls->Add(this->label7);
+			this->panel1->Controls->Add(this->label6);
 			this->panel1->Controls->Add(this->GovernorateComboBox);
 			this->panel1->Controls->Add(this->label4);
 			this->panel1->Controls->Add(this->PasswordTextBox);
@@ -483,41 +512,49 @@ namespace gui {
 			this->panel1->Controls->Add(this->GenderLabel);
 			this->panel1->Controls->Add(this->AgeTextBox);
 			this->panel1->Controls->Add(this->AgeLabel);
-			this->panel1->Location = System::Drawing::Point(665, -3);
+			this->panel1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1497, 1065);
+			this->panel1->Size = System::Drawing::Size(862, 876);
 			this->panel1->TabIndex = 30;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &reg::panel1_Paint);
 			// 
-			// label5
+			// label7
 			// 
-			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI Black", 18));
-			this->label5->ForeColor = System::Drawing::Color::Gold;
-			this->label5->Location = System::Drawing::Point(-7, 42);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(697, 40);
-			this->label5->TabIndex = 33;
-			this->label5->Text = L"   Please, enter your info and fill all fields";
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
+				static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->label7->Location = System::Drawing::Point(-7, 32);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(697, 42);
+			this->label7->TabIndex = 35;
+			this->label7->Text = L"   Please, enter your info and fill all fields";
 			// 
-			// TitleLabel
+			// label6
 			// 
-			this->TitleLabel->AutoSize = true;
-			this->TitleLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI Black", 18));
-			this->TitleLabel->ForeColor = System::Drawing::Color::White;
-			this->TitleLabel->Location = System::Drawing::Point(-7, 52);
-			this->TitleLabel->Name = L"TitleLabel";
-			this->TitleLabel->Size = System::Drawing::Size(594, 41);
-			this->TitleLabel->TabIndex = 32;
-			this->TitleLabel->Text = L"________________________________________________";
+			this->label6->BackColor = System::Drawing::Color::Transparent;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Eras Bold ITC", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
+				static_cast<System::Int32>(static_cast<System::Byte>(15)));
+			this->label6->Location = System::Drawing::Point(12, 45);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(697, 41);
+			this->label6->TabIndex = 34;
+			this->label6->Text = L"___________________________________";
 			// 
 			// GovernorateComboBox
 			// 
-			this->GovernorateComboBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->GovernorateComboBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)),
+				static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->GovernorateComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->GovernorateComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->GovernorateComboBox->ForeColor = System::Drawing::Color::White;
+			this->GovernorateComboBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(173)),
+				static_cast<System::Int32>(static_cast<System::Byte>(135)), static_cast<System::Int32>(static_cast<System::Byte>(15)));
 			this->GovernorateComboBox->FormattingEnabled = true;
 			this->GovernorateComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(27) {
 				L"Alexandria", L"Aswan", L"Assiut", L"Beheira",
@@ -526,8 +563,9 @@ namespace gui {
 					L"South Sinai", L"Suez", L"Luxor"
 			});
 			this->GovernorateComboBox->Location = System::Drawing::Point(241, 593);
+			this->GovernorateComboBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->GovernorateComboBox->Name = L"GovernorateComboBox";
-			this->GovernorateComboBox->Size = System::Drawing::Size(206, 37);
+			this->GovernorateComboBox->Size = System::Drawing::Size(207, 37);
 			this->GovernorateComboBox->TabIndex = 31;
 			// 
 			// label4
@@ -535,22 +573,11 @@ namespace gui {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
 			this->label4->ForeColor = System::Drawing::Color::Red;
-			this->label4->Location = System::Drawing::Point(177, 798);
+			this->label4->Location = System::Drawing::Point(189, 796);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(0, 38);
 			this->label4->TabIndex = 30;
-			// 
-			// pictureBox2
-			// 
-			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
-			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->pictureBox2->ErrorImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.ErrorImage")));
-			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
-			this->pictureBox2->Location = System::Drawing::Point(-2, 131);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(661, 253);
-			this->pictureBox2->TabIndex = 32;
-			this->pictureBox2->TabStop = false;
+			this->label4->Click += gcnew System::EventHandler(this, &reg::label4_Click_1);
 			// 
 			// reg
 			// 
@@ -558,17 +585,19 @@ namespace gui {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1924, 1055);
-			this->Controls->Add(this->pictureBox2);
+			this->ClientSize = System::Drawing::Size(854, 843);
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Location = System::Drawing::Point(2000, 600);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->MaximumSize = System::Drawing::Size(872, 890);
+			this->MinimumSize = System::Drawing::Size(872, 890);
 			this->Name = L"reg";
 			this->Text = L"Registeration";
 			this->Load += gcnew System::EventHandler(this, &reg::reg_Load);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &reg::reg_KeyDown);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -629,5 +658,7 @@ namespace gui {
 	private: System::Void GovernorateTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 
 	private: System::Void reg_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+private: System::Void label4_Click_1(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

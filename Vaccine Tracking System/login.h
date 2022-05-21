@@ -341,6 +341,7 @@ namespace gui {
 			this->ClientSize = System::Drawing::Size(1924, 1055);
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Location = System::Drawing::Point(2000, 600);
 			this->Name = L"login";
 			this->Text = L"login";
 			this->Load += gcnew System::EventHandler(this, &login::login_Load);
