@@ -101,6 +101,7 @@ namespace gui {
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Panel^ panel5;
+	private: System::Windows::Forms::Panel^ panel6;
 
 
 
@@ -153,6 +154,7 @@ namespace gui {
 			this->UsernameLabel = (gcnew System::Windows::Forms::Label());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
@@ -160,6 +162,7 @@ namespace gui {
 			this->panel1->SuspendLayout();
 			this->panel4->SuspendLayout();
 			this->panel5->SuspendLayout();
+			this->panel6->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -171,9 +174,9 @@ namespace gui {
 			this->ViewUserInfoButton->BackColor = System::Drawing::Color::Transparent;
 			this->ViewUserInfoButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->ViewUserInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->ViewUserInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ViewUserInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ViewUserInfoButton->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->ViewUserInfoButton->ForeColor = System::Drawing::Color::Black;
 			this->ViewUserInfoButton->Location = System::Drawing::Point(22, 343);
 			this->ViewUserInfoButton->Name = L"ViewUserInfoButton";
 			this->ViewUserInfoButton->Size = System::Drawing::Size(261, 64);
@@ -187,9 +190,9 @@ namespace gui {
 			this->EditUserInfoButton->BackColor = System::Drawing::Color::Transparent;
 			this->EditUserInfoButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->EditUserInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->EditUserInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->EditUserInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->EditUserInfoButton->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->EditUserInfoButton->ForeColor = System::Drawing::Color::Black;
 			this->EditUserInfoButton->Location = System::Drawing::Point(22, 456);
 			this->EditUserInfoButton->Name = L"EditUserInfoButton";
 			this->EditUserInfoButton->Size = System::Drawing::Size(261, 68);
@@ -203,9 +206,9 @@ namespace gui {
 			this->DeleteInfoButton->BackColor = System::Drawing::Color::Transparent;
 			this->DeleteInfoButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->DeleteInfoButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->DeleteInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->DeleteInfoButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->DeleteInfoButton->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->DeleteInfoButton->ForeColor = System::Drawing::Color::Black;
 			this->DeleteInfoButton->Location = System::Drawing::Point(22, 573);
 			this->DeleteInfoButton->Name = L"DeleteInfoButton";
 			this->DeleteInfoButton->Size = System::Drawing::Size(261, 64);
@@ -243,7 +246,7 @@ namespace gui {
 			this->ErrorLabel->AutoSize = true;
 			this->ErrorLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 13));
 			this->ErrorLabel->ForeColor = System::Drawing::Color::Red;
-			this->ErrorLabel->Location = System::Drawing::Point(1180, 639);
+			this->ErrorLabel->Location = System::Drawing::Point(1110, 529);
 			this->ErrorLabel->Name = L"ErrorLabel";
 			this->ErrorLabel->Size = System::Drawing::Size(0, 30);
 			this->ErrorLabel->TabIndex = 25;
@@ -354,18 +357,18 @@ namespace gui {
 			// NewvalueLabel
 			// 
 			this->NewvalueLabel->AutoSize = true;
-			this->NewvalueLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI Historic", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->NewvalueLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI Historic", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NewvalueLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->NewvalueLabel->Location = System::Drawing::Point(998, 183);
+			this->NewvalueLabel->ForeColor = System::Drawing::Color::LightCyan;
+			this->NewvalueLabel->Location = System::Drawing::Point(1016, 183);
 			this->NewvalueLabel->Name = L"NewvalueLabel";
-			this->NewvalueLabel->Size = System::Drawing::Size(253, 54);
+			this->NewvalueLabel->Size = System::Drawing::Size(265, 54);
 			this->NewvalueLabel->TabIndex = 21;
 			this->NewvalueLabel->Text = L"updated info";
 			// 
 			// SubmitButton
 			// 
-			this->SubmitButton->BackColor = System::Drawing::Color::Transparent;
+			this->SubmitButton->BackColor = System::Drawing::Color::DodgerBlue;
 			this->SubmitButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->SubmitButton->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->SubmitButton->FlatAppearance->BorderColor = System::Drawing::Color::White;
@@ -374,13 +377,12 @@ namespace gui {
 			this->SubmitButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->SubmitButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->SubmitButton->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->SubmitButton->ForeColor = System::Drawing::Color::Black;
 			this->SubmitButton->Location = System::Drawing::Point(1103, 433);
 			this->SubmitButton->Name = L"SubmitButton";
 			this->SubmitButton->Size = System::Drawing::Size(166, 57);
 			this->SubmitButton->TabIndex = 22;
 			this->SubmitButton->Text = L"submit";
-			this->SubmitButton->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->SubmitButton->UseVisualStyleBackColor = false;
 			this->SubmitButton->Click += gcnew System::EventHandler(this, &UserForm::SubmitButton_Click);
 			// 
@@ -531,8 +533,7 @@ namespace gui {
 			// 
 			// UserInfoRichTextBox
 			// 
-			this->UserInfoRichTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)),
-				static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->UserInfoRichTextBox->BackColor = System::Drawing::Color::CadetBlue;
 			this->UserInfoRichTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->UserInfoRichTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -567,19 +568,18 @@ namespace gui {
 			// UsernameLabel
 			// 
 			this->UsernameLabel->AutoSize = true;
-			this->UsernameLabel->Font = (gcnew System::Drawing::Font(L"Sitka Text", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->UsernameLabel->Font = (gcnew System::Drawing::Font(L"Sitka Text", 22.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->UsernameLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->UsernameLabel->Location = System::Drawing::Point(64, 125);
+			this->UsernameLabel->ForeColor = System::Drawing::Color::DodgerBlue;
+			this->UsernameLabel->Location = System::Drawing::Point(50, 0);
 			this->UsernameLabel->Name = L"UsernameLabel";
-			this->UsernameLabel->Size = System::Drawing::Size(78, 40);
+			this->UsernameLabel->Size = System::Drawing::Size(107, 55);
 			this->UsernameLabel->TabIndex = 42;
 			this->UsernameLabel->Text = L"user";
 			// 
 			// panel4
 			// 
-			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
-				static_cast<System::Int32>(static_cast<System::Byte>(54)));
+			this->panel4->BackColor = System::Drawing::Color::DarkCyan;
 			this->panel4->Controls->Add(this->panel5);
 			this->panel4->Controls->Add(this->pictureBox4);
 			this->panel4->Controls->Add(this->pictureBox3);
@@ -595,18 +595,28 @@ namespace gui {
 			// 
 			// panel5
 			// 
+			this->panel5->BackColor = System::Drawing::Color::Teal;
+			this->panel5->Controls->Add(this->panel6);
 			this->panel5->Controls->Add(this->pictureBox1);
-			this->panel5->Controls->Add(this->UsernameLabel);
 			this->panel5->Location = System::Drawing::Point(3, 0);
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(368, 224);
 			this->panel5->TabIndex = 51;
 			// 
+			// panel6
+			// 
+			this->panel6->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->panel6->Controls->Add(this->UsernameLabel);
+			this->panel6->Location = System::Drawing::Point(58, 115);
+			this->panel6->Name = L"panel6";
+			this->panel6->Size = System::Drawing::Size(200, 64);
+			this->panel6->TabIndex = 47;
+			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox1->Location = System::Drawing::Point(101, 12);
+			this->pictureBox1->Location = System::Drawing::Point(101, 3);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(110, 110);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
@@ -650,8 +660,7 @@ namespace gui {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->BackColor = System::Drawing::Color::CadetBlue;
 			this->ClientSize = System::Drawing::Size(1615, 792);
 			this->Controls->Add(this->GovernorateComboBox);
 			this->Controls->Add(this->SubmitButton);
@@ -685,7 +694,8 @@ namespace gui {
 			this->panel1->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
 			this->panel5->ResumeLayout(false);
-			this->panel5->PerformLayout();
+			this->panel6->ResumeLayout(false);
+			this->panel6->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -733,7 +743,7 @@ namespace gui {
 		System::Void vaccinatedCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 
 		System::Void ApplyCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-		
+
 		System::Void NewvalueTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
-};
+	};
 }
