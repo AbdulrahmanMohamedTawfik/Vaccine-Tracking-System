@@ -245,8 +245,8 @@ namespace gui {
 			// 
 			this->ErrorLabel->AutoSize = true;
 			this->ErrorLabel->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 13));
-			this->ErrorLabel->ForeColor = System::Drawing::Color::Red;
-			this->ErrorLabel->Location = System::Drawing::Point(1110, 529);
+			this->ErrorLabel->ForeColor = System::Drawing::Color::DarkRed;
+			this->ErrorLabel->Location = System::Drawing::Point(1101, 399);
 			this->ErrorLabel->Name = L"ErrorLabel";
 			this->ErrorLabel->Size = System::Drawing::Size(0, 30);
 			this->ErrorLabel->TabIndex = 25;
@@ -378,7 +378,7 @@ namespace gui {
 			this->SubmitButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->SubmitButton->ForeColor = System::Drawing::Color::Black;
-			this->SubmitButton->Location = System::Drawing::Point(1103, 433);
+			this->SubmitButton->Location = System::Drawing::Point(1103, 432);
 			this->SubmitButton->Name = L"SubmitButton";
 			this->SubmitButton->Size = System::Drawing::Size(166, 57);
 			this->SubmitButton->TabIndex = 22;
