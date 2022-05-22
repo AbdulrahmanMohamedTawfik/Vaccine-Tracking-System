@@ -16,6 +16,7 @@ System::Void gui::UserForm::UserForm_Load(System::Object^ sender, System::EventA
 	u.read_data(users);
 	u.getUserName(users);
 	string std_str = u.NameText;
+	std_str = std_str.substr(0, std_str.find(" "));
 	String^ sys_str = gcnew String(std_str.c_str());
 	UsernameLabel->Text = sys_str;
 	this->Text = sys_str;
@@ -287,6 +288,7 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 				u.read_data(users);
 				u.getUserName(users);
 				string std_str = u.NameText;
+				std_str = std_str.substr(0, std_str.find(" "));
 				String^ sys_str = gcnew String(std_str.c_str());
 				UsernameLabel->Text = sys_str;
 				this->Text = sys_str;

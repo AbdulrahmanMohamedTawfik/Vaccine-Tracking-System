@@ -91,7 +91,7 @@ namespace gui {
 
 
 
-	private: System::Windows::Forms::Label^ UsernameLabel;
+
 
 
 	private: System::Windows::Forms::ComboBox^ GovernorateComboBox;
@@ -101,7 +101,8 @@ namespace gui {
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Panel^ panel5;
-	private: System::Windows::Forms::Panel^ panel6;
+	private: System::Windows::Forms::Label^ UsernameLabel;
+
 
 
 
@@ -151,18 +152,16 @@ namespace gui {
 			this->vaccinatedCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->UserInfoRichTextBox = (gcnew System::Windows::Forms::RichTextBox());
 			this->GovernorateComboBox = (gcnew System::Windows::Forms::ComboBox());
-			this->UsernameLabel = (gcnew System::Windows::Forms::Label());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
-			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->UsernameLabel = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->panel4->SuspendLayout();
 			this->panel5->SuspendLayout();
-			this->panel6->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -565,18 +564,6 @@ namespace gui {
 			this->GovernorateComboBox->Size = System::Drawing::Size(206, 37);
 			this->GovernorateComboBox->TabIndex = 45;
 			// 
-			// UsernameLabel
-			// 
-			this->UsernameLabel->AutoSize = true;
-			this->UsernameLabel->Font = (gcnew System::Drawing::Font(L"Sitka Text", 22.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->UsernameLabel->ForeColor = System::Drawing::Color::DodgerBlue;
-			this->UsernameLabel->Location = System::Drawing::Point(50, 0);
-			this->UsernameLabel->Name = L"UsernameLabel";
-			this->UsernameLabel->Size = System::Drawing::Size(107, 55);
-			this->UsernameLabel->TabIndex = 42;
-			this->UsernameLabel->Text = L"user";
-			// 
 			// panel4
 			// 
 			this->panel4->BackColor = System::Drawing::Color::DarkCyan;
@@ -596,21 +583,12 @@ namespace gui {
 			// panel5
 			// 
 			this->panel5->BackColor = System::Drawing::Color::Teal;
-			this->panel5->Controls->Add(this->panel6);
+			this->panel5->Controls->Add(this->UsernameLabel);
 			this->panel5->Controls->Add(this->pictureBox1);
 			this->panel5->Location = System::Drawing::Point(3, 0);
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(368, 224);
 			this->panel5->TabIndex = 51;
-			// 
-			// panel6
-			// 
-			this->panel6->BackColor = System::Drawing::Color::DarkSlateGray;
-			this->panel6->Controls->Add(this->UsernameLabel);
-			this->panel6->Location = System::Drawing::Point(58, 115);
-			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(200, 64);
-			this->panel6->TabIndex = 47;
 			// 
 			// pictureBox1
 			// 
@@ -656,6 +634,19 @@ namespace gui {
 			this->pictureBox2->TabIndex = 48;
 			this->pictureBox2->TabStop = false;
 			// 
+			// UsernameLabel
+			// 
+			this->UsernameLabel->AutoSize = true;
+			this->UsernameLabel->BackColor = System::Drawing::Color::Transparent;
+			this->UsernameLabel->Font = (gcnew System::Drawing::Font(L"Sitka Text", 22.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->UsernameLabel->ForeColor = System::Drawing::Color::MediumBlue;
+			this->UsernameLabel->Location = System::Drawing::Point(91, 116);
+			this->UsernameLabel->Name = L"UsernameLabel";
+			this->UsernameLabel->Size = System::Drawing::Size(107, 55);
+			this->UsernameLabel->TabIndex = 42;
+			this->UsernameLabel->Text = L"user";
+			// 
 			// UserForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
@@ -694,8 +685,7 @@ namespace gui {
 			this->panel1->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
 			this->panel5->ResumeLayout(false);
-			this->panel6->ResumeLayout(false);
-			this->panel6->PerformLayout();
+			this->panel5->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
