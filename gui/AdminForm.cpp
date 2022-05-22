@@ -1,6 +1,7 @@
 #include "AdminForm.h"
 #include "Admin.h"
 #include "User.h"
+#include "statistics.h"
 #include "statistics_dashboard.h"
 #include <unordered_map>
 #include <msclr/marshal_cppstd.h>
@@ -8,8 +9,13 @@
 unordered_map<string, User> users_for_admin;
 User u1;
 Admin a1;
+statistics s;
 System::Void gui::AdminForm::ViewInfoButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	if (users_for_admin.size() != s.getuser()) {
+		u1.read_data(users_for_admin);
+		
+	}
 	view_or_del = 0;
 	richTextBox1->Hide();
 	NationalIDLabel->Show();
@@ -21,6 +27,10 @@ System::Void gui::AdminForm::ViewInfoButton_Click(System::Object^ sender, System
 
 System::Void gui::AdminForm::ViewAllUsers_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	if (users_for_admin.size() != s.getuser()) {
+		u1.read_data(users_for_admin);
+	
+	}
 	NationalIDLabel->Hide();
 	NationalIDTextBox->Hide();
 	SubmitButton->Hide();
@@ -33,6 +43,10 @@ System::Void gui::AdminForm::ViewAllUsers_Click(System::Object^ sender, System::
 
 System::Void gui::AdminForm::ViewAwaitingListButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	if (users_for_admin.size() != s.getuser()) {
+		u1.read_data(users_for_admin);
+		
+	}
 	NationalIDLabel->Hide();
 	NationalIDTextBox->Hide();
 	SubmitButton->Hide();
@@ -45,6 +59,9 @@ System::Void gui::AdminForm::ViewAwaitingListButton_Click(System::Object^ sender
 
 System::Void gui::AdminForm::DeleteInfoButton_Click(System::Object^ sender, System::EventArgs^ e)//bug fix needed here
 {
+	if (users_for_admin.size() != s.getuser()) {
+		u1.read_data(users_for_admin);
+	}
 	view_or_del = 1;
 	richTextBox1->Hide();
 	NationalIDLabel->Show();
@@ -71,6 +88,7 @@ System::Void gui::AdminForm::DeleteAllUsers_Click(System::Object^ sender, System
 
 System::Void gui::AdminForm::AdminForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
+	users_for_admin.clear();
 	u1.read_data(users_for_admin);
 	WindowState = FormWindowState::Maximized;
 	return System::Void();
@@ -97,7 +115,7 @@ System::Void gui::AdminForm::SubmitButton_Click(System::Object^ sender, System::
 	if (view_or_del)
 	{
 		a1.deleteUser(NatID, users_for_admin);
-		if (u1.getdel_user_found())//bug fix needed here (always if is executed and else never executed)
+		if (u1.getdel_user_found())
 		{
 			u1.update_files(users_for_admin);
 			richTextBox1->Text = "User Deleteted successfully";
