@@ -572,7 +572,7 @@ namespace gui {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F));
-			this->label4->ForeColor = System::Drawing::Color::Red;
+			this->label4->ForeColor = System::Drawing::Color::OrangeRed;
 			this->label4->Location = System::Drawing::Point(189, 796);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(0, 38);
