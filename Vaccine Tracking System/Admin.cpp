@@ -46,21 +46,21 @@ string Admin::viewAll(unordered_map<string, User> users)
 
 string Admin::view_notVaccUsersList(queue<User>& notVaccUsers)
 {
-	string temp = "Waiting for first dose : ";
+	string temp = "Waiting for first dose : \n_______________\n\n";
 	while (!notVaccUsers.empty()) {
-		temp += ("\n------------------------------\nName: " + notVaccUsers.front().name + "\nID: " + notVaccUsers.front().id);
+		temp += ("Name: " + notVaccUsers.front().name + "\nID: " + notVaccUsers.front().id + "\n______________________________\n\n");
 		notVaccUsers.pop();
 	}
 	if (temp == "Waiting for first dose : ")
-		temp += ("\nNo Users Waiting for first dose !\n------------------------------\n");
+		temp += ("\nNo.Users Waiting for first dose !\n______________________________");
 	return temp;
 }
 
 string Admin::view_oneDoseVaccUsersList(queue<User>& oneDoseVaccUsers)
 {
-	string temp = "Waiting for second dose : ";
+	string temp = "\nWaiting for second dose : \n_______________\n\n";
 	while (!oneDoseVaccUsers.empty()) {
-		temp += ("\n------------------------------\nName: " + oneDoseVaccUsers.front().name + "\nID: " + oneDoseVaccUsers.front().id);
+		temp += ("Name: " + oneDoseVaccUsers.front().name + "\nID: " + oneDoseVaccUsers.front().id + "\n______________________________\n\n");
 		oneDoseVaccUsers.pop();
 	}
 	return temp;
