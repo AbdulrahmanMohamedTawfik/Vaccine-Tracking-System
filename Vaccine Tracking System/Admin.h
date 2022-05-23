@@ -16,5 +16,7 @@ public:
 	string viewAll(unordered_map<string, User> users);
 	void deleteUser(string userNationalID, unordered_map<string, User>& users);
 	void deleteAll(unordered_map<string, User>& users);
-	string view_Waiting(unordered_map<string, User> users);
+	string view_notVaccUsersList(queue<User>& notVaccUsers);
+	string view_oneDoseVaccUsersList(queue<User>& oneDoseVaccUsers);
+	string fill_WaitingList(unordered_map<string, User> users);
 };

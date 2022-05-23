@@ -1,4 +1,5 @@
 #include "Admin.h"
+#include <queue>
 using namespace std;
 
 Admin::Admin()
@@ -42,21 +43,45 @@ string Admin::viewAll(unordered_map<string, User> users)
 
 	return temp;
 }
-string Admin::view_Waiting(unordered_map<string, User> users)
+
+string Admin::view_notVaccUsersList(queue<User>& notVaccUsers)
 {
 	string temp = "Waiting for first dose : ";
-	for (auto it : users) {
-		if (it.second.status == "not vaccinated")
-			temp += ("\n------------------------------\nName: " + it.second.name + "\nID: " + it.second.id);
+	while (!notVaccUsers.empty()) {
+		temp += ("\n------------------------------\nName: " + notVaccUsers.front().name + "\nID: " + notVaccUsers.front().id);
+		notVaccUsers.pop();
 	}
 	if (temp == "Waiting for first dose : ")
-		temp+=("\nNo Users Waiting for first dose !\n------------------------------\n");
-	temp+= "\n\n\n\nWaiting for second dose : ";
-	for (auto it : users) {
-		if (it.second.status == "vaccinated: only first dose")
-			temp += ("\n------------------------------\nName: " + it.second.name + "\nID: " + it.second.id);
+		temp += ("\nNo Users Waiting for first dose !\n------------------------------\n");
+	return temp;
+}
+
+string Admin::view_oneDoseVaccUsersList(queue<User>& oneDoseVaccUsers)
+{
+	string temp = "Waiting for second dose : ";
+	while (!oneDoseVaccUsers.empty()) {
+		temp += ("\n------------------------------\nName: " + oneDoseVaccUsers.front().name + "\nID: " + oneDoseVaccUsers.front().id);
+		oneDoseVaccUsers.pop();
 	}
 	return temp;
+}
+
+string Admin::fill_WaitingList(unordered_map<string, User> users)
+{
+	queue<User> notVaccUsers;
+	queue<User> oneDoseVaccUsers;
+	for (auto it : users) {
+		if (it.second.status == "not vaccinated")
+		{
+			notVaccUsers.push(it.second);
+		}
+		else if (it.second.status == "vaccinated: only first dose")
+		{
+			oneDoseVaccUsers.push(it.second);
+		}
+	}
+	string fullWaitingList = view_notVaccUsersList(notVaccUsers) + "\n\n\n\n" + view_oneDoseVaccUsersList(oneDoseVaccUsers);
+	return fullWaitingList;
 }
 
 void Admin::deleteUser(string userNationalID, unordered_map<string, User>& users)

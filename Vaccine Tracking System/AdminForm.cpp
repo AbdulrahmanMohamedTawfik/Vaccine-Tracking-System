@@ -36,7 +36,7 @@ System::Void gui::AdminForm::ViewAwaitingListButton_Click(System::Object^ sender
 	NationalIDLabel->Hide();
 	NationalIDTextBox->Hide();
 	SubmitButton->Hide();
-	string contents = a1.view_Waiting(users_for_admin);
+	string contents = a1.fill_WaitingList(users_for_admin);
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 	richTextBox1->Text = syscontents;
 	richTextBox1->Show();
