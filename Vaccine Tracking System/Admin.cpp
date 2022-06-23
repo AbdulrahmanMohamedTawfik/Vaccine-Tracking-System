@@ -1,7 +1,7 @@
 #include "Admin.h"
 #include <queue>
 using namespace std;
-
+User u2;
 Admin::Admin()
 {
 	this->nationalID = "admin";
@@ -84,21 +84,5 @@ string Admin::fill_WaitingList(unordered_map<string, User> users)
 	return fullWaitingList;
 }
 
-void Admin::deleteUser(string userNationalID, unordered_map<string, User>& users)
-{
-	User u;
-	if (u.check_id(userNationalID))
-	{
-		u.setdel_user_found(true);
-		users.erase(userNationalID);
-	}
-	else
-	{
-		u.setdel_user_found(false);
-	}
-}
 
-void Admin::deleteAll(unordered_map<string, User>& users)
-{
-	users.clear();
-}
+
