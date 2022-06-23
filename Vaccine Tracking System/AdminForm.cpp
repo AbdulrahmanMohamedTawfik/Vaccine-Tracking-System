@@ -5,7 +5,6 @@
 #include <unordered_map>
 #include <msclr/marshal_cppstd.h>
 #include <string>
-unordered_map<string, User> users_for_admin;
 User u1;
 Admin a1;
 System::Void gui::AdminForm::ViewInfoButton_Click(System::Object^ sender, System::EventArgs^ e)
@@ -24,7 +23,7 @@ System::Void gui::AdminForm::ViewAllUsers_Click(System::Object^ sender, System::
 	NationalIDLabel->Hide();
 	NationalIDTextBox->Hide();
 	SubmitButton->Hide();
-	string contents = a1.viewAll(users_for_admin);
+	string contents = a1.viewAll(u1.getMap());
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 	richTextBox1->Text = syscontents;
 	richTextBox1->Show();
@@ -36,7 +35,7 @@ System::Void gui::AdminForm::ViewAwaitingListButton_Click(System::Object^ sender
 	NationalIDLabel->Hide();
 	NationalIDTextBox->Hide();
 	SubmitButton->Hide();
-	string contents = a1.fill_WaitingList(users_for_admin);
+	string contents = a1.fill_WaitingList(u1.getMap());
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 	richTextBox1->Text = syscontents;
 	richTextBox1->Show();
@@ -62,8 +61,8 @@ System::Void gui::AdminForm::DeleteAllUsers_Click(System::Object^ sender, System
 	String^ all;
 	all = NationalIDTextBox->Text;
 	string NatID = msclr::interop::marshal_as< std::string >(all);
-	a1.deleteAll(users_for_admin);
-	u1.update_files(users_for_admin);
+	u1.deleteAll();
+	u1.update_files(u1.getMap());
 	richTextBox1->Show();
 	richTextBox1->Text = "All Users Deleteted successfully";
 	return System::Void();
@@ -71,8 +70,7 @@ System::Void gui::AdminForm::DeleteAllUsers_Click(System::Object^ sender, System
 
 System::Void gui::AdminForm::AdminForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
-	users_for_admin.clear();
-	u1.read_data(users_for_admin);
+	
 	WindowState = FormWindowState::Maximized;
 	return System::Void();
 }
@@ -97,10 +95,10 @@ System::Void gui::AdminForm::SubmitButton_Click(System::Object^ sender, System::
 	string NatID = msclr::interop::marshal_as< std::string >(all);
 	if (view_or_del)
 	{
-		a1.deleteUser(NatID, users_for_admin);
+		u1.deleteUser(NatID);
 		if (u1.getdel_user_found())
 		{
-			u1.update_files(users_for_admin);
+			u1.update_files(u1.getMap());
 			richTextBox1->Text = "User Deleteted successfully";
 		}
 		else
@@ -110,7 +108,7 @@ System::Void gui::AdminForm::SubmitButton_Click(System::Object^ sender, System::
 	}
 	else //if (!view_or_del)
 	{
-		string contents = a1.viewUser(NatID, users_for_admin);
+		string contents = a1.viewUser(NatID, u1.getMap());
 		String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 		richTextBox1->Text = syscontents;
 	}

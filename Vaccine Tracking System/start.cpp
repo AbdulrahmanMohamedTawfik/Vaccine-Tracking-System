@@ -10,6 +10,7 @@ User usr;
 [STAThreadAttribute]
 int main(cli::array<System::String^>^ args)
 {
+	usr.read_data(usr.getMap());
 	auto arr = gcnew cli::array<String^>(42);
 	Application::SetCompatibleTextRenderingDefault(false);
 	Application::EnableVisualStyles();

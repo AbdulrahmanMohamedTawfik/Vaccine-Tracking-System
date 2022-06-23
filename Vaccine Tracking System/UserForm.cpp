@@ -6,15 +6,13 @@
 #include <msclr/marshal_cppstd.h>
 #include <string>
 using namespace System::Media;
-unordered_map<string, User> users;
 User u;
 Admin a;
 System::Void gui::UserForm::UserForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	WindowState = FormWindowState::Maximized;
-	users.clear();
-	u.read_data(users);
-	u.getUserName(users);
+	
+	u.getUserName(u.getMap());
 	string std_str = u.NameText;
 	String^ sys_str = gcnew String(std_str.c_str());
 	UsernameLabel->Text = sys_str;
@@ -51,7 +49,7 @@ System::Void gui::UserForm::ViewUserInfoButton_Click(System::Object^ sender, Sys
 	DoseComboBox->Hide();
 	GovernorateComboBox->Hide();
 	login^ l = gcnew login();
-	string contents = a.viewUser(u.getNAtIDTextBox_Text(), users);
+	string contents = a.viewUser(u.getNAtIDTextBox_Text(), u.getMap());
 	String^ syscontents = gcnew String(contents.c_str());//convert from std string to sys string
 	UserInfoRichTextBox->Show();
 	UserInfoRichTextBox->Text = syscontents;
@@ -86,8 +84,8 @@ System::Void gui::UserForm::EditUserInfoButton_Click(System::Object^ sender, Sys
 
 System::Void gui::UserForm::DeleteInfoButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	a.deleteUser(u.getNAtIDTextBox_Text(), users);
-	u.update_files(users);
+	u.deleteUser(u.getNAtIDTextBox_Text());
+	u.update_files(u.getMap());
 	this->Close();
 	return System::Void();
 }
@@ -279,13 +277,12 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			}
 			else
 			{
-				u.editName(new_value, users);
-				u.update_files(users);
+				u.editName(new_value);
+				u.update_files(u.getMap());
 				ErrorLabel->ForeColor = System::Drawing::Color::Green;
 				ErrorLabel->Show();
 				ErrorLabel->Text = "Name Changed succesfully!";
-				u.read_data(users);
-				u.getUserName(users);
+				u.getUserName(u.getMap());
 				string std_str = u.NameText;
 				String^ sys_str = gcnew String(std_str.c_str());
 				UsernameLabel->Text = sys_str;
@@ -307,8 +304,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			}
 			else
 			{
-				u.editAge(new_value, users);
-				u.update_files(users);
+				u.editAge(new_value);
+				u.update_files(u.getMap());
 				ErrorLabel->ForeColor = System::Drawing::Color::Green;
 				ErrorLabel->Show();
 				ErrorLabel->Text = " Age Changed succesfully!";
@@ -324,8 +321,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			{
 				new_value = "female";
 			}
-			u.editGender(new_value, users);
-			u.update_files(users);
+			u.editGender(new_value);
+			u.update_files(u.getMap());
 
 			ErrorLabel->ForeColor = System::Drawing::Color::Green;
 			ErrorLabel->Show();
@@ -336,8 +333,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			if (EgyptCheckBox->Checked)
 			{
 				new_value = "Egypt";
-				u.editCountry(new_value, users);
-				u.update_files(users);
+				u.editCountry(new_value);
+				u.update_files(u.getMap());
 
 				ErrorLabel->ForeColor = System::Drawing::Color::Green;
 				ErrorLabel->Text = "Country Changed succesfully!";
@@ -361,8 +358,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 				else
 				{
 					new_value = ("Abroad: " + choosed_country);
-					u.editCountry(new_value, users);
-					u.update_files(users);
+					u.editCountry(new_value);
+					u.update_files(u.getMap());
 
 					ErrorLabel->ForeColor = System::Drawing::Color::Green;
 					ErrorLabel->Text = "Country Changed succesfully!";
@@ -374,8 +371,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 		{
 			str_sys = GovernorateComboBox->Text;
 			new_value = msclr::interop::marshal_as< std::string >(str_sys);//convert from sys string to std string
-			u.editGov(new_value, users);
-			u.update_files(users);
+			u.editGov(new_value);
+			u.update_files(u.getMap());
 
 			ErrorLabel->ForeColor = System::Drawing::Color::Green;
 			ErrorLabel->Show();
@@ -386,8 +383,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			if (ApplyCheckBox->Checked)
 			{
 				new_value = "not vaccinated";
-				u.editStatus(new_value, users);
-				u.update_files(users);
+				u.editStatus(new_value);
+				u.update_files(u.getMap());
 
 				ErrorLabel->ForeColor = System::Drawing::Color::Green;
 				ErrorLabel->Text = "Status Changed succesfully!";
@@ -411,8 +408,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 				else
 				{
 					new_value = ("vaccinated: " + choosed_status);
-					u.editStatus(new_value, users);
-					u.update_files(users);
+					u.editStatus(new_value);
+					u.update_files(u.getMap());
 
 					ErrorLabel->ForeColor = System::Drawing::Color::Green;
 					ErrorLabel->Text = "Status Changed succesfully!";
@@ -435,8 +432,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			}
 			else
 			{
-				u.editPassword(new_value, users);
-				u.update_files(users);
+				u.editPassword(new_value);
+				u.update_files(u.getMap());
 
 				ErrorLabel->ForeColor = System::Drawing::Color::Green;
 				ErrorLabel->Show();
@@ -480,8 +477,8 @@ System::Void gui::UserForm::SubmitButton_Click(System::Object^ sender, System::E
 			}
 			else
 			{
-				u.editId(new_value, users);
-				u.update_files(users);
+				u.editId(new_value, u.getMap());
+				u.update_files(u.getMap());
 				ErrorLabel->ForeColor = System::Drawing::Color::Green;
 				ErrorLabel->Show();
 				ErrorLabel->Text = "ID Changed succesfully!";
