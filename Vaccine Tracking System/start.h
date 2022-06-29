@@ -51,6 +51,8 @@ namespace gui {
 	private: System::Windows::Forms::Button^ VolumeButton;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Button^ AboutDevs;
+
 
 	private:
 		/// <summary>
@@ -72,6 +74,7 @@ namespace gui {
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->VolumeButton = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->AboutDevs = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			this->panel1->SuspendLayout();
@@ -164,6 +167,7 @@ namespace gui {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->panel1->AutoSize = true;
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->Controls->Add(this->AboutDevs);
 			this->panel1->Controls->Add(this->pictureBox1);
 			this->panel1->Controls->Add(this->RegisterButton);
 			this->panel1->Controls->Add(this->LoginButton);
@@ -172,6 +176,24 @@ namespace gui {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1991, 930);
 			this->panel1->TabIndex = 12;
+			// 
+			// AboutDevs
+			// 
+			this->AboutDevs->BackColor = System::Drawing::Color::Goldenrod;
+			this->AboutDevs->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->AboutDevs->FlatAppearance->MouseOverBackColor = System::Drawing::Color::DarkGoldenrod;
+			this->AboutDevs->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->AboutDevs->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AboutDevs->Location = System::Drawing::Point(71, 753);
+			this->AboutDevs->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->AboutDevs->Name = L"AboutDevs";
+			this->AboutDevs->Size = System::Drawing::Size(241, 52);
+			this->AboutDevs->TabIndex = 3;
+			this->AboutDevs->Text = L"About Developers";
+			this->AboutDevs->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->AboutDevs->UseVisualStyleBackColor = false;
+			this->AboutDevs->Click += gcnew System::EventHandler(this, &start::AboutDevs_Click);
 			// 
 			// pictureBox1
 			// 
@@ -229,5 +251,7 @@ namespace gui {
 	private: System::Void start_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 
 	private: System::Void VolumeButton_Click(System::Object^ sender, System::EventArgs^ e);
-	};
+
+	private: System::Void AboutDevs_Click(System::Object^ sender, System::EventArgs^ e);
+};
 }

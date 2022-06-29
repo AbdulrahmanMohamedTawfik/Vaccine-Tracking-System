@@ -1,4 +1,5 @@
 ﻿#include "reg.h"
+#include "login.h"
 #include<string>
 #include<iostream>
 #include "User.h"

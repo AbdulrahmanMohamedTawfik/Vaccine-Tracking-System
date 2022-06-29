@@ -1,6 +1,7 @@
 #include "start.h"
 #include <array>
 #include"User.h"
+#include"AboutUs.h"
 #include<iostream>
 using namespace std;
 using namespace System;
@@ -21,8 +22,8 @@ int main(cli::array<System::String^>^ args)
 
 System::Void gui::start::LoginButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	login^ form = gcnew login();
-	form->Show();
+	login^ logform = gcnew login();
+	logform->Show();
 	return System::Void();
 }
 
@@ -85,3 +86,12 @@ System::Void gui::start::VolumeButton_Click(System::Object^ sender, System::Even
 	cout << "getvol_on()= " << usr.getvol_on() << "\n";
 	return System::Void();
 }
+
+System::Void gui::start::AboutDevs_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	AboutUs^ form = gcnew AboutUs();
+	form->Show();
+	return System::Void();
+}
+
+
