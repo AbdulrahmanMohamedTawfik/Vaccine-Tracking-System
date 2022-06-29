@@ -137,6 +137,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AboutUs.cpp" />
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="AdminForm.cpp" />
     <ClCompile Include="login.cpp" />
@@ -148,6 +149,9 @@
     <ClCompile Include="UserForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AboutUs.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Admin.h" />
     <ClInclude Include="AdminForm.h">
       <FileType>CppForm</FileType>
@@ -171,6 +175,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AboutUs.resx">
+      <DependentUpon>AboutUs.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.h</DependentUpon>
     </EmbeddedResource>
