@@ -44,7 +44,8 @@ namespace gui {
 
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ AliGithub;
+
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
 	private: System::Windows::Forms::Button^ ShikaGithub;
@@ -76,7 +77,7 @@ namespace gui {
 			this->FayzGithub = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->AliGithub = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->ShikaGithub = (gcnew System::Windows::Forms::Button());
@@ -220,21 +221,22 @@ namespace gui {
 			this->pictureBox3->TabIndex = 8;
 			this->pictureBox3->TabStop = false;
 			// 
-			// button1
+			// AliGithub
 			// 
-			this->button1->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->button1->BackColor = System::Drawing::Color::White;
-			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
-			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::LightGray;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Location = System::Drawing::Point(281, 755);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(50, 45);
-			this->button1->TabIndex = 13;
-			this->button1->UseVisualStyleBackColor = false;
+			this->AliGithub->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->AliGithub->BackColor = System::Drawing::Color::White;
+			this->AliGithub->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AliGithub.BackgroundImage")));
+			this->AliGithub->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->AliGithub->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->AliGithub->FlatAppearance->BorderSize = 0;
+			this->AliGithub->FlatAppearance->MouseOverBackColor = System::Drawing::Color::LightGray;
+			this->AliGithub->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->AliGithub->Location = System::Drawing::Point(281, 755);
+			this->AliGithub->Name = L"AliGithub";
+			this->AliGithub->Size = System::Drawing::Size(50, 45);
+			this->AliGithub->TabIndex = 13;
+			this->AliGithub->UseVisualStyleBackColor = false;
+			this->AliGithub->Click += gcnew System::EventHandler(this, &AboutUs::AliGithub_Click);
 			// 
 			// label3
 			// 
@@ -314,7 +316,7 @@ namespace gui {
 			this->Controls->Add(this->ShikaGithub);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->pictureBox5);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->AliGithub);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->pictureBox4);
 			this->Controls->Add(this->FayzGithub);
@@ -348,5 +350,7 @@ namespace gui {
 	private: System::Void FayzGithub_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void ShikaGithub_Click(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void AliGithub_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }
