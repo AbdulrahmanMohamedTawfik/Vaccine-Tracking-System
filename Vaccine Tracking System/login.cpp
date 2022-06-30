@@ -134,15 +134,17 @@ System::Void gui::login::label5_MouseLeave(System::Object^ sender, System::Event
 
 System::Void gui::login::UnseeButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	if (PasswordTextBox->PasswordChar == '\0')
+	if (PasswordTextBox->PasswordChar == '*')
 	{
-		PasswordTextBox->PasswordChar = '*';
-		UnseeButton->Text = "🐵";
+		PasswordTextBox->PasswordChar = '\0';
+		UnseeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Strikeout, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
 	}
 	else
 	{
-		PasswordTextBox->PasswordChar = '\0';
-		UnseeButton->Text = "🙈";
+		PasswordTextBox->PasswordChar = '*';
+		UnseeButton->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
 	}
 	return System::Void();
 }
