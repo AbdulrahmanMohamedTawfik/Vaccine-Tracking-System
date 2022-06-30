@@ -609,7 +609,7 @@ namespace gui {
 	private: System::Void UnseeButton_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void reg_Load(System::Object^ sender, System::EventArgs^ e);
-	
+
 	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	}
@@ -658,7 +658,7 @@ namespace gui {
 	private: System::Void GovernorateTextBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 
 	private: System::Void reg_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
-private: System::Void label4_Click_1(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	private: System::Void label4_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	}
+	};
 }
