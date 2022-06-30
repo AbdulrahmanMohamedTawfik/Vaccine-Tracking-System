@@ -23,3 +23,9 @@ System::Void gui::AboutUs::ShikaGithub_Click(System::Object^ sender, System::Eve
 	System::Diagnostics::Process::Start("https://github.com/AbdelrahmanMoh-Hussain");
 	return System::Void();
 }
+
+System::Void gui::AboutUs::AliGithub_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	System::Diagnostics::Process::Start("https://github.com/aliahmedayad");
+	return System::Void();
+}
