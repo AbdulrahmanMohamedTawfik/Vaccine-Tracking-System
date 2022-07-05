@@ -56,15 +56,19 @@ System::Void gui::login::LoginButton_Click(System::Object^ sender, System::Event
 		}
 		else
 		{
-			userform->Show();
-			this->Close();
+			if (Application::OpenForms["userform"] == nullptr)
+			{
+				// Form is not open
+				userform->Show();
+				this->Close();
+			}
 		}
 	}
 	else
 	{
 		if (NatIDTextBox->Text == "admin" && PasswordTextBox->Text == "admin")
 		{
-			adminform->Show();
+			adminform->ShowDialog();
 			if (usr.getvol_on())
 			{
 				SoundPlayer^ splayer = gcnew SoundPlayer("sounds\\hello_admin.wav");
@@ -89,8 +93,12 @@ System::Void gui::login::LoginButton_Click(System::Object^ sender, System::Event
 
 System::Void gui::login::label5_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	reg^ regform = gcnew reg();
-	regform->Show();
+	if (Application::OpenForms["reg"] == nullptr)
+	{
+		// Form is not open
+		reg^ regform = gcnew reg();
+		regform->Show();
+	}
 	return System::Void();
 }
 

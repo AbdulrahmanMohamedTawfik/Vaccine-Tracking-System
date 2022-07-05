@@ -23,14 +23,18 @@ int main(cli::array<System::String^>^ args)
 System::Void gui::start::LoginButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	login^ logform = gcnew login();
-	logform->Show();
+	logform->ShowDialog();
 	return System::Void();
 }
 
 System::Void gui::start::RegisterButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	reg^ form = gcnew reg();
-	form->Show();
+	if (Application::OpenForms["reg"] == nullptr)
+	{
+		// Form is not open
+		reg^ form = gcnew reg();
+		form->Show();
+	}
 	return System::Void();
 }
 
@@ -52,7 +56,7 @@ System::Void gui::start::start_Load(System::Object^ sender, System::EventArgs^ e
 System::Void gui::start::pictureBox1_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	login^ form = gcnew login();
-	form->Show();
+	form->ShowDialog();
 	return System::Void();
 }
 
@@ -89,8 +93,13 @@ System::Void gui::start::VolumeButton_Click(System::Object^ sender, System::Even
 
 System::Void gui::start::AboutDevs_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	AboutUs^ form = gcnew AboutUs();
-	form->Show();
+	
+	if (Application::OpenForms["AboutUs"] == nullptr)
+	{
+		// Form is not open
+		AboutUs^ form = gcnew AboutUs();
+		form->Show();
+	}
 	return System::Void();
 }
 
