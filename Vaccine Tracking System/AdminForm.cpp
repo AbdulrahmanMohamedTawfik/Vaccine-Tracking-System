@@ -80,8 +80,12 @@ System::Void gui::AdminForm::StatButton_Click(System::Object^ sender, System::Ev
 	NationalIDLabel->Hide();
 	NationalIDTextBox->Hide();
 	SubmitButton->Hide();
-	statistics_dashboard^ form = gcnew statistics_dashboard();
-	form->Show();
+	if (Application::OpenForms["statistics_dashboard"] == nullptr)
+	{
+		// Form is not open
+		statistics_dashboard^ form = gcnew statistics_dashboard();
+		form->Show();
+	}
 	richTextBox1->Show();
 	richTextBox1->Text = "Statistics dashboard viewed successfully";
 	return System::Void();
