@@ -74,8 +74,8 @@ namespace gui {
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->VolumeButton = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->AboutDevs = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->AboutDevs = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -167,33 +167,14 @@ namespace gui {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->panel1->AutoSize = true;
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
-			this->panel1->Controls->Add(this->AboutDevs);
 			this->panel1->Controls->Add(this->pictureBox1);
 			this->panel1->Controls->Add(this->RegisterButton);
 			this->panel1->Controls->Add(this->LoginButton);
 			this->panel1->Location = System::Drawing::Point(-59, 143);
 			this->panel1->Margin = System::Windows::Forms::Padding(4);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1991, 930);
+			this->panel1->Size = System::Drawing::Size(1991, 914);
 			this->panel1->TabIndex = 12;
-			// 
-			// AboutDevs
-			// 
-			this->AboutDevs->BackColor = System::Drawing::Color::Goldenrod;
-			this->AboutDevs->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->AboutDevs->FlatAppearance->MouseOverBackColor = System::Drawing::Color::DarkGoldenrod;
-			this->AboutDevs->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->AboutDevs->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->AboutDevs->Location = System::Drawing::Point(71, 753);
-			this->AboutDevs->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->AboutDevs->Name = L"AboutDevs";
-			this->AboutDevs->Size = System::Drawing::Size(241, 52);
-			this->AboutDevs->TabIndex = 3;
-			this->AboutDevs->Text = L"About Developers";
-			this->AboutDevs->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->AboutDevs->UseVisualStyleBackColor = false;
-			this->AboutDevs->Click += gcnew System::EventHandler(this, &start::AboutDevs_Click);
 			// 
 			// pictureBox1
 			// 
@@ -209,6 +190,24 @@ namespace gui {
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &start::pictureBox1_Click);
 			// 
+			// AboutDevs
+			// 
+			this->AboutDevs->BackColor = System::Drawing::Color::DarkRed;
+			this->AboutDevs->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->AboutDevs->FlatAppearance->MouseOverBackColor = System::Drawing::Color::DarkRed;
+			this->AboutDevs->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->AboutDevs->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AboutDevs->Location = System::Drawing::Point(1268, 9);
+			this->AboutDevs->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->AboutDevs->Name = L"AboutDevs";
+			this->AboutDevs->Size = System::Drawing::Size(341, 52);
+			this->AboutDevs->TabIndex = 3;
+			this->AboutDevs->Text = L"About the Developers";
+			this->AboutDevs->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->AboutDevs->UseVisualStyleBackColor = false;
+			this->AboutDevs->Click += gcnew System::EventHandler(this, &start::AboutDevs_Click);
+			// 
 			// start
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -216,6 +215,7 @@ namespace gui {
 			this->BackColor = System::Drawing::Color::White;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1924, 1055);
+			this->Controls->Add(this->AboutDevs);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->VolumeButton);
 			this->Controls->Add(this->pictureBox4);
