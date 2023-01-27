@@ -45,7 +45,7 @@ namespace gui {
 
 
 
-	private: System::Windows::Forms::PictureBox^ pictureBox4;
+
 
 
 	private: System::Windows::Forms::Button^ VolumeButton;
@@ -71,12 +71,10 @@ namespace gui {
 			this->LoginButton = (gcnew System::Windows::Forms::Button());
 			this->RegisterButton = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->VolumeButton = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->AboutDevs = (gcnew System::Windows::Forms::Button());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
@@ -126,18 +124,6 @@ namespace gui {
 			this->label3->Size = System::Drawing::Size(530, 37);
 			this->label3->TabIndex = 6;
 			this->label3->Text = L"Login now to get vaccination services. ";
-			// 
-			// pictureBox4
-			// 
-			this->pictureBox4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.BackgroundImage")));
-			this->pictureBox4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox4->Location = System::Drawing::Point(64, 4);
-			this->pictureBox4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(509, 133);
-			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox4->TabIndex = 8;
-			this->pictureBox4->TabStop = false;
 			// 
 			// VolumeButton
 			// 
@@ -218,7 +204,6 @@ namespace gui {
 			this->Controls->Add(this->AboutDevs);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->VolumeButton);
-			this->Controls->Add(this->pictureBox4);
 			this->Controls->Add(this->label3);
 			this->ForeColor = System::Drawing::Color::Transparent;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
@@ -228,7 +213,6 @@ namespace gui {
 			this->Text = L"Vaccination application";
 			this->Load += gcnew System::EventHandler(this, &start::start_Load);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &start::start_KeyDown);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
